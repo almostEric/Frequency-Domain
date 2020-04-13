@@ -1,0 +1,33 @@
+{
+  "slug": "SpectreModular",
+  "name": "Spectre Modular",
+  "version": "1.0.0",
+  "license": "Proprietary",
+  "brand": "Spectre Modular",
+  "modules": [
+    {
+      "slug": "HarmonicConvergence",
+      "name": "Harmonic Convergence",
+      "description": "Harmonic Convergence - Resynthesis Engine",
+      "tags": [
+        "Synth voice"
+      ]
+    },
+    {
+      "slug": "DelayedReaction",
+      "name": "Delayed Reaction",
+      "description": "Spectrum based delay",
+      "tags": [
+        "Delay"
+      ]
+    },
+    {
+      "slug": "Morphology",
+      "name": "Morphology",
+      "description": "Spectrum Morpher",
+      "tags": [
+        "Vocoder","Effect"
+      ]
+    }
+  ]
+}
