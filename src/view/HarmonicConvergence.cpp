@@ -119,7 +119,7 @@ HarmonicConvergenceWidget::HarmonicConvergenceWidget(HarmonicConvergenceModule *
   }
 
 
-  //FREQ CENTER
+  // Warp Center Frequency
   addInput(createInput<LightPort>(Vec(263, 50), module, HarmonicConvergenceModule::FREQ_WARP_CENTER_CV));
   addParam(createParam<LightKnob>(Vec(293.5, 36), module, HarmonicConvergenceModule::FREQ_WARP_CENTER));
   {
@@ -201,7 +201,7 @@ HarmonicConvergenceWidget::HarmonicConvergenceWidget(HarmonicConvergenceModule *
     addChild(c);
   }
 
-  addParam(createParam<LightSmallKnob>(Vec(140.25, 354), module, HarmonicConvergenceModule::MORPH));
+  addParam(createParam<LightSmallKnob>(Vec(140.25, 354), module, HarmonicConvergenceModule::MORPH_AMOUNT));
   {
     SmallBidirectionalArcDisplay *c = new SmallBidirectionalArcDisplay();
     if (module) {
@@ -211,7 +211,6 @@ HarmonicConvergenceWidget::HarmonicConvergenceWidget(HarmonicConvergenceModule *
     c->box.size = Vec(30, 30);
     addChild(c);
   }
-
 
 
   //Ring Modulator Enableds
@@ -321,6 +320,12 @@ HarmonicConvergenceWidget::HarmonicConvergenceWidget(HarmonicConvergenceModule *
     addInput(createInput<LightPort>(Vec(85, 313), module, HarmonicConvergenceModule::MORPH_SHIFT_Y_CV));
 
   }
+
+  //Morph Mode
+  // addParam(createParam<RecButton>(Vec(55.5, 280), module, HarmonicConvergenceModule::MORPH_MODE));
+  // addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(57.5, 281), module, HarmonicConvergenceModule::MORPH_MODE_LIGHT));
+
+
 
 
   // Panning

@@ -20,13 +20,11 @@ HarmonicConvergenceModule::HarmonicConvergenceModule() {
   configParam(MIX, 0.0f, 100.0f, 50.0f,"Wet Mix","%");
   configParam(FRAME_SIZE, 7.0f, 13.0f, 9.0f, "Frame Size"," Bytes",2,1);
 
-  configParam(MORPH, -1.0f, 1.0f, 0.0f, "Morph","%",0,100);
+  configParam(MORPH_AMOUNT, -1.0f, 1.0f, 0.0f, "Morph","%",0,100);
   configParam(FM_AMOUNT, 0.0f, 1.0f, 0.0f, "FM Amount","%",0,100);
   configParam(RM_MIX, 0.0f, 1.0f, 0.0f, "RM Mix","%",0,100);
 
   configParam(RING_MODULATION, 0.0f, 1.0f, 0.0f, "Ring Modulation");
-
-
 
   // frameSize / sampleRate
   frameSize1 = 9;
@@ -57,6 +55,7 @@ HarmonicConvergenceModule::HarmonicConvergenceModule() {
 
   binnings1 = new Binning(frameSizeInBytes1, sampleRate);
   binnings2 = new Binning(frameSizeInBytes2, sampleRate);
+  
 
   windowFunction1 = new WindowFunction<float>(frameSizeInBytes1);
   windowFunction2 = new WindowFunction<float>(frameSizeInBytes2);
@@ -75,6 +74,8 @@ HarmonicConvergenceModule::HarmonicConvergenceModule() {
   ringModulationCells = new OneDimensionalCellsWithRollover(36, 36, 0, 1, PIN_ROLLOVER_MODE, WRAP_AROUND_ROLLOVER_MODE);
   ringModulationMixCells = new OneDimensionalCellsWithRollover(40, 36, 0, 1,PIN_ROLLOVER_MODE, WRAP_AROUND_ROLLOVER_MODE);
   panningCells = new OneDimensionalCellsWithRollover(40, 36, -1, 1, PIN_ROLLOVER_MODE, WRAP_AROUND_ROLLOVER_MODE);
+
+  onReset();
 }
 
 HarmonicConvergenceModule::~HarmonicConvergenceModule() {
@@ -100,6 +101,7 @@ HarmonicConvergenceModule::~HarmonicConvergenceModule() {
 
   delete binnings1;
   delete binnings2;
+  
 
   delete morphingCells;
   delete frequencyModulationCells;
@@ -146,6 +148,10 @@ void HarmonicConvergenceModule::dataFromJson(json_t *root) {
   if (json_is_boolean(wf)) {
     warpBasedOnFundamental = json_boolean_value(wf);
   }
+  json_t *mm = json_object_get(root, "morphMode");
+  if (json_is_boolean(mm)) {
+    morphMode = json_boolean_value(mm);
+  }
 
   for(int i=0;i<MAX_VOICE_COUNT;i++) {
     std::string buf = "fmMatrix-" + std::to_string(i) ;
@@ -187,7 +193,8 @@ json_t *HarmonicConvergenceModule::dataToJson() {
   json_object_set(root, "frameSize2", json_integer(frameSize2));
   json_object_set(root, "windowFunction", json_integer(windowFunctionId));
   json_object_set(root, "rmActive", json_boolean(rmActive));
-  json_object_set(root, "warpBasedOnFundamental", json_integer(warpBasedOnFundamental));
+  json_object_set(root, "morphMode", json_boolean(morphMode));
+  json_object_set(root, "warpBasedOnFundamental", json_boolean(warpBasedOnFundamental));
   for(int i=0;i<MAX_VOICE_COUNT;i++) {
     std::string buf = "fmMatrix-" + std::to_string(i) ;
     json_object_set(root, buf.c_str(),json_real((float) frequencyModulationCells->cells[i]));
@@ -260,6 +267,13 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
   lights[FREQ_WARP_USE_FUNDAMENTAL_LIGHT+0].value = warpBasedOnFundamental;
   lights[FREQ_WARP_USE_FUNDAMENTAL_LIGHT+1].value = warpBasedOnFundamental;
   lights[FREQ_WARP_USE_FUNDAMENTAL_LIGHT  +2].value = warpBasedOnFundamental ? 0.2 : 0.0;
+
+  if (morphModeTrigger.process(params[MORPH_MODE].getValue())) {
+    morphMode  = !morphMode;
+  }
+  lights[MORPH_MODE_LIGHT+0].value = morphMode;
+  lights[MORPH_MODE_LIGHT+1].value = morphMode;
+  lights[MORPH_MODE_LIGHT+2].value = morphMode ? 0.2 : 0.0;
 
 
   // get the dry input from the buffer, it should end up one loop delayed
@@ -434,11 +448,11 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
   float octave = paramValue(OCTAVE, OCTAVE_CV, -2, 3);
   octavePercentage = octave / 3.0;
 
-  float morphShiftX = inputs[MORPH_SHIFT_X_CV].getVoltage() / 5.0 + params[MORPH].getValue();
+  float morphShiftX = inputs[MORPH_SHIFT_X_CV].getVoltage() / 5.0 + params[MORPH_AMOUNT].getValue();
   float morphShiftY = inputs[MORPH_SHIFT_Y_CV].getVoltage() / 5.0;
   morphingCells->shiftX = morphShiftX;
   morphingCells->shiftY = morphShiftY;
-  morphPercentage = params[MORPH].getValue();
+  morphPercentage = params[MORPH_AMOUNT].getValue();
 
   float fmShiftX = inputs[FM_SHIFT_X_CV].getVoltage() / 5.0;
   float fmShiftY = inputs[FM_SHIFT_Y_CV].getVoltage() / 5.0;
@@ -475,7 +489,6 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
   
   //magnitudeNormaliztion = 2.0 / powf(windowFunction->sum[windowFunctionId], 2.0);
   for (uint8_t i = 0; i < voiceCount; i++) {
-
     float frequency1,frequency2,magnitude1,magnitude2;
     if (octave == 0) {
       frequency1 = bins1[i].frequency;
@@ -488,13 +501,19 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
       frequency2 = clamp(bins2[i].frequency * (1.0 + octave), 20.0f, 20000.0f);
     } 
 
+    magnitude1 = bins1[i].magnitude / magnitudeAdjustment[frameSize1 - 7];
+    magnitude2 = bins2[i].magnitude / magnitudeAdjustment[frameSize2 - 7];
+
     float interpolatedFrequency;
     if(input1Connected && input2Connected) {
       interpolatedFrequency = interpolate(frequency1,frequency2,morphing[i],0.0f,1.0f);
-    } else if (input2Connected) {
-      interpolatedFrequency = frequency2;
-    } else {
+      magnitudes[i] = interpolate(magnitude1,magnitude2,morphing[i],0.0f,1.0f);
+    } else if (input1Connected) {
       interpolatedFrequency = frequency1;
+      magnitudes[i] = magnitude1;
+    } else {
+      interpolatedFrequency = frequency2;
+      magnitudes[i] = magnitude2;
     }
     if(i == 0 && warpBasedOnFundamental) {
       freqWarpCenterFrequency = interpolatedFrequency + freqWarpCenterFrequency;
@@ -502,11 +521,8 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
     float adjustedFrequency = clamp(interpolatedFrequency + (freqWarpAmount * ((interpolatedFrequency - freqWarpCenterFrequency))),1.0f,20000.0f);
     frequencies[i] = adjustedFrequency;
 
-    magnitude1 = bins1[i].magnitude / magnitudeAdjustment[frameSize1 - 7];
-    magnitude2 = bins2[i].magnitude / magnitudeAdjustment[frameSize2 - 7];
     // magnitude1 = bins1[i].magnitude * magnitudeNormaliztion;
     // magnitude2 = bins2[i].magnitude * magnitudeNormaliztion;
-    magnitudes[i] = interpolate(magnitude1,magnitude2,morphing[i],0.0f,1.0f);
   }
 
   bank.setFrequency(frequencies, magnitudes, voiceCount);

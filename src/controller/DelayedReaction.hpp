@@ -1,7 +1,7 @@
 #include <cstdint>
 #include <vector>
 
-#include "../SpectreModular.hpp"
+#include "../FrequencyDomain.hpp"
 #include "../model/dsp/FFT.hpp"
 #include "../model/DelayLine.hpp"
 #include "../model/dsp/WindowFunction.hpp"

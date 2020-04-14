@@ -1,14 +1,14 @@
 {
-  "slug": "SpectreModular",
-  "name": "Spectre Modular",
+  "slug": "FrequencyDomain",
+  "name": "Frequency Domain",
   "version": "1.0.0",
   "license": "Proprietary",
-  "brand": "Spectre Modular",
+  "brand": "Freqeuncy Domain",
   "modules": [
     {
       "slug": "HarmonicConvergence",
       "name": "Harmonic Convergence",
-      "description": "Harmonic Convergence - Resynthesis Engine",
+      "description": "Resynthesis Engine",
       "tags": [
         "Synth voice"
       ]
@@ -24,7 +24,7 @@
     {
       "slug": "Morphology",
       "name": "Morphology",
-      "description": "Spectrum Morpher",
+      "description": "Spectral Morpher",
       "tags": [
         "Vocoder","Effect"
       ]

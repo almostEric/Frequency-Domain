@@ -1,7 +1,7 @@
 #include <cstdint>
 #include <vector>
 
-#include "../SpectreModular.hpp"
+#include "../FrequencyDomain.hpp"
 #include "../model/dsp/Binning.hpp"
 //#include "../model/dsp/Biquad.hpp"
 #include "../model/dsp/WindowFunction.hpp"
@@ -33,7 +33,8 @@ struct HarmonicConvergenceModule : Module {
     RING_MODULATION,
     VOICE_SHIFT,
     SPECTRAL_MODE,
-    MORPH,
+    MORPH_AMOUNT,
+    MORPH_MODE,
     FM_AMOUNT,
     RM_MIX,
     NUM_PARAMS
@@ -71,7 +72,8 @@ struct HarmonicConvergenceModule : Module {
   enum LightIds {
     RING_MODULATION_ENABLED_LIGHT,
     FREQ_WARP_USE_FUNDAMENTAL_LIGHT = RING_MODULATION_ENABLED_LIGHT + 3,
-    NUM_LIGHTS = FREQ_WARP_USE_FUNDAMENTAL_LIGHT + 3
+    MORPH_MODE_LIGHT = FREQ_WARP_USE_FUNDAMENTAL_LIGHT + 3,
+    NUM_LIGHTS = MORPH_MODE_LIGHT + 3
   };
 
   HarmonicConvergenceModule ();
@@ -105,7 +107,7 @@ struct HarmonicConvergenceModule : Module {
   Result bins2[MAX_VOICE_COUNT] = { { 0, 0 } };
   WindowFunction<float> *windowFunction1;
   WindowFunction<float> *windowFunction2;
-  dsp::SchmittTrigger rmTrigger,warpUseFundamentalTrigger;
+  dsp::SchmittTrigger rmTrigger,warpUseFundamentalTrigger, morphModeTrigger;
 
 
   // 9 x 4 = 36 oscillators
@@ -158,6 +160,8 @@ struct HarmonicConvergenceModule : Module {
   float freqWarpAmount = 0;
   float freqWarpCenterFrequency = 0;
   bool warpBasedOnFundamental = false;
+  
+  bool morphMode = false;
 
   // percentages
   float voiceCountPercentage = 0;

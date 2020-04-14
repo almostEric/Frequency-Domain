@@ -1,4 +1,4 @@
-#include "SpectreModular.hpp"
+#include "FrequencyDomain.hpp"
 
 Plugin *pluginInstance;
 
