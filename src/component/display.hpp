@@ -226,7 +226,7 @@ struct CellGrid : FramebufferWidget {
     nvgFill(args.vg);
 
     if (cells) {
-      nvgFillColor(args.vg, nvgRGB(248, 201, 51)); //gold
+      nvgFillColor(args.vg, nvgRGB(48, 171, 51)); //gold
 
       for (uint16_t y = 0; y < cells->height; y++) {
         uint16_t x = cells->displayValueForPosition(y);
@@ -294,7 +294,7 @@ struct CellBarGrid : FramebufferWidget {
     nvgFill(args.vg);
 
     if (cells) {
-      nvgFillColor(args.vg, nvgRGB(248, 201, 51)); //silver
+      nvgFillColor(args.vg, nvgRGB(48, 171, 51)); //silver
 
       for (uint16_t y = 0; y < cells->height; y++) {
         uint16_t x = cells->displayValueForPosition(y);
@@ -306,71 +306,3 @@ struct CellBarGrid : FramebufferWidget {
   }
 };
 
-struct CellBarGridHorizontal : FramebufferWidget {
-  OneDimensionalCells *cells = nullptr;
-  float initX = 0;
-  float initY = 0;
-  float dragX = 0;
-  float dragY = 0;
-  bool currentlyTurningOn = false;
-
-  CellBarGridHorizontal() {
-
-  }
-
-  void step () override {
-    if (cells && (*cells).dirty) {
-      dirty = true;
-      (*cells).dirty = false;
-    } else {
-      dirty = false;
-    }
-
-    FramebufferWidget::step();
-  }
-
-  void onButton(const event::Button &e) override {
-    if (e.action == GLFW_PRESS && e.button == GLFW_MOUSE_BUTTON_LEFT) {
-      e.consume(this);
-
-      if (cells) {
-        initX = e.pos.x;
-        initY = e.pos.y;
-        currentlyTurningOn = !cells->active(e.pos.y, e.pos.x);
-        cells->setCell(cells->width - e.pos.y, e.pos.x / 2.0);
-        //fprintf(stderr, "set: %f => %d (%f)\n",  e.pos.x / 2.0, cells->valueForPosition(e.pos.x / 2.0), e.pos.y);
-      }
-    }
-  }
-
-  void onDragStart(const event::DragStart &e) override {
-    dragX = APP->scene->rack->mousePos.x;
-    dragY = APP->scene->rack->mousePos.y;
-  }
-
-  void onDragMove(const event::DragMove &e) override {
-    float newDragX = APP->scene->rack->mousePos.x;
-    float newDragY = APP->scene->rack->mousePos.y;
-    cells->setCell(cells->width - (initY+(newDragY-dragY)), (initX+(newDragX-dragX)) / 2.0);
-    //fprintf(stderr, "position: %f => %d\n", (initX+(newDragX-dragX)) / 2.0, cells->valueForPosition((initX+(newDragX-dragX)) / 2.0));
-  }
-
-  void draw(const DrawArgs &args) override {
-    //background
-    nvgFillColor(args.vg, nvgRGB(20, 30, 33));
-    nvgBeginPath(args.vg);
-    nvgRect(args.vg, 0, 0, box.size.x, box.size.y);
-    nvgFill(args.vg);
-
-    if (cells) {
-      nvgFillColor(args.vg, nvgRGB(185, 150, 25)); //gold
-
-      for (uint16_t y = 0; y < cells->height; y++) {
-        uint16_t x = cells->displayValueForPosition(y);
-        nvgBeginPath(args.vg);
-        nvgRect(args.vg, y * 2, cells->width, 2, - x);
-        nvgFill(args.vg);
-      }
-    }
-  }
-};

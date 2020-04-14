@@ -31,9 +31,9 @@
   <sodipodi:namedview
      borderopacity="1"
      inkscape:zoom="2.9512404"
-     inkscape:cy="141.54065"
+     inkscape:cy="263.52326"
      gridtolerance="10"
-     inkscape:cx="163.94267"
+     inkscape:cx="245.26441"
      inkscape:window-height="1057"
      inkscape:measure-start="21.6858,252.097"
      inkscape:pagecheckerboard="true"
@@ -511,19 +511,19 @@
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text108-3"
-     x="69.644234"
+     x="89.644234"
      font-size="8px"
      y="33.878906">ATTENUATION</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text108-3-0"
-     x="203.57031"
+     x="230.57031"
      font-size="8px"
      y="34">DELAY TIME</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text108-3-5"
-     x="340.71094"
+     x="370.71094"
      font-size="8px"
      y="33.894531">FEEDBACK</text>
   <text
