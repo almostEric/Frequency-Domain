@@ -34,3 +34,4 @@ This is great for creating inharmonic sounds
 - Essentially a spectral based vocoder.
 - Frequency bands can be placed individually in the stereo field
 - Band spread allows frequency bands to modulate its neighbors.
+- Inverter buttons make loudest frequency bands the quietest and vice-versa
