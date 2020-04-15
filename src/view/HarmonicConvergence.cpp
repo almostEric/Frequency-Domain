@@ -213,21 +213,26 @@ HarmonicConvergenceWidget::HarmonicConvergenceWidget(HarmonicConvergenceModule *
   }
 
 
-  //Ring Modulator Enableds
-  addParam(createParam<RecButton>(Vec(280.5, 230), module, HarmonicConvergenceModule::RING_MODULATION));
-  addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(282.5, 231), module, HarmonicConvergenceModule::RING_MODULATION_ENABLED_LIGHT));
+  //Ring Modulator Enableds 
+  addParam(createParam<RecButton>(Vec(300.5, 228), module, HarmonicConvergenceModule::RING_MODULATION));
+  addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(302.5, 229), module, HarmonicConvergenceModule::RING_MODULATION_ENABLED_LIGHT));
 
 
   // Input/Output
-  addInput(createInput<LightPort>(Vec(325, 332), module, HarmonicConvergenceModule::INPUT_1));
-  addInput(createInput<LightPort>(Vec(347, 332), module, HarmonicConvergenceModule::INPUT_2));
+  addInput(createInput<LightPort>(Vec(325, 340), module, HarmonicConvergenceModule::INPUT_1));
+  addInput(createInput<LightPort>(Vec(347, 340), module, HarmonicConvergenceModule::INPUT_2));
 
-  addOutput(createOutput<LightPort>(Vec(395, 332), module, HarmonicConvergenceModule::OUTPUT_L));
-  addOutput(createOutput<LightPort>(Vec(417, 332), module, HarmonicConvergenceModule::OUTPUT_R));
+  addOutput(createOutput<LightPort>(Vec(395, 340), module, HarmonicConvergenceModule::OUTPUT_L));
+  addOutput(createOutput<LightPort>(Vec(417, 340), module, HarmonicConvergenceModule::OUTPUT_R));
 
 
   // FM Input
-  addInput(createInput<LightPort>(Vec(28, 222), module, HarmonicConvergenceModule::FM_INPUT));
+  addInput(createInput<LightPort>(Vec(18, 222), module, HarmonicConvergenceModule::FM_INPUT_1));
+  addInput(createInput<LightPort>(Vec(40, 222), module, HarmonicConvergenceModule::FM_INPUT_2));
+
+  // FM Input
+  addInput(createInput<LightPort>(Vec(240, 222), module, HarmonicConvergenceModule::AM_RM_INPUT_1));
+  addInput(createInput<LightPort>(Vec(262, 222), module, HarmonicConvergenceModule::AM_RM_INPUT_2));
 
 
   // Frame Size

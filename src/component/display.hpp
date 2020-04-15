@@ -226,7 +226,7 @@ struct CellGrid : FramebufferWidget {
     nvgFill(args.vg);
 
     if (cells) {
-      nvgFillColor(args.vg, nvgRGB(48, 171, 51)); //gold
+      nvgFillColor(args.vg, nvgRGB(0x3a, 0xa3, 0x27)); //CRT Green
 
       for (uint16_t y = 0; y < cells->height; y++) {
         uint16_t x = cells->displayValueForPosition(y);
@@ -294,7 +294,7 @@ struct CellBarGrid : FramebufferWidget {
     nvgFill(args.vg);
 
     if (cells) {
-      nvgFillColor(args.vg, nvgRGB(48, 171, 51)); //silver
+      nvgFillColor(args.vg, nvgRGB(0x3a, 0x73, 0x27)); //crt green
 
       for (uint16_t y = 0; y < cells->height; y++) {
         uint16_t x = cells->displayValueForPosition(y);

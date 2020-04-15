@@ -3,7 +3,15 @@
   "name": "Frequency Domain",
   "version": "1.0.0",
   "license": "Proprietary",
-  "brand": "Freqeuncy Domain",
+  "brand": "Frequency Domain",
+	"author": "almostEric and JerrySV",
+  "authorEmail": "almostEric@frozenwastelandmodules.com",
+	"pluginUrl": "https://github.com/almostEric/FrozenWasteland/blob/master/README.md",
+	"authorUrl": "https://vcvrack.com/",
+	"manualUrl": "https://github.com/almostEric/Frequency-Domain-Manuals/blob/master/README.md",
+	"donateUrl": "https://paypal.me/FrozenWasteland",
+	"changelogUrl": "https://github.com/almostEric/Frequency-Domain-Manuals/blob/master/CHANGELOG.md",
+
   "modules": [
     {
       "slug": "HarmonicConvergence",

@@ -29,6 +29,7 @@ struct DelayedReactionModule : Module {
                   NUM_PARAMS };
   enum InputIds {
     INPUT,
+    FEEDBACK_RETURN,
     ATTENUATION_X_CV,
     ATTENUATION_Y_CV,
     DELAY_TIME_X_CV,
@@ -38,7 +39,7 @@ struct DelayedReactionModule : Module {
     MIX_CV,
     NUM_INPUTS
   };
-  enum OutputIds { OUTPUT, NUM_OUTPUTS };
+  enum OutputIds { OUTPUT, FEEDBACK_SEND, NUM_OUTPUTS };
   enum LightIds { DELAY_RANGE_LIGHT,
                   PIN_ATTENUATION_0S_LIGHT = DELAY_RANGE_LIGHT + 3,
                   PIN_DELAY_TIME_0S_LIGHT = PIN_ATTENUATION_0S_LIGHT + 3,

@@ -36,7 +36,7 @@ struct OscillatorBank {
   }
 
   void setFM(uint8_t *fmMatrix, float *fmAmount, float *fmIn, uint8_t count) {
-    for (uint8_t i = 0; i < NUM_OSCILLATORS / 4; i++) {
+    for (uint8_t i = 0; i < NUM_OSCILLATORS; i++) {
       if (count == 0) {
         this->frequencyModulation[i] = 0;
       } else {        
@@ -49,12 +49,25 @@ struct OscillatorBank {
     }
   }
 
-  void setRM(bool rmActive, uint8_t *rmMatrix, float *rmMix) {
+  void setRM(bool rmActive, uint8_t *rmMatrix, float *rmMix, float *amInput, uint8_t count) {
     this->ringModulationActive = rmActive;
     for (uint8_t i = 0; i < NUM_OSCILLATORS;i++) {
       this->rmMatrix[i]  = rmMatrix[i];
       this->rmMix[i] = rmMix[i];
     }
+
+    for (uint8_t i = 0; i < NUM_OSCILLATORS; i++) {
+      if (count == 0) {
+        this->amplitudeModulation[i] = 1;
+      } else {        
+        uint8_t j = rmMatrix[i];
+        while (j >= count) {
+          j -= count;
+        }
+        this->amplitudeModulation[i] = amInput[j];
+      }
+    }
+
   }
 
 
@@ -145,16 +158,19 @@ struct OscillatorBank {
     }
 
     for (uint8_t i = 0; i < NUM_OSCILLATORS && i < numOscillators[currentBank]; i++) {
-      if(ringModulationActive) {        
-        float rmValue = interpolate(currentVoiceOutput[i],ringModulator.processModel(currentVoiceOutput[i],currentVoiceOutput[rmMatrix[i]]),rmMix[i],0.0f,1.0f);
-        outputMono += rmValue;
-        outputLeft += rmValue * std::max(1.0 - panning[i],0.0) ;
-        outputRight += rmValue * std::max(panning[i]+1.0,1.0);
-      } else {
-        outputMono += currentVoiceOutput[i];
-        outputLeft += currentVoiceOutput[i] * std::max(1.0 - panning[i],0.0);
-        outputRight += currentVoiceOutput[i] * std::max(panning[i]+1.0,1.0);
-      }
+      //float amValue = ringModulator.processModel(currentVoiceOutput[i],amplitudeModulation[i]); 
+      float amValue = currentVoiceOutput[i] * (amplitudeModulation[i] > 0 ? amplitudeModulation[i] / 5.0 : 0); 
+      float rmValue = ringModulator.processModel(currentVoiceOutput[i],currentVoiceOutput[rmMatrix[i]]);
+
+      float adjustedValue = interpolate(currentVoiceOutput[i],ringModulationActive ? rmValue : amValue ,rmMix[i],0.0f,1.0f);
+      outputMono += adjustedValue;
+      outputLeft += adjustedValue * std::max(1.0 - panning[i],0.0) ;
+      outputRight += adjustedValue * std::max(panning[i]+1.0,1.0);
+      // } else {
+      //   outputMono += currentVoiceOutput[i];
+      //   outputLeft += currentVoiceOutput[i] * std::max(1.0 - panning[i],0.0);
+      //   outputRight += currentVoiceOutput[i] * std::max(panning[i]+1.0,1.0);
+      // }
     }
 
     BankOutput bankOutput;
@@ -180,6 +196,7 @@ struct OscillatorBank {
   uint8_t currentBank;
   int8_t voiceShift = 0;
   float frequencyModulation[NUM_OSCILLATORS + 4]{0};
+  float amplitudeModulation[NUM_OSCILLATORS + 4]{0};
   uint8_t rmMatrix[NUM_OSCILLATORS] {0};
   float rmMix[NUM_OSCILLATORS]{0};
 };

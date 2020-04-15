@@ -13,7 +13,7 @@
    id="SvgjsSvg1006"
    sodipodi:docname="Morphology.svg"
    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
-   width="345"
+   width="300"
    version="1.1">
   <metadata
      id="metadata7215">
@@ -23,16 +23,16 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
      borderopacity="1"
-     inkscape:zoom="2.9512404"
-     inkscape:cy="106.33247"
+     inkscape:zoom="2.0868421"
+     inkscape:cy="74.973342"
      gridtolerance="10"
-     inkscape:cx="12.314294"
+     inkscape:cx="111.84052"
      inkscape:window-height="1057"
      inkscape:measure-start="21.6858,252.097"
      inkscape:pagecheckerboard="true"
@@ -82,20 +82,20 @@
        x2="345"
        y2="380"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-6,6)" />
+       gradientTransform="matrix(0.86956522,0,0,1,-5.2173913,6)" />
     <style
        id="Routed Gothic">@import url(file://fonts/routed-gothic.ttf);</style>
   </defs>
   <path
-     d="M 0,0 H 345 V 380 H 0 Z"
+     d="M 0,0 H 300 V 380 H 0 Z"
      id="SvgjsRect1008"
-     style="visibility:visible;fill:url(#linearGradientOuter);fill-opacity:1;stroke:none;stroke-width:0.87559509;stroke-opacity:1"
+     style="visibility:visible;fill:url(#linearGradientOuter);fill-opacity:1;stroke:none;stroke-width:0.81649661;stroke-opacity:1"
      visibility="visible"
      inkscape:connector-curvature="0" />
   <text
      style="font-size:16px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text5"
-     x="171.98438"
+     x="148.98438"
      font-size="16px"
      y="18">MORPHOLOGY</text>
   <text
@@ -103,341 +103,341 @@
      id="text106"
      x="211.95703"
      font-size="8px"
-     y="369.87891">INPUT</text>
+     y="371.87891">INPUT</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text108"
-     x="295.91016"
+     x="275.91016"
      font-size="8px"
-     y="369.87891">OUTPUT</text>
+     y="371.87891">OUTPUT</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text108-3"
-     x="140.4375"
+     x="90.4375"
      font-size="8px"
      y="33.878906">BAND SHIFT</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text108-3-0"
-     x="280.03906"
+     x="230.03906"
      font-size="8px"
      y="34">PANNING</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-6"
-     x="76.4375"
+     x="26.4375"
      font-size="8px"
      y="179.89453">Y</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-6-5"
-     x="142.47656"
+     x="92.476562"
      font-size="8px"
      y="329.89453">X</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-6-6"
-     x="216.4375"
+     x="166.4375"
      font-size="8px"
      y="179.89453">Y</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-6-5-2"
-     x="282.47656"
+     x="232.47656"
      font-size="8px"
      y="329.89453">X</text>
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -18.18652,10.5"
+     d="m 130.92395,343.57674 -18.18652,10.5"
      id="SvgjsLine1312" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -18.09653,8.51556"
+     d="m 130.92395,343.57674 -18.09653,8.51556"
      id="SvgjsLine1313" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -18.74564,6.97144"
+     d="m 130.92395,343.57674 -18.74564,6.97144"
      id="SvgjsLine1314" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -19.26324,5.37842"
+     d="m 130.92395,343.57674 -19.26324,5.37842"
      id="SvgjsLine1315" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -19.64575,3.74762"
+     d="m 130.92395,343.57674 -19.64575,3.74762"
      id="SvgjsLine1316" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -20.88495,2.1951"
+     d="m 130.92395,343.57674 -20.88495,2.1951"
      id="SvgjsLine1317" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -19.99561,0.41885"
+     d="m 130.92395,343.57674 -19.99561,0.41885"
      id="SvgjsLine1318" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -19.96054,-1.2558"
+     d="m 130.92395,343.57674 -19.96054,-1.2558"
      id="SvgjsLine1319" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -19.78546,-2.92166"
+     d="m 130.92395,343.57674 -19.78546,-2.92166"
      id="SvgjsLine1320" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -19.47159,-4.56702"
+     d="m 130.92395,343.57674 -19.47159,-4.56702"
      id="SvgjsLine1321" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -19.9722,-6.48935"
+     d="m 130.92395,343.57674 -19.9722,-6.48935"
      id="SvgjsLine1322" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="M 50.924148,229.95971 32.486888,222.2094"
+     d="m 130.92395,343.57674 -18.43726,-7.75031"
      id="SvgjsLine1323" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -17.72406,-9.26593"
+     d="m 130.92395,343.57674 -17.72406,-9.26593"
      id="SvgjsLine1324" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="M 50.924148,229.95971 34.037578,219.24316"
+     d="M 130.92395,343.57674 114.03738,332.86019"
      id="SvgjsLine1325" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -15.9306,-12.09198"
+     d="m 130.92395,343.57674 -15.9306,-12.09198"
      id="SvgjsLine1326" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="M 50.924148,229.95971 35.318098,215.90795"
+     d="M 130.92395,343.57674 115.3179,329.52498"
      id="SvgjsLine1327" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="M 50.924148,229.95971 37.233198,215.38033"
+     d="M 130.92395,343.57674 117.233,328.99736"
      id="SvgjsLine1328" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="M 50.924148,229.95971 38.501208,214.28582"
+     d="M 130.92395,343.57674 118.50101,327.90285"
      id="SvgjsLine1329" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="M 50.924148,229.95971 39.856308,213.30126"
+     d="M 130.92395,343.57674 119.85611,326.91829"
      id="SvgjsLine1330" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -9.63507,-17.52612"
+     d="m 130.92395,343.57674 -9.63507,-17.52612"
      id="SvgjsLine1331" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -8.54147,-19.18445"
+     d="m 130.92395,343.57674 -8.54147,-19.18445"
      id="SvgjsLine1332" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="M 50.924148,229.95971 44.346818,211.0722"
+     d="m 130.92395,343.57674 -6.57733,-18.88751"
      id="SvgjsLine1333" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -4.97379,-19.37164"
+     d="M 130.92395,343.57674 125.95016,324.2051"
      id="SvgjsLine1334" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="M 50.924148,229.95971 47.588758,210.2398"
+     d="m 130.92395,343.57674 -3.33539,-19.71991"
      id="SvgjsLine1335" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 -1.67355,-19.92987"
+     d="M 130.92395,343.57674 129.2504,323.64687"
      id="SvgjsLine1336" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 v -21"
+     d="m 130.92395,343.57674 v -21"
      id="SvgjsLine1337" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 1.67355,-19.92987"
+     d="m 130.92395,343.57674 1.67355,-19.92987"
      id="SvgjsLine1338" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 3.33539,-19.71991"
+     d="m 130.92395,343.57674 3.33539,-19.71991"
      id="SvgjsLine1339" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 4.97379,-19.37164"
+     d="m 130.92395,343.57674 4.97379,-19.37164"
      id="SvgjsLine1340" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 6.57733,-18.88751"
+     d="m 130.92395,343.57674 6.57733,-18.88751"
      id="SvgjsLine1341" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 8.54147,-19.18445"
+     d="m 130.92395,343.57674 8.54147,-19.18445"
      id="SvgjsLine1342" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 9.63507,-17.52612"
+     d="m 130.92395,343.57674 9.63507,-17.52612"
      id="SvgjsLine1343" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 11.06784,-16.65845"
+     d="m 130.92395,343.57674 11.06784,-16.65845"
      id="SvgjsLine1344" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 12.42294,-15.67389"
+     d="m 130.92395,343.57674 12.42294,-15.67389"
      id="SvgjsLine1345" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 13.69095,-14.57938"
+     d="M 130.92395,343.57674 144.6149,328.99736"
      id="SvgjsLine1346" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 15.60605,-14.05176"
+     d="M 130.92395,343.57674 146.53,329.52498"
      id="SvgjsLine1347" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 15.9306,-12.09198"
+     d="m 130.92395,343.57674 15.9306,-12.09198"
      id="SvgjsLine1348" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 16.88657,-10.71655"
+     d="m 130.92395,343.57674 16.88657,-10.71655"
      id="SvgjsLine1349" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 17.72406,-9.26593"
+     d="m 130.92395,343.57674 17.72406,-9.26593"
      id="SvgjsLine1350" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 18.43726,-7.75031"
+     d="m 130.92395,343.57674 18.43726,-7.75031"
      id="SvgjsLine1351" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 19.9722,-6.48935"
+     d="m 130.92395,343.57674 19.9722,-6.48935"
      id="SvgjsLine1352" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 19.47159,-4.56702"
+     d="m 130.92395,343.57674 19.47159,-4.56702"
      id="SvgjsLine1353" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 19.78546,-2.92166"
+     d="m 130.92395,343.57674 19.78546,-2.92166"
      id="SvgjsLine1354" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 19.96054,-1.2558"
+     d="m 130.92395,343.57674 19.96054,-1.2558"
      id="SvgjsLine1355" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 19.99561,0.41885"
+     d="m 130.92395,343.57674 19.99561,0.41885"
      id="SvgjsLine1356" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 20.88495,2.1951"
+     d="m 130.92395,343.57674 20.88495,2.1951"
      id="SvgjsLine1357" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 19.64575,3.74762"
+     d="m 130.92395,343.57674 19.64575,3.74762"
      id="SvgjsLine1358" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 19.26324,5.37842"
+     d="m 130.92395,343.57674 19.26324,5.37842"
      id="SvgjsLine1359" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 18.74564,6.97144"
+     d="m 130.92395,343.57674 18.74564,6.97144"
      id="SvgjsLine1360" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 18.09653,8.51556"
+     d="m 130.92395,343.57674 18.09653,8.51556"
      id="SvgjsLine1361" />
   <path
      inkscape:connector-curvature="0"
      style="stroke:#e8b923;stroke-width:0.75"
-     d="m 50.924148,229.95971 18.18652,10.5"
+     d="m 130.92395,343.57674 18.18652,10.5"
      id="SvgjsLine1362" />
   <path
      inkscape:connector-curvature="0"
      style="fill:#988903;stroke:#583903;stroke-width:0.75"
-     d="m 68.924148,229.95971 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18 z"
+     d="m 148.92395,343.57674 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18 z"
      id="SvgjsCircle1363" />
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-69"
-     x="21.45401"
+     x="121.45381"
      font-size="8px"
-     y="258.2775">SPREAD</text>
+     y="371.89453">SPREAD</text>
   <rect
      style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.50001633;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="rect4936-0"
      width="100.49997"
      height="256.49997"
-     x="89.750008"
+     x="39.750008"
      y="39.750023" />
   <rect
      style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.50001633;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="rect4936-0-1"
      width="100.49997"
      height="256.49997"
-     x="229.75002"
+     x="179.75002"
      y="39.750023" />
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-6-6-8"
-     x="187.42578"
+     x="38.542969"
      font-size="8px"
-     y="334">INV1</text>
+     y="312">INVERT</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-6-6-8-5"
-     x="227.42578"
+     x="21.445312"
      font-size="8px"
-     y="334">INV2</text>
+     y="340">L</text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.33333302px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
@@ -446,8 +446,8 @@
      id="text3960"><tspan
        sodipodi:role="line"
        id="tspan3958"
-       x="-47.282928"
-       y="165.17506" /></text>
+       x="-49.131886"
+       y="177.18512" /></text>
   <g
      id="g1200"
      transform="translate(0.2045204,2.4103028)">
@@ -477,4 +477,10 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.33333349px;font-family:'Megi Sans';-inkscape-font-specification:'Megi Sans'"
        id="tspan1358">FREQENCY DOMAIN</tspan>
   </text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text106-6-6-8-5-5"
+     x="56"
+     font-size="8px"
+     y="340">R</text>
 </svg>

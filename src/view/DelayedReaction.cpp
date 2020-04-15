@@ -124,22 +124,25 @@ DelayedReactionWidget::DelayedReactionWidget(DelayedReactionModule *module) {
   }
 
 
-  addInput(createInput<LightPort>(Vec(279.5, 340), module, DelayedReactionModule::MIX_CV));
-  addParam(createParam<LightKnob>(Vec(309.5, 324), module, DelayedReactionModule::MIX));
+  addInput(createInput<LightPort>(Vec(229.5, 340), module, DelayedReactionModule::MIX_CV));
+  addParam(createParam<LightKnob>(Vec(259.5, 324), module, DelayedReactionModule::MIX));
   {
     ArcDisplay *c = new ArcDisplay();
     if (module) {
       c->percentage = &module->mixPercentage;
     }
-    c->box.pos = Vec(315.5, 330.5);
+    c->box.pos = Vec(265.5, 330.5);
     c->box.size = Vec(60, 60);
     addChild(c);
   }
 
 
-  addInput(createInput<LightPort>(Vec(230, 340), module, DelayedReactionModule::INPUT));
+  addInput(createInput<LightPort>(Vec(330, 340), module, DelayedReactionModule::INPUT));
+  addOutput(createOutput<LightPort>(Vec(399, 340), module, DelayedReactionModule::OUTPUT));
 
-  addOutput(createOutput<LightPort>(Vec(374.5, 340), module, DelayedReactionModule::OUTPUT));
+
+  addOutput(createOutput<LightPort>(Vec(302.5, 300), module, DelayedReactionModule::FEEDBACK_SEND));
+  addInput(createInput<LightPort>(Vec(330.5, 300), module, DelayedReactionModule::FEEDBACK_RETURN));
 
 }
 

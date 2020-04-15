@@ -47,7 +47,10 @@ struct HarmonicConvergenceModule : Module {
     FM_SHIFT_Y_CV,
     FM_AMOUNT_SHIFT_X_CV,
     FM_AMOUNT_SHIFT_Y_CV,
-    FM_INPUT,
+    FM_INPUT_1,
+    FM_INPUT_2,
+    AM_RM_INPUT_1,
+    AM_RM_INPUT_2,
     VOICE_COUNT_CV,
     VOICE_WAVEFORM_CV,
     WINDOW_FUNCTION_CV,
@@ -133,6 +136,7 @@ struct HarmonicConvergenceModule : Module {
   float morphing[MAX_VOICE_COUNT] = {0};
   uint8_t fmMatrix[MAX_VOICE_COUNT] = {0};
   float fmAmount[MAX_VOICE_COUNT] = {0};
+  float amAmount[MAX_VOICE_COUNT] = {0};
   uint8_t rmMatrix[MAX_VOICE_COUNT] = {0};
   float rmMix[MAX_VOICE_COUNT] = {0};
   float panning[MAX_VOICE_COUNT] = {0};

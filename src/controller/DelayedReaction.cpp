@@ -509,7 +509,10 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
   }
 
   float wet = proceesedTotal;
-  feedback = feedbackTotal;
+  outputs[FEEDBACK_SEND].setVoltage(feedbackTotal);
+  if(inputs[FEEDBACK_RETURN].isConnected()) {
+    feedback = inputs[FEEDBACK_RETURN].getVoltage();
+  }
   
 
   float output = (wet * mix) + ((1.0f - mix) * dryDelayed);

@@ -31,9 +31,9 @@
   <sodipodi:namedview
      borderopacity="1"
      inkscape:zoom="3.1644444"
-     inkscape:cy="87.83705"
+     inkscape:cy="-32.078655"
      gridtolerance="10"
-     inkscape:cx="105.66174"
+     inkscape:cx="367.79307"
      inkscape:window-height="1057"
      inkscape:measure-start="21.6858,252.097"
      inkscape:pagecheckerboard="true"
@@ -170,36 +170,36 @@
      id="line74"
      style="fill:none;stroke:#e8b923" />
   <line
-     x1="378.229"
-     x2="438.229"
-     y1="127.07267"
-     y2="127.07267"
+     x1="403"
+     x2="439"
+     y1="126.89999"
+     y2="126.89999"
      id="line78"
-     style="fill:none;stroke:#e8b923;stroke-width:0.65465367" />
+     style="fill:none;stroke:#e8b923;stroke-width:0.833;stroke-miterlimit:4;stroke-dasharray:none" />
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text80"
      x="336.979"
      font-size="8px"
-     y="130">RING MODULATION</text>
+     y="130">AMPLITUDE/RING MODULATION</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text88"
-     x="258.0625"
+     x="262.0625"
      font-size="8px"
-     y="240">RM ON</text>
+     y="252.8125">AM/RM IN</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text90"
      x="347.95703"
      font-size="8px"
-     y="363.87891">INPUT</text>
+     y="371.87891">INPUT</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text47"
      x="417.45901"
      font-size="8px"
-     y="363.87891">OUTPUT</text>
+     y="371.87891">OUTPUT</text>
   <line
      x1="210.5"
      x2="210.5"
@@ -210,10 +210,10 @@
   <line
      x1="169"
      x2="211"
-     y1="127"
-     y2="127"
+     y1="127.02915"
+     y2="127.02915"
      id="line2081"
-     style="fill:none;stroke:#e8b923;stroke-width:1.0583005" />
+     style="fill:none;stroke:#e8b923;stroke-width:0.833;stroke-miterlimit:4;stroke-dasharray:none" />
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text2083"
@@ -223,9 +223,9 @@
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text104"
-     x="38.789062"
+     x="40.5"
      font-size="8px"
-     y="251.87891">FM INPUT</text>
+     y="253.87891">FM IN</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text108"
@@ -1617,14 +1617,14 @@
      id="line2077-1-1"
      style="fill:none;stroke:#e8b923" />
   <path
-     style="fill:none;stroke:#e8b923;stroke-width:0.65465367"
-     d="m 235,127.07267 h 60"
+     style="fill:none;stroke:#e8b923;stroke-width:0.833;stroke-miterlimit:4;stroke-dasharray:none"
+     d="m 235,126.82622 h 36"
      id="line78-0"
      inkscape:connector-curvature="0" />
   <path
      inkscape:connector-curvature="0"
-     style="fill:none;stroke:#e8b923;stroke-width:1.0583005"
-     d="M 16,127 H 58"
+     style="fill:none;stroke:#e8b923;stroke-width:0.833;stroke-miterlimit:4;stroke-dasharray:none"
+     d="M 16,127.0583 H 58"
      id="line2081-1" />
   <path
      style="fill:none;stroke:#e8b923;stroke-width:0.8326664"
@@ -1638,12 +1638,12 @@
      inkscape:connector-curvature="0" />
   <path
      style="fill:none;stroke:#e8b923;stroke-width:0.86409891"
-     d="m 202,264.6 h 28"
+     d="m 202,264.53205 h 28"
      id="line2081-6-7"
      inkscape:connector-curvature="0" />
   <path
      style="fill:none;stroke:#e8b923;stroke-width:0.86409873"
-     d="m 272,264.59995 h 28"
+     d="m 272,264.532 h 28"
      id="line2081-6-6"
      inkscape:connector-curvature="0" />
   <text
@@ -1723,13 +1723,13 @@
      id="text104-1-8-3"
      x="396.11423"
      font-size="8px"
-     y="221">RM MIX</text>
+     y="221">AM/RM MIX</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text104-1-9"
      x="291.33594"
      font-size="8px"
-     y="221">RM MATRIX</text>
+     y="221">AM/RM MATRIX</text>
   <path
      style="fill:none;stroke:#e8b923;stroke-width:0.50000006;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      d="m 137.86409,74.83748 h 2.875 v -3.875 h 2.375 V 74.9 h 1.5"
@@ -3710,4 +3710,10 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.33333349px;font-family:'Megi Sans';-inkscape-font-specification:'Megi Sans'"
        id="tspan1358">FREQENCY DOMAIN</tspan>
   </text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text88-0"
+     x="315.87891"
+     font-size="8px"
+     y="252.8125">INTERNAL</text>
 </svg>

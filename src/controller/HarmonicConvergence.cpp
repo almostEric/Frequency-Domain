@@ -287,25 +287,25 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
     // debugOutput[1] = input1 * windowedValue1;
 
       // set the hpf and lpf values for filtering of bandwidth/center
-    hpf1.setFc(lowFreq() / args.sampleRate);
-    lpf1.setFc(highFreq() / args.sampleRate);
-    hpf1.calcBiquad();
-    lpf1.calcBiquad();
+    // hpf1.setFc(lowFreq() / args.sampleRate);
+    // lpf1.setFc(highFreq() / args.sampleRate);
+    // hpf1.calcBiquad();
+    // lpf1.calcBiquad();
 
-    hpf2.setFc(lowFreq() / args.sampleRate);
-    lpf2.setFc(highFreq() / args.sampleRate);
-    hpf2.calcBiquad();
-    lpf2.calcBiquad();
+    // hpf2.setFc(lowFreq() / args.sampleRate);
+    // lpf2.setFc(highFreq() / args.sampleRate);
+    // hpf2.calcBiquad();
+    // lpf2.calcBiquad();
 
     //TODO: Take advantage of SIMD
 
     if(input1Connected) {
-      input1 = hpf1.process(lpf1.process(input1))[0];
+      //input1 = hpf1.process(lpf1.process(input1))[0];
       dryBuffer1[i]->set(input1 * windowedValue1);
     }
 
     if(input2Connected) {
-      input2 = hpf2.process(lpf2.process(input2))[0];
+      //input2 = hpf2.process(lpf2.process(input2))[0];
       dryBuffer2[i]->set(input2 * windowedValue2);
     }
 
@@ -372,7 +372,7 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
     if(updateCells) {
       for (uint8_t voiceIndex = 0; voiceIndex < MAX_VOICE_COUNT; voiceIndex++) {
         morphing[voiceIndex] = morphingCells->valueForPosition(voiceIndex);
-        fmMatrix[voiceIndex] = frequencyModulationCells->displayValueForPosition(voiceIndex) / 2;
+        fmMatrix[voiceIndex] = frequencyModulationCells->displayValueForPosition(voiceIndex);
         fmAmount[voiceIndex] = frequencyModulationAmountCells->valueForPosition(voiceIndex);
         rmMatrix[voiceIndex] = ringModulationCells->displayValueForPosition(voiceIndex);
         rmMix[voiceIndex] = ringModulationMixCells->valueForPosition(voiceIndex);
@@ -439,13 +439,14 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
   float frequencies[MAX_VOICE_COUNT]{0};
   float magnitudes[MAX_VOICE_COUNT]{0};
 
-  float fmValue[MAX_POLYPHONY]{0};
+  float fmValue[MAX_POLYPHONY * 2]{0};
+  float amValue[MAX_POLYPHONY * 2]{0};
   uint8_t voiceCount = (uint8_t) paramValue(VOICE_COUNT, VOICE_COUNT_CV, 1, 36);
   // set the voice percentage
   voiceCountPercentage = (float(voiceCount - 1) / 35.0);
 
   // figure out any octave changes
-  float octave = paramValue(OCTAVE, OCTAVE_CV, -2, 3);
+  float octave = paramValue(OCTAVE, OCTAVE_CV, -3, 3);
   octavePercentage = octave / 3.0;
 
   float morphShiftX = inputs[MORPH_SHIFT_X_CV].getVoltage() / 5.0 + params[MORPH_AMOUNT].getValue();
@@ -494,8 +495,8 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
       frequency1 = bins1[i].frequency;
       frequency2 = bins2[i].frequency;
     } else if (octave < 0) {
-      frequency1 = clamp(bins1[i].frequency * (1.0 + octave / 2.0), 20.0f, 20000.0f);
-      frequency2 = clamp(bins2[i].frequency * (1.0 + octave / 2.0), 20.0f, 20000.0f);
+      frequency1 = clamp(bins1[i].frequency * (1.0 + octave / 3.0), 20.0f, 20000.0f);
+      frequency2 = clamp(bins2[i].frequency * (1.0 + octave / 3.0), 20.0f, 20000.0f);
     } else {
       frequency1 = clamp(bins1[i].frequency * (1.0 + octave), 20.0f, 20000.0f);
       frequency2 = clamp(bins2[i].frequency * (1.0 + octave), 20.0f, 20000.0f);
@@ -527,13 +528,31 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
 
   bank.setFrequency(frequencies, magnitudes, voiceCount);
 
-  int fmCount = inputs[FM_INPUT].getChannels();
-  for (uint8_t i = 0; i < fmCount; i++) {
-    fmValue[i] = inputs[FM_INPUT].getVoltage(i) * 2000; //Converting -5 to 5 to -10000hz to +10000hz
+  int voiceIndex = 0;
+  uint8_t fmCount1 = inputs[FM_INPUT_1].getChannels();
+  for (uint8_t i = 0; i < fmCount1; i++) {
+    fmValue[voiceIndex] = inputs[FM_INPUT_1].getVoltage(i) * 2000; //Converting -5 to 5 to -10000hz to +10000hz
+    voiceIndex++;
   }
-  bank.setFM(fmMatrix, fmAmount,fmValue, fmCount);
+  uint8_t fmCount2 = inputs[FM_INPUT_2].getChannels();
+  for (uint8_t i = 0; i < fmCount2; i++) {
+    fmValue[voiceIndex] = inputs[FM_INPUT_2].getVoltage(i) * 2000; //Converting -5 to 5 to -10000hz to +10000hz
+    voiceIndex++;
+  }
+  bank.setFM(fmMatrix, fmAmount,fmValue, fmCount1 + fmCount2);
 
-  bank.setRM(rmActive,rmMatrix,rmMix);
+  voiceIndex = 0;
+  uint8_t amCount1 = inputs[AM_RM_INPUT_1].getChannels();
+  for (uint8_t i = 0; i < amCount1; i++) {
+    amValue[voiceIndex] = inputs[AM_RM_INPUT_1].getVoltage(i); 
+    voiceIndex++;
+  }
+  uint8_t amCount2 = inputs[AM_RM_INPUT_2].getChannels();
+  for (uint8_t i = 0; i < amCount2; i++) {
+    amValue[voiceIndex] = inputs[AM_RM_INPUT_2].getVoltage(i); 
+    voiceIndex++;
+  }
+  bank.setRM(rmActive,rmMatrix,rmMix,amValue,amCount1 + amCount2);
 
 
   bank.setVoiceShift((int8_t) paramValue(VOICE_SHIFT, VOICE_SHIFT_CV, 1-MAX_VOICE_COUNT, MAX_VOICE_COUNT-1));
