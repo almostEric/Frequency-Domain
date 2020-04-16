@@ -308,8 +308,8 @@ void MorphologyModule::process(const ProcessArgs &args) {
       }
 
       for (uint16_t j = 0; j < nbrBands; j++) {        
-        float magnitude1 = invertSpectra1 ? (maxMagnitude1-magnitude1Array[j]) : magnitude1Array[j];
-        float magnitude2 = invertSpectra2 ? (maxMagnitude2-magnitude2Array[j]) : magnitude2Array[j];
+        float magnitude1 = invertSpectra1 && magnitude1Array[j] > 0 ? (maxMagnitude1-magnitude1Array[j]) : magnitude1Array[j];
+        float magnitude2 = invertSpectra2 && magnitude2Array[j] > 0 ? (maxMagnitude2-magnitude2Array[j]) : magnitude2Array[j];
 
         float magnitude = magnitude1 * magnitude2 / 100;
         float phase = interpolate(phase1Array[j],phase2Array[j],1.0f,0.0f,1.0f);
