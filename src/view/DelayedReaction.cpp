@@ -136,6 +136,16 @@ DelayedReactionWidget::DelayedReactionWidget(DelayedReactionModule *module) {
     addChild(c);
   }
 
+  {
+    DisplayBarGrid *dg = new DisplayBarGrid(100,128);
+    if (module) {
+      dg->graph = module->spectrograph;
+    }
+    dg->box.pos = Vec(40, 40);
+    dg->box.size = Vec(98, 256);
+    addChild(dg);
+  }
+
 
   addInput(createInput<LightPort>(Vec(330, 340), module, DelayedReactionModule::INPUT));
   addOutput(createOutput<LightPort>(Vec(399, 340), module, DelayedReactionModule::OUTPUT));

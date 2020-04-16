@@ -10,8 +10,7 @@ DelayedReactionModule::DelayedReactionModule() {
 
   leftExpander.producerMessage = producerMessage;
   leftExpander.consumerMessage = consumerMessage;
-
-
+  
   frameSize = 11;
   nbrBands = pow(2.0,frameSize-1);
   lastFrameSize = frameSize;
@@ -447,6 +446,7 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
         float delayTime = delayTimeCells->displayValueForPosition(uiBand);
         float feedbackAmount = feedbackCells->valueForPosition(uiBand);
 
+        float bandSum = 0;
         for (uint16_t j = 0; j < bandsPerUIBand[uiBand]; j++) { 
           fftBand-=1;
           delayLine[fftBand].setDelayTime(delayTime * ((1 << delayRange) * 2.56 / delayAdjustment));
@@ -455,6 +455,7 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
           float magnitude = sqrt(inputValue.r * inputValue.r + inputValue.i * inputValue.i);
           float phase = atan2(inputValue.i, inputValue.r);
 
+          bandSum += magnitude;
           magnitude = magnitude * attenuation;
 
           inputValue.r = magnitude*cos(phase);
@@ -481,6 +482,8 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
           feedbackfft->in[fftBand].r = newR;
           feedbackfft->in[fftBand].i = newI;
         }
+        spectrograph[uiBand] = bandSum / (float(bandsPerUIBand[uiBand]) * nbrBands * 4);
+        
       }
 
       for(uint16_t padIndex = nbrBands; padIndex < nbrBands*2;padIndex++) {
@@ -512,6 +515,8 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
   outputs[FEEDBACK_SEND].setVoltage(feedbackTotal);
   if(inputs[FEEDBACK_RETURN].isConnected()) {
     feedback = inputs[FEEDBACK_RETURN].getVoltage();
+  } else {
+    feedback = feedbackTotal;
   }
   
 

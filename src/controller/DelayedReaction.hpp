@@ -4,6 +4,7 @@
 #include "../FrequencyDomain.hpp"
 #include "../model/dsp/FFT.hpp"
 #include "../model/DelayLine.hpp"
+#include "../model/dsp/Audio.hpp"
 #include "../model/dsp/WindowFunction.hpp"
 #include "../model/Buffer.hpp"
 #include "../model/dsp/Binning.hpp"
@@ -106,6 +107,8 @@ struct DelayedReactionModule : Module {
   uint8_t windowFunctionId;
 
   uint16_t bandsPerUIBand[NUM_UI_BANDS] = {0};
+
+  float spectrograph[NUM_UI_BANDS] = {0};
 
   bool pinAttenuation0s = false;
   bool pinDelayTime0s = false;

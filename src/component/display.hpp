@@ -122,53 +122,7 @@ struct DelayRangeDisplay : FramebufferWidget {
 };
 
 
-struct EqDisplay : FramebufferWidget {
-  uint8_t *eq = nullptr;
-  bool *updated = nullptr;
-  uint16_t *size = nullptr;
-  const uint8_t width = 128;
-  const uint8_t height = 200;
 
-  EqDisplay ( ) {
-    dirty = true;
-  }
-
-  void step () override {
-    if (eq && updated && *updated) {
-      dirty = true;
-      *updated = false;
-    } else {
-      dirty = false;
-    }
-
-    FramebufferWidget::step();
-  }
-
-  void draw (const DrawArgs &args) override {
-    if (eq) {
-      float n = (float(*size) / float(width));
-      nvgStrokeColor(args.vg, nvgRGBA(0xa8, 0x81, 0x09, 0xff));
-      nvgStrokeWidth(args.vg, 1.1f);
-      nvgBeginPath(args.vg);
-
-      nvgMoveTo(args.vg, 0, eq[0]);
-
-      for (uint16_t x = 0, nx = 0; x < width; x++) {
-        float avg = 0;
-        for (uint8_t i = 0; i < n; i++) {
-          avg += eq[nx + i];
-        }
-        uint8_t y = uint8_t(avg / n);
-
-        nvgLineTo(args.vg, x, y);
-
-        nx += uint8_t(n);
-      }
-
-      nvgStroke(args.vg);
-    }
-  }
-};
 
 struct CellGrid : FramebufferWidget {
   OneDimensionalCells *cells = nullptr;
@@ -303,6 +257,33 @@ struct CellBarGrid : FramebufferWidget {
         int16_t sizeOffset = x*2 >= yAxis ? 2 : -2;
         int16_t placeOffset = x*2 >= yAxis ? 0 : 2;
         nvgRect(args.vg, yAxis + placeOffset, y*2, x*2 + sizeOffset-yAxis, 2);
+        nvgFill(args.vg);
+      }
+    }
+  }
+};
+
+
+struct DisplayBarGrid : FramebufferWidget {
+  float *graph= nullptr;
+
+  uint16_t height;
+  float width;
+
+  DisplayBarGrid(float width, uint16_t height) {
+    this->width = width;
+    this->height = height;
+  }
+
+
+  void draw(const DrawArgs &args) override {
+    if (graph) {
+      nvgFillColor(args.vg, nvgRGBA(0xca, 0xc3, 0x27, 0x80)); //yellow for now
+
+      for (uint16_t y = 0; y < height; y++) {
+        uint16_t x = graph[y] * width;
+        nvgBeginPath(args.vg);
+        nvgRect(args.vg, 0, y*2, x*2+2, 2);
         nvgFill(args.vg);
       }
     }
