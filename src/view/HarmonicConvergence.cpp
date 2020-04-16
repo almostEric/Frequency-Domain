@@ -296,7 +296,8 @@ HarmonicConvergenceWidget::HarmonicConvergenceWidget(HarmonicConvergenceModule *
 
   // RM Mix
   {
-    CellGrid *RMMixDisplay = new CellGrid();
+    CellBarGrid *RMMixDisplay = new CellBarGrid(0);
+    
     if (module) {
       RMMixDisplay->cells = module->ringModulationMixCells;
     }
@@ -312,7 +313,7 @@ HarmonicConvergenceWidget::HarmonicConvergenceWidget(HarmonicConvergenceModule *
 
   // Morphing
   {
-    CellGrid *morphingDisplay = new CellGrid();
+    CellBarGrid *morphingDisplay = new CellBarGrid(39);
     if (module) {
       morphingDisplay->cells = module->morphingCells;
     }
@@ -335,7 +336,7 @@ HarmonicConvergenceWidget::HarmonicConvergenceWidget(HarmonicConvergenceModule *
 
   // Panning
   {
-    CellGrid *panningDisplay = new CellGrid();
+    CellBarGrid *panningDisplay = new CellBarGrid(39);
     if (module) {
       panningDisplay->cells = module->panningCells;
     }

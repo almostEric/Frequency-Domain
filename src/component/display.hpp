@@ -244,10 +244,11 @@ struct CellBarGrid : FramebufferWidget {
   float initY = 0;
   float dragX = 0;
   float dragY = 0;
+  uint16_t yAxis = 0;
   bool currentlyTurningOn = false;
 
-  CellBarGrid() {
-
+  CellBarGrid(uint16_t yAxis = 0) {
+    this->yAxis = yAxis;
   }
 
   void step () override {
@@ -299,7 +300,9 @@ struct CellBarGrid : FramebufferWidget {
       for (uint16_t y = 0; y < cells->height; y++) {
         uint16_t x = cells->displayValueForPosition(y);
         nvgBeginPath(args.vg);
-        nvgRect(args.vg, 0, y*2, x*2+2, 2);
+        int16_t sizeOffset = x*2 >= yAxis ? 2 : -2;
+        int16_t placeOffset = x*2 >= yAxis ? 0 : 2;
+        nvgRect(args.vg, yAxis + placeOffset, y*2, x*2 + sizeOffset-yAxis, 2);
         nvgFill(args.vg);
       }
     }

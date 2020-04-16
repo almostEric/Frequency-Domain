@@ -45,7 +45,7 @@ MorphologyWidget::MorphologyWidget(MorphologyModule *module) {
   setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/Morphology.svg")));
 
   {
-    CellGrid *bandShiftDisplay = new CellGrid();
+    CellBarGrid *bandShiftDisplay = new CellBarGrid(0);
     if (module) {
       bandShiftDisplay->cells = module->bandShiftCells;
     }
@@ -60,7 +60,7 @@ MorphologyWidget::MorphologyWidget(MorphologyModule *module) {
   }
 
   {
-    CellGrid *panningDisplay = new CellGrid();
+    CellBarGrid *panningDisplay = new CellBarGrid(50);
     if (module) {
       panningDisplay->cells = module->panningCells;
     }
