@@ -13,7 +13,7 @@ HarmonicConvergenceModule::HarmonicConvergenceModule() {
   configParam<VCOVoice>(VOICE_WAVEFORM, 0.0f, 4.0f, 0.0f,"Voice Waveform");
   configParam(OCTAVE, -3.0f, 3.0f, 0.0f, "Frequency Shift (Octaves)");
   configParam(FREQ_WARP_AMOUNT, 0.0f, 1.0f, 0.0f,"Frequency Warp Amount","%",0,100);
-  configParam(FREQ_WARP_CENTER, 0.0f, 1.0f, 0.0f,"Frequency Warp Center", " Hz", 0, 10000);
+  configParam(FREQ_WARP_CENTER, 0.0f, 1.0f, 0.0f,"Frequency Warp Center Frequency", " Hz", 0, 10000);
   configParam<SpectralModeName>(SPECTRAL_MODE, 0.0f, 3.0f, 0.0f, "Spectral Mode");
   configParam(VOICE_SHIFT, -35.0f, 35.0f, 0.0f, "Voice Shift");
 
@@ -22,7 +22,7 @@ HarmonicConvergenceModule::HarmonicConvergenceModule() {
 
   configParam(MORPH_AMOUNT, -1.0f, 1.0f, 0.0f, "Morph","%",0,100);
   configParam(FM_AMOUNT, 0.0f, 1.0f, 0.0f, "FM Amount","%",0,100);
-  configParam(RM_MIX, 0.0f, 1.0f, 0.0f, "RM Mix","%",0,100);
+  configParam(RM_MIX, 0.0f, 1.0f, 0.0f, "AM/RM Mix","%",0,100);
 
   configParam(RING_MODULATION, 0.0f, 1.0f, 0.0f, "Ring Modulation");
 

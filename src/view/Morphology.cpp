@@ -94,13 +94,16 @@ MorphologyWidget::MorphologyWidget(MorphologyModule *module) {
     addChild(c);
   }
 
-  addInput(createInput<LightPort>(Vec(189, 340), module, MorphologyModule::INPUT_1));
-  addInput(createInput<LightPort>(Vec(211, 340), module, MorphologyModule::INPUT_2));
+  addInput(createInput<LightPort>(Vec(179, 340), module, MorphologyModule::INPUT_1));
+  addInput(createInput<LightPort>(Vec(201, 340), module, MorphologyModule::INPUT_2));
 
-  addOutput(createOutput<LightPort>(Vec(252, 340), module, MorphologyModule::OUTPUT_L));
-  addOutput(createOutput<LightPort>(Vec(274, 340), module, MorphologyModule::OUTPUT_R));
+  addOutput(createOutput<LightPort>(Vec(242, 340), module, MorphologyModule::OUTPUT_L));
+  addOutput(createOutput<LightPort>(Vec(264, 340), module, MorphologyModule::OUTPUT_R));
 
-  //addOutput(createOutput<LightPort>(Vec(290, 320), module, MorphologyModule::TEST_OUTPUT));
+  addChild(createWidget<ScrewBlack>(Vec(RACK_GRID_WIDTH-12, 0)));
+  addChild(createWidget<ScrewBlack>(Vec(box.size.x - 2 * RACK_GRID_WIDTH + 12, 0)));
+  addChild(createWidget<ScrewBlack>(Vec(RACK_GRID_WIDTH-12, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
+  addChild(createWidget<ScrewBlack>(Vec(box.size.x - 2 * RACK_GRID_WIDTH + 12, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 
 }
 

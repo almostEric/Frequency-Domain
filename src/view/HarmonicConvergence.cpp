@@ -349,8 +349,10 @@ HarmonicConvergenceWidget::HarmonicConvergenceWidget(HarmonicConvergenceModule *
 
   }
 
-  //addOutput(createOutput<LightPort>(Vec(20, 20), module, HarmonicConvergenceModule::DEBUG_OUTPUT));
-
+  addChild(createWidget<ScrewBlack>(Vec(RACK_GRID_WIDTH-12, 0)));
+  addChild(createWidget<ScrewBlack>(Vec(box.size.x - 2 * RACK_GRID_WIDTH + 12, 0)));
+  addChild(createWidget<ScrewBlack>(Vec(RACK_GRID_WIDTH-12, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
+  addChild(createWidget<ScrewBlack>(Vec(box.size.x - 2 * RACK_GRID_WIDTH + 12, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 
 }
 

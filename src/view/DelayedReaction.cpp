@@ -144,6 +144,11 @@ DelayedReactionWidget::DelayedReactionWidget(DelayedReactionModule *module) {
   addOutput(createOutput<LightPort>(Vec(302.5, 300), module, DelayedReactionModule::FEEDBACK_SEND));
   addInput(createInput<LightPort>(Vec(330.5, 300), module, DelayedReactionModule::FEEDBACK_RETURN));
 
+  addChild(createWidget<ScrewBlack>(Vec(RACK_GRID_WIDTH-12, 0)));
+  addChild(createWidget<ScrewBlack>(Vec(box.size.x - 2 * RACK_GRID_WIDTH + 12, 0)));
+  addChild(createWidget<ScrewBlack>(Vec(RACK_GRID_WIDTH-12, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
+  addChild(createWidget<ScrewBlack>(Vec(box.size.x - 2 * RACK_GRID_WIDTH + 12, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
+
 }
 
 Model *modelDelayedReaction = createModel<DelayedReactionModule, DelayedReactionWidget>("DelayedReaction");
