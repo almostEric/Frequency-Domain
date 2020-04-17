@@ -283,7 +283,7 @@ struct DisplayBarGrid : FramebufferWidget {
       for (uint16_t y = 0; y < height; y++) {
         uint16_t x = clamp(graph[y] * width,0.0f,width);
         nvgBeginPath(args.vg);
-        nvgRect(args.vg, 0, y*2, x*2+2, 2);
+        nvgRect(args.vg, 0, y*2, x+2, 2);
         nvgFill(args.vg);
       }
     }

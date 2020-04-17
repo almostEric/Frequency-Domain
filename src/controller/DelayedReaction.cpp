@@ -487,6 +487,9 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
           magnitude = sqrt(delayedValue.r * delayedValue.r + delayedValue.i * delayedValue.i);
           phase = atan2(delayedValue.i, delayedValue.r);
 
+          if(fftBand == 0)
+            feedbackAmount = 0;
+
           magnitude = magnitude * feedbackAmount;
           
           
@@ -525,6 +528,8 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
     curPos[i]++;
   }
 
+  feedbackTotal = clamp(feedbackTotal,-10.0,10.0);
+  
   float wet = proceesedTotal;
   outputs[FEEDBACK_SEND].setVoltage(feedbackTotal);
   if(inputs[FEEDBACK_RETURN].isConnected()) {
