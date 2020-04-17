@@ -27,6 +27,9 @@ struct DelayedReactionModule : Module {
                   LINK_DELAY_TIME,
                   LINK_FEEDBACK,
                   MIX,                
+                  X_AXIS_PIN_POS_ATTENUATION,
+                  X_AXIS_PIN_POS_DELAY_TIME,
+                  X_AXIS_PIN_POS_FEEDBACK,
                   NUM_PARAMS };
   enum InputIds {
     INPUT,
@@ -38,6 +41,9 @@ struct DelayedReactionModule : Module {
     DELAY_FEEDBACK_X_CV,
     DELAY_FEEDBACK_Y_CV,
     MIX_CV,
+    X_AXIS_PIN_POS_ATTENUATION_CV,
+    X_AXIS_PIN_POS_DELAY_TIME_CV,
+    X_AXIS_PIN_POS_FEEDBACK_CV,
     NUM_INPUTS
   };
   enum OutputIds { OUTPUT, FEEDBACK_SEND, NUM_OUTPUTS };
@@ -110,9 +116,9 @@ struct DelayedReactionModule : Module {
 
   float spectrograph[NUM_UI_BANDS] = {0};
 
-  bool pinAttenuation0s = false;
-  bool pinDelayTime0s = false;
-  bool pinFeedback0s = false;
+  uint8_t pinAttenuation0s = 0;
+  uint8_t pinDelayTime0s = 0;
+  uint8_t pinFeedback0s = 0;
 
 
   bool attenuationLinked = false;
@@ -121,6 +127,9 @@ struct DelayedReactionModule : Module {
 
 
   // percentages
+  float attenuationXAxisPercentage = 0;
+  float delayTimeXAxisPercentage = 0;
+  float feedbackXAxisPercentage = 0;
   float mixPercentage = 0;
 
   // cells for stuff

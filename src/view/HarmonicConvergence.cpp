@@ -254,6 +254,7 @@ HarmonicConvergenceWidget::HarmonicConvergenceWidget(HarmonicConvergenceModule *
     CellGrid *frequencyModulationDisplay = new CellGrid();
     if (module) {
       frequencyModulationDisplay->cells = module->frequencyModulationCells;
+      frequencyModulationDisplay->gridName = "FM Matrix";
     }
 
     frequencyModulationDisplay->box.pos = Vec(35, 140);
@@ -269,6 +270,7 @@ HarmonicConvergenceWidget::HarmonicConvergenceWidget(HarmonicConvergenceModule *
     CellBarGrid *FMAmountDisplay = new CellBarGrid();
     if (module) {
       FMAmountDisplay->cells = module->frequencyModulationAmountCells;
+      FMAmountDisplay->gridName = "FM Amount";
     }
 
     FMAmountDisplay->box.pos = Vec(130, 140);
@@ -284,6 +286,7 @@ HarmonicConvergenceWidget::HarmonicConvergenceWidget(HarmonicConvergenceModule *
     CellGrid *ringModulationDisplay = new CellGrid();
     if (module) {
       ringModulationDisplay->cells = module->ringModulationCells;
+      ringModulationDisplay->gridName = "AM/RM Matrix";
     }
 
     ringModulationDisplay->box.pos = Vec(255, 140);
@@ -300,6 +303,7 @@ HarmonicConvergenceWidget::HarmonicConvergenceWidget(HarmonicConvergenceModule *
     
     if (module) {
       RMMixDisplay->cells = module->ringModulationMixCells;
+      RMMixDisplay->gridName = "AM/RM Mix";
     }
 
     RMMixDisplay->box.pos = Vec(358, 140);
@@ -316,6 +320,7 @@ HarmonicConvergenceWidget::HarmonicConvergenceWidget(HarmonicConvergenceModule *
     CellBarGrid *morphingDisplay = new CellBarGrid(39);
     if (module) {
       morphingDisplay->cells = module->morphingCells;
+      morphingDisplay->gridName = "Morphing";
     }
 
     morphingDisplay->box.pos = Vec(110, 276.5);
@@ -339,6 +344,7 @@ HarmonicConvergenceWidget::HarmonicConvergenceWidget(HarmonicConvergenceModule *
     CellBarGrid *panningDisplay = new CellBarGrid(39);
     if (module) {
       panningDisplay->cells = module->panningCells;
+      panningDisplay->gridName = "Attenuation";
     }
 
     panningDisplay->box.pos = Vec(220, 276.5);

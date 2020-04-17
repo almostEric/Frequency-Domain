@@ -131,6 +131,7 @@ struct CellGrid : FramebufferWidget {
   float dragX = 0;
   float dragY = 0;
   bool currentlyTurningOn = false;
+  std::string gridName = "";
 
   CellGrid() {
     dirty = true;
@@ -157,6 +158,10 @@ struct CellGrid : FramebufferWidget {
         currentlyTurningOn = !cells->active(e.pos.x / 2.0, e.pos.y / 2.0);
         cells->setCell(e.pos.x / 2.0, e.pos.y / 2.0);
       }
+    }
+    if (e.action == GLFW_PRESS && e.button == GLFW_MOUSE_BUTTON_RIGHT) {
+      createContextMenu();
+      e.consume(this);
     }
   }
 
@@ -190,6 +195,85 @@ struct CellGrid : FramebufferWidget {
       }
     }
   }
+
+    void createContextMenu() {
+		ui::Menu* menu = createMenu();
+		menu->addChild(construct<MenuLabel>(&MenuLabel::text, gridName.c_str()));
+
+    DrawShapeMenuItem *drawMaxShape = new DrawShapeMenuItem();
+		drawMaxShape->text = "All Maximum";// 
+		drawMaxShape->cells = cells;
+		drawMaxShape->shape= 0;
+		menu->addChild(drawMaxShape);
+
+    DrawShapeMenuItem *drawMinShape = new DrawShapeMenuItem();
+		drawMinShape->text = "All Minimum";// 
+		drawMinShape->cells = cells;
+		drawMinShape->shape= 1;
+		menu->addChild(drawMinShape);
+
+    DrawShapeMenuItem *drawMediumShape = new DrawShapeMenuItem();
+		drawMediumShape->text = "All Half";// 
+		drawMediumShape->cells = cells;
+		drawMediumShape->shape= 2;
+		menu->addChild(drawMediumShape);
+
+    DrawShapeMenuItem *drawTriangleShape = new DrawShapeMenuItem();
+		drawTriangleShape->text = "Triangle";// 
+		drawTriangleShape->cells = cells;
+		drawTriangleShape->shape= 3;
+		menu->addChild(drawTriangleShape);
+
+    DrawShapeMenuItem *drawSinShape = new DrawShapeMenuItem();
+		drawSinShape->text = "Sine";// 
+		drawSinShape->cells = cells;
+		drawSinShape->shape= 4;
+		menu->addChild(drawSinShape);
+
+    DrawShapeMenuItem *drawRampShape = new DrawShapeMenuItem();
+		drawRampShape->text = "Ramp";// 
+		drawRampShape->cells = cells;
+		drawRampShape->shape= 5;
+		menu->addChild(drawRampShape);
+
+    DrawShapeMenuItem *drawRandomShape = new DrawShapeMenuItem();
+		drawRandomShape->text = "Random";// 
+		drawRandomShape->cells = cells;
+		drawRandomShape->shape= 6;
+		menu->addChild(drawRandomShape);
+
+    ChangeShapeMenuItem *flipHorizontal = new ChangeShapeMenuItem();
+		flipHorizontal->text = "Flip Horizontal";// 
+		flipHorizontal->cells = cells;
+		flipHorizontal->direction= true;
+		menu->addChild(flipHorizontal);
+
+    ChangeShapeMenuItem *flipVertical = new ChangeShapeMenuItem();
+		flipVertical->text = "Flip Vertical";// 
+		flipVertical->cells = cells;
+		flipVertical->direction= false;
+		menu->addChild(flipVertical);
+
+	}
+
+  struct DrawShapeMenuItem : MenuItem {
+    OneDimensionalCells *cells;
+    uint8_t shape;
+
+    void onAction(const event::Action& e) override {
+      cells->drawShape(shape);
+    }
+    };
+
+  struct ChangeShapeMenuItem : MenuItem {
+    OneDimensionalCells *cells;
+    bool direction;
+
+    void onAction(const event::Action& e) override {
+      cells->flip(direction);
+    }
+  };
+
 };
 
 struct CellBarGrid : FramebufferWidget {
@@ -199,10 +283,12 @@ struct CellBarGrid : FramebufferWidget {
   float dragX = 0;
   float dragY = 0;
   uint16_t yAxis = 0;
+  std::string gridName = "";
   bool currentlyTurningOn = false;
 
   CellBarGrid(uint16_t yAxis = 0) {
     this->yAxis = yAxis;
+    this->gridName = gridName;
   }
 
   void step () override {
@@ -219,13 +305,17 @@ struct CellBarGrid : FramebufferWidget {
   void onButton(const event::Button &e) override {
     if (e.action == GLFW_PRESS && e.button == GLFW_MOUSE_BUTTON_LEFT) {
       e.consume(this);
-
       if (cells) {
         initX = e.pos.x;
         initY = e.pos.y;
         currentlyTurningOn = !cells->active(e.pos.x, e.pos.y);
         cells->setCell(e.pos.x / 2.0, e.pos.y / 2.0);
       }
+    }
+    if (e.action == GLFW_PRESS && e.button == GLFW_MOUSE_BUTTON_RIGHT) {
+      //module->selectionSet(type, id);
+      createContextMenu();
+      e.consume(this);
     }
   }
 
@@ -259,8 +349,99 @@ struct CellBarGrid : FramebufferWidget {
         nvgRect(args.vg, yAxis + placeOffset, y*2, x*2 + sizeOffset-yAxis, 2);
         nvgFill(args.vg);
       }
+
+
+      // draw x axis pin line
+      if (cells->pinXAxisValues > 0) {
+        nvgStrokeColor(args.vg, nvgRGBA(0x1a, 0x13, 0xc7, 0xF0)); //translucent blue
+        nvgStrokeWidth(args.vg, 1.0);
+        nvgBeginPath(args.vg);
+        float x = cells->pinXAxisPosition * cells->width * 2;
+        nvgMoveTo(args.vg,x,0);
+        nvgLineTo(args.vg,x,cells->height * 2 + 2);
+        nvgStroke(args.vg);		
+      }
     }
   }
+
+  void createContextMenu() {
+		ui::Menu* menu = createMenu();
+		menu->addChild(construct<MenuLabel>(&MenuLabel::text, gridName.c_str()));
+
+    DrawShapeMenuItem *drawMaxShape = new DrawShapeMenuItem();
+		drawMaxShape->text = "All Maximum";// 
+		drawMaxShape->cells = cells;
+		drawMaxShape->shape= 0;
+		menu->addChild(drawMaxShape);
+
+    DrawShapeMenuItem *drawMinShape = new DrawShapeMenuItem();
+		drawMinShape->text = "All Minimum";// 
+		drawMinShape->cells = cells;
+		drawMinShape->shape= 1;
+		menu->addChild(drawMinShape);
+
+    DrawShapeMenuItem *drawMediumShape = new DrawShapeMenuItem();
+		drawMediumShape->text = "All Half";// 
+		drawMediumShape->cells = cells;
+		drawMediumShape->shape= 2;
+		menu->addChild(drawMediumShape);
+
+    DrawShapeMenuItem *drawTriangleShape = new DrawShapeMenuItem();
+		drawTriangleShape->text = "Triangle";// 
+		drawTriangleShape->cells = cells;
+		drawTriangleShape->shape= 3;
+		menu->addChild(drawTriangleShape);
+
+    DrawShapeMenuItem *drawSinShape = new DrawShapeMenuItem();
+		drawSinShape->text = "Sine";// 
+		drawSinShape->cells = cells;
+		drawSinShape->shape= 4;
+		menu->addChild(drawSinShape);
+
+    DrawShapeMenuItem *drawRampShape = new DrawShapeMenuItem();
+		drawRampShape->text = "Ramp";// 
+		drawRampShape->cells = cells;
+		drawRampShape->shape= 5;
+		menu->addChild(drawRampShape);
+
+    DrawShapeMenuItem *drawRandomShape = new DrawShapeMenuItem();
+		drawRandomShape->text = "Random";// 
+		drawRandomShape->cells = cells;
+		drawRandomShape->shape= 6;
+		menu->addChild(drawRandomShape);
+
+    ChangeShapeMenuItem *flipHorizontal = new ChangeShapeMenuItem();
+		flipHorizontal->text = "Flip Horizontal";// 
+		flipHorizontal->cells = cells;
+		flipHorizontal->direction= true;
+		menu->addChild(flipHorizontal);
+
+    ChangeShapeMenuItem *flipVertical = new ChangeShapeMenuItem();
+		flipVertical->text = "Flip Vertical";// 
+		flipVertical->cells = cells;
+		flipVertical->direction= false;
+		menu->addChild(flipVertical);
+
+	}
+
+  struct DrawShapeMenuItem : MenuItem {
+    OneDimensionalCells *cells;
+    uint8_t shape;
+
+    void onAction(const event::Action& e) override {
+      cells->drawShape(shape);
+    }
+    };
+
+  struct ChangeShapeMenuItem : MenuItem {
+    OneDimensionalCells *cells;
+    bool direction;
+
+    void onAction(const event::Action& e) override {
+      cells->flip(direction);
+    }
+  };
+
 };
 
 
@@ -278,7 +459,7 @@ struct DisplayBarGrid : FramebufferWidget {
 
   void draw(const DrawArgs &args) override {
     if (graph) {
-      nvgFillColor(args.vg, nvgRGBA(0xca, 0xc3, 0x27, 0x80)); //yellow for now
+      nvgFillColor(args.vg, nvgRGBA(0xca, 0xc3, 0x27, 0xc0)); //yellow for now
 
       for (uint16_t y = 0; y < height; y++) {
         uint16_t x = clamp(graph[y] * width,0.0f,width);

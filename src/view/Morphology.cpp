@@ -48,6 +48,7 @@ MorphologyWidget::MorphologyWidget(MorphologyModule *module) {
     CellBarGrid *bandShiftDisplay = new CellBarGrid(0);
     if (module) {
       bandShiftDisplay->cells = module->bandShiftCells;
+      bandShiftDisplay->gridName = "Band Shift";
     }
 
     bandShiftDisplay->box.pos = Vec(40, 40);
@@ -63,6 +64,7 @@ MorphologyWidget::MorphologyWidget(MorphologyModule *module) {
     CellBarGrid *panningDisplay = new CellBarGrid(50);
     if (module) {
       panningDisplay->cells = module->panningCells;
+      panningDisplay->gridName = "Panning";
     }
 
     panningDisplay->box.pos = Vec(180, 40);

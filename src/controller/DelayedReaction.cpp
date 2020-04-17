@@ -8,6 +8,11 @@ DelayedReactionModule::DelayedReactionModule() {
 
   configParam(MIX, 0.0f, 1.0f, 0.5f, "Mix","%",0,100);
 
+
+  configParam(X_AXIS_PIN_POS_ATTENUATION, 0.0f, 1.0f, 0.0f, "Attenuation X Axis Pin Position","%",0,100);
+  configParam(X_AXIS_PIN_POS_DELAY_TIME, 0.0f, 1.0f, 0.0f, "Attenuation X Axis Pin Position","%",0,100);
+  configParam(X_AXIS_PIN_POS_FEEDBACK, 0.0f, 1.0f, 0.0f, "Attenuation X Axis Pin Position","%",0,100);
+
   leftExpander.producerMessage = producerMessage;
   leftExpander.consumerMessage = consumerMessage;
   
@@ -104,17 +109,17 @@ void DelayedReactionModule::dataFromJson(json_t *root) {
 
   json_t *a0J = json_object_get(root, "pinAttenuation0s");
   if (json_is_integer(a0J)) {
-    pinAttenuation0s = (bool) json_integer_value(a0J);
+    pinAttenuation0s = (uint8_t) json_integer_value(a0J);
   }
 
   json_t *dt0J = json_object_get(root, "pinDelayTime0s");
   if (json_is_integer(dt0J)) {
-    pinDelayTime0s = (bool) json_integer_value(dt0J);
+    pinDelayTime0s = (uint8_t) json_integer_value(dt0J);
   }
 
   json_t *fb0J = json_object_get(root, "pinFeedback0s");
   if (json_is_integer(fb0J)) {
-    pinFeedback0s = (bool) json_integer_value(fb0J);
+    pinFeedback0s = (uint8_t) json_integer_value(fb0J);
   }
 
   json_t *alJ = json_object_get(root, "attenuationLinked");
@@ -312,33 +317,114 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
     }
   }
 
+  float pinXAxisPosAttenuation = paramValue(X_AXIS_PIN_POS_ATTENUATION, X_AXIS_PIN_POS_ATTENUATION_CV, 0, 1);
+  attenuationXAxisPercentage = pinXAxisPosAttenuation;
   if (pinAttenuation0sTrigger.process(params[PIN_ATTENUATION_0S].getValue())) {
-    pinAttenuation0s = !pinAttenuation0s;
+    pinAttenuation0s = (pinAttenuation0s + 1) % 5;
   }
-  attenuationCells->pinZeroValues = pinAttenuation0s;
-  lights[PIN_ATTENUATION_0S_LIGHT+0].value = pinAttenuation0s;
-  lights[PIN_ATTENUATION_0S_LIGHT+1].value = pinAttenuation0s;
-  lights[PIN_ATTENUATION_0S_LIGHT+2].value = pinAttenuation0s ? 0.2 : 0.0;
+  attenuationCells->pinXAxisValues = pinAttenuation0s;
+  attenuationCells->pinXAxisPosition = pinXAxisPosAttenuation;
+  switch (pinAttenuation0s) {
+    case 0 :
+      lights[PIN_ATTENUATION_0S_LIGHT+0].value = 0;
+      lights[PIN_ATTENUATION_0S_LIGHT+1].value = 0;
+      lights[PIN_ATTENUATION_0S_LIGHT+2].value = 0;
+      break;
+    case 1 :
+      lights[PIN_ATTENUATION_0S_LIGHT].value = .15;
+      lights[PIN_ATTENUATION_0S_LIGHT+1].value = 1;
+      lights[PIN_ATTENUATION_0S_LIGHT+2].value = .15;
+      break;
+    case 2 :
+      lights[PIN_ATTENUATION_0S_LIGHT].value = 0;
+      lights[PIN_ATTENUATION_0S_LIGHT+1].value = 1;
+      lights[PIN_ATTENUATION_0S_LIGHT+2].value = 0;
+      break;
+    case 3 :
+      lights[PIN_ATTENUATION_0S_LIGHT].value = 1;
+      lights[PIN_ATTENUATION_0S_LIGHT+1].value = .15;
+      lights[PIN_ATTENUATION_0S_LIGHT+2].value = .15;
+      break;
+    case 4 :
+      lights[PIN_ATTENUATION_0S_LIGHT].value = 1;
+      lights[PIN_ATTENUATION_0S_LIGHT+1].value = 0;
+      lights[PIN_ATTENUATION_0S_LIGHT+2].value = 0;
+      break;
+  }
 
+  float pinXAxisPosDelayTime = paramValue(X_AXIS_PIN_POS_DELAY_TIME, X_AXIS_PIN_POS_DELAY_TIME_CV, 0, 1);
+  delayTimeXAxisPercentage = pinXAxisPosAttenuation;
   if (pinDelayTime0sTrigger.process(params[PIN_DELAY_TIME_0S].getValue())) {
-    pinDelayTime0s = !pinDelayTime0s;
+    pinDelayTime0s = (pinDelayTime0s + 1) % 5;
   }
-  delayTimeCells->pinZeroValues = pinDelayTime0s;
-  lights[PIN_DELAY_TIME_0S_LIGHT+0].value = pinDelayTime0s;
-  lights[PIN_DELAY_TIME_0S_LIGHT+1].value = pinDelayTime0s;
-  lights[PIN_DELAY_TIME_0S_LIGHT+2].value = pinDelayTime0s ? 0.2 : 0.0;
+  delayTimeCells->pinXAxisValues = pinDelayTime0s;
+  delayTimeCells->pinXAxisPosition = pinXAxisPosDelayTime;
+  switch (pinDelayTime0s) {
+    case 0 :
+      lights[PIN_DELAY_TIME_0S_LIGHT+0].value = 0;
+      lights[PIN_DELAY_TIME_0S_LIGHT+1].value = 0;
+      lights[PIN_DELAY_TIME_0S_LIGHT+2].value = 0;
+      break;
+    case 1 :
+      lights[PIN_DELAY_TIME_0S_LIGHT].value = .15;
+      lights[PIN_DELAY_TIME_0S_LIGHT+1].value = 1;
+      lights[PIN_DELAY_TIME_0S_LIGHT+2].value = .15;
+      break;
+    case 2 :
+      lights[PIN_DELAY_TIME_0S_LIGHT].value = 0;
+      lights[PIN_DELAY_TIME_0S_LIGHT+1].value = 1;
+      lights[PIN_DELAY_TIME_0S_LIGHT+2].value = 0;
+      break;
+    case 3 :
+      lights[PIN_DELAY_TIME_0S_LIGHT].value = 1;
+      lights[PIN_DELAY_TIME_0S_LIGHT+1].value = .15;
+      lights[PIN_DELAY_TIME_0S_LIGHT+2].value = .15;
+      break;
+    case 4 :
+      lights[PIN_DELAY_TIME_0S_LIGHT].value = 1;
+      lights[PIN_DELAY_TIME_0S_LIGHT+1].value = 0;
+      lights[PIN_DELAY_TIME_0S_LIGHT+2].value = 0;
+      break;
+  }
 
+  float pinXAxisPosFeedback = paramValue(X_AXIS_PIN_POS_FEEDBACK, X_AXIS_PIN_POS_FEEDBACK_CV, 0, 1);
+  feedbackXAxisPercentage = pinXAxisPosAttenuation;
   if (pinFeedback0sTrigger.process(params[PIN_FEEDBACK_0S].getValue())) {
-    pinFeedback0s = !pinFeedback0s;
+    pinFeedback0s = (pinFeedback0s + 1) % 5;
   }
-  feedbackCells->pinZeroValues = pinFeedback0s;
-  lights[PIN_FEEDBACK_0S_LIGHT+0].value = pinFeedback0s;
-  lights[PIN_FEEDBACK_0S_LIGHT+1].value = pinFeedback0s;
-  lights[PIN_FEEDBACK_0S_LIGHT+2].value = pinFeedback0s ? 0.2 : 0.0;
+  feedbackCells->pinXAxisValues = pinFeedback0s;
+  feedbackCells->pinXAxisPosition = pinXAxisPosFeedback;
+  switch (pinFeedback0s) {
+    case 0 :
+      lights[PIN_FEEDBACK_0S_LIGHT+0].value = 0;
+      lights[PIN_FEEDBACK_0S_LIGHT+1].value = 0;
+      lights[PIN_FEEDBACK_0S_LIGHT+2].value = 0;
+      break;
+    case 1 :
+      lights[PIN_FEEDBACK_0S_LIGHT].value = .15;
+      lights[PIN_FEEDBACK_0S_LIGHT+1].value = 1;
+      lights[PIN_FEEDBACK_0S_LIGHT+2].value = .15;
+      break;
+    case 2 :
+      lights[PIN_FEEDBACK_0S_LIGHT].value = 0;
+      lights[PIN_FEEDBACK_0S_LIGHT+1].value = 1;
+      lights[PIN_FEEDBACK_0S_LIGHT+2].value = 0;
+      break;
+    case 3 :
+      lights[PIN_FEEDBACK_0S_LIGHT].value = 1;
+      lights[PIN_FEEDBACK_0S_LIGHT+1].value = .15;
+      lights[PIN_FEEDBACK_0S_LIGHT+2].value = .15;
+      break;
+    case 4 :
+      lights[PIN_FEEDBACK_0S_LIGHT].value = 1;
+      lights[PIN_FEEDBACK_0S_LIGHT+1].value = 0;
+      lights[PIN_FEEDBACK_0S_LIGHT+2].value = 0;
+      break;
+  }
 
 
   if (linkAttenuationTrigger.process(params[LINK_ATTENUATION].getValue())) {
-    attenuationLinked = !attenuationLinked;
+    attenuationLinked = (attenuationLinked + 1) % 5;
   }
   lights[LINK_ATTENUATION_LIGHT+0].value = attenuationLinked;
   lights[LINK_ATTENUATION_LIGHT+1].value = attenuationLinked;
@@ -363,10 +449,9 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
     delayRange = (delayRange + 1) % 6;
   }
   delayRangeTime =  ceil(baseDelaySizeinBytes * (1 << delayRange) / sampleRate) / 10;    
-  lights[DELAY_RANGE_LIGHT+2].value = 0;
   switch (delayRange) {
     case 0 :
-      lights[DELAY_RANGE_LIGHT].value = 0;
+      lights[DELAY_RANGE_LIGHT+0].value = 0;
       lights[DELAY_RANGE_LIGHT+1].value = 0;
       lights[DELAY_RANGE_LIGHT+2].value = .5;
       break;

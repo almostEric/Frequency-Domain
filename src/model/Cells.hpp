@@ -1,9 +1,23 @@
+
 #pragma once
+
+#include <time.h>
 
 enum RolloverModes {
     PIN_ROLLOVER_MODE,
     WRAP_AROUND_ROLLOVER_MODE,
 };
+
+enum CellGridShapes {
+    MAX_GRID_SHAPE,
+    MIN_GRID_SHAPE,
+    HALF_GRID_SHAPE,
+    TRIANGLE_GRID_SHAPE,
+    SIN_GRID_SHAPE,
+    RAMP_GRID_SHAPE,
+    RANDOM_GRID_SHAPE
+};
+
 
 struct Cells {
   virtual ~Cells() {}
@@ -70,6 +84,8 @@ struct OneDimensionalCells : Cells {
     // allocate the cells
     cells = new float[height]{defaultValue};
     dirty = true;
+
+    srand(time(NULL));
   }
 
   ~OneDimensionalCells() {
@@ -101,7 +117,7 @@ struct OneDimensionalCells : Cells {
     }
 
     float value = cells[adjustedPosition];
-    float adjustedValue = pinZeroValues && value == 0 ? 0 : value + (shiftX * totalRange);
+    float adjustedValue = pinXAxisValues && value == 0 ? 0 : value + (shiftX * totalRange);
 
     if (adjustedValue < lowRange) {
         adjustedValue = lowRange;
@@ -151,6 +167,50 @@ struct OneDimensionalCells : Cells {
     return (valueForPosition(position) == value);
   }
 
+
+  void drawShape(uint8_t shapeType) {
+    float slope = totalRange / height * 2.0;
+    for(uint16_t i=0;i<height;i++) {
+      switch(shapeType) {
+        case MAX_GRID_SHAPE :
+          cells[i] = highRange;
+          break;
+        case MIN_GRID_SHAPE :
+          cells[i] = lowRange;
+          break;
+        case HALF_GRID_SHAPE :
+          cells[i] = totalRange/2 + lowRange;
+          break;
+        case TRIANGLE_GRID_SHAPE :
+          cells[i] = (i < height/2 ? i * slope : (height-i) * slope)+lowRange;
+          break;
+        case SIN_GRID_SHAPE :
+          cells[i] = sin(2.0 * M_PI * i/height - M_PI_2) * (totalRange / 2) + (totalRange/2) + lowRange;
+          break;
+        case RAMP_GRID_SHAPE :
+          cells[i] = slope * i / 2.0 + lowRange;
+          break;
+        case RANDOM_GRID_SHAPE :
+          cells[i] = ((float) rand()/RAND_MAX) * totalRange + lowRange;
+          break;
+      }
+    }
+  }
+
+  void flip(bool flipHorizontal) {
+    if(flipHorizontal) {
+      for(uint16_t i=0;i<height;i++) {
+          cells[i] = totalRange - cells[i];
+      }
+    } else {
+      for(uint16_t i=0;i<height/2;i++) {
+          float cellValue = cells[i];
+          cells[i] = cells[height-i];
+          cells[height-i] = cellValue;
+      }
+    }
+  }
+
   float *cells;
   uint16_t width;
   uint16_t height;
@@ -163,7 +223,8 @@ struct OneDimensionalCells : Cells {
   float shiftX = 0;
   float shiftY = 0;
 
-  bool pinZeroValues = false;
+  uint8_t pinXAxisValues = 0;
+  float pinXAxisPosition = 0;
 
   uint16_t lastPosition;
   uint16_t lastValue;
@@ -201,7 +262,24 @@ struct OneDimensionalCellsWithRollover : OneDimensionalCells {
     }
 
     float value = cells[adjustedPosition];
-    float adjustedValue = pinZeroValues && value == 0 ? 0 : value + (shiftX * totalRange);
+    float adjustedValue = 0;
+    switch(pinXAxisValues) {
+      case 0 :
+        adjustedValue = value + (shiftX * totalRange);
+        break;
+      case 1 :
+        adjustedValue = value <= pinXAxisPosition ? pinXAxisPosition : value + (shiftX * totalRange);
+        break;
+      case 2 :
+        adjustedValue = value <= pinXAxisPosition ? value : value + (shiftX * totalRange);
+        break;
+      case 3 :
+        adjustedValue = value >= pinXAxisPosition ? pinXAxisPosition : value + (shiftX * totalRange);
+        break;
+      case 4 :
+        adjustedValue = value >= pinXAxisPosition ? value : value + (shiftX * totalRange);
+        break;
+    }
     
     if (adjustedValue < lowRange) {
         adjustedValue = rolloverModeX == WRAP_AROUND_ROLLOVER_MODE ? adjustedValue + width : lowRange;
