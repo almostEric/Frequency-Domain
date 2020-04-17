@@ -281,7 +281,7 @@ struct DisplayBarGrid : FramebufferWidget {
       nvgFillColor(args.vg, nvgRGBA(0xca, 0xc3, 0x27, 0x80)); //yellow for now
 
       for (uint16_t y = 0; y < height; y++) {
-        uint16_t x = graph[y] * width;
+        uint16_t x = clamp(graph[y] * width,0.0f,width);
         nvgBeginPath(args.vg);
         nvgRect(args.vg, 0, y*2, x*2+2, 2);
         nvgFill(args.vg);

@@ -299,15 +299,15 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
 
     //TODO: Take advantage of SIMD
 
-    if(input1Connected) {
+    //if(input1Connected) {
       //input1 = hpf1.process(lpf1.process(input1))[0];
       dryBuffer1[i]->set(input1 * windowedValue1);
-    }
+    //}
 
-    if(input2Connected) {
+    //if(input2Connected) {
       //input2 = hpf2.process(lpf2.process(input2))[0];
       dryBuffer2[i]->set(input2 * windowedValue2);
-    }
+    //}
 
     bool updateCells = false;
     // is it time to do the fft?

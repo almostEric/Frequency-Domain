@@ -15,7 +15,7 @@ DelayedReactionModule::DelayedReactionModule() {
   nbrBands = pow(2.0,frameSize-1);
   lastFrameSize = frameSize;
   hopSize = frameSize - 2;
-  baseDelaySizeinBytes = 655360; // * 10 so it can get rounded to .1
+  baseDelaySizeinBytes = 163840; // * 10 so it can get rounded to .1
 
   delayAdjustment = pow(2,frameSize-11); //keep delay time constant, independent of frame sizze
 
@@ -178,7 +178,7 @@ json_t *DelayedReactionModule::dataToJson() {
 
 void DelayedReactionModule::onReset() {
 
-  delayRange = 0;
+  delayRange = 2;
 
   // window function
   windowFunctionId = 4;
@@ -360,26 +360,40 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
 
 
   if (delayRangeTrigger.process(params[DELAY_RANGE].getValue())) {
-    delayRange = (delayRange + 1) % 4;
+    delayRange = (delayRange + 1) % 6;
   }
   delayRangeTime =  ceil(baseDelaySizeinBytes * (1 << delayRange) / sampleRate) / 10;    
   lights[DELAY_RANGE_LIGHT+2].value = 0;
   switch (delayRange) {
     case 0 :
       lights[DELAY_RANGE_LIGHT].value = 0;
-      lights[DELAY_RANGE_LIGHT+1].value = 1;
+      lights[DELAY_RANGE_LIGHT+1].value = 0;
+      lights[DELAY_RANGE_LIGHT+2].value = .5;
       break;
     case 1 :
-      lights[DELAY_RANGE_LIGHT].value = 1;
-      lights[DELAY_RANGE_LIGHT+1].value = 1;
+      lights[DELAY_RANGE_LIGHT].value = .15;
+      lights[DELAY_RANGE_LIGHT+1].value = .15;
+      lights[DELAY_RANGE_LIGHT+2].value = .8;
       break;
     case 2 :
-      lights[DELAY_RANGE_LIGHT].value = 1;
-      lights[DELAY_RANGE_LIGHT+1].value = 0.5;
+      lights[DELAY_RANGE_LIGHT].value = 0;
+      lights[DELAY_RANGE_LIGHT+1].value = 1;
+      lights[DELAY_RANGE_LIGHT+2].value = 0;
       break;
     case 3 :
       lights[DELAY_RANGE_LIGHT].value = 1;
+      lights[DELAY_RANGE_LIGHT+1].value = 1;
+      lights[DELAY_RANGE_LIGHT+2].value = 0;
+      break;
+    case 4 :
+      lights[DELAY_RANGE_LIGHT].value = 1;
+      lights[DELAY_RANGE_LIGHT+1].value = 0.5;
+      lights[DELAY_RANGE_LIGHT+2].value = 0;
+      break;
+    case 5 :
+      lights[DELAY_RANGE_LIGHT].value = 1;
       lights[DELAY_RANGE_LIGHT+1].value = 0;
+      lights[DELAY_RANGE_LIGHT+2].value = 0;
       break;
   }
 
@@ -449,7 +463,7 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
         float bandSum = 0;
         for (uint16_t j = 0; j < bandsPerUIBand[uiBand]; j++) { 
           fftBand-=1;
-          delayLine[fftBand].setDelayTime(delayTime * ((1 << delayRange) * 2.56 / delayAdjustment));
+          delayLine[fftBand].setDelayTime(delayTime * ((1 << delayRange) * 0.64 / delayAdjustment));
 
           kiss_fft_cpx inputValue = fft->out[fftBand]; 
           float magnitude = sqrt(inputValue.r * inputValue.r + inputValue.i * inputValue.i);

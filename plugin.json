@@ -1,12 +1,11 @@
 {
   "slug": "FrequencyDomain",
   "name": "Frequency Domain",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "Proprietary",
   "brand": "Frequency Domain",
 	"author": "almostEric and JerrySV",
   "authorEmail": "almostEric@frozenwastelandmodules.com",
-	"authorUrl": "https://vcvrack.com/",
 	"manualUrl": "https://github.com/almostEric/Frequency-Domain-Manual/blob/master/README.md",
 	"donateUrl": "https://paypal.me/FrozenWasteland",
 	"changelogUrl": "https://github.com/almostEric/Frequency-Domain-Manual/blob/master/CHANGELOG.md",
