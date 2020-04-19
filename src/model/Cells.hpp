@@ -268,16 +268,16 @@ struct OneDimensionalCellsWithRollover : OneDimensionalCells {
         adjustedValue = value + (shiftX * totalRange);
         break;
       case 1 :
-        adjustedValue = value <= pinXAxisPosition ? pinXAxisPosition : value + (shiftX * totalRange);
+        adjustedValue = value <= pinXAxisPosition * totalRange + lowRange ? pinXAxisPosition * totalRange + lowRange : value + (shiftX * totalRange);
         break;
       case 2 :
-        adjustedValue = value <= pinXAxisPosition ? value : value + (shiftX * totalRange);
+        adjustedValue = value <= pinXAxisPosition * totalRange + lowRange ? value : value + (shiftX * totalRange);
         break;
       case 3 :
-        adjustedValue = value >= pinXAxisPosition ? pinXAxisPosition : value + (shiftX * totalRange);
+        adjustedValue = value >= pinXAxisPosition * totalRange + lowRange ? pinXAxisPosition * totalRange + lowRange : value + (shiftX * totalRange);
         break;
       case 4 :
-        adjustedValue = value >= pinXAxisPosition ? value : value + (shiftX * totalRange);
+        adjustedValue = value >= pinXAxisPosition * totalRange + lowRange ? value : value + (shiftX * totalRange);
         break;
     }
     

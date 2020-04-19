@@ -22,6 +22,10 @@ struct MorphologyModule : Module {
                   INVERT_SPECTA_1,
                   INVERT_SPECTA_2,
                   SPREAD,
+                  PIN_BAND_SPREAD_XS,
+                  PIN_PANNING_XS,
+                  X_AXIS_PIN_POS_BAND_SPREAD,
+                  X_AXIS_PIN_POS_PANNING,
                   NUM_PARAMS };
   enum InputIds {
     INPUT_1,
@@ -31,12 +35,16 @@ struct MorphologyModule : Module {
     PANNING_X_CV,
     PANNING_Y_CV,
     SPREAD_CV,
+    X_AXIS_PIN_POS_BAND_SPREAD_CV,
+    X_AXIS_PIN_POS_PANNING_CV,
     NUM_INPUTS
   };
   enum OutputIds { OUTPUT_L, OUTPUT_R, TEST_OUTPUT,NUM_OUTPUTS };
   enum LightIds { INVERT_SPECTA_1_LIGHT,
                   INVERT_SPECTA_2_LIGHT = INVERT_SPECTA_1_LIGHT+3,
-                  NUM_LIGHTS = INVERT_SPECTA_2_LIGHT+3};
+                  PIN_BAND_SPREAD_XS_LIGHT = INVERT_SPECTA_2_LIGHT + 3,
+                  PIN_PANNING_XS_LIGHT = PIN_BAND_SPREAD_XS_LIGHT + 3,                  
+                  NUM_LIGHTS = PIN_PANNING_XS_LIGHT+3};
 
   MorphologyModule ();
   ~MorphologyModule ();
@@ -64,7 +72,7 @@ struct MorphologyModule : Module {
   float phase2Array[MAX_NUM_BANDS] {0};
   //float *processed[MAX_FRAMES] = {0}; 
 
-  dsp::SchmittTrigger invertSpectra1Trigger,invertSpectra2Trigger;
+  dsp::SchmittTrigger invertSpectra1Trigger,invertSpectra2Trigger,pinBandSpreadXsTrigger,pinPanningXsTrigger;
 
 //Not sure if this shoud be based on ui # of bands (128 right now)
   float bandShift[MAX_NUM_BANDS] = {0};
@@ -85,10 +93,17 @@ struct MorphologyModule : Module {
   bool invertSpectra2 = false;
   uint8_t windowFunctionId;
 
+  uint8_t pinBandSpreadXs = 0;
+  uint8_t pinPanningXs = 0;
+
+
   uint16_t bandsPerUIBand[NUM_UI_BANDS] = {0};
   
   // percentages
   float bandShiftSpreadPercentage = 0;
+  float bandSpreadXAxisPercentage = 0;
+  float panningXAxisPercentage = 0;
+
 
 
   // cells for stuff

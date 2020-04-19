@@ -100,6 +100,17 @@ void MorphologyModule::dataFromJson(json_t *root) {
     invertSpectra2 = (uint8_t) json_integer_value(is2J);
   }
 
+  json_t *pbJ = json_object_get(root, "pinBandSpreadXs");
+  if (json_is_integer(pbJ)) {
+    pinBandSpreadXs = (uint8_t) json_integer_value(pbJ);
+  }
+
+  json_t *ppJ = json_object_get(root, "pinPanningXs");
+  if (json_is_integer(ppJ)) {
+    pinPanningXs = (uint8_t) json_integer_value(ppJ);
+  }
+
+
   for(int i=0;i<NUM_UI_BANDS;i++) {
     std::string buf = "bandShift-" + std::to_string(i) ;
     json_t *attJ = json_object_get(root, buf.c_str());
@@ -122,6 +133,8 @@ json_t *MorphologyModule::dataToJson() {
 
   json_object_set(root, "invertSpectra1", json_integer(invertSpectra1));
   json_object_set(root, "invertSpectra2", json_integer(invertSpectra2));
+  json_object_set(root, "pinBandSpreadXs", json_integer(pinBandSpreadXs));
+  json_object_set(root, "pinPanningXs", json_integer(pinPanningXs));
   for(int i=0;i<NUM_UI_BANDS;i++) {
     std::string buf = "bandShift-" + std::to_string(i) ;
     json_object_set(root, buf.c_str(),json_real((float) bandShiftCells->cells[i]));
@@ -236,6 +249,76 @@ void MorphologyModule::process(const ProcessArgs &args) {
       bandsPerUIBand[bandIndex++]= 1 * bandMultiplier;
     }
 
+  }
+
+  float pinXAxisPosBandSpread = paramValue(X_AXIS_PIN_POS_BAND_SPREAD, X_AXIS_PIN_POS_BAND_SPREAD_CV, 0, 1);
+  bandSpreadXAxisPercentage = pinXAxisPosBandSpread;
+  if (pinBandSpreadXsTrigger.process(params[PIN_BAND_SPREAD_XS].getValue())) {
+    pinBandSpreadXs = (pinBandSpreadXs + 1) % 5;
+  }
+  bandShiftCells->pinXAxisValues = pinBandSpreadXs;
+  bandShiftCells->pinXAxisPosition = pinXAxisPosBandSpread;
+  switch (pinBandSpreadXs) {
+    case 0 :
+      lights[PIN_BAND_SPREAD_XS_LIGHT+0].value = 0;
+      lights[PIN_BAND_SPREAD_XS_LIGHT+1].value = 0;
+      lights[PIN_BAND_SPREAD_XS_LIGHT+2].value = 0;
+      break;
+    case 1 :
+      lights[PIN_BAND_SPREAD_XS_LIGHT].value = .15;
+      lights[PIN_BAND_SPREAD_XS_LIGHT+1].value = 1;
+      lights[PIN_BAND_SPREAD_XS_LIGHT+2].value = .15;
+      break;
+    case 2 :
+      lights[PIN_BAND_SPREAD_XS_LIGHT].value = 0;
+      lights[PIN_BAND_SPREAD_XS_LIGHT+1].value = 1;
+      lights[PIN_BAND_SPREAD_XS_LIGHT+2].value = 0;
+      break;
+    case 3 :
+      lights[PIN_BAND_SPREAD_XS_LIGHT].value = 1;
+      lights[PIN_BAND_SPREAD_XS_LIGHT+1].value = .15;
+      lights[PIN_BAND_SPREAD_XS_LIGHT+2].value = .15;
+      break;
+    case 4 :
+      lights[PIN_BAND_SPREAD_XS_LIGHT].value = 1;
+      lights[PIN_BAND_SPREAD_XS_LIGHT+1].value = 0;
+      lights[PIN_BAND_SPREAD_XS_LIGHT+2].value = 0;
+      break;
+  }
+
+  float pinXAxisPosPanning = paramValue(X_AXIS_PIN_POS_PANNING, X_AXIS_PIN_POS_PANNING_CV, 0, 1);
+  panningXAxisPercentage = pinXAxisPosPanning;
+  if (pinPanningXsTrigger.process(params[PIN_PANNING_XS].getValue())) {
+    pinPanningXs = (pinPanningXs + 1) % 5;
+  }
+  panningCells->pinXAxisValues = pinPanningXs;
+  panningCells->pinXAxisPosition = pinXAxisPosPanning;
+  switch (pinPanningXs) {
+    case 0 :
+      lights[PIN_PANNING_XS_LIGHT+0].value = 0;
+      lights[PIN_PANNING_XS_LIGHT+1].value = 0;
+      lights[PIN_PANNING_XS_LIGHT+2].value = 0;
+      break;
+    case 1 :
+      lights[PIN_PANNING_XS_LIGHT].value = .15;
+      lights[PIN_PANNING_XS_LIGHT+1].value = 1;
+      lights[PIN_PANNING_XS_LIGHT+2].value = .15;
+      break;
+    case 2 :
+      lights[PIN_PANNING_XS_LIGHT].value = 0;
+      lights[PIN_PANNING_XS_LIGHT+1].value = 1;
+      lights[PIN_PANNING_XS_LIGHT+2].value = 0;
+      break;
+    case 3 :
+      lights[PIN_PANNING_XS_LIGHT].value = 1;
+      lights[PIN_PANNING_XS_LIGHT+1].value = .15;
+      lights[PIN_PANNING_XS_LIGHT+2].value = .15;
+      break;
+    case 4 :
+      lights[PIN_PANNING_XS_LIGHT].value = 1;
+      lights[PIN_PANNING_XS_LIGHT+1].value = 0;
+      lights[PIN_PANNING_XS_LIGHT+2].value = 0;
+      break;
   }
 
  

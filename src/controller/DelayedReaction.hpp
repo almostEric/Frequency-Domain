@@ -81,16 +81,10 @@ struct DelayedReactionModule : Module {
 
   // buffer for managing input/output
   Buffer<float> *dryBuffer[MAX_FRAMES] = { 0 };
-  // float feedbackResult[MAX_FRAMES][NUM_BANDS * 2] = {{ 0 }};
-  // float processed[MAX_FRAMES][NUM_BANDS * 2] = { {0} }; 
   float *feedbackResult[MAX_FRAMES] = { 0 };
   float *processed[MAX_FRAMES] = {0}; 
 
   dsp::SchmittTrigger delayRangeTrigger,pinAttenuation0sTrigger,pinDelayTime0sTrigger,pinFeedback0sTrigger,linkAttenuationTrigger,linkDelayTimeTrigger,linkFeedbackTrigger;
-//Not sure if this shoud be based on ui # of bands (128 right now)
-  // float attenuation[NUM_BANDS] = {0};
-  // float delayTime[NUM_BANDS] = {0};
-  // float feedbackAmount[NUM_BANDS] = {0};
 
   Buffer<float> *dry;
 
