@@ -55,7 +55,7 @@ MorphologyWidget::MorphologyWidget(MorphologyModule *module) {
     bandShiftDisplay->box.size = Vec(100, 256);
     addChild(bandShiftDisplay);
 
-    addInput(createInput<LightPort>(Vec(80, 300), module, MorphologyModule::BAND_SHIFT_X_CV));
+    addInput(createInput<LightPort>(Vec(15, 65), module, MorphologyModule::BAND_SHIFT_X_CV));
     addInput(createInput<LightPort>(Vec(15, 100), module, MorphologyModule::BAND_SHIFT_Y_CV));
 
     addParam(createParam<RecButton>(Vec(5, 195), module, MorphologyModule::PIN_BAND_SPREAD_XS));
@@ -74,7 +74,7 @@ MorphologyWidget::MorphologyWidget(MorphologyModule *module) {
     panningDisplay->box.size = Vec(100, 256);
     addChild(panningDisplay);
 
-    addInput(createInput<LightPort>(Vec(220, 300), module, MorphologyModule::PANNING_X_CV));
+    addInput(createInput<LightPort>(Vec(155, 65), module, MorphologyModule::PANNING_X_CV));
     addInput(createInput<LightPort>(Vec(155, 100), module, MorphologyModule::PANNING_Y_CV));
 
     addParam(createParam<RecButton>(Vec(145, 195), module, MorphologyModule::PIN_PANNING_XS));
@@ -82,21 +82,22 @@ MorphologyWidget::MorphologyWidget(MorphologyModule *module) {
   }
 
 
-  addParam(createParam<RecButton>(Vec(8, 316), module, MorphologyModule::INVERT_SPECTA_1));
-  addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(10, 317), module, MorphologyModule::INVERT_SPECTA_1_LIGHT));
+  addParam(createParam<RecButton>(Vec(88, 321), module, MorphologyModule::INVERT_SPECTA_1));
+  addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(90, 322), module, MorphologyModule::INVERT_SPECTA_1_LIGHT));
 
-  addParam(createParam<RecButton>(Vec(42, 316), module, MorphologyModule::INVERT_SPECTA_2));
-  addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(44, 317), module, MorphologyModule::INVERT_SPECTA_2_LIGHT));
+  addParam(createParam<RecButton>(Vec(88, 345), module, MorphologyModule::INVERT_SPECTA_2));
+  addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(90, 346), module, MorphologyModule::INVERT_SPECTA_2_LIGHT));
 
 
-  addInput(createInput<LightPort>(Vec(84, 348), module, MorphologyModule::SPREAD_CV));
-  addParam(createParam<LightKnob>(Vec(113.25, 324), module, MorphologyModule::SPREAD));
+
+  addInput(createInput<LightPort>(Vec(3, 306), module, MorphologyModule::SPREAD_CV));
+  addParam(createParam<LightSmallKnob>(Vec(30, 309), module, MorphologyModule::SPREAD));
   {
-    ArcDisplay *c = new ArcDisplay();
+    SmallBidirectionalArcDisplay *c = new SmallBidirectionalArcDisplay();
     if (module) {
       c->percentage = &module->bandShiftSpreadPercentage;
     } 
-    c->box.pos = Vec(120, 330.5);
+    c->box.pos = Vec(34, 312.5);
     c->box.size = Vec(60, 60);
     addChild(c);
   }
@@ -124,6 +125,32 @@ MorphologyWidget::MorphologyWidget(MorphologyModule *module) {
     c->box.size = Vec(30, 30);
     addChild(c);
   }
+
+
+  addInput(createInput<LightPort>(Vec(120, 316), module, MorphologyModule::INVERT_THRESHOLD_1_CV));
+  addParam(createParam<LightSmallKnob>(Vec(147, 319), module, MorphologyModule::INVERT_THRESHOLD_1));
+  {
+    SmallArcDisplay *c = new SmallArcDisplay();
+    if (module) {
+      c->percentage = &module->invertThreshold1Percentage;
+    } 
+    c->box.pos = Vec(150.5, 322.5);
+    c->box.size = Vec(60, 60);
+    addChild(c);
+  }
+
+  addInput(createInput<LightPort>(Vec(120, 340), module, MorphologyModule::INVERT_THRESHOLD_2_CV));
+  addParam(createParam<LightSmallKnob>(Vec(147, 343), module, MorphologyModule::INVERT_THRESHOLD_2));
+  {
+    SmallArcDisplay *c = new SmallArcDisplay();
+    if (module) {
+      c->percentage = &module->invertThreshold2Percentage;
+    } 
+    c->box.pos = Vec(150.5, 346.5);
+    c->box.size = Vec(60, 60);
+    addChild(c);
+  }
+
 
 
   addInput(createInput<LightPort>(Vec(179, 340), module, MorphologyModule::INPUT_1));

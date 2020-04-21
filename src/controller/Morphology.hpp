@@ -26,6 +26,8 @@ struct MorphologyModule : Module {
                   PIN_PANNING_XS,
                   X_AXIS_PIN_POS_BAND_SPREAD,
                   X_AXIS_PIN_POS_PANNING,
+                  INVERT_THRESHOLD_1,
+                  INVERT_THRESHOLD_2,
                   NUM_PARAMS };
   enum InputIds {
     INPUT_1,
@@ -37,6 +39,8 @@ struct MorphologyModule : Module {
     SPREAD_CV,
     X_AXIS_PIN_POS_BAND_SPREAD_CV,
     X_AXIS_PIN_POS_PANNING_CV,
+    INVERT_THRESHOLD_1_CV,
+    INVERT_THRESHOLD_2_CV,
     NUM_INPUTS
   };
   enum OutputIds { OUTPUT_L, OUTPUT_R, TEST_OUTPUT,NUM_OUTPUTS };
@@ -103,7 +107,8 @@ struct MorphologyModule : Module {
   float bandShiftSpreadPercentage = 0;
   float bandSpreadXAxisPercentage = 0;
   float panningXAxisPercentage = 0;
-
+  float invertThreshold1Percentage = 0;
+  float invertThreshold2Percentage = 0;
 
 
   // cells for stuff

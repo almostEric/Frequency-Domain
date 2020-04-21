@@ -50,7 +50,7 @@ struct Binning {
     // minimum magnitude for replacement
     float minMagnitude = std::numeric_limits<double>::infinity();
     inMagData[0] = -minMagnitude;
-
+    
     for (uint16_t i = 0; i <= size / 2; i++) { 
       //Use phases shift to alter frequency
       float freqAdjustment = binSize * inPhaseData[i] / M_PI;

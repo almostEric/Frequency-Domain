@@ -353,7 +353,7 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
   }
 
   float pinXAxisPosDelayTime = paramValue(X_AXIS_PIN_POS_DELAY_TIME, X_AXIS_PIN_POS_DELAY_TIME_CV, 0, 1);
-  delayTimeXAxisPercentage = pinXAxisPosAttenuation;
+  delayTimeXAxisPercentage = pinXAxisPosDelayTime;
   if (pinDelayTime0sTrigger.process(params[PIN_DELAY_TIME_0S].getValue())) {
     pinDelayTime0s = (pinDelayTime0s + 1) % 5;
   }
@@ -388,7 +388,7 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
   }
 
   float pinXAxisPosFeedback = paramValue(X_AXIS_PIN_POS_FEEDBACK, X_AXIS_PIN_POS_FEEDBACK_CV, 0, 1);
-  feedbackXAxisPercentage = pinXAxisPosAttenuation;
+  feedbackXAxisPercentage = pinXAxisPosFeedback;
   if (pinFeedback0sTrigger.process(params[PIN_FEEDBACK_0S].getValue())) {
     pinFeedback0s = (pinFeedback0s + 1) % 5;
   }

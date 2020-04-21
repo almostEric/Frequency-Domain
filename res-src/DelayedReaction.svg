@@ -31,9 +31,9 @@
   <sodipodi:namedview
      borderopacity="1"
      inkscape:zoom="4.1736842"
-     inkscape:cy="78.423403"
+     inkscape:cy="107.17498"
      gridtolerance="10"
-     inkscape:cx="233.04499"
+     inkscape:cx="113.72595"
      inkscape:window-height="2115"
      inkscape:measure-start="21.6858,252.097"
      inkscape:pagecheckerboard="true"
@@ -493,39 +493,39 @@
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-6"
-     x="26.4375"
+     x="27.4375"
      font-size="8px"
      y="130">Y</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-6-5"
-     x="92.476562"
+     x="27.476562"
      font-size="8px"
-     y="329.89453">X</text>
+     y="95">X</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-6-6"
-     x="166.4375"
+     x="167.4375"
      font-size="8px"
      y="130">Y</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-6-4"
-     x="306.4375"
+     x="307.4375"
      font-size="8px"
      y="130">Y</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-6-5-2"
-     x="232.47656"
+     x="167.47656"
      font-size="8px"
-     y="329.89453">X</text>
+     y="95">X</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-6-5-5"
-     x="372.47656"
+     x="307.47656"
      font-size="8px"
-     y="329.89453">X</text>
+     y="95">X</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-6-5-2-2"
@@ -628,15 +628,15 @@
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-3"
-     x="314.82031"
+     x="330.82031"
      font-size="8px"
      y="329.78952">SEND</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-3-2"
-     x="343"
+     x="369.70312"
      font-size="8px"
-     y="329.89499">RET</text>
+     y="329.89499">RETURN</text>
   <g
      id="g6916"
      transform="matrix(0.5,0,0,0.5,-131.2458,-16.513687)">

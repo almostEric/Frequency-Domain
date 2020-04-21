@@ -15,13 +15,12 @@ struct BankOutput {
 
 struct OscillatorBank {
   OscillatorBank() {
-    blurAmount = 50; // Manually Adjust
-    // set currentBank to 1 so that it changes to 0 on first run
-    currentBank = 1;
+    magnitudeSmoothness = 50; // Manually Adjust
+    amplitudeSmoothness = 50; // Manuallly adjust
   }
 
   void setFrequency(float *frequencies, float *volumes, uint8_t count) {
-    numOscillators[currentBank] = count;
+    numOscillators = count;
 
     // update the current bank values
     for (uint8_t i = 0; i < NUM_OSCILLATORS; i++) {
@@ -50,7 +49,7 @@ struct OscillatorBank {
   }
 
   void setRM(bool rmActive, uint8_t *rmMatrix, float *rmMix, float *amInput, uint8_t count) {
-    this->ringModulationActive = rmActive;
+    this->ringModuationInternal = rmActive;
     for (uint8_t i = 0; i < NUM_OSCILLATORS;i++) {
       this->rmMatrix[i]  = rmMatrix[i];
       this->rmMix[i] = rmMix[i];
@@ -64,7 +63,12 @@ struct OscillatorBank {
         while (j >= count) {
           j -= count;
         }
-        this->amplitudeModulation[i] = amInput[j];
+        float amAmount = amInput[j] / 5.0; //Scale input
+        if(amAmount != amplitudeModulation[i]) {
+          oldAmplitudeModulation[i] = amplitudeModulation[i];
+          currentAMSmoothingPosition = 0;
+        }
+        this->amplitudeModulation[i] = amAmount;
       }
     }
 
@@ -77,8 +81,7 @@ struct OscillatorBank {
 
 
   void switchBanks() {
-    currentBank = !currentBank;
-    currentBlur = 0;
+    currentMagnitudeSmoothingPosition = 0;
     // update the current bank values
     for (uint8_t i = 0; i < NUM_OSCILLATORS; i++) {
       oldFrequencies[i] = currentFrequencies[i];
@@ -92,24 +95,23 @@ struct OscillatorBank {
     float_4 oscFreq = 0;
     float volumes[NUM_OSCILLATORS];
 
-    currentBlur++;
-    if (currentBlur > blurAmount) {
-      currentBlur = blurAmount;
+    currentMagnitudeSmoothingPosition++;
+    if (currentMagnitudeSmoothingPosition > magnitudeSmoothness) {
+      currentMagnitudeSmoothingPosition = magnitudeSmoothness;
     }
 
-    float pct = blurAmount ? (float(currentBlur) / float(blurAmount)) : 1;
+    float pct = magnitudeSmoothness ? (float(currentMagnitudeSmoothingPosition) / float(magnitudeSmoothness)) : 1;
     for (uint8_t i = 0, c = 0; i < NUM_OSCILLATORS; ) {
       for (c = 0; c < 4; c++) {
-        if (i + c < numOscillators[currentBank]) {
+        if (i + c < numOscillators) {
           oscFreq[c] = currentFrequencies[i + c] + frequencyModulation[i + c];
-          volumes[i + c] = (oldVolumes[i + c] * (1 - pct)) + (currentVolumes[i + c] * pct);
+          volumes[i + c] =  interpolate(oldVolumes[i + c],currentVolumes[i + c],pct,0.0f,1.0f);
         }
       }
 
-
       // set up the current bank and step it
-      banks[0][currentVoice].setFrequency(oscFreq);
-      banks[0][currentVoice].step(sampleTime);
+      bank[currentVoice].setFrequency(oscFreq);
+      bank[currentVoice].step(sampleTime);
 
       currentVoice++;
       i += c;
@@ -121,35 +123,35 @@ struct OscillatorBank {
     float outputRight = 0;
 
     for (uint8_t i = 0, c = 0; i < NUM_OSCILLATORS; ) {
-      float_4 shaped;
+      float_4 oscOutput;
       switch (waveShape) {
         case SIN_WAVESHAPE :
-          shaped = banks[0][currentVoice].sin();
+          oscOutput = bank[currentVoice].sin();
           break;
         case TRIANGLE_WAVESHAPE :
-          shaped = banks[0][currentVoice].tri();
+          oscOutput = bank[currentVoice].tri();
           break;
         case SAWTOOTH_WAVESHAPE :
-          shaped = banks[0][currentVoice].saw();
+          oscOutput = bank[currentVoice].saw();
           break;
         case SQUARE_WAVESHAPE :
-          shaped = banks[0][currentVoice].sqr();
+          oscOutput = bank[currentVoice].sqr();
           break;
         case RECTANGLE_WAVESHAPE :
-          shaped = banks[0][currentVoice].rect();
+          oscOutput = bank[currentVoice].rect();
           break;
       }
 
       for (c = 0; c < 4 && i + c < NUM_OSCILLATORS; c++) {
-        if (i + c < numOscillators[currentBank]) {
-          if (numOscillators[currentBank]) {
-            int8_t magnitudeVoice = (i + c + voiceShift) % numOscillators[currentBank];
+        if (i + c < numOscillators) {
+          if (numOscillators) {
+            int8_t magnitudeVoice = (i + c + voiceShift) % numOscillators;
             if (magnitudeVoice < 0) {
-              magnitudeVoice += numOscillators[currentBank];
+              magnitudeVoice += numOscillators;
             }
-            currentVoiceOutput[i+c] = (shaped[c] * volumes[magnitudeVoice]);
+            currentVoiceOutput[i+c] = (oscOutput[c] * volumes[magnitudeVoice]);
           } else {
-            currentVoiceOutput[i+c] = (shaped[c] * volumes[(i + c)]);
+            currentVoiceOutput[i+c] = (oscOutput[c] * volumes[(i + c)]);
           }
         }
       }
@@ -157,20 +159,23 @@ struct OscillatorBank {
       i += c;
     }
 
-    for (uint8_t i = 0; i < NUM_OSCILLATORS && i < numOscillators[currentBank]; i++) {
-      //float amValue = ringModulator.processModel(currentVoiceOutput[i],amplitudeModulation[i]); 
-      float amValue = currentVoiceOutput[i] * (amplitudeModulation[i] > 0 ? amplitudeModulation[i] / 5.0 : 0); 
+
+    currentAMSmoothingPosition++;
+    if (currentAMSmoothingPosition > amplitudeSmoothness) {
+      currentAMSmoothingPosition = amplitudeSmoothness;
+    }
+
+    float smoothPct = amplitudeSmoothness ? (float(currentAMSmoothingPosition) / float(amplitudeSmoothness)) : 1;
+
+    for (uint8_t i = 0; i < NUM_OSCILLATORS && i < numOscillators; i++) {
+      float currentAMAmount = interpolate(oldAmplitudeModulation[i],amplitudeModulation[i],smoothPct,0.0f,1.0f);
+      float amValue = currentVoiceOutput[i] * (currentAMAmount > 0 ? currentAMAmount : 0); 
       float rmValue = ringModulator.processModel(currentVoiceOutput[i],currentVoiceOutput[rmMatrix[i]]);
 
-      float adjustedValue = interpolate(currentVoiceOutput[i],ringModulationActive ? rmValue : amValue ,rmMix[i],0.0f,1.0f);
+      float adjustedValue = interpolate(currentVoiceOutput[i],ringModuationInternal ? rmValue : amValue ,rmMix[i],0.0f,1.0f);
       outputMono += adjustedValue;
       outputLeft += adjustedValue * std::max(1.0 - panning[i],0.0) ;
       outputRight += adjustedValue * std::max(panning[i]+1.0,1.0);
-      // } else {
-      //   outputMono += currentVoiceOutput[i];
-      //   outputLeft += currentVoiceOutput[i] * std::max(1.0 - panning[i],0.0);
-      //   outputRight += currentVoiceOutput[i] * std::max(panning[i]+1.0,1.0);
-      // }
     }
 
     BankOutput bankOutput;
@@ -182,18 +187,20 @@ struct OscillatorBank {
   }
 
 
-  uint8_t numOscillators[2];
-  Oscillator<float_4> banks[2][NUM_OSCILLATORS / 4];
+  uint8_t numOscillators;
+  Oscillator<float_4> bank[NUM_OSCILLATORS / 4];
   RingModulator ringModulator;
-  bool ringModulationActive;
+  bool ringModuationInternal;
   float currentFrequencies[NUM_OSCILLATORS]{0};
   float currentVolumes[NUM_OSCILLATORS]{0};
   float currentVoiceOutput[NUM_OSCILLATORS];
-  uint16_t blurAmount;
-  uint16_t currentBlur;
+  uint16_t magnitudeSmoothness;
+  uint16_t currentMagnitudeSmoothingPosition;
+  uint16_t amplitudeSmoothness;
+  uint16_t currentAMSmoothingPosition = 0;
   float oldFrequencies[NUM_OSCILLATORS]{0};
   float oldVolumes[NUM_OSCILLATORS]{0};
-  uint8_t currentBank;
+  float oldAmplitudeModulation[NUM_OSCILLATORS]{0};
   int8_t voiceShift = 0;
   float frequencyModulation[NUM_OSCILLATORS + 4]{0};
   float amplitudeModulation[NUM_OSCILLATORS + 4]{0};

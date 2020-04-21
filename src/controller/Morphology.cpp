@@ -7,7 +7,9 @@
 MorphologyModule::MorphologyModule() {
   config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
 
-  configParam(SPREAD, 0.0f, 1024.0f, 50.0f, "Band Spread");
+  configParam(SPREAD, -1024.0f, 1024.0f, 0.0f, "Band Spread");
+  configParam(INVERT_THRESHOLD_1, 0.0f, 50.0f, 0.0f, "Invert Threshold L");
+  configParam(INVERT_THRESHOLD_2, 0.0f, 50.0f, 0.0f, "Invert Threshold R");
 
 
   frameSize = 11;
@@ -321,8 +323,14 @@ void MorphologyModule::process(const ProcessArgs &args) {
       break;
   }
 
- 
-  float spread = paramValue(SPREAD, SPREAD_CV, 0, nbrBands);
+
+  float invertThreshold1 = paramValue(INVERT_THRESHOLD_1, INVERT_THRESHOLD_1_CV, 0, 50);
+  invertThreshold1Percentage = invertThreshold1 / 50.0;
+  float invertThreshold2 = paramValue(INVERT_THRESHOLD_2, INVERT_THRESHOLD_2_CV, 0, 50);
+  invertThreshold2Percentage = invertThreshold2 / 50.0;
+
+
+  float spread = paramValue(SPREAD, SPREAD_CV, -nbrBands, nbrBands);
   bandShiftSpreadPercentage = spread / nbrBands;
 
 
@@ -391,8 +399,8 @@ void MorphologyModule::process(const ProcessArgs &args) {
       }
 
       for (uint16_t j = 0; j < nbrBands; j++) {        
-        float magnitude1 = invertSpectra1 && magnitude1Array[j] > 0 ? (maxMagnitude1-magnitude1Array[j]) : magnitude1Array[j];
-        float magnitude2 = invertSpectra2 && magnitude2Array[j] > 0 ? (maxMagnitude2-magnitude2Array[j]) : magnitude2Array[j];
+        float magnitude1 = invertSpectra1 && magnitude1Array[j] > invertThreshold1 ? (maxMagnitude1-magnitude1Array[j]) : magnitude1Array[j];
+        float magnitude2 = invertSpectra2 && magnitude2Array[j] > invertThreshold2 ? (maxMagnitude2-magnitude2Array[j]) : magnitude2Array[j];
 
         float magnitude = magnitude1 * magnitude2 / 100;
         float phase = interpolate(phase1Array[j],phase2Array[j],1.0f,0.0f,1.0f);

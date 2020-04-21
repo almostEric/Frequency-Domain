@@ -356,9 +356,9 @@ struct CellBarGrid : FramebufferWidget {
         nvgStrokeColor(args.vg, nvgRGBA(0x1a, 0x13, 0xc7, 0xF0)); //translucent blue
         nvgStrokeWidth(args.vg, 1.0);
         nvgBeginPath(args.vg);
-        float x = cells->pinXAxisPosition * cells->width * 2;
+        float x = cells->pinXAxisPosition * (cells->width-1) * 2 + 1;
         nvgMoveTo(args.vg,x,0);
-        nvgLineTo(args.vg,x,cells->height * 2 + 2);
+        nvgLineTo(args.vg,x,cells->height * 2);
         nvgStroke(args.vg);		
       }
     }
