@@ -30,6 +30,9 @@ struct DelayedReactionModule : Module {
                   X_AXIS_PIN_POS_ATTENUATION,
                   X_AXIS_PIN_POS_DELAY_TIME,
                   X_AXIS_PIN_POS_FEEDBACK,
+                  X_AXIS_ROTATION_ATTENUATION,
+                  X_AXIS_ROTATION_DELAY_TIME,
+                  X_AXIS_ROTATION_FEEDBACK,
                   NUM_PARAMS };
   enum InputIds {
     INPUT,
@@ -44,6 +47,9 @@ struct DelayedReactionModule : Module {
     X_AXIS_PIN_POS_ATTENUATION_CV,
     X_AXIS_PIN_POS_DELAY_TIME_CV,
     X_AXIS_PIN_POS_FEEDBACK_CV,
+    X_AXIS_ROTATION_ATTENUATION_CV,
+    X_AXIS_ROTATION_DELAY_CV,
+    X_AXIS_ROTATION_FEEDBACK_CV,
     NUM_INPUTS
   };
   enum OutputIds { OUTPUT, FEEDBACK_SEND, NUM_OUTPUTS };
@@ -124,6 +130,9 @@ struct DelayedReactionModule : Module {
   float attenuationXAxisPercentage = 0;
   float delayTimeXAxisPercentage = 0;
   float feedbackXAxisPercentage = 0;
+  float attenuationXAxisRotatePercentage = 0;
+  float delayTimeXAxisRotatePercentage = 0;
+  float feedbackXAxisRotatePercentage = 0;
   float mixPercentage = 0;
 
   // cells for stuff

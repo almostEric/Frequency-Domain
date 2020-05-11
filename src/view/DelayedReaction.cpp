@@ -55,15 +55,15 @@ DelayedReactionWidget::DelayedReactionWidget(DelayedReactionModule *module) {
     attenuationDisplay->box.size = Vec(100, 256);
     addChild(attenuationDisplay);
 
-    addInput(createInput<LightPort>(Vec(15, 65), module, DelayedReactionModule::ATTENUATION_X_CV));
-    addInput(createInput<LightPort>(Vec(15, 100), module, DelayedReactionModule::ATTENUATION_Y_CV));
+    addInput(createInput<LightPort>(Vec(15, 40), module, DelayedReactionModule::ATTENUATION_X_CV));
+    addInput(createInput<LightPort>(Vec(15, 75), module, DelayedReactionModule::ATTENUATION_Y_CV));
 
-    addParam(createParam<RecButton>(Vec(5, 195), module, DelayedReactionModule::PIN_ATTENUATION_0S));
-    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(7, 196), module, DelayedReactionModule::PIN_ATTENUATION_0S_LIGHT));
+    addParam(createParam<RecButton>(Vec(5, 230), module, DelayedReactionModule::PIN_ATTENUATION_0S));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(7, 231), module, DelayedReactionModule::PIN_ATTENUATION_0S_LIGHT));
 
 
-    addParam(createParam<RecButton>(Vec(5, 240), module, DelayedReactionModule::LINK_ATTENUATION));
-    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(7, 241), module, DelayedReactionModule::LINK_ATTENUATION_LIGHT));
+    addParam(createParam<RecButton>(Vec(5, 270), module, DelayedReactionModule::LINK_ATTENUATION));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(7, 271), module, DelayedReactionModule::LINK_ATTENUATION_LIGHT));
 
   }
 
@@ -91,15 +91,15 @@ DelayedReactionWidget::DelayedReactionWidget(DelayedReactionModule *module) {
     addParam(createParam<RecButton>(Vec(178.5, 318), module, DelayedReactionModule::DELAY_RANGE));
     addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(180.5, 319), module, DelayedReactionModule::DELAY_RANGE_LIGHT));
 
-    addInput(createInput<LightPort>(Vec(155, 65), module, DelayedReactionModule::DELAY_TIME_X_CV));
-    addInput(createInput<LightPort>(Vec(155, 100), module, DelayedReactionModule::DELAY_TIME_Y_CV));
+    addInput(createInput<LightPort>(Vec(155, 40), module, DelayedReactionModule::DELAY_TIME_X_CV));
+    addInput(createInput<LightPort>(Vec(155, 75), module, DelayedReactionModule::DELAY_TIME_Y_CV));
 
-    addParam(createParam<RecButton>(Vec(145, 195), module, DelayedReactionModule::PIN_DELAY_TIME_0S));
-    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(147, 196), module, DelayedReactionModule::PIN_DELAY_TIME_0S_LIGHT));
+    addParam(createParam<RecButton>(Vec(145, 230), module, DelayedReactionModule::PIN_DELAY_TIME_0S));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(147, 231), module, DelayedReactionModule::PIN_DELAY_TIME_0S_LIGHT));
 
 
-    addParam(createParam<RecButton>(Vec(145, 240), module, DelayedReactionModule::LINK_DELAY_TIME));
-    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(147, 241), module, DelayedReactionModule::LINK_DELAY_TIME_LIGHT));
+    addParam(createParam<RecButton>(Vec(145, 270), module, DelayedReactionModule::LINK_DELAY_TIME));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(147, 271), module, DelayedReactionModule::LINK_DELAY_TIME_LIGHT));
 
   }
 
@@ -114,14 +114,14 @@ DelayedReactionWidget::DelayedReactionWidget(DelayedReactionModule *module) {
     feedbackDisplay->box.size = Vec(100, 256);
     addChild(feedbackDisplay);
 
-    addInput(createInput<LightPort>(Vec(295, 65), module, DelayedReactionModule::DELAY_FEEDBACK_X_CV));
-    addInput(createInput<LightPort>(Vec(295, 100), module, DelayedReactionModule::DELAY_FEEDBACK_Y_CV));
+    addInput(createInput<LightPort>(Vec(295, 40), module, DelayedReactionModule::DELAY_FEEDBACK_X_CV));
+    addInput(createInput<LightPort>(Vec(295, 75), module, DelayedReactionModule::DELAY_FEEDBACK_Y_CV));
 
-    addParam(createParam<RecButton>(Vec(285, 195), module, DelayedReactionModule::PIN_FEEDBACK_0S));
-    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(287, 196), module, DelayedReactionModule::PIN_FEEDBACK_0S_LIGHT));
+    addParam(createParam<RecButton>(Vec(285, 230), module, DelayedReactionModule::PIN_FEEDBACK_0S));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(287, 231), module, DelayedReactionModule::PIN_FEEDBACK_0S_LIGHT));
 
-    addParam(createParam<RecButton>(Vec(285, 240), module, DelayedReactionModule::LINK_FEEDBACK));
-    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(287, 241), module, DelayedReactionModule::LINK_FEEDBACK_LIGHT));
+    addParam(createParam<RecButton>(Vec(285, 270), module, DelayedReactionModule::LINK_FEEDBACK));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(287, 271), module, DelayedReactionModule::LINK_FEEDBACK_LIGHT));
 
 
   }
@@ -150,41 +150,80 @@ DelayedReactionWidget::DelayedReactionWidget(DelayedReactionModule *module) {
     
   }
 
-  addInput(createInput<LightPort>(Vec(8, 170), module, DelayedReactionModule::X_AXIS_PIN_POS_ATTENUATION_CV));
-  addParam(createParam<LightSmallKnob>(Vec(11, 150), module, DelayedReactionModule::X_AXIS_PIN_POS_ATTENUATION));
+  addInput(createInput<LightPort>(Vec(8, 205), module, DelayedReactionModule::X_AXIS_PIN_POS_ATTENUATION_CV));
+  addParam(createParam<LightSmallKnob>(Vec(11, 185), module, DelayedReactionModule::X_AXIS_PIN_POS_ATTENUATION));
   {
     SmallArcDisplay *c = new SmallArcDisplay();
     if (module) {
       c->percentage = &module->attenuationXAxisPercentage;
     }
-    c->box.pos = Vec(14.5, 153.5);
+    c->box.pos = Vec(14.5, 188.5);
     c->box.size = Vec(30, 30);
     addChild(c);
   }
 
-  addInput(createInput<LightPort>(Vec(148, 170), module, DelayedReactionModule::X_AXIS_PIN_POS_DELAY_TIME_CV));
-  addParam(createParam<LightSmallKnob>(Vec(151, 150), module, DelayedReactionModule::X_AXIS_PIN_POS_DELAY_TIME));
+  addInput(createInput<LightPort>(Vec(148, 205), module, DelayedReactionModule::X_AXIS_PIN_POS_DELAY_TIME_CV));
+  addParam(createParam<LightSmallKnob>(Vec(151, 185), module, DelayedReactionModule::X_AXIS_PIN_POS_DELAY_TIME));
   {
     SmallArcDisplay *c = new SmallArcDisplay();
     if (module) {
       c->percentage = &module->delayTimeXAxisPercentage;
     }
-    c->box.pos = Vec(154.5, 153.5);
+    c->box.pos = Vec(154.5, 188.5);
     c->box.size = Vec(30, 30);
     addChild(c);
   }
 
-  addInput(createInput<LightPort>(Vec(288, 170), module, DelayedReactionModule::X_AXIS_PIN_POS_FEEDBACK_CV));
-  addParam(createParam<LightSmallKnob>(Vec(291, 150), module, DelayedReactionModule::X_AXIS_PIN_POS_FEEDBACK));
+  addInput(createInput<LightPort>(Vec(288, 205), module, DelayedReactionModule::X_AXIS_PIN_POS_FEEDBACK_CV));
+  addParam(createParam<LightSmallKnob>(Vec(291, 185), module, DelayedReactionModule::X_AXIS_PIN_POS_FEEDBACK));
   {
     SmallArcDisplay *c = new SmallArcDisplay();
     if (module) {
       c->percentage = &module->feedbackXAxisPercentage;
     }
-    c->box.pos = Vec(294.5, 153.5);
+    c->box.pos = Vec(294.5, 188.5);
     c->box.size = Vec(30, 30);
     addChild(c);
   }
+
+
+  //Rotations
+  addInput(createInput<LightPort>(Vec(8, 138), module, DelayedReactionModule::X_AXIS_ROTATION_ATTENUATION_CV));
+  addParam(createParam<LightSmallKnob>(Vec(11, 118), module, DelayedReactionModule::X_AXIS_ROTATION_ATTENUATION));
+  {
+    SmallBidirectionalArcDisplay *c = new SmallBidirectionalArcDisplay();
+    if (module) {
+      c->percentage = &module->attenuationXAxisRotatePercentage;
+    }
+    c->box.pos = Vec(14.5, 121.5);
+    c->box.size = Vec(30, 30);
+    addChild(c);
+  }
+
+  addInput(createInput<LightPort>(Vec(148, 138), module, DelayedReactionModule::X_AXIS_ROTATION_DELAY_CV));
+  addParam(createParam<LightSmallKnob>(Vec(151, 118), module, DelayedReactionModule::X_AXIS_ROTATION_DELAY_TIME));
+  {
+    SmallBidirectionalArcDisplay *c = new SmallBidirectionalArcDisplay();
+    if (module) {
+      c->percentage = &module->delayTimeXAxisRotatePercentage;
+    }
+    c->box.pos = Vec(154.5, 121.5);
+    c->box.size = Vec(30, 30);
+    addChild(c);
+  }
+
+  addInput(createInput<LightPort>(Vec(288, 138), module, DelayedReactionModule::X_AXIS_ROTATION_FEEDBACK_CV));
+  addParam(createParam<LightSmallKnob>(Vec(291, 118), module, DelayedReactionModule::X_AXIS_ROTATION_FEEDBACK_CV));
+  {
+    SmallBidirectionalArcDisplay *c = new SmallBidirectionalArcDisplay();
+    if (module) {
+      c->percentage = &module->feedbackXAxisRotatePercentage;
+    }
+    c->box.pos = Vec(294.5, 121.5);
+    c->box.size = Vec(30, 30);
+    addChild(c);
+  }
+
 
 
 

@@ -222,6 +222,7 @@ struct OneDimensionalCells : Cells {
   uint8_t rolloverModeY = PIN_ROLLOVER_MODE;
   float shiftX = 0;
   float shiftY = 0;
+  float rotateX = 0;
 
   uint8_t pinXAxisValues = 0;
   float pinXAxisPosition = 0;
@@ -280,6 +281,13 @@ struct OneDimensionalCellsWithRollover : OneDimensionalCells {
         adjustedValue = value >= pinXAxisPosition * totalRange + lowRange ? value : value + (shiftX * totalRange);
         break;
     }
+
+    //Rotation
+    if(rotateX !=0) {
+      float phasePosition = cos(M_PI * rotateX);
+      adjustedValue = adjustedValue * phasePosition + (pinXAxisValues > 0 ? pinXAxisPosition : 0.0);
+    }
+
     
     if (adjustedValue < lowRange) {
         adjustedValue = rolloverModeX == WRAP_AROUND_ROLLOVER_MODE ? adjustedValue + width : lowRange;

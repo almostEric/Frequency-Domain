@@ -26,6 +26,8 @@ struct MorphologyModule : Module {
                   PIN_PANNING_XS,
                   X_AXIS_PIN_POS_BAND_SPREAD,
                   X_AXIS_PIN_POS_PANNING,
+                  X_AXIS_ROTATION_BAND_SPREAD,
+                  X_AXIS_ROTATION_PANNING,
                   INVERT_THRESHOLD_1,
                   INVERT_THRESHOLD_2,
                   NUM_PARAMS };
@@ -39,6 +41,8 @@ struct MorphologyModule : Module {
     SPREAD_CV,
     X_AXIS_PIN_POS_BAND_SPREAD_CV,
     X_AXIS_PIN_POS_PANNING_CV,
+    X_AXIS_ROTATION_BAND_SPREAD_CV,
+    X_AXIS_ROTATION_PANNING_CV,
     INVERT_THRESHOLD_1_CV,
     INVERT_THRESHOLD_2_CV,
     NUM_INPUTS
@@ -107,6 +111,9 @@ struct MorphologyModule : Module {
   float bandShiftSpreadPercentage = 0;
   float bandSpreadXAxisPercentage = 0;
   float panningXAxisPercentage = 0;
+  float bandShiftXAxisRotatePercentage = 0;
+  float panningXAxisRotatePercentage = 0;
+
   float invertThreshold1Percentage = 0;
   float invertThreshold2Percentage = 0;
 

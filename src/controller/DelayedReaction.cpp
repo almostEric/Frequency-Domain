@@ -10,8 +10,12 @@ DelayedReactionModule::DelayedReactionModule() {
 
 
   configParam(X_AXIS_PIN_POS_ATTENUATION, 0.0f, 1.0f, 0.0f, "Attenuation X Axis Pin Position","%",0,100);
-  configParam(X_AXIS_PIN_POS_DELAY_TIME, 0.0f, 1.0f, 0.0f, "Attenuation X Axis Pin Position","%",0,100);
-  configParam(X_AXIS_PIN_POS_FEEDBACK, 0.0f, 1.0f, 0.0f, "Attenuation X Axis Pin Position","%",0,100);
+  configParam(X_AXIS_PIN_POS_DELAY_TIME, 0.0f, 1.0f, 0.0f, "Delay Time X Axis Pin Position","%",0,100);
+  configParam(X_AXIS_PIN_POS_FEEDBACK, 0.0f, 1.0f, 0.0f, "Feedback X Axis Pin Position","%",0,100);
+
+  configParam(X_AXIS_ROTATION_ATTENUATION, -1.0f, 1.0f, 0.0f, "Attenuation X Axis Rotation","°",0,180);
+  configParam(X_AXIS_ROTATION_DELAY_TIME, -1.0f, 1.0f, 0.0f, "Delay Time X Axis Rotation","°",0,180);
+  configParam(X_AXIS_ROTATION_FEEDBACK, -1.0f, 1.0f, 0.0f, "Feedback X Axis Rotation","°",0,180);
 
   leftExpander.producerMessage = producerMessage;
   leftExpander.consumerMessage = consumerMessage;
@@ -319,11 +323,14 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
 
   float pinXAxisPosAttenuation = paramValue(X_AXIS_PIN_POS_ATTENUATION, X_AXIS_PIN_POS_ATTENUATION_CV, 0, 1);
   attenuationXAxisPercentage = pinXAxisPosAttenuation;
+  float xAxisRotationAttenuation = paramValue(X_AXIS_ROTATION_ATTENUATION, X_AXIS_ROTATION_ATTENUATION_CV, -1, 1);
+  attenuationXAxisRotatePercentage = xAxisRotationAttenuation;
   if (pinAttenuation0sTrigger.process(params[PIN_ATTENUATION_0S].getValue())) {
     pinAttenuation0s = (pinAttenuation0s + 1) % 5;
   }
   attenuationCells->pinXAxisValues = pinAttenuation0s;
   attenuationCells->pinXAxisPosition = pinXAxisPosAttenuation;
+  attenuationCells->rotateX = xAxisRotationAttenuation;
   switch (pinAttenuation0s) {
     case 0 :
       lights[PIN_ATTENUATION_0S_LIGHT+0].value = 0;
@@ -354,11 +361,14 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
 
   float pinXAxisPosDelayTime = paramValue(X_AXIS_PIN_POS_DELAY_TIME, X_AXIS_PIN_POS_DELAY_TIME_CV, 0, 1);
   delayTimeXAxisPercentage = pinXAxisPosDelayTime;
+  float xAxisRotationDelayTime = paramValue(X_AXIS_ROTATION_DELAY_TIME, X_AXIS_ROTATION_DELAY_CV, -1, 1);
+  delayTimeXAxisRotatePercentage = xAxisRotationDelayTime;
   if (pinDelayTime0sTrigger.process(params[PIN_DELAY_TIME_0S].getValue())) {
     pinDelayTime0s = (pinDelayTime0s + 1) % 5;
   }
   delayTimeCells->pinXAxisValues = pinDelayTime0s;
   delayTimeCells->pinXAxisPosition = pinXAxisPosDelayTime;
+  delayTimeCells->rotateX = xAxisRotationDelayTime;
   switch (pinDelayTime0s) {
     case 0 :
       lights[PIN_DELAY_TIME_0S_LIGHT+0].value = 0;
@@ -389,11 +399,14 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
 
   float pinXAxisPosFeedback = paramValue(X_AXIS_PIN_POS_FEEDBACK, X_AXIS_PIN_POS_FEEDBACK_CV, 0, 1);
   feedbackXAxisPercentage = pinXAxisPosFeedback;
+  float xAxisRotationFeedback = paramValue(X_AXIS_ROTATION_FEEDBACK, X_AXIS_ROTATION_FEEDBACK_CV, -1, 1);
+  feedbackXAxisRotatePercentage = xAxisRotationFeedback;
   if (pinFeedback0sTrigger.process(params[PIN_FEEDBACK_0S].getValue())) {
     pinFeedback0s = (pinFeedback0s + 1) % 5;
   }
   feedbackCells->pinXAxisValues = pinFeedback0s;
   feedbackCells->pinXAxisPosition = pinXAxisPosFeedback;
+  feedbackCells->rotateX = xAxisRotationFeedback;
   switch (pinFeedback0s) {
     case 0 :
       lights[PIN_FEEDBACK_0S_LIGHT+0].value = 0;

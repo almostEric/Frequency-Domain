@@ -55,11 +55,11 @@ MorphologyWidget::MorphologyWidget(MorphologyModule *module) {
     bandShiftDisplay->box.size = Vec(100, 256);
     addChild(bandShiftDisplay);
 
-    addInput(createInput<LightPort>(Vec(15, 65), module, MorphologyModule::BAND_SHIFT_X_CV));
-    addInput(createInput<LightPort>(Vec(15, 100), module, MorphologyModule::BAND_SHIFT_Y_CV));
+    addInput(createInput<LightPort>(Vec(15, 40), module, MorphologyModule::BAND_SHIFT_X_CV));
+    addInput(createInput<LightPort>(Vec(15, 75), module, MorphologyModule::BAND_SHIFT_Y_CV));
 
-    addParam(createParam<RecButton>(Vec(5, 195), module, MorphologyModule::PIN_BAND_SPREAD_XS));
-    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(7, 196), module, MorphologyModule::PIN_BAND_SPREAD_XS_LIGHT));
+    addParam(createParam<RecButton>(Vec(5, 245), module, MorphologyModule::PIN_BAND_SPREAD_XS));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(7, 246), module, MorphologyModule::PIN_BAND_SPREAD_XS_LIGHT));
 
   }
 
@@ -74,11 +74,11 @@ MorphologyWidget::MorphologyWidget(MorphologyModule *module) {
     panningDisplay->box.size = Vec(100, 256);
     addChild(panningDisplay);
 
-    addInput(createInput<LightPort>(Vec(155, 65), module, MorphologyModule::PANNING_X_CV));
-    addInput(createInput<LightPort>(Vec(155, 100), module, MorphologyModule::PANNING_Y_CV));
+    addInput(createInput<LightPort>(Vec(155, 40), module, MorphologyModule::PANNING_X_CV));
+    addInput(createInput<LightPort>(Vec(155, 75), module, MorphologyModule::PANNING_Y_CV));
 
-    addParam(createParam<RecButton>(Vec(145, 195), module, MorphologyModule::PIN_PANNING_XS));
-    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(147, 196), module, MorphologyModule::PIN_PANNING_XS_LIGHT));
+    addParam(createParam<RecButton>(Vec(145, 245), module, MorphologyModule::PIN_PANNING_XS));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(147, 246), module, MorphologyModule::PIN_PANNING_XS_LIGHT));
   }
 
 
@@ -102,29 +102,57 @@ MorphologyWidget::MorphologyWidget(MorphologyModule *module) {
     addChild(c);
   }
 
-  addInput(createInput<LightPort>(Vec(8, 170), module, MorphologyModule::X_AXIS_PIN_POS_BAND_SPREAD_CV));
-  addParam(createParam<LightSmallKnob>(Vec(11, 150), module, MorphologyModule::X_AXIS_PIN_POS_BAND_SPREAD));
+  addInput(createInput<LightPort>(Vec(8, 220), module, MorphologyModule::X_AXIS_PIN_POS_BAND_SPREAD_CV));
+  addParam(createParam<LightSmallKnob>(Vec(11, 200), module, MorphologyModule::X_AXIS_PIN_POS_BAND_SPREAD));
   {
     SmallArcDisplay *c = new SmallArcDisplay();
     if (module) {
       c->percentage = &module->bandSpreadXAxisPercentage;
     }
-    c->box.pos = Vec(14.5, 153.5);
+    c->box.pos = Vec(14.5, 203.5);
     c->box.size = Vec(30, 30);
     addChild(c);
   }
 
-  addInput(createInput<LightPort>(Vec(148, 170), module, MorphologyModule::X_AXIS_PIN_POS_PANNING_CV));
-  addParam(createParam<LightSmallKnob>(Vec(151, 150), module, MorphologyModule::X_AXIS_PIN_POS_PANNING));
+  addInput(createInput<LightPort>(Vec(148, 220), module, MorphologyModule::X_AXIS_PIN_POS_PANNING_CV));
+  addParam(createParam<LightSmallKnob>(Vec(151, 200), module, MorphologyModule::X_AXIS_PIN_POS_PANNING));
   {
     SmallArcDisplay *c = new SmallArcDisplay();
     if (module) {
       c->percentage = &module->panningXAxisPercentage;
     }
-    c->box.pos = Vec(154.5, 153.5);
+    c->box.pos = Vec(154.5, 203.5);
     c->box.size = Vec(30, 30);
     addChild(c);
   }
+
+
+
+  //Rotations
+  addInput(createInput<LightPort>(Vec(8, 138), module, MorphologyModule::X_AXIS_ROTATION_BAND_SPREAD_CV));
+  addParam(createParam<LightSmallKnob>(Vec(11, 118), module, MorphologyModule::X_AXIS_ROTATION_BAND_SPREAD));
+  {
+    SmallBidirectionalArcDisplay *c = new SmallBidirectionalArcDisplay();
+    if (module) {
+      c->percentage = &module->bandShiftXAxisRotatePercentage;
+    }
+    c->box.pos = Vec(14.5, 121.5);
+    c->box.size = Vec(30, 30);
+    addChild(c);
+  }
+
+  addInput(createInput<LightPort>(Vec(148, 138), module, MorphologyModule::X_AXIS_ROTATION_PANNING_CV));
+  addParam(createParam<LightSmallKnob>(Vec(151, 118), module, MorphologyModule::X_AXIS_ROTATION_PANNING));
+  {
+    SmallBidirectionalArcDisplay *c = new SmallBidirectionalArcDisplay();
+    if (module) {
+      c->percentage = &module->panningXAxisRotatePercentage;
+    }
+    c->box.pos = Vec(154.5, 121.5);
+    c->box.size = Vec(30, 30);
+    addChild(c);
+  }
+
 
 
   addInput(createInput<LightPort>(Vec(120, 316), module, MorphologyModule::INVERT_THRESHOLD_1_CV));
