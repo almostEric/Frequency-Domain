@@ -245,14 +245,32 @@ struct CellGrid : FramebufferWidget {
     ChangeShapeMenuItem *flipHorizontal = new ChangeShapeMenuItem();
 		flipHorizontal->text = "Flip Horizontal";// 
 		flipHorizontal->cells = cells;
-		flipHorizontal->direction= true;
+		flipHorizontal->flipDirection=-1;
 		menu->addChild(flipHorizontal);
 
     ChangeShapeMenuItem *flipVertical = new ChangeShapeMenuItem();
 		flipVertical->text = "Flip Vertical";// 
 		flipVertical->cells = cells;
-		flipVertical->direction= false;
+		flipVertical->flipDirection=1;
 		menu->addChild(flipVertical);
+
+    ChangeShapeMenuItem *reduceByHalf = new ChangeShapeMenuItem();
+		reduceByHalf->text = "Reduce By Half";// 
+		reduceByHalf->cells = cells;
+		reduceByHalf->reductionAmount=0.5;
+		menu->addChild(reduceByHalf);
+
+    ChangeShapeMenuItem *shiftLeft = new ChangeShapeMenuItem();
+		shiftLeft->text = "Shift Left";// 
+		shiftLeft->cells = cells;
+		shiftLeft->shiftDirection=1;
+		menu->addChild(shiftLeft);
+
+    ChangeShapeMenuItem *shiftRight = new ChangeShapeMenuItem();
+		shiftRight->text = "Shift Right";// 
+		shiftRight->cells = cells;
+		shiftRight->shiftDirection=-1;
+		menu->addChild(shiftRight);
 
 	}
 
@@ -267,10 +285,12 @@ struct CellGrid : FramebufferWidget {
 
   struct ChangeShapeMenuItem : MenuItem {
     OneDimensionalCells *cells;
-    bool direction;
+    int flipDirection = 0;
+    int shiftDirection = 0;
+    float reductionAmount =0.0;
 
     void onAction(const event::Action& e) override {
-      cells->flip(direction);
+      cells->changeShape(flipDirection,shiftDirection,reductionAmount);
     }
   };
 
@@ -413,14 +433,32 @@ struct CellBarGrid : FramebufferWidget {
     ChangeShapeMenuItem *flipHorizontal = new ChangeShapeMenuItem();
 		flipHorizontal->text = "Flip Horizontal";// 
 		flipHorizontal->cells = cells;
-		flipHorizontal->direction= true;
+		flipHorizontal->flipDirection=-1;
 		menu->addChild(flipHorizontal);
 
     ChangeShapeMenuItem *flipVertical = new ChangeShapeMenuItem();
 		flipVertical->text = "Flip Vertical";// 
 		flipVertical->cells = cells;
-		flipVertical->direction= false;
+		flipVertical->flipDirection=1;
 		menu->addChild(flipVertical);
+
+    ChangeShapeMenuItem *reduceByHalf = new ChangeShapeMenuItem();
+		reduceByHalf->text = "Reduce By Half";// 
+		reduceByHalf->cells = cells;
+		reduceByHalf->reductionAmount=0.5;
+		menu->addChild(reduceByHalf);
+
+    ChangeShapeMenuItem *shiftLeft = new ChangeShapeMenuItem();
+		shiftLeft->text = "Shift Left";// 
+		shiftLeft->cells = cells;
+		shiftLeft->shiftDirection=1;
+		menu->addChild(shiftLeft);
+
+    ChangeShapeMenuItem *shiftRight = new ChangeShapeMenuItem();
+		shiftRight->text = "Shift Right";// 
+		shiftRight->cells = cells;
+		shiftRight->shiftDirection=-1;
+		menu->addChild(shiftRight);
 
 	}
 
@@ -435,10 +473,12 @@ struct CellBarGrid : FramebufferWidget {
 
   struct ChangeShapeMenuItem : MenuItem {
     OneDimensionalCells *cells;
-    bool direction;
+    int flipDirection = 0;
+    int shiftDirection = 0;
+    float reductionAmount =0.0;
 
     void onAction(const event::Action& e) override {
-      cells->flip(direction);
+      cells->changeShape(flipDirection,shiftDirection,reductionAmount);
     }
   };
 
