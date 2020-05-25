@@ -6,17 +6,10 @@
 template <typename T>
 struct Buffer {
   Buffer(uint16_t size, uint16_t initialPosition) {
-    data = new T[size]{0};
-    for (uint16_t i = 0; i < size; i++) {
-      data[i] = 0;
-    }
-    looped = false;
-    if(initialPosition >= size) 
-      initialPosition -=size;
-    setPos = initialPosition;
-    getPos = initialPosition;
-
     this->size = size;
+    this->initialPosition = initialPosition;
+    data = new T[size]{0};
+    reset();
   }
 
   ~Buffer() {
@@ -47,8 +40,20 @@ struct Buffer {
     return value;
   }
 
+  void reset() {
+    for (uint16_t i = 0; i < size; i++) {
+      data[i] = 0;
+    }
+    looped = false;
+    if(initialPosition >= size) 
+      initialPosition -=size;
+    setPos = initialPosition;
+    getPos = initialPosition;
+  }
+
   T *data;
   uint16_t size;
+  uint16_t initialPosition;
   uint16_t setPos;
   uint16_t getPos;
   bool looped;

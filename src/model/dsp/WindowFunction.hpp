@@ -161,5 +161,6 @@ struct WindowFunction {
     float alpha;
     float ii0a;
     
+    std::string windowFunctionName[NBR_WINDOW_FUNCTIONS] = {"None","Triangle","Welch","Sin","Hanning","Blackman","Nutall","Kaiser"};
 
 };

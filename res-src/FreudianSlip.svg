@@ -9,12 +9,11 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    height="380"
-   style="zoom: 8;"
    cursor="default"
    id="SvgjsSvg1006"
-   sodipodi:docname="DelayedReaction.svg"
+   sodipodi:docname="FreudianSlip.svg"
    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
-   width="450"
+   width="390"
    version="1.1">
   <metadata
      id="metadata7215">
@@ -30,10 +29,10 @@
   </metadata>
   <sodipodi:namedview
      borderopacity="1"
-     inkscape:zoom="4.1736842"
-     inkscape:cy="145.51042"
+     inkscape:zoom="5.656854"
+     inkscape:cy="165.97165"
      gridtolerance="10"
-     inkscape:cx="35.857097"
+     inkscape:cx="211.93076"
      inkscape:window-height="2115"
      inkscape:measure-start="21.6858,252.097"
      inkscape:pagecheckerboard="true"
@@ -76,526 +75,368 @@
        x2="450"
        y2="380"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-6,6)" />
+       gradientTransform="matrix(0.86666667,0,0,1,-5.2,6)" />
     <style
        id="Routed Gothic">@import url(file://fonts/routed-gothic.ttf);</style>
   </defs>
   <path
-     d="M 0,0 H 450 V 380 H 0 Z"
+     d="M 0,0 H 390 V 380 H 0 Z"
      id="SvgjsRect1008"
-     style="visibility:visible;fill:url(#linearGradientOuter);fill-opacity:1;stroke:none;stroke-opacity:1"
-     visibility="visible" />
+     style="visibility:visible;fill:url(#linearGradientOuter);fill-opacity:1;stroke:none;stroke-width:0.93094933;stroke-opacity:1"
+     visibility="visible"
+     inkscape:connector-curvature="0" />
   <text
      style="font-size:16px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text5"
-     x="225"
+     x="194.95312"
      font-size="16px"
-     y="18">DELAYED REACTION</text>
+     y="18">FREUDIAN SLIP</text>
+  <line
+     x1="379.5"
+     x2="379.5"
+     y1="232"
+     y2="239"
+     id="line74"
+     style="fill:none;stroke:#e8b923" />
+  <line
+     x1="358"
+     x2="379.5"
+     y1="231.89999"
+     y2="231.89999"
+     id="line78"
+     style="fill:none;stroke:#e8b923;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none" />
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text70"
-     x="259.00043"
+     id="text80"
+     x="290.70312"
      font-size="8px"
-     y="372">MIX</text>
+     y="235">AMPLITUDE/RING MODULATION</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106"
-     x="341.95703"
+     id="text90"
+     x="118.45312"
      font-size="8px"
-     y="371.87891">INPUT</text>
+     y="371.87891">TRIGGER</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text108"
-     x="409.91016"
+     id="text47"
+     x="353.45917"
      font-size="8px"
      y="371.87891">OUTPUT</text>
   <line
-     id="SvgjsLine1312"
-     x1="276.50043"
-     y1="341"
-     x2="258.3139"
-     y2="351.5"
-     style="stroke:#e8b923;stroke-width:0.75" />
+     x1="183.5"
+     x2="183.5"
+     y1="232"
+     y2="239"
+     id="line2077"
+     style="fill:none;stroke:#e8b923" />
   <line
-     id="SvgjsLine1313"
-     x1="276.50043"
-     y1="341"
-     x2="258.4039"
-     y2="349.51556"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1314"
-     x1="276.50043"
-     y1="341"
-     x2="257.75479"
-     y2="347.97144"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1315"
-     x1="276.50043"
-     y1="341"
-     x2="257.23718"
-     y2="346.37842"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1316"
-     x1="276.50043"
-     y1="341"
-     x2="256.85468"
-     y2="344.74762"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1317"
-     x1="276.50043"
-     y1="341"
-     x2="255.61549"
-     y2="343.1951"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1318"
-     x1="276.50043"
-     y1="341"
-     x2="256.50482"
-     y2="341.41885"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1319"
-     x1="276.50043"
-     y1="341"
-     x2="256.53989"
-     y2="339.7442"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1320"
-     x1="276.50043"
-     y1="341"
-     x2="256.71497"
-     y2="338.07834"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1321"
-     x1="276.50043"
-     y1="341"
-     x2="257.02884"
-     y2="336.43298"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1322"
-     x1="276.50043"
-     y1="341"
-     x2="256.52823"
-     y2="334.51065"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1323"
-     x1="276.50043"
-     y1="341"
-     x2="258.06317"
-     y2="333.24969"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1324"
-     x1="276.50043"
-     y1="341"
-     x2="258.77637"
-     y2="331.73407"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1325"
-     x1="276.50043"
-     y1="341"
-     x2="259.61386"
-     y2="330.28345"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1326"
-     x1="276.50043"
-     y1="341"
-     x2="260.56982"
-     y2="328.90802"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1327"
-     x1="276.50043"
-     y1="341"
-     x2="260.89438"
-     y2="326.94824"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1328"
-     x1="276.50043"
-     y1="341"
-     x2="262.80948"
-     y2="326.42062"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1329"
-     x1="276.50043"
-     y1="341"
-     x2="264.07748"
-     y2="325.32611"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1330"
-     x1="276.50043"
-     y1="341"
-     x2="265.43259"
-     y2="324.34155"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1331"
-     x1="276.50043"
-     y1="341"
-     x2="266.86536"
-     y2="323.47388"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1332"
-     x1="276.50043"
-     y1="341"
-     x2="267.95895"
-     y2="321.81555"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1333"
-     x1="276.50043"
-     y1="341"
-     x2="269.9231"
-     y2="322.11249"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1334"
-     x1="276.50043"
-     y1="341"
-     x2="271.52664"
-     y2="321.62836"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1335"
-     x1="276.50043"
-     y1="341"
-     x2="273.16504"
-     y2="321.28009"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1336"
-     x1="276.50043"
-     y1="341"
-     x2="274.82687"
-     y2="321.07013"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1337"
-     x1="276.50043"
-     y1="341"
-     x2="276.50043"
-     y2="320"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1338"
-     x1="276.50043"
-     y1="341"
-     x2="278.17398"
-     y2="321.07013"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1339"
-     x1="276.50043"
-     y1="341"
-     x2="279.83582"
-     y2="321.28009"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1340"
-     x1="276.50043"
-     y1="341"
-     x2="281.47421"
-     y2="321.62836"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1341"
-     x1="276.50043"
-     y1="341"
-     x2="283.07776"
-     y2="322.11249"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1342"
-     x1="276.50043"
-     y1="341"
-     x2="285.0419"
-     y2="321.81555"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1343"
-     x1="276.50043"
-     y1="341"
-     x2="286.1355"
-     y2="323.47388"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1344"
-     x1="276.50043"
-     y1="341"
-     x2="287.56827"
-     y2="324.34155"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1345"
-     x1="276.50043"
-     y1="341"
-     x2="288.92337"
-     y2="325.32611"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1346"
-     x1="276.50043"
-     y1="341"
-     x2="290.19138"
-     y2="326.42062"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1347"
-     x1="276.50043"
-     y1="341"
-     x2="292.10648"
-     y2="326.94824"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1348"
-     x1="276.50043"
-     y1="341"
-     x2="292.43103"
-     y2="328.90802"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1349"
-     x1="276.50043"
-     y1="341"
-     x2="293.38699"
-     y2="330.28345"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1350"
-     x1="276.50043"
-     y1="341"
-     x2="294.22449"
-     y2="331.73407"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1351"
-     x1="276.50043"
-     y1="341"
-     x2="294.93768"
-     y2="333.24969"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1352"
-     x1="276.50043"
-     y1="341"
-     x2="296.47263"
-     y2="334.51065"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1353"
-     x1="276.50043"
-     y1="341"
-     x2="295.97202"
-     y2="336.43298"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1354"
-     x1="276.50043"
-     y1="341"
-     x2="296.28589"
-     y2="338.07834"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1355"
-     x1="276.50043"
-     y1="341"
-     x2="296.46097"
-     y2="339.7442"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1356"
-     x1="276.50043"
-     y1="341"
-     x2="296.49603"
-     y2="341.41885"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1357"
-     x1="276.50043"
-     y1="341"
-     x2="297.38538"
-     y2="343.1951"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1358"
-     x1="276.50043"
-     y1="341"
-     x2="296.14618"
-     y2="344.74762"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1359"
-     x1="276.50043"
-     y1="341"
-     x2="295.76367"
-     y2="346.37842"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1360"
-     x1="276.50043"
-     y1="341"
-     x2="295.24606"
-     y2="347.97144"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1361"
-     x1="276.50043"
-     y1="341"
-     x2="294.59695"
-     y2="349.51556"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <line
-     id="SvgjsLine1362"
-     x1="276.50043"
-     y1="341"
-     x2="294.68695"
-     y2="351.5"
-     style="stroke:#e8b923;stroke-width:0.75" />
-  <circle
-     id="SvgjsCircle1363"
-     r="18"
-     cx="276.50043"
-     cy="341"
-     style="fill:#988903;stroke:#583903;stroke-width:0.75" />
+     x1="149.5"
+     x2="184"
+     y1="232.02914"
+     y2="232.02914"
+     id="line2081"
+     style="fill:none;stroke:#e8b923;stroke-width:1.13038838;stroke-miterlimit:4;stroke-dasharray:none" />
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text108-3"
-     x="89.644234"
+     id="text2083"
+     x="94.65625"
      font-size="8px"
-     y="33.878906">ATTENUATION</text>
+     y="235">FREQUENCY MODULATION</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text108-3-0"
-     x="230.57031"
+     id="text104"
+     x="53.5"
      font-size="8px"
-     y="34">DELAY TIME</text>
+     y="346">FM IN</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text108-3-5"
-     x="370.71094"
+     id="text108"
+     x="337.53906"
      font-size="8px"
-     y="33.894531">FEEDBACK</text>
+     y="98.02372">PANNING</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6"
-     x="27.4375"
+     id="text53"
+     x="11.476562"
      font-size="8px"
-     y="105">Y</text>
+     y="269">X</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-5"
-     x="27.476562"
+     id="text55"
+     x="11.476562"
      font-size="8px"
-     y="70">X</text>
+     y="303">Y</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-6"
-     x="167.4375"
+     id="text22"
+     x="34.539062"
      font-size="8px"
-     y="105">Y</text>
+     y="139.87891"># VOICES</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-4"
-     x="307.4375"
+     id="text26"
+     x="164.03906"
      font-size="8px"
-     y="105">Y</text>
+     y="139.87891">TUNING</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-5-2"
-     x="167.47656"
+     id="text40"
+     x="161"
      font-size="8px"
-     y="70">X</text>
+     y="211.87891">RANDOMIZE</text>
+  <line
+     x1="5.5"
+     x2="5.5"
+     y1="232"
+     y2="239"
+     id="line2077-2"
+     style="fill:none;stroke:#e8b923" />
+  <line
+     x1="203.5"
+     x2="203.5"
+     y1="232"
+     y2="239"
+     id="line2077-0"
+     style="fill:none;stroke:#e8b923" />
+  <line
+     x1="296.60477"
+     x2="296.60477"
+     y1="94.137001"
+     y2="101.137"
+     id="line2077-1-3"
+     style="fill:none;stroke:#e8b923" />
+  <line
+     x1="379.5"
+     x2="379.5"
+     y1="94.137001"
+     y2="101.137"
+     id="line2077-1-1"
+     style="fill:none;stroke:#e8b923" />
+  <path
+     style="fill:none;stroke:#e8b923;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+     d="m 203,231.82622 h 21.5"
+     id="line78-0"
+     inkscape:connector-curvature="0" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:none;stroke:#e8b923;stroke-width:0.90632695;stroke-miterlimit:4;stroke-dasharray:none"
+     d="M 5,232.0583 H 39.5"
+     id="line2081-1" />
+  <path
+     style="fill:none;stroke:#e8b923;stroke-width:0.86602533;stroke-miterlimit:4;stroke-dasharray:none"
+     d="m 296.10477,94.55523 h 21"
+     id="line2081-6-7"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#e8b923;stroke-width:0.86602539;stroke-miterlimit:4;stroke-dasharray:none"
+     d="m 358,94.498383 h 21"
+     id="line2081-6-6"
+     inkscape:connector-curvature="0" />
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-5-5"
-     x="307.47656"
+     id="text53-3"
+     x="106.47656"
      font-size="8px"
-     y="70">X</text>
+     y="269">X</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-5-2-2"
-     x="193.35938"
+     id="text55-5"
+     x="106.47656"
      font-size="8px"
-     y="341.88672">RANGE</text>
+     y="303">Y</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text53-1"
+     x="211.47656"
+     font-size="8px"
+     y="269">X</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text55-1"
+     x="211.47656"
+     font-size="8px"
+     y="303">Y</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text53-6"
+     x="302.47656"
+     font-size="8px"
+     y="269">X</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text55-8"
+     x="302.47656"
+     font-size="8px"
+     y="303">Y</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text53-30"
+     x="302.5813"
+     font-size="8px"
+     y="128.63701">X</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text55-4"
+     x="302.5813"
+     font-size="8px"
+     y="157">Y</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text104-1"
+     x="55.851562"
+     font-size="8px"
+     y="316">FM MATRIX</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text104-1-8"
+     x="150.94531"
+     font-size="8px"
+     y="315.87891">FM AMOUNT</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text104-1-8-3"
+     x="345.19531"
+     font-size="8px"
+     y="316">AM/RM MIX</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text104-1-9"
+     x="255.94531"
+     font-size="8px"
+     y="316">AM/RM MATRIX</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text24"
+     x="100.98438"
+     font-size="8px"
+     y="139.87891">WAVEFORM</text>
+  <line
+     id="SvgjsLine1047"
+     x1="106.28347"
+     y1="116"
+     x2="106.28347"
+     y2="102"
+     style="stroke:#e8b923;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none" />
+  <path
+     style="fill:none;stroke:#e8b923;stroke-width:0.50000006;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 118.86409,107.68748 h 2.875 v -3.87501 h 2.375 V 107.75 h 1.5"
+     id="path872"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#e8b923;stroke-width:0.50000006;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 89.218894,107.87923 2,-3.62498 2.1875,3.375"
+     id="path870"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccc" />
+  <g
+     id="g346"
+     transform="matrix(0.46877037,0,0,0.46877037,85.031074,106.06165)"
+     style="stroke:#e8b923;stroke-width:1.06662023;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
+    <!-- <text font-size="6pt" letter-spacing="2px" transform="translate(6.5 40)">SIN</text> -->
+    <g
+       id="g344"
+       transform="translate(9,33.5)"
+       style="stroke:#e8b923;stroke-width:1.06662023;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
+      <!-- <rect width="12" height="8" fill="none" stroke-width="1" stroke="#0f0" /> -->
+      <path
+         style="fill:none;stroke:#e8b923;stroke-width:1.06662023;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:connector-curvature="0"
+         id="path340"
+         d="M 0,4 A 3,4.5 0 0 1 6,4" />
+      <path
+         style="fill:none;stroke:#e8b923;stroke-width:1.06662023;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:connector-curvature="0"
+         id="path342"
+         d="m 6,4 a 3,4.5 0 0 0 6,0" />
+    </g>
+  </g>
+  <g
+     transform="matrix(0.46932997,0,0,0.46932997,98.914705,80.314794)"
+     id="g318"
+     style="stroke:#e8b923;stroke-width:1.06534851;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
+    <g
+       transform="translate(9,33.5)"
+       id="g316"
+       style="stroke:#e8b923;stroke-width:1.06534851;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
+      <path
+         inkscape:connector-curvature="0"
+         id="polyline314"
+         d="M 0,8 12,0 v 8"
+         style="fill:none;stroke:#e8b923;stroke-width:1.06534851;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+  </g>
+  <path
+     style="fill:none;stroke:#e8b923;stroke-width:0.39022854;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 118,125.74063 h 1.7037 v -3.98303 h 1.40741 v 4.04729 H 122"
+     id="path872-0"
+     inkscape:connector-curvature="0" />
   <rect
-     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="rect4936"
-     width="26.429569"
-     height="12.537107"
-     x="180.25"
-     y="302.21289" />
-  <rect
-     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.50001633;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.42280042;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="rect4936-0"
-     width="100.49997"
-     height="256.49997"
-     x="39.750008"
-     y="39.750023" />
-  <rect
-     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.50001633;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="rect4936-0-4"
-     width="100.49997"
-     height="256.49997"
-     x="179.75002"
-     y="39.750023" />
-  <rect
-     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.50001633;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     id="rect4936-0-1"
-     width="100.49997"
-     height="256.49997"
-     x="319.75"
-     y="39.750023" />
+     width="64.577202"
+     height="64.577194"
+     x="118.72485"
+     y="242.7114" />
+  <path
+     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.47179952;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 23.735899,242.7359 h 64.528205 v 64.5282 H 23.735899 Z"
+     id="rect4936-0-7"
+     inkscape:connector-curvature="0" />
+  <path
+     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.44538769;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 223.7227,242.7227 h 64.55461 v 64.5546 H 223.7227 Z"
+     id="rect4936-0-0"
+     inkscape:connector-curvature="0" />
+  <path
+     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.42297262;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 314.74056,242.71148 h 64.57703 v 64.57703 h -64.57703 z"
+     id="rect4936-0-8"
+     inkscape:connector-curvature="0" />
+  <path
+     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.42297262;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 314.81626,104.34848 h 64.57703 v 64.57703 h -64.57703 z"
+     id="rect4936-0-8-4-4"
+     inkscape:connector-curvature="0" />
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-1"
-     x="18.898438"
+     id="text26-5"
+     x="30.570312"
      font-size="8px"
-     y="254.99953">PIN Xs</text>
+     y="211.46484">FREQ. WARP</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-1-3"
-     x="158.89844"
+     id="text26-9"
+     x="95.796204"
      font-size="8px"
-     y="254.99953">PIN Xs</text>
-  <text
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-1-6"
-     x="298.89844"
-     font-size="8px"
-     y="254.99953">PIN Xs</text>
-  <text
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-1-4"
-     x="18.898438"
-     font-size="8px"
-     y="295">LINK</text>
-  <text
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-1-4-6"
-     x="158.89844"
-     font-size="8px"
-     y="295">LINK</text>
-  <text
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-1-4-2"
-     x="298.89844"
-     font-size="8px"
-     y="295">LINK</text>
+     y="211.46484">CENTER FREQ</text>
+  <g
+     id="g7419"
+     transform="translate(-173.1028,124.10216)">
+    <text
+       y="47.897842"
+       font-size="8px"
+       x="252.28249"
+       id="text88-1"
+       style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision">V1</text>
+    <g
+       transform="translate(-1,-0.50000017)"
+       id="g6166">
+      <path
+         style="fill:none;stroke:#e8b923;stroke-width:0.50000006;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 260.12077,47.781106 3.62498,-2 -3.375,-2.1875"
+         id="path870-4-4"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccc" />
+      <line
+         x1="259"
+         x2="263"
+         y1="45.622036"
+         y2="45.622036"
+         id="line14-6"
+         style="fill:none;stroke:#e8b923;stroke-width:0.75592893" />
+    </g>
+  </g>
   <g
      id="g1200"
      transform="translate(10.204521,2.4103028)">
@@ -615,814 +456,58 @@
        id="path8"
        style="fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:0.00933918" />
   </g>
-  <text
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text104-0"
-     x="37.015625"
-     font-size="8px"
-     y="352.35678">
-    <tspan
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.33333349px;font-family:'Megi Sans';-inkscape-font-specification:'Megi Sans'"
-       id="tspan1358">FREQENCY DOMAIN</tspan>
-  </text>
-  <text
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-3"
-     x="330.82031"
-     font-size="8px"
-     y="329.78952">SEND</text>
-  <text
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-3-2"
-     x="369.70312"
-     font-size="8px"
-     y="329.89499">RETURN</text>
   <g
-     id="g6916"
-     transform="matrix(0.5,0,0,0.5,-131.2458,18.485844)">
+     id="g6916-2"
+     transform="matrix(0.5,0,0,0.5,-0.74579701,154.98631)">
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="362.15237"
        x2="284.22922"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1307-6" />
+       id="SvgjsLine1307-6-8" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="360.16794"
        x2="284.31921"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1308-2" />
+       id="SvgjsLine1308-2-9" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="358.62381"
        x2="283.6701"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1309-4" />
+       id="SvgjsLine1309-4-6" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="357.03079"
        x2="283.1525"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1310-4" />
+       id="SvgjsLine1310-4-2" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="355.39999"
        x2="282.76999"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1311-0" />
+       id="SvgjsLine1311-0-7" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="353.84747"
        x2="281.53079"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1312-4" />
+       id="SvgjsLine1312-4-1" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="352.07123"
        x2="282.42014"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1313-4" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="350.39658"
-       x2="282.4552"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1314-7" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="348.73071"
-       x2="282.63028"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1315-0" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="347.08536"
-       x2="282.94415"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1316-9" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="345.16302"
-       x2="282.44354"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1317-8" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="343.90207"
-       x2="283.97849"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1318-3" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="342.38644"
-       x2="284.69168"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1319-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="340.93585"
-       x2="285.52917"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1320-0" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="339.56042"
-       x2="286.48514"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1321-9" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="337.60065"
-       x2="286.80969"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1322-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="337.073"
-       x2="288.72479"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1323-6" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="335.97852"
-       x2="289.9928"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1324-7" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="334.99396"
-       x2="291.3479"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1325-6" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="334.12628"
-       x2="292.78067"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1326-9" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.46796"
-       x2="293.87427"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1327-0" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.76489"
-       x2="295.83841"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1328-8" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.28076"
-       x2="297.44196"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1329-3" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="331.9325"
-       x2="299.08035"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1330-1" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="331.72253"
-       x2="300.74219"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1331-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="330.6524"
-       x2="302.41574"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1332-5" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="331.72253"
-       x2="304.08929"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1333-0" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="331.9325"
-       x2="305.75113"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1334-5" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.28076"
-       x2="307.38953"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1335-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.76489"
-       x2="308.99307"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1336-1" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.46796"
-       x2="310.95721"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1337-7" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="334.12628"
-       x2="312.05081"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1338-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="334.99396"
-       x2="313.48358"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1339-8" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="335.97852"
-       x2="314.83868"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1340-7" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="337.073"
-       x2="316.10669"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1341-5" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="337.60065"
-       x2="318.02179"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1342-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="339.56042"
-       x2="318.34634"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1343-7" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="340.93585"
-       x2="319.30231"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1344-0" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="342.38644"
-       x2="320.1398"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1345-8" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="343.90207"
-       x2="320.853"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1346-5" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="345.16302"
-       x2="322.38794"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1347-0" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="347.08536"
-       x2="321.88733"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1348-5" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="348.73071"
-       x2="322.2012"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1349-6" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="350.39658"
-       x2="322.37628"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1350-1" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="352.07123"
-       x2="322.41135"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1351-5" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="353.84747"
-       x2="323.30069"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1352-4" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="355.39999"
-       x2="322.06149"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1353-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="357.03079"
-       x2="321.67899"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1354-5" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="358.62381"
-       x2="321.16138"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1355-6" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="360.16794"
-       x2="320.51227"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1356-6" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="362.15237"
-       x2="320.60226"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1357-8" />
-    <circle
-       style="fill:#988903;stroke:#583903;stroke-width:0.75"
-       cy="351.65237"
-       cx="302.41574"
-       r="18"
-       id="SvgjsCircle1358-7" />
-  </g>
-  <g
-     id="g6916-6"
-     transform="matrix(0.5,0,0,0.5,8.754203,18.485844)">
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="362.15237"
-       x2="284.22922"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1307-6-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="360.16794"
-       x2="284.31921"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1308-2-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="358.62381"
-       x2="283.6701"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1309-4-0" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="357.03079"
-       x2="283.1525"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1310-4-7" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="355.39999"
-       x2="282.76999"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1311-0-1" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="353.84747"
-       x2="281.53079"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1312-4-3" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="352.07123"
-       x2="282.42014"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1313-4-7" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="350.39658"
-       x2="282.4552"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1314-7-6" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="348.73071"
-       x2="282.63028"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1315-0-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="347.08536"
-       x2="282.94415"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1316-9-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="345.16302"
-       x2="282.44354"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1317-8-0" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="343.90207"
-       x2="283.97849"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1318-3-4" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="342.38644"
-       x2="284.69168"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1319-2-5" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="340.93585"
-       x2="285.52917"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1320-0-9" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="339.56042"
-       x2="286.48514"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1321-9-0" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="337.60065"
-       x2="286.80969"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1322-2-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="337.073"
-       x2="288.72479"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1323-6-3" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="335.97852"
-       x2="289.9928"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1324-7-8" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="334.99396"
-       x2="291.3479"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1325-6-5" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="334.12628"
-       x2="292.78067"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1326-9-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.46796"
-       x2="293.87427"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1327-0-9" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.76489"
-       x2="295.83841"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1328-8-4" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.28076"
-       x2="297.44196"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1329-3-8" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="331.9325"
-       x2="299.08035"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1330-1-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="331.72253"
-       x2="300.74219"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1331-2-8" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="330.6524"
-       x2="302.41574"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1332-5-6" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="331.72253"
-       x2="304.08929"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1333-0-4" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="331.9325"
-       x2="305.75113"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1334-5-7" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.28076"
-       x2="307.38953"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1335-2-9" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.76489"
-       x2="308.99307"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1336-1-4" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.46796"
-       x2="310.95721"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1337-7-3" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="334.12628"
-       x2="312.05081"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1338-2-9" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="334.99396"
-       x2="313.48358"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1339-8-9" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="335.97852"
-       x2="314.83868"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1340-7-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="337.073"
-       x2="316.10669"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1341-5-0" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="337.60065"
-       x2="318.02179"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1342-2-3" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="339.56042"
-       x2="318.34634"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1343-7-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="340.93585"
-       x2="319.30231"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1344-0-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="342.38644"
-       x2="320.1398"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1345-8-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="343.90207"
-       x2="320.853"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1346-5-4" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="345.16302"
-       x2="322.38794"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1347-0-9" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="347.08536"
-       x2="321.88733"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1348-5-3" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="348.73071"
-       x2="322.2012"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1349-6-6" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="350.39658"
-       x2="322.37628"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1350-1-6" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="352.07123"
-       x2="322.41135"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1351-5-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="353.84747"
-       x2="323.30069"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1352-4-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="355.39999"
-       x2="322.06149"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1353-2-4" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="357.03079"
-       x2="321.67899"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1354-5-3" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="358.62381"
-       x2="321.16138"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1355-6-6" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="360.16794"
-       x2="320.51227"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1356-6-6" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="362.15237"
-       x2="320.60226"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1357-8-3" />
-    <circle
-       style="fill:#988903;stroke:#583903;stroke-width:0.75"
-       cy="351.65237"
-       cx="302.41574"
-       r="18"
-       id="SvgjsCircle1358-7-8" />
-  </g>
-  <g
-     id="g6916-1"
-     transform="matrix(0.5,0,0,0.5,148.7542,18.485844)">
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="362.15237"
-       x2="284.22922"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1307-6-5" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="360.16794"
-       x2="284.31921"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1308-2-1" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="358.62381"
-       x2="283.6701"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1309-4-3" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="357.03079"
-       x2="283.1525"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1310-4-6" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="355.39999"
-       x2="282.76999"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1311-0-3" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="353.84747"
-       x2="281.53079"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1312-4-9" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="352.07123"
-       x2="282.42014"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1313-4-3" />
+       id="SvgjsLine1313-4-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="350.39658"
@@ -1436,444 +521,77 @@
        x2="282.63028"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1315-0-0" />
+       id="SvgjsLine1315-0-6" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="347.08536"
        x2="282.94415"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1316-9-6" />
+       id="SvgjsLine1316-9-1" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="345.16302"
        x2="282.44354"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1317-8-2" />
+       id="SvgjsLine1317-8-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="343.90207"
        x2="283.97849"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1318-3-5" />
+       id="SvgjsLine1318-3-2" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="342.38644"
        x2="284.69168"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1319-2-4" />
+       id="SvgjsLine1319-2-0" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="340.93585"
        x2="285.52917"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1320-0-5" />
+       id="SvgjsLine1320-0-7" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="339.56042"
        x2="286.48514"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1321-9-2" />
+       id="SvgjsLine1321-9-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="337.60065"
        x2="286.80969"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1322-2-1" />
+       id="SvgjsLine1322-2-8" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="337.073"
        x2="288.72479"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1323-6-5" />
+       id="SvgjsLine1323-6-6" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="335.97852"
        x2="289.9928"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1324-7-6" />
+       id="SvgjsLine1324-7-4" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="334.99396"
        x2="291.3479"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1325-6-8" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="334.12628"
-       x2="292.78067"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1326-9-8" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.46796"
-       x2="293.87427"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1327-0-3" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.76489"
-       x2="295.83841"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1328-8-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.28076"
-       x2="297.44196"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1329-3-6" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="331.9325"
-       x2="299.08035"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1330-1-5" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="331.72253"
-       x2="300.74219"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1331-2-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="330.6524"
-       x2="302.41574"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1332-5-3" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="331.72253"
-       x2="304.08929"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1333-0-0" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="331.9325"
-       x2="305.75113"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1334-5-4" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.28076"
-       x2="307.38953"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1335-2-1" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.76489"
-       x2="308.99307"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1336-1-5" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="332.46796"
-       x2="310.95721"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1337-7-8" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="334.12628"
-       x2="312.05081"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1338-2-0" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="334.99396"
-       x2="313.48358"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1339-8-3" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="335.97852"
-       x2="314.83868"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1340-7-7" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="337.073"
-       x2="316.10669"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1341-5-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="337.60065"
-       x2="318.02179"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1342-2-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="339.56042"
-       x2="318.34634"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1343-7-6" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="340.93585"
-       x2="319.30231"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1344-0-9" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="342.38644"
-       x2="320.1398"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1345-8-1" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="343.90207"
-       x2="320.853"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1346-5-1" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="345.16302"
-       x2="322.38794"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1347-0-94" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="347.08536"
-       x2="321.88733"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1348-5-9" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="348.73071"
-       x2="322.2012"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1349-6-0" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="350.39658"
-       x2="322.37628"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1350-1-8" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="352.07123"
-       x2="322.41135"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1351-5-3" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="353.84747"
-       x2="323.30069"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1352-4-9" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="355.39999"
-       x2="322.06149"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1353-2-0" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="357.03079"
-       x2="321.67899"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1354-5-7" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="358.62381"
-       x2="321.16138"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1355-6-4" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="360.16794"
-       x2="320.51227"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1356-6-5" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="362.15237"
-       x2="320.60226"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1357-8-33" />
-    <circle
-       style="fill:#988903;stroke:#583903;stroke-width:0.75"
-       cy="351.65237"
-       cx="302.41574"
-       r="18"
-       id="SvgjsCircle1358-7-5" />
-  </g>
-  <g
-     id="g6916-9"
-     transform="matrix(0.5,0,0,0.5,-131.2458,-48.513687)">
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="362.15237"
-       x2="284.22922"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1307-6-7" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="360.16794"
-       x2="284.31921"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1308-2-24" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="358.62381"
-       x2="283.6701"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1309-4-4" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="357.03079"
-       x2="283.1525"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1310-4-0" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="355.39999"
-       x2="282.76999"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1311-0-19" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="353.84747"
-       x2="281.53079"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1312-4-4" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="352.07123"
-       x2="282.42014"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1313-4-75" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="350.39658"
-       x2="282.4552"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1314-7-5" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="348.73071"
-       x2="282.63028"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1315-0-7" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="347.08536"
-       x2="282.94415"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1316-9-3" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="345.16302"
-       x2="282.44354"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1317-8-6" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="343.90207"
-       x2="283.97849"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1318-3-6" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="342.38644"
-       x2="284.69168"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1319-2-1" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="340.93585"
-       x2="285.52917"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1320-0-0" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="339.56042"
-       x2="286.48514"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1321-9-9" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="337.60065"
-       x2="286.80969"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1322-2-29" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="337.073"
-       x2="288.72479"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1323-6-7" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="335.97852"
-       x2="289.9928"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1324-7-2" />
-    <line
-       style="stroke:#e8b923;stroke-width:0.75"
-       y2="334.99396"
-       x2="291.3479"
-       y1="351.65237"
-       x1="302.41574"
-       id="SvgjsLine1325-6-55" />
+       id="SvgjsLine1325-6-9" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="334.12628"
@@ -1894,112 +612,112 @@
        x2="295.83841"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1328-8-3" />
+       id="SvgjsLine1328-8-0" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="332.28076"
        x2="297.44196"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1329-3-0" />
+       id="SvgjsLine1329-3-4" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="331.9325"
        x2="299.08035"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1330-1-9" />
+       id="SvgjsLine1330-1-0" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="331.72253"
        x2="300.74219"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1331-2-4" />
+       id="SvgjsLine1331-2-0" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="330.6524"
        x2="302.41574"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1332-5-0" />
+       id="SvgjsLine1332-5-8" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="331.72253"
        x2="304.08929"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1333-0-8" />
+       id="SvgjsLine1333-0-9" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="331.9325"
        x2="305.75113"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1334-5-0" />
+       id="SvgjsLine1334-5-4" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="332.28076"
        x2="307.38953"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1335-2-2" />
+       id="SvgjsLine1335-2-4" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="332.76489"
        x2="308.99307"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1336-1-7" />
+       id="SvgjsLine1336-1-8" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="332.46796"
        x2="310.95721"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1337-7-9" />
+       id="SvgjsLine1337-7-0" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="334.12628"
        x2="312.05081"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1338-2-90" />
+       id="SvgjsLine1338-2-6" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="334.99396"
        x2="313.48358"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1339-8-0" />
+       id="SvgjsLine1339-8-7" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="335.97852"
        x2="314.83868"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1340-7-8" />
+       id="SvgjsLine1340-7-7" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="337.073"
        x2="316.10669"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1341-5-1" />
+       id="SvgjsLine1341-5-3" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="337.60065"
        x2="318.02179"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1342-2-4" />
+       id="SvgjsLine1342-2-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="339.56042"
        x2="318.34634"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1343-7-5" />
+       id="SvgjsLine1343-7-3" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="340.93585"
@@ -2013,21 +731,21 @@
        x2="320.1398"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1345-8-8" />
+       id="SvgjsLine1345-8-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="343.90207"
        x2="320.853"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1346-5-0" />
+       id="SvgjsLine1346-5-3" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="345.16302"
        x2="322.38794"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1347-0-3" />
+       id="SvgjsLine1347-0-7" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="347.08536"
@@ -2048,56 +766,56 @@
        x2="322.37628"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1350-1-0" />
+       id="SvgjsLine1350-1-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="352.07123"
        x2="322.41135"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1351-5-28" />
+       id="SvgjsLine1351-5-7" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="353.84747"
        x2="323.30069"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1352-4-6" />
+       id="SvgjsLine1352-4-8" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="355.39999"
        x2="322.06149"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1353-2-9" />
+       id="SvgjsLine1353-2-0" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="357.03079"
        x2="321.67899"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1354-5-4" />
+       id="SvgjsLine1354-5-3" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="358.62381"
        x2="321.16138"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1355-6-0" />
+       id="SvgjsLine1355-6-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="360.16794"
        x2="320.51227"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1356-6-2" />
+       id="SvgjsLine1356-6-6" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="362.15237"
        x2="320.60226"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1357-8-4" />
+       id="SvgjsLine1357-8-0" />
     <circle
        style="fill:#988903;stroke:#583903;stroke-width:0.75"
        cy="351.65237"
@@ -2106,148 +824,525 @@
        id="SvgjsCircle1358-7-7" />
   </g>
   <g
-     id="g6916-9-2"
-     transform="matrix(0.5,0,0,0.5,8.754203,-48.513687)">
+     id="g6916-0"
+     transform="matrix(0.5,0,0,0.5,193.2542,154.98631)">
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="362.15237"
        x2="284.22922"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1307-6-7-7" />
+       id="SvgjsLine1307-6-6" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="360.16794"
        x2="284.31921"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1308-2-24-6" />
+       id="SvgjsLine1308-2-6" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="358.62381"
        x2="283.6701"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1309-4-4-8" />
+       id="SvgjsLine1309-4-0" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="357.03079"
        x2="283.1525"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1310-4-0-8" />
+       id="SvgjsLine1310-4-20" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="355.39999"
        x2="282.76999"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1311-0-19-2" />
+       id="SvgjsLine1311-0-9" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="353.84747"
        x2="281.53079"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1312-4-4-9" />
+       id="SvgjsLine1312-4-8" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="352.07123"
        x2="282.42014"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1313-4-75-4" />
+       id="SvgjsLine1313-4-0" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="350.39658"
        x2="282.4552"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1314-7-5-9" />
+       id="SvgjsLine1314-7-4" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="348.73071"
        x2="282.63028"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1315-0-7-2" />
+       id="SvgjsLine1315-0-7" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="347.08536"
        x2="282.94415"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1316-9-3-0" />
+       id="SvgjsLine1316-9-10" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="345.16302"
        x2="282.44354"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1317-8-6-1" />
+       id="SvgjsLine1317-8-4" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="343.90207"
        x2="283.97849"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1318-3-6-5" />
+       id="SvgjsLine1318-3-7" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="342.38644"
        x2="284.69168"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1319-2-1-3" />
+       id="SvgjsLine1319-2-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="340.93585"
        x2="285.52917"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1320-0-0-9" />
+       id="SvgjsLine1320-0-8" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="339.56042"
        x2="286.48514"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1321-9-9-9" />
+       id="SvgjsLine1321-9-3" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="337.60065"
        x2="286.80969"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1322-2-29-0" />
+       id="SvgjsLine1322-2-81" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="337.073"
        x2="288.72479"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1323-6-7-1" />
+       id="SvgjsLine1323-6-8" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="335.97852"
        x2="289.9928"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1324-7-2-2" />
+       id="SvgjsLine1324-7-7" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="334.99396"
        x2="291.3479"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1325-6-55-8" />
+       id="SvgjsLine1325-6-1" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="334.12628"
        x2="292.78067"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1326-9-7-6" />
+       id="SvgjsLine1326-9-9" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.46796"
+       x2="293.87427"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1327-0-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.76489"
+       x2="295.83841"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1328-8-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.28076"
+       x2="297.44196"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1329-3-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.9325"
+       x2="299.08035"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1330-1-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.72253"
+       x2="300.74219"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1331-2-9" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="330.6524"
+       x2="302.41574"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1332-5-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.72253"
+       x2="304.08929"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1333-0-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.9325"
+       x2="305.75113"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1334-5-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.28076"
+       x2="307.38953"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1335-2-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.76489"
+       x2="308.99307"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1336-1-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.46796"
+       x2="310.95721"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1337-7-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.12628"
+       x2="312.05081"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1338-2-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.99396"
+       x2="313.48358"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1339-8-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="335.97852"
+       x2="314.83868"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1340-7-72" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.073"
+       x2="316.10669"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1341-5-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.60065"
+       x2="318.02179"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1342-2-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="339.56042"
+       x2="318.34634"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1343-7-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="340.93585"
+       x2="319.30231"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1344-0-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="342.38644"
+       x2="320.1398"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1345-8-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="343.90207"
+       x2="320.853"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1346-5-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="345.16302"
+       x2="322.38794"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1347-0-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="347.08536"
+       x2="321.88733"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1348-5-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="348.73071"
+       x2="322.2012"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1349-6-21" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="350.39658"
+       x2="322.37628"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1350-1-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="352.07123"
+       x2="322.41135"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1351-5-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="353.84747"
+       x2="323.30069"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1352-4-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="355.39999"
+       x2="322.06149"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1353-2-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="357.03079"
+       x2="321.67899"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1354-5-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="358.62381"
+       x2="321.16138"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1355-6-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="360.16794"
+       x2="320.51227"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1356-6-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="362.15237"
+       x2="320.60226"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1357-8-07" />
+    <circle
+       style="fill:#988903;stroke:#583903;stroke-width:0.75"
+       cy="351.65237"
+       cx="302.41574"
+       r="18"
+       id="SvgjsCircle1358-7-1" />
+  </g>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text104-0"
+     x="37.015625"
+     font-size="8px"
+     y="353.35678">
+    <tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.33333349px;font-family:'Megi Sans';-inkscape-font-specification:'Megi Sans'"
+       id="tspan1358">FREQENCY DOMAIN</tspan>
+  </text>
+  <g
+     id="g6916-2-4"
+     transform="matrix(0.5,0,0,0.5,-104.74549,-58.32976)">
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="362.15237"
+       x2="284.22922"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1307-6-8-9" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="360.16794"
+       x2="284.31921"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1308-2-9-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="358.62381"
+       x2="283.6701"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1309-4-6-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="357.03079"
+       x2="283.1525"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1310-4-2-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="355.39999"
+       x2="282.76999"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1311-0-7-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="353.84747"
+       x2="281.53079"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1312-4-1-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="352.07123"
+       x2="282.42014"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1313-4-5-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="350.39658"
+       x2="282.4552"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1314-7-0-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="348.73071"
+       x2="282.63028"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1315-0-6-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="347.08536"
+       x2="282.94415"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1316-9-1-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="345.16302"
+       x2="282.44354"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1317-8-5-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="343.90207"
+       x2="283.97849"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1318-3-2-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="342.38644"
+       x2="284.69168"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1319-2-0-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="340.93585"
+       x2="285.52917"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1320-0-7-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="339.56042"
+       x2="286.48514"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1321-9-5-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.60065"
+       x2="286.80969"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1322-2-8-9" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.073"
+       x2="288.72479"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1323-6-6-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="335.97852"
+       x2="289.9928"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1324-7-4-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.99396"
+       x2="291.3479"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1325-6-9-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.12628"
+       x2="292.78067"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1326-9-7-2" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="332.46796"
@@ -2261,210 +1356,210 @@
        x2="295.83841"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1328-8-3-4" />
+       id="SvgjsLine1328-8-0-1" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="332.28076"
        x2="297.44196"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1329-3-0-0" />
+       id="SvgjsLine1329-3-4-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="331.9325"
        x2="299.08035"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1330-1-9-9" />
+       id="SvgjsLine1330-1-0-8" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="331.72253"
        x2="300.74219"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1331-2-4-4" />
+       id="SvgjsLine1331-2-0-1" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="330.6524"
        x2="302.41574"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1332-5-0-0" />
+       id="SvgjsLine1332-5-8-0" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="331.72253"
        x2="304.08929"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1333-0-8-7" />
+       id="SvgjsLine1333-0-9-1" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="331.9325"
        x2="305.75113"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1334-5-0-9" />
+       id="SvgjsLine1334-5-4-2" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="332.28076"
        x2="307.38953"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1335-2-2-1" />
+       id="SvgjsLine1335-2-4-2" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="332.76489"
        x2="308.99307"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1336-1-7-8" />
+       id="SvgjsLine1336-1-8-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="332.46796"
        x2="310.95721"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1337-7-9-7" />
+       id="SvgjsLine1337-7-0-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="334.12628"
        x2="312.05081"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1338-2-90-9" />
+       id="SvgjsLine1338-2-6-2" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="334.99396"
        x2="313.48358"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1339-8-0-4" />
+       id="SvgjsLine1339-8-7-9" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="335.97852"
        x2="314.83868"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1340-7-8-8" />
+       id="SvgjsLine1340-7-7-9" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="337.073"
        x2="316.10669"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1341-5-1-0" />
+       id="SvgjsLine1341-5-3-3" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="337.60065"
        x2="318.02179"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1342-2-4-3" />
+       id="SvgjsLine1342-2-5-2" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="339.56042"
        x2="318.34634"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1343-7-5-3" />
+       id="SvgjsLine1343-7-3-9" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="340.93585"
        x2="319.30231"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1344-0-3-9" />
+       id="SvgjsLine1344-0-3-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="342.38644"
        x2="320.1398"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1345-8-8-4" />
+       id="SvgjsLine1345-8-5-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="343.90207"
        x2="320.853"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1346-5-0-8" />
+       id="SvgjsLine1346-5-3-1" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="345.16302"
        x2="322.38794"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1347-0-3-1" />
+       id="SvgjsLine1347-0-7-2" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="347.08536"
        x2="321.88733"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1348-5-5-7" />
+       id="SvgjsLine1348-5-5-6" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="348.73071"
        x2="322.2012"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1349-6-2-4" />
+       id="SvgjsLine1349-6-2-9" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="350.39658"
        x2="322.37628"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1350-1-0-3" />
+       id="SvgjsLine1350-1-5-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="352.07123"
        x2="322.41135"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1351-5-28-7" />
+       id="SvgjsLine1351-5-7-6" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="353.84747"
        x2="323.30069"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1352-4-6-2" />
+       id="SvgjsLine1352-4-8-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="355.39999"
        x2="322.06149"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1353-2-9-6" />
+       id="SvgjsLine1353-2-0-4" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="357.03079"
        x2="321.67899"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1354-5-4-7" />
+       id="SvgjsLine1354-5-3-9" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="358.62381"
        x2="321.16138"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1355-6-0-5" />
+       id="SvgjsLine1355-6-5-2" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="360.16794"
        x2="320.51227"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1356-6-2-3" />
+       id="SvgjsLine1356-6-6-6" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="362.15237"
        x2="320.60226"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1357-8-4-3" />
+       id="SvgjsLine1357-8-0-0" />
     <circle
        style="fill:#988903;stroke:#583903;stroke-width:0.75"
        cy="351.65237"
@@ -2473,141 +1568,141 @@
        id="SvgjsCircle1358-7-7-4" />
   </g>
   <g
-     id="g6916-9-4"
-     transform="matrix(0.5,0,0,0.5,148.7542,-48.513687)">
+     id="g6916-2-45"
+     transform="matrix(0.5,0,0,0.5,19.254203,-58.329687)">
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="362.15237"
        x2="284.22922"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1307-6-7-5" />
+       id="SvgjsLine1307-6-8-94" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="360.16794"
        x2="284.31921"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1308-2-24-7" />
+       id="SvgjsLine1308-2-9-1" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="358.62381"
        x2="283.6701"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1309-4-4-2" />
+       id="SvgjsLine1309-4-6-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="357.03079"
        x2="283.1525"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1310-4-0-3" />
+       id="SvgjsLine1310-4-2-3" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="355.39999"
        x2="282.76999"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1311-0-19-7" />
+       id="SvgjsLine1311-0-7-65" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="353.84747"
        x2="281.53079"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1312-4-4-2" />
+       id="SvgjsLine1312-4-1-4" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="352.07123"
        x2="282.42014"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1313-4-75-8" />
+       id="SvgjsLine1313-4-5-7" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="350.39658"
        x2="282.4552"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1314-7-5-0" />
+       id="SvgjsLine1314-7-0-9" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="348.73071"
        x2="282.63028"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1315-0-7-3" />
+       id="SvgjsLine1315-0-6-9" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="347.08536"
        x2="282.94415"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1316-9-3-6" />
+       id="SvgjsLine1316-9-1-4" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="345.16302"
        x2="282.44354"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1317-8-6-0" />
+       id="SvgjsLine1317-8-5-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="343.90207"
        x2="283.97849"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1318-3-6-4" />
+       id="SvgjsLine1318-3-2-4" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="342.38644"
        x2="284.69168"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1319-2-1-8" />
+       id="SvgjsLine1319-2-0-2" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="340.93585"
        x2="285.52917"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1320-0-0-8" />
+       id="SvgjsLine1320-0-7-9" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="339.56042"
        x2="286.48514"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1321-9-9-1" />
+       id="SvgjsLine1321-9-5-8" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="337.60065"
        x2="286.80969"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1322-2-29-7" />
+       id="SvgjsLine1322-2-8-7" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="337.073"
        x2="288.72479"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1323-6-7-8" />
+       id="SvgjsLine1323-6-6-4" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="335.97852"
        x2="289.9928"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1324-7-2-3" />
+       id="SvgjsLine1324-7-4-9" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="334.99396"
        x2="291.3479"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1325-6-55-0" />
+       id="SvgjsLine1325-6-9-77" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="334.12628"
@@ -2621,119 +1716,486 @@
        x2="293.87427"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1327-0-8-08" />
+       id="SvgjsLine1327-0-8-3" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="332.76489"
        x2="295.83841"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1328-8-3-6" />
+       id="SvgjsLine1328-8-0-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="332.28076"
        x2="297.44196"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1329-3-0-06" />
+       id="SvgjsLine1329-3-4-8" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="331.9325"
        x2="299.08035"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1330-1-9-6" />
+       id="SvgjsLine1330-1-0-6" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="331.72253"
        x2="300.74219"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1331-2-4-0" />
+       id="SvgjsLine1331-2-0-6" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="330.6524"
        x2="302.41574"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1332-5-0-6" />
+       id="SvgjsLine1332-5-8-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="331.72253"
        x2="304.08929"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1333-0-8-1" />
+       id="SvgjsLine1333-0-9-4" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="331.9325"
        x2="305.75113"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1334-5-0-3" />
+       id="SvgjsLine1334-5-4-3" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="332.28076"
        x2="307.38953"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1335-2-2-6" />
+       id="SvgjsLine1335-2-4-8" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="332.76489"
        x2="308.99307"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1336-1-7-9" />
+       id="SvgjsLine1336-1-8-0" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="332.46796"
        x2="310.95721"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1337-7-9-0" />
+       id="SvgjsLine1337-7-0-9" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="334.12628"
        x2="312.05081"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1338-2-90-0" />
+       id="SvgjsLine1338-2-6-8" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="334.99396"
        x2="313.48358"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1339-8-0-9" />
+       id="SvgjsLine1339-8-7-4" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="335.97852"
        x2="314.83868"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1340-7-8-1" />
+       id="SvgjsLine1340-7-7-2" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="337.073"
        x2="316.10669"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1341-5-1-3" />
+       id="SvgjsLine1341-5-3-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="337.60065"
        x2="318.02179"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1342-2-4-6" />
+       id="SvgjsLine1342-2-5-7" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="339.56042"
        x2="318.34634"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1343-7-5-5" />
+       id="SvgjsLine1343-7-3-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="340.93585"
+       x2="319.30231"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1344-0-3-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="342.38644"
+       x2="320.1398"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1345-8-5-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="343.90207"
+       x2="320.853"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1346-5-3-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="345.16302"
+       x2="322.38794"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1347-0-7-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="347.08536"
+       x2="321.88733"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1348-5-5-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="348.73071"
+       x2="322.2012"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1349-6-2-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="350.39658"
+       x2="322.37628"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1350-1-5-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="352.07123"
+       x2="322.41135"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1351-5-7-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="353.84747"
+       x2="323.30069"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1352-4-8-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="355.39999"
+       x2="322.06149"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1353-2-0-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="357.03079"
+       x2="321.67899"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1354-5-3-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="358.62381"
+       x2="321.16138"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1355-6-5-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="360.16794"
+       x2="320.51227"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1356-6-6-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="362.15237"
+       x2="320.60226"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1357-8-0-9" />
+    <circle
+       style="fill:#988903;stroke:#583903;stroke-width:0.75"
+       cy="351.65237"
+       cx="302.41574"
+       r="18"
+       id="SvgjsCircle1358-7-7-2" />
+  </g>
+  <g
+     id="g6916-2-3"
+     transform="matrix(0.5,0,0,0.5,-104.7458,14.986313)">
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="362.15237"
+       x2="284.22922"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1307-6-8-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="360.16794"
+       x2="284.31921"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1308-2-9-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="358.62381"
+       x2="283.6701"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1309-4-6-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="357.03079"
+       x2="283.1525"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1310-4-2-22" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="355.39999"
+       x2="282.76999"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1311-0-7-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="353.84747"
+       x2="281.53079"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1312-4-1-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="352.07123"
+       x2="282.42014"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1313-4-5-74" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="350.39658"
+       x2="282.4552"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1314-7-0-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="348.73071"
+       x2="282.63028"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1315-0-6-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="347.08536"
+       x2="282.94415"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1316-9-1-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="345.16302"
+       x2="282.44354"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1317-8-5-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="343.90207"
+       x2="283.97849"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1318-3-2-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="342.38644"
+       x2="284.69168"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1319-2-0-81" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="340.93585"
+       x2="285.52917"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1320-0-7-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="339.56042"
+       x2="286.48514"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1321-9-5-9" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.60065"
+       x2="286.80969"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1322-2-8-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.073"
+       x2="288.72479"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1323-6-6-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="335.97852"
+       x2="289.9928"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1324-7-4-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.99396"
+       x2="291.3479"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1325-6-9-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.12628"
+       x2="292.78067"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1326-9-7-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.46796"
+       x2="293.87427"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1327-0-8-04" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.76489"
+       x2="295.83841"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1328-8-0-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.28076"
+       x2="297.44196"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1329-3-4-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.9325"
+       x2="299.08035"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1330-1-0-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.72253"
+       x2="300.74219"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1331-2-0-63" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="330.6524"
+       x2="302.41574"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1332-5-8-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.72253"
+       x2="304.08929"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1333-0-9-33" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.9325"
+       x2="305.75113"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1334-5-4-06" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.28076"
+       x2="307.38953"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1335-2-4-91" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.76489"
+       x2="308.99307"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1336-1-8-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.46796"
+       x2="310.95721"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1337-7-0-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.12628"
+       x2="312.05081"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1338-2-6-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.99396"
+       x2="313.48358"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1339-8-7-45" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="335.97852"
+       x2="314.83868"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1340-7-7-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.073"
+       x2="316.10669"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1341-5-3-55" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.60065"
+       x2="318.02179"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1342-2-5-73" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="339.56042"
+       x2="318.34634"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1343-7-3-92" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="340.93585"
@@ -2747,111 +2209,1316 @@
        x2="320.1398"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1345-8-8-9" />
+       id="SvgjsLine1345-8-5-21" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="343.90207"
        x2="320.853"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1346-5-0-9" />
+       id="SvgjsLine1346-5-3-9" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="345.16302"
        x2="322.38794"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1347-0-3-8" />
+       id="SvgjsLine1347-0-7-06" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="347.08536"
        x2="321.88733"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1348-5-5-8" />
+       id="SvgjsLine1348-5-5-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="348.73071"
        x2="322.2012"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1349-6-2-5" />
+       id="SvgjsLine1349-6-2-7" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="350.39658"
        x2="322.37628"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1350-1-0-1" />
+       id="SvgjsLine1350-1-5-38" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="352.07123"
        x2="322.41135"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1351-5-28-77" />
+       id="SvgjsLine1351-5-7-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="353.84747"
        x2="323.30069"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1352-4-6-0" />
+       id="SvgjsLine1352-4-8-8" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="355.39999"
        x2="322.06149"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1353-2-9-7" />
+       id="SvgjsLine1353-2-0-0" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="357.03079"
        x2="321.67899"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1354-5-4-3" />
+       id="SvgjsLine1354-5-3-5" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="358.62381"
        x2="321.16138"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1355-6-0-59" />
+       id="SvgjsLine1355-6-5-58" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="360.16794"
        x2="320.51227"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1356-6-2-9" />
+       id="SvgjsLine1356-6-6-9" />
     <line
        style="stroke:#e8b923;stroke-width:0.75"
        y2="362.15237"
        x2="320.60226"
        y1="351.65237"
        x1="302.41574"
-       id="SvgjsLine1357-8-4-6" />
+       id="SvgjsLine1357-8-0-2" />
     <circle
        style="fill:#988903;stroke:#583903;stroke-width:0.75"
        cy="351.65237"
        cx="302.41574"
        r="18"
-       id="SvgjsCircle1358-7-7-9" />
+       id="SvgjsCircle1358-7-7-1" />
+  </g>
+  <g
+     id="g6916-2-31"
+     transform="matrix(0.5,0,0,0.5,19.254203,14.986313)">
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="362.15237"
+       x2="284.22922"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1307-6-8-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="360.16794"
+       x2="284.31921"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1308-2-9-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="358.62381"
+       x2="283.6701"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1309-4-6-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="357.03079"
+       x2="283.1525"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1310-4-2-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="355.39999"
+       x2="282.76999"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1311-0-7-9" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="353.84747"
+       x2="281.53079"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1312-4-1-9" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="352.07123"
+       x2="282.42014"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1313-4-5-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="350.39658"
+       x2="282.4552"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1314-7-0-69" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="348.73071"
+       x2="282.63028"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1315-0-6-92" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="347.08536"
+       x2="282.94415"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1316-9-1-55" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="345.16302"
+       x2="282.44354"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1317-8-5-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="343.90207"
+       x2="283.97849"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1318-3-2-22" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="342.38644"
+       x2="284.69168"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1319-2-0-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="340.93585"
+       x2="285.52917"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1320-0-7-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="339.56042"
+       x2="286.48514"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1321-9-5-41" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.60065"
+       x2="286.80969"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1322-2-8-43" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.073"
+       x2="288.72479"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1323-6-6-91" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="335.97852"
+       x2="289.9928"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1324-7-4-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.99396"
+       x2="291.3479"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1325-6-9-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.12628"
+       x2="292.78067"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1326-9-7-59" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.46796"
+       x2="293.87427"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1327-0-8-55" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.76489"
+       x2="295.83841"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1328-8-0-11" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.28076"
+       x2="297.44196"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1329-3-4-9" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.9325"
+       x2="299.08035"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1330-1-0-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.72253"
+       x2="300.74219"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1331-2-0-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="330.6524"
+       x2="302.41574"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1332-5-8-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.72253"
+       x2="304.08929"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1333-0-9-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.9325"
+       x2="305.75113"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1334-5-4-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.28076"
+       x2="307.38953"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1335-2-4-29" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.76489"
+       x2="308.99307"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1336-1-8-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.46796"
+       x2="310.95721"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1337-7-0-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.12628"
+       x2="312.05081"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1338-2-6-26" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.99396"
+       x2="313.48358"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1339-8-7-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="335.97852"
+       x2="314.83868"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1340-7-7-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.073"
+       x2="316.10669"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1341-5-3-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.60065"
+       x2="318.02179"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1342-2-5-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="339.56042"
+       x2="318.34634"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1343-7-3-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="340.93585"
+       x2="319.30231"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1344-0-3-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="342.38644"
+       x2="320.1398"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1345-8-5-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="343.90207"
+       x2="320.853"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1346-5-3-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="345.16302"
+       x2="322.38794"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1347-0-7-05" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="347.08536"
+       x2="321.88733"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1348-5-5-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="348.73071"
+       x2="322.2012"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1349-6-2-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="350.39658"
+       x2="322.37628"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1350-1-5-54" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="352.07123"
+       x2="322.41135"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1351-5-7-9" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="353.84747"
+       x2="323.30069"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1352-4-8-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="355.39999"
+       x2="322.06149"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1353-2-0-03" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="357.03079"
+       x2="321.67899"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1354-5-3-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="358.62381"
+       x2="321.16138"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1355-6-5-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="360.16794"
+       x2="320.51227"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1356-6-6-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="362.15237"
+       x2="320.60226"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1357-8-0-5" />
+    <circle
+       style="fill:#988903;stroke:#583903;stroke-width:0.75"
+       cy="351.65237"
+       cx="302.41574"
+       r="18"
+       id="SvgjsCircle1358-7-7-3" />
+  </g>
+  <g
+     id="g6916-2-2"
+     transform="matrix(0.5,0,0,0.5,-45.887178,14.986313)">
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="362.15237"
+       x2="284.22922"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1307-6-8-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="360.16794"
+       x2="284.31921"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1308-2-9-53" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="358.62381"
+       x2="283.6701"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1309-4-6-56" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="357.03079"
+       x2="283.1525"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1310-4-2-33" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="355.39999"
+       x2="282.76999"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1311-0-7-99" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="353.84747"
+       x2="281.53079"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1312-4-1-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="352.07123"
+       x2="282.42014"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1313-4-5-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="350.39658"
+       x2="282.4552"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1314-7-0-4" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="348.73071"
+       x2="282.63028"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1315-0-6-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="347.08536"
+       x2="282.94415"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1316-9-1-9" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="345.16302"
+       x2="282.44354"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1317-8-5-66" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="343.90207"
+       x2="283.97849"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1318-3-2-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="342.38644"
+       x2="284.69168"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1319-2-0-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="340.93585"
+       x2="285.52917"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1320-0-7-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="339.56042"
+       x2="286.48514"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1321-9-5-45" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.60065"
+       x2="286.80969"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1322-2-8-79" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.073"
+       x2="288.72479"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1323-6-6-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="335.97852"
+       x2="289.9928"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1324-7-4-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.99396"
+       x2="291.3479"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1325-6-9-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.12628"
+       x2="292.78067"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1326-9-7-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.46796"
+       x2="293.87427"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1327-0-8-34" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.76489"
+       x2="295.83841"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1328-8-0-113" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.28076"
+       x2="297.44196"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1329-3-4-46" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.9325"
+       x2="299.08035"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1330-1-0-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.72253"
+       x2="300.74219"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1331-2-0-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="330.6524"
+       x2="302.41574"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1332-5-8-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.72253"
+       x2="304.08929"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1333-0-9-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.9325"
+       x2="305.75113"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1334-5-4-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.28076"
+       x2="307.38953"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1335-2-4-90" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.76489"
+       x2="308.99307"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1336-1-8-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.46796"
+       x2="310.95721"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1337-7-0-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.12628"
+       x2="312.05081"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1338-2-6-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.99396"
+       x2="313.48358"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1339-8-7-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="335.97852"
+       x2="314.83868"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1340-7-7-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.073"
+       x2="316.10669"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1341-5-3-39" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.60065"
+       x2="318.02179"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1342-2-5-54" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="339.56042"
+       x2="318.34634"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1343-7-3-70" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="340.93585"
+       x2="319.30231"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1344-0-3-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="342.38644"
+       x2="320.1398"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1345-8-5-52" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="343.90207"
+       x2="320.853"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1346-5-3-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="345.16302"
+       x2="322.38794"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1347-0-7-9" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="347.08536"
+       x2="321.88733"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1348-5-5-43" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="348.73071"
+       x2="322.2012"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1349-6-2-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="350.39658"
+       x2="322.37628"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1350-1-5-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="352.07123"
+       x2="322.41135"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1351-5-7-10" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="353.84747"
+       x2="323.30069"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1352-4-8-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="355.39999"
+       x2="322.06149"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1353-2-0-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="357.03079"
+       x2="321.67899"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1354-5-3-13" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="358.62381"
+       x2="321.16138"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1355-6-5-31" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="360.16794"
+       x2="320.51227"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1356-6-6-13" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="362.15237"
+       x2="320.60226"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1357-8-0-7" />
+    <circle
+       style="fill:#988903;stroke:#583903;stroke-width:0.75"
+       cy="351.65237"
+       cx="302.41574"
+       r="18"
+       id="SvgjsCircle1358-7-7-7" />
+  </g>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text108-9"
+     x="246.27344"
+     font-size="8px"
+     y="98.031532">SPEED</text>
+  <line
+     x1="205.5"
+     x2="205.5"
+     y1="94.136986"
+     y2="101.137"
+     id="line2077-1-3-7"
+     style="fill:none;stroke:#e8b923" />
+  <line
+     x1="288"
+     x2="288"
+     y1="94.136986"
+     y2="101.137"
+     id="line2077-1-1-0"
+     style="fill:none;stroke:#e8b923" />
+  <path
+     style="fill:none;stroke:#e8b923;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+     d="m 205,94.668951 h 26.5"
+     id="line2081-6-7-2"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#e8b923;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none"
+     d="M 261.5,94.381815 H 288"
+     id="line2081-6-6-9"
+     inkscape:connector-curvature="0" />
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text53-30-4"
+     x="211.47656"
+     font-size="8px"
+     y="127.69267">X</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text55-4-8"
+     x="211.47656"
+     font-size="8px"
+     y="156.05566">Y</text>
+  <path
+     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.42297262;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 223.71149,104.34848 h 64.57703 v 64.57703 h -64.57703 z"
+     id="rect4936-0-8-4-4-6"
+     inkscape:connector-curvature="0" />
+  <g
+     id="g6916-0-9"
+     transform="matrix(0.5,0,0,0.5,105.2542,7.9863129)">
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="362.15237"
+       x2="284.22922"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1307-6-6-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="360.16794"
+       x2="284.31921"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1308-2-6-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="358.62381"
+       x2="283.6701"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1309-4-0-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="357.03079"
+       x2="283.1525"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1310-4-20-9" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="355.39999"
+       x2="282.76999"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1311-0-9-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="353.84747"
+       x2="281.53079"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1312-4-8-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="352.07123"
+       x2="282.42014"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1313-4-0-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="350.39658"
+       x2="282.4552"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1314-7-4-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="348.73071"
+       x2="282.63028"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1315-0-7-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="347.08536"
+       x2="282.94415"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1316-9-10-9" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="345.16302"
+       x2="282.44354"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1317-8-4-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="343.90207"
+       x2="283.97849"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1318-3-7-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="342.38644"
+       x2="284.69168"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1319-2-5-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="340.93585"
+       x2="285.52917"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1320-0-8-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="339.56042"
+       x2="286.48514"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1321-9-3-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.60065"
+       x2="286.80969"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1322-2-81-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.073"
+       x2="288.72479"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1323-6-8-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="335.97852"
+       x2="289.9928"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1324-7-7-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.99396"
+       x2="291.3479"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1325-6-1-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.12628"
+       x2="292.78067"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1326-9-9-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.46796"
+       x2="293.87427"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1327-0-4-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.76489"
+       x2="295.83841"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1328-8-1-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.28076"
+       x2="297.44196"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1329-3-5-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.9325"
+       x2="299.08035"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1330-1-1-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.72253"
+       x2="300.74219"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1331-2-9-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="330.6524"
+       x2="302.41574"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1332-5-7-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.72253"
+       x2="304.08929"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1333-0-1-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="331.9325"
+       x2="305.75113"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1334-5-5-9" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.28076"
+       x2="307.38953"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1335-2-1-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.76489"
+       x2="308.99307"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1336-1-1-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="332.46796"
+       x2="310.95721"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1337-7-5-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.12628"
+       x2="312.05081"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1338-2-4-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="334.99396"
+       x2="313.48358"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1339-8-3-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="335.97852"
+       x2="314.83868"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1340-7-72-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.073"
+       x2="316.10669"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1341-5-6-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="337.60065"
+       x2="318.02179"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1342-2-2-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="339.56042"
+       x2="318.34634"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1343-7-4-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="340.93585"
+       x2="319.30231"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1344-0-4-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="342.38644"
+       x2="320.1398"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1345-8-7-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="343.90207"
+       x2="320.853"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1346-5-4-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="345.16302"
+       x2="322.38794"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1347-0-6-7" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="347.08536"
+       x2="321.88733"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1348-5-1-3" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="348.73071"
+       x2="322.2012"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1349-6-21-0" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="350.39658"
+       x2="322.37628"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1350-1-0-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="352.07123"
+       x2="322.41135"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1351-5-4-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="353.84747"
+       x2="323.30069"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1352-4-2-5" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="355.39999"
+       x2="322.06149"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1353-2-7-1" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="357.03079"
+       x2="321.67899"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1354-5-1-6" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="358.62381"
+       x2="321.16138"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1355-6-3-8" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="360.16794"
+       x2="320.51227"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1356-6-8-2" />
+    <line
+       style="stroke:#e8b923;stroke-width:0.75"
+       y2="362.15237"
+       x2="320.60226"
+       y1="351.65237"
+       x1="302.41574"
+       id="SvgjsLine1357-8-07-1" />
+    <circle
+       style="fill:#988903;stroke:#583903;stroke-width:0.75"
+       cy="351.65237"
+       cx="302.41574"
+       r="18"
+       id="SvgjsCircle1358-7-1-3" />
   </g>
   <path
+     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.44765586;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 140.3806,23.630693 H 379.93294 V 87.776172 H 140.3806 Z"
+     id="rect4936-0-8-4-4-4"
+     inkscape:connector-curvature="0" />
+  <path
+     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 5.25,23.343326 H 132.65668 V 87.75 H 5.25 Z"
+     id="rect4936-0-8-4-4-0"
+     inkscape:connector-curvature="0" />
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text90-6"
+     x="205.11719"
+     font-size="8px"
+     y="371.72052">LOOP</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text90-6-8"
+     x="303.40759"
+     font-size="8px"
+     y="372.39481">EOC</text>
+  <path
      inkscape:connector-curvature="0"
-     d="m 19.3582,161.73872 c -2.58087,0 -5.3582,0.76846 -5.3582,2.45584 0,1.49337 2.17565,2.26652 4.46516,2.42459 V 168 l 2.59628,-2.01938 -2.59628,-2.01936 v 1.31566 c -2.05419,-0.15784 -3.12561,-0.82985 -3.12561,-1.08236 0,-0.28688 1.38175,-1.11629 4.01865,-1.11629 2.6369,0 4.01865,0.82941 4.01865,1.11629 0,0.12347 -0.35252,0.49363 -1.40027,0.78989 l -0.16254,0.0457 v 1.3784 l 0.27684,-0.0685 c 1.69297,-0.41883 2.62552,-1.18081 2.62552,-2.14551 0,-1.68738 -2.77733,-2.45584 -5.3582,-2.45584 z"
+     d="m 212.3582,177.73872 c -2.58087,0 -5.3582,0.76846 -5.3582,2.45584 0,1.49337 2.17565,2.26652 4.46516,2.42459 V 184 l 2.59628,-2.01938 -2.59628,-2.01936 v 1.31566 c -2.05419,-0.15784 -3.12561,-0.82985 -3.12561,-1.08236 0,-0.28688 1.38175,-1.11629 4.01865,-1.11629 2.6369,0 4.01865,0.82941 4.01865,1.11629 0,0.12347 -0.35252,0.49363 -1.40027,0.78989 l -0.16254,0.0457 v 1.3784 l 0.27684,-0.0685 c 1.69297,-0.41883 2.62552,-1.18081 2.62552,-2.14551 0,-1.68738 -2.77733,-2.45584 -5.3582,-2.45584 z"
      id="path24013"
      style="fill:#e8b923;fill-opacity:1;stroke-width:0.22325826" />
   <path
      inkscape:connector-curvature="0"
-     d="m 159.3582,161.73872 c -2.58087,0 -5.3582,0.76846 -5.3582,2.45584 0,1.49337 2.17565,2.26652 4.46516,2.42459 V 168 l 2.59628,-2.01938 -2.59628,-2.01936 v 1.31566 c -2.05419,-0.15784 -3.12561,-0.82985 -3.12561,-1.08236 0,-0.28688 1.38175,-1.11629 4.01865,-1.11629 2.6369,0 4.01865,0.82941 4.01865,1.11629 0,0.12347 -0.35252,0.49363 -1.40027,0.78989 l -0.16254,0.0457 v 1.3784 l 0.27684,-0.0685 c 1.69297,-0.41883 2.62552,-1.18081 2.62552,-2.14551 0,-1.68738 -2.77733,-2.45584 -5.3582,-2.45584 z"
-     id="path24013-2"
+     d="m 303.3582,177.73872 c -2.58087,0 -5.3582,0.76846 -5.3582,2.45584 0,1.49337 2.17565,2.26652 4.46516,2.42459 V 184 l 2.59628,-2.01938 -2.59628,-2.01936 v 1.31566 c -2.05419,-0.15784 -3.12561,-0.82985 -3.12561,-1.08236 0,-0.28688 1.38175,-1.11629 4.01865,-1.11629 2.6369,0 4.01865,0.82941 4.01865,1.11629 0,0.12347 -0.35252,0.49363 -1.40027,0.78989 l -0.16254,0.0457 v 1.3784 l 0.27684,-0.0685 c 1.69297,-0.41883 2.62552,-1.18081 2.62552,-2.14551 0,-1.68738 -2.77733,-2.45584 -5.3582,-2.45584 z"
+     id="path24013-9"
      style="fill:#e8b923;fill-opacity:1;stroke-width:0.22325826" />
-  <path
-     inkscape:connector-curvature="0"
-     d="m 299.3582,161.73872 c -2.58087,0 -5.3582,0.76846 -5.3582,2.45584 0,1.49337 2.17565,2.26652 4.46516,2.42459 V 168 l 2.59628,-2.01938 -2.59628,-2.01936 v 1.31566 c -2.05419,-0.15784 -3.12561,-0.82985 -3.12561,-1.08236 0,-0.28688 1.38175,-1.11629 4.01865,-1.11629 2.6369,0 4.01865,0.82941 4.01865,1.11629 0,0.12347 -0.35252,0.49363 -1.40027,0.78989 l -0.16254,0.0457 v 1.3784 l 0.27684,-0.0685 c 1.69297,-0.41883 2.62552,-1.18081 2.62552,-2.14551 0,-1.68738 -2.77733,-2.45584 -5.3582,-2.45584 z"
-     id="path24013-7"
-     style="fill:#e8b923;fill-opacity:1;stroke-width:0.22325826" />
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text104-2"
+     x="254.07031"
+     font-size="8px"
+     y="346">AM/RM IN</text>
+  <line
+     id="SvgjsLine1047-1"
+     x1="118.11153"
+     y1="123.29521"
+     x2="106.64339"
+     y2="115.26514"
+     style="stroke:#e8b923;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none" />
+  <line
+     id="SvgjsLine1047-1-1"
+     x1="106.24937"
+     y1="115.78349"
+     x2="94.125"
+     y2="122.78349"
+     style="stroke:#e8b923;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none" />
+  <line
+     id="SvgjsLine1047-1-7"
+     x1="106.43966"
+     y1="115.78349"
+     x2="94.315277"
+     y2="108.78349"
+     style="stroke:#e8b923;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none" />
+  <line
+     id="SvgjsLine1047-1-1-4"
+     x1="117.68872"
+     y1="108.78349"
+     x2="105.56435"
+     y2="115.78349"
+     style="stroke:#e8b923;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none" />
+  <circle
+     id="SvgjsCircle1358-7-7-5"
+     r="9"
+     cx="106.1875"
+     cy="115.8125"
+     style="fill:#988903;stroke:#583903;stroke-width:0.375" />
 </svg>

@@ -8,14 +8,14 @@
 #define NUM_OSCILLATORS 36
 
 struct BankOutput {
-  float outputMono;
-  float outputLeft;
-  float outputRight;
+  float outputMono = 0.0;
+  float outputLeft = 0.0;
+  float outputRight = 0.0;
 };
 
 struct OscillatorBank {
   OscillatorBank() {
-    magnitudeSmoothness = 50; // Manually Adjust
+    magnitudeSmoothness = 32.0; // Manually Adjust
     amplitudeSmoothness = 50; // Manuallly adjust
   }
 
@@ -80,32 +80,40 @@ struct OscillatorBank {
   }
 
 
-  void switchBanks() {
-    currentMagnitudeSmoothingPosition = 0;
+  void switchBanks(int8_t v = -1) {
     // update the current bank values
-    for (uint8_t i = 0; i < NUM_OSCILLATORS; i++) {
-      oldFrequencies[i] = currentFrequencies[i];
-      oldVolumes[i] = currentVolumes[i];
+    if(v >= 0) {
+      currentMagnitudeSmoothingPosition[v] = 0.0;
+      //oldFrequencies[v] = currentFrequencies[v];
+      oldVolumes[v] = currentVolumes[v];
+    } else {
+      for (uint8_t i = 0; i < NUM_OSCILLATORS; i++) {
+        currentMagnitudeSmoothingPosition[i] = 0.0;
+        //oldFrequencies[i] = currentFrequencies[i];
+        oldVolumes[i] = currentVolumes[i];
+      }
     }
   }
 
+  
 
   BankOutput process(uint8_t waveShape, float sampleTime,float *panning) {
     uint8_t currentVoice = 0;
     float_4 oscFreq = 0;
     float volumes[NUM_OSCILLATORS];
 
-    currentMagnitudeSmoothingPosition++;
-    if (currentMagnitudeSmoothingPosition > magnitudeSmoothness) {
-      currentMagnitudeSmoothingPosition = magnitudeSmoothness;
-    }
-
-    float pct = magnitudeSmoothness ? (float(currentMagnitudeSmoothingPosition) / float(magnitudeSmoothness)) : 1;
     for (uint8_t i = 0, c = 0; i < NUM_OSCILLATORS; ) {
       for (c = 0; c < 4; c++) {
-        if (i + c < numOscillators) {
-          oscFreq[c] = currentFrequencies[i + c] + frequencyModulation[i + c];
-          volumes[i + c] =  interpolate(oldVolumes[i + c],currentVolumes[i + c],pct,0.0f,1.0f);
+        uint8_t o = i+c;
+        currentMagnitudeSmoothingPosition[o]+=1.0;
+        if (currentMagnitudeSmoothingPosition[o] > magnitudeSmoothness) {
+          currentMagnitudeSmoothingPosition[o] = magnitudeSmoothness;
+        }
+
+        float pct = currentMagnitudeSmoothingPosition[o] / magnitudeSmoothness;
+        if (o < numOscillators) {
+          oscFreq[c] = abs(currentFrequencies[o] + frequencyModulation[o]); //abs should make it through zero FM
+          volumes[o] =  interpolate(oldVolumes[o],currentVolumes[o],pct,0.0f,1.0f);
         }
       }
 
@@ -170,12 +178,11 @@ struct OscillatorBank {
     for (uint8_t i = 0; i < NUM_OSCILLATORS && i < numOscillators; i++) {
       float currentAMAmount = interpolate(oldAmplitudeModulation[i],amplitudeModulation[i],smoothPct,0.0f,1.0f);
       float amValue = currentVoiceOutput[i] * (currentAMAmount > 0 ? currentAMAmount : 0); 
-      float rmValue = ringModulator.processModel(currentVoiceOutput[i],currentVoiceOutput[rmMatrix[i]]);
+      float adjustedValue = interpolate(currentVoiceOutput[i],amValue,rmMix[i],0.0f,1.0f);
 
-      float adjustedValue = interpolate(currentVoiceOutput[i],ringModuationInternal ? rmValue : amValue ,rmMix[i],0.0f,1.0f);
       outputMono += adjustedValue;
-      outputLeft += adjustedValue * std::max(1.0 - panning[i],0.0) ;
-      outputRight += adjustedValue * std::max(panning[i]+1.0,1.0);
+      outputLeft += adjustedValue * std::min(1.0 - panning[i],1.0);
+      outputRight += adjustedValue * std::min(panning[i]+1.0,1.0);
     }
 
     BankOutput bankOutput;
@@ -194,8 +201,8 @@ struct OscillatorBank {
   float currentFrequencies[NUM_OSCILLATORS]{0};
   float currentVolumes[NUM_OSCILLATORS]{0};
   float currentVoiceOutput[NUM_OSCILLATORS];
-  uint16_t magnitudeSmoothness;
-  uint16_t currentMagnitudeSmoothingPosition;
+  float magnitudeSmoothness;
+  float currentMagnitudeSmoothingPosition[NUM_OSCILLATORS] = {0.0};
   uint16_t amplitudeSmoothness;
   uint16_t currentAMSmoothingPosition = 0;
   float oldFrequencies[NUM_OSCILLATORS]{0};

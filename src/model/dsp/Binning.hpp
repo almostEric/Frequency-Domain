@@ -37,7 +37,8 @@ struct Binning {
 
     float binSize = sampleRate / float(size); 
 
-    freqDiffThreshold = binSize * 2;
+    freqDiffThreshold = binSize * 4;
+    //freqDiffThreshold = binSize;
 
     //Make sure we start fresh
     for (uint16_t c = 0; c < count; c++) {

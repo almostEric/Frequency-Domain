@@ -511,3 +511,4 @@ struct DisplayBarGrid : FramebufferWidget {
   }
 };
 
+

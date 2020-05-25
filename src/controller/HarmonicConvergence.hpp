@@ -3,11 +3,9 @@
 
 #include "../FrequencyDomain.hpp"
 #include "../model/dsp/Binning.hpp"
-//#include "../model/dsp/Biquad.hpp"
 #include "../model/dsp/WindowFunction.hpp"
 #include "../model/Oscillator.hpp"
 #include "../model/Buffer.hpp"
-#include "../model/dsp/Biquad.hpp"
 #include "../model/OscillatorBank.hpp"
 #include "../model/Cells.hpp"
 #include "../model/dsp/FFT.hpp"
@@ -95,16 +93,9 @@ struct HarmonicConvergenceModule : Module {
   FFT *fft1;
   FFT *fft2;
 
-  //input filters
-  Biquad<float_4> lpf1;
-  Biquad<float_4> hpf1;
-  Biquad<float_4> lpf2;
-  Biquad<float_4> hpf2;
-
 
   // binning, 36 bins to work with
   Binning *binnings1;
-  Biquad<float> *biquadFilter1,*biquadFilter2;
   Result bins1[MAX_VOICE_COUNT] = { { 0, 0 } };
   Binning *binnings2;
   Result bins2[MAX_VOICE_COUNT] = { { 0, 0 } };

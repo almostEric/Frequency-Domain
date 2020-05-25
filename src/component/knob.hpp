@@ -79,3 +79,17 @@ struct LightSmallKnob : BaseKnob {
     shadow.setShadowPosition(2, 3.5);
   }
 };
+
+struct LightSmallKnobSnap : BaseKnob {
+  LightSmallKnobSnap() {
+    snap = true;
+    minAngle = -0.68*M_PI;
+    maxAngle = 0.68*M_PI;
+
+    setSvg(APP->window->loadSvg(asset::plugin(pluginInstance, "res/component/knob_small.svg")));
+    shadow.setBox(box);
+    shadow.setSize(0.8);
+    shadow.setStrength(0.2);
+    shadow.setShadowPosition(2, 3.5);
+  }
+};

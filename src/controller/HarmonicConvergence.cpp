@@ -44,11 +44,6 @@ HarmonicConvergenceModule::HarmonicConvergenceModule() {
   // window function
   windowFunctionId = 4;
 
-  lpf1.setType(bq_type_lowpass);
-  hpf1.setType(bq_type_highpass);
-  lpf2.setType(bq_type_lowpass);
-  hpf2.setType(bq_type_highpass);
-
 
   fft1 = new FFT(frameSizeInBytes1);
   fft2 = new FFT(frameSizeInBytes2);
@@ -89,9 +84,6 @@ HarmonicConvergenceModule::~HarmonicConvergenceModule() {
       delete dryBuffer2[i];
     }
   }
-
-  // delete biquadFilter1;
-  // delete biquadFilter2;
 
   delete windowFunction1;
   delete windowFunction2;
@@ -225,22 +217,6 @@ float HarmonicConvergenceModule::paramValue (uint16_t param, uint16_t input, flo
 }
 
 
-float HarmonicConvergenceModule::lowFreq() {
-  // float bandwidth = 20000;
-  // float center = 5000;
-
-//  return clamp(center - bandwidth / 2.0, 20, 20000);
-    return 50;
-}
-
-float HarmonicConvergenceModule::highFreq() {
-  // float bandwidth = 20000;
-  // float center = 5000;
-
-  //return clamp(center + bandwidth / 2.0, 20, 20000);
-  return 15000;
-}
-
 
 void HarmonicConvergenceModule::process(const ProcessArgs &args) {
   // get the current input
@@ -286,28 +262,11 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
     // debugOutput[0] = input1;
     // debugOutput[1] = input1 * windowedValue1;
 
-      // set the hpf and lpf values for filtering of bandwidth/center
-    // hpf1.setFc(lowFreq() / args.sampleRate);
-    // lpf1.setFc(highFreq() / args.sampleRate);
-    // hpf1.calcBiquad();
-    // lpf1.calcBiquad();
-
-    // hpf2.setFc(lowFreq() / args.sampleRate);
-    // lpf2.setFc(highFreq() / args.sampleRate);
-    // hpf2.calcBiquad();
-    // lpf2.calcBiquad();
-
     //TODO: Take advantage of SIMD
 
-    //if(input1Connected) {
-      //input1 = hpf1.process(lpf1.process(input1))[0];
-      dryBuffer1[i]->set(input1 * windowedValue1);
-    //}
+    dryBuffer1[i]->set(input1 * windowedValue1);
 
-    //if(input2Connected) {
-      //input2 = hpf2.process(lpf2.process(input2))[0];
-      dryBuffer2[i]->set(input2 * windowedValue2);
-    //}
+    dryBuffer2[i]->set(input2 * windowedValue2);
 
     bool updateCells = false;
     // is it time to do the fft?
@@ -578,8 +537,8 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
     outputs[OUTPUT_R].setVoltage(interpolate(dryDelayed+dryDelayed2, output.outputRight, mix, 0.0f, 100.0f));
   }
 
-  for (uint8_t i = 0; i < 16; i++) {
-    outputs[DEBUG_OUTPUT].setVoltage(debugOutput[i], i);
-  }
- outputs[DEBUG_OUTPUT].setChannels(16);
+//   for (uint8_t i = 0; i < 16; i++) {
+//     outputs[DEBUG_OUTPUT].setVoltage(debugOutput[i], i);
+//   }
+//  outputs[DEBUG_OUTPUT].setChannels(16);
 }
