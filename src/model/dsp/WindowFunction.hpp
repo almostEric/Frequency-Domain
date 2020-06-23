@@ -1,4 +1,4 @@
-#define NBR_WINDOW_FUNCTIONS 8
+#define NBR_WINDOW_FUNCTIONS 10
 
 enum WindowFunctionTypes {
     NO_WINDOW_FUNCTION,
@@ -8,7 +8,9 @@ enum WindowFunctionTypes {
     HANNING_WINDOW_FUNCTION,
     BLACKMAN_WINDOW_FUNCTION,
     NUTALL_WINDOW_FUNCTION,
-    KAISER_WINDOW_FUNCTION
+    KAISER_WINDOW_FUNCTION,
+    EXPONENTIAL_DECAY_WINDOW_FUNCTION,
+    EXPONENTIAL_ATTACK_WINDOW_FUNCTION
 };
 
 template <typename T>
@@ -77,6 +79,13 @@ struct WindowFunction {
             case KAISER_WINDOW_FUNCTION :
                 returnValue = KaiserWindow(index);
                 break;
+            case EXPONENTIAL_DECAY_WINDOW_FUNCTION :
+                returnValue = ExponentialDecay(phase);
+                break;
+            case EXPONENTIAL_ATTACK_WINDOW_FUNCTION :
+                returnValue = ExponentialAttack(phase);
+                //fprintf(stderr, "%f => %f \n", phase, returnValue);
+                break;
             default:
                 break;
         }
@@ -132,6 +141,21 @@ struct WindowFunction {
         x *= alpha;
         return i0(x) * ii0a;
     }
+
+    T ExponentialDecay(float phase) {
+        if(phase <= 0.1) {
+            return phase/0.1;
+        }
+        return (10.0f-powf(10.0,(phase-0.1)) / 0.9) / 9.0;
+    }
+
+    T ExponentialAttack(float phase) {        
+        if(phase >= 0.9) {
+            return (1.0-phase) /0.1;
+        }
+        return (powf(10.0,(phase/0.9))-1.0) / 9.0;
+    }
+
 
     // Rabiner, Gold: "The Theory and Application of Digital Signal Processing", 1975, page 103.
     float i0(float x) {

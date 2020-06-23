@@ -25,7 +25,7 @@ using rack::simd::float_4;
 #define MAX_POLYPHONY 16
 #define MAX_BUFFER_SIZE 32768 //2^15
 #define NUM_UI_BANDS 64
-#define NUM_UI_FRAMES 238
+#define NUM_UI_FRAMES 328
 
 
 // struct ResultArray {
@@ -44,10 +44,14 @@ struct FreudianSlipModule : Module {
     FREQ_WARP_USE_FUNDAMENTAL,
     RING_MODULATION,
     PLAY_SPEED_PARAM,
+    START_POS_PARAM,
+    STOP_POS_PARAM,
     RANDOMIZE_PARAM,
     FM_AMOUNT,
     RM_MIX,
     LOOP_PARAM,
+    POSITION_MODE_PARAM,
+    EOC_MODE_PARAM,
     NUM_PARAMS
     };
 
@@ -78,6 +82,12 @@ struct FreudianSlipModule : Module {
     PLAY_SPEED_SHIFT_X_CV,
     PLAY_SPEED_SHIFT_Y_CV,
     PLAY_SPEED_ROTATE_X_CV,
+    START_POS_SHIFT_X_CV,
+    START_POS_SHIFT_Y_CV,
+    START_POS_ROTATE_X_CV,
+    STOP_POS_SHIFT_X_CV,
+    STOP_POS_SHIFT_Y_CV,
+    STOP_POS_ROTATE_X_CV,
     LOOP_INPUT,
     NUM_INPUTS
     };
@@ -87,7 +97,9 @@ struct FreudianSlipModule : Module {
     FREQ_WARP_USE_FUNDAMENTAL_LIGHT = RING_MODULATION_ENABLED_LIGHT + 3,
     MORPH_MODE_LIGHT = FREQ_WARP_USE_FUNDAMENTAL_LIGHT + 3,
     LOOP_MODE_LIGHT = MORPH_MODE_LIGHT + 3,
-    NUM_LIGHTS = LOOP_MODE_LIGHT + 3
+    POSITION_MODE_LIGHT = LOOP_MODE_LIGHT + 3,
+    EOC_MODE_LIGHT = POSITION_MODE_LIGHT + 3,
+    NUM_LIGHTS = EOC_MODE_LIGHT + 3
     };
 
     FreudianSlipModule ();
@@ -150,7 +162,7 @@ struct FreudianSlipModule : Module {
     uint32_t samplesPlayed;
 
     WindowFunction<float> *windowFunction;
-    dsp::SchmittTrigger playTrigger,rmTrigger,warpUseFundamentalTrigger,loopTrigger;
+    dsp::SchmittTrigger playTrigger,rmTrigger,warpUseFundamentalTrigger,loopTrigger,positionModeTrigger,eocModeTrigger;
     dsp::PulseGenerator endOfSamplePulse;
 
     OscillatorBank bankL;
@@ -179,6 +191,8 @@ struct FreudianSlipModule : Module {
     float rmMix[MAX_VOICE_COUNT] = {0};
     float panning[MAX_VOICE_COUNT] = {0};
     float playSpeed[MAX_VOICE_COUNT] = {1};
+    float startPosition[MAX_VOICE_COUNT] = {0};
+    float stopPosition[MAX_VOICE_COUNT] = {1};
 
     bool input1Connected;
     bool input2Connected;
@@ -204,6 +218,8 @@ struct FreudianSlipModule : Module {
     float randomizeStepAmount = 0;
 
     bool loopMode = false;
+    bool positionMode = false;
+    bool eocMode = false;
 
     float frequencies1[MAX_VOICE_COUNT] {0};
     float magnitudes1[MAX_VOICE_COUNT] {0};
@@ -225,6 +241,8 @@ struct FreudianSlipModule : Module {
     float framePercentage = 0;
     float randomizeStepPercentage = 0;
     float playSpeedPercentage = 0;
+    float startPositionPercentage = 0;
+    float stopPositionPercentage = 0;
     const float phaseThreshold = 1E-01;
 
 
@@ -235,6 +253,8 @@ struct FreudianSlipModule : Module {
     OneDimensionalCells *ringModulationMixCells;
     OneDimensionalCells *panningCells;
     OneDimensionalCells *playSpeedCells;
+    OneDimensionalCells *startPositionCells;
+    OneDimensionalCells *stopPositionCells;
 
 
     // float debugOutput[16];

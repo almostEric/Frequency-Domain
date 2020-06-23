@@ -10,4 +10,5 @@ void init(rack::Plugin *p) {
   p->addModel(modelHarmonicConvergence);
   p->addModel(modelDelayedReaction);
   p->addModel(modelMorphology);
+  p->addModel(modelGrainsOfWrath);
 }

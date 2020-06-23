@@ -21,7 +21,7 @@ enum CellGridShapes {
 
 struct Cells {
   virtual ~Cells() {}
-  virtual void setCell(int16_t a, int16_t b) {}
+  virtual void setCell(int16_t a, int16_t b, bool c) {}
   virtual bool active(uint16_t value, uint16_t position) { return false; }
   virtual void reset() { }
   bool dirty;
@@ -47,7 +47,7 @@ struct TwoDimensionalCells : Cells {
     delete[] cells;
   }
 
-  void setCell(int16_t value, int16_t position) override {
+  void setCell(int16_t value, int16_t position, bool setRange) override {
     if (position >= height || position < 0) {
       return;
     }
@@ -66,7 +66,7 @@ struct TwoDimensionalCells : Cells {
     return cells[position][value];
   }
 
-  bool **cells;
+  bool **cells;  
   uint16_t width;
   uint16_t height;
   float defaultValue;
@@ -82,7 +82,10 @@ struct OneDimensionalCells : Cells {
     this->defaultValue = defaultValue;
 
     // allocate the cells
-    cells = new float[height]{defaultValue};
+    cells = new float[height];
+    cellExtendedValue = new float[height];
+    cellColor = new NVGcolor[height]; 
+    reset();
     dirty = true;
 
     srand(time(NULL));
@@ -95,6 +98,8 @@ struct OneDimensionalCells : Cells {
   void reset() override {
     for (uint16_t i = 0; i < height; i++) {
       cells[i] = defaultValue;
+      cellExtendedValue[i] = 0.0;
+      cellColor[i] = nvgRGB(0x3a, 0xa3, 0x27); //CRT Green
     }
   }
 
@@ -105,6 +110,14 @@ struct OneDimensionalCells : Cells {
   uint16_t intForValue(float value) {
     return uint16_t(((value - lowRange) / totalRange) * (width-1));
   }
+
+  // float floatForExtendedValue(uint16_t value) {
+  //   return (value / float(width)) * totalRange;
+  // }
+
+  // uint16_t intForExtendedValue(float value) {
+  //   return uint16_t(value / totalRange * (width-1));
+  // }
 
 
   virtual float valueForPosition(uint16_t position)  {
@@ -128,13 +141,37 @@ struct OneDimensionalCells : Cells {
     return adjustedValue;
   }
 
+  virtual float extendedValueForPosition(uint16_t position)  {
+    int16_t adjustedPosition = position + (shiftY * height) + (shiftEY * height);
+    if(adjustedPosition < 0) {
+        adjustedPosition = 0;
+    } else if(adjustedPosition >= height) {
+        adjustedPosition = height - 1;
+    }
+
+
+    float value = cellExtendedValue[adjustedPosition];
+//fprintf(stderr, "evp %u %f \n",adjustedPosition,value);
+    float adjustedValue = value + (shiftEX);
+
+    if (adjustedValue < 0) {
+        adjustedValue = 0;
+    } else if (adjustedValue > 1) {
+        adjustedValue = 1;
+    }
+
+    return adjustedValue;
+  }
+
 
   uint16_t displayValueForPosition(uint16_t position) {
   
     return intForValue(valueForPosition(position));
   }
 
-  void setCell(int16_t value, int16_t position) override {
+
+
+  void setCell(int16_t value, int16_t position, bool setRange) override {
     if (position >= height || position < 0) {
       return;
     }
@@ -154,7 +191,11 @@ struct OneDimensionalCells : Cells {
         adjustedValue = width;
     }
 
-    cells[adjustedPosition] = floatForValue(adjustedValue);
+    if(!setRange) {
+      cells[adjustedPosition] = floatForValue(adjustedValue);
+    } else {
+      cellExtendedValue[adjustedPosition] = abs(cells[adjustedPosition] - floatForValue(value)) / (totalRange); 
+    }
 
     lastPosition = position;
     lastValue = value;
@@ -200,7 +241,7 @@ struct OneDimensionalCells : Cells {
   void changeShape(int flipDirection, int shiftDirection,float reductionAmount) {
     if(flipDirection==-1) {
       for(uint16_t i=0;i<height;i++) {
-          cells[i] = totalRange - cells[i];
+          cells[i] = highRange - cells[i] + lowRange;
       }
     } else if (flipDirection==1) {
       for(uint16_t i=0;i<height/2;i++) {
@@ -221,10 +262,20 @@ struct OneDimensionalCells : Cells {
           cells[i] = cells[i] * reductionAmount;
       }
     }
-    
+   
+  }
+
+  void resetRange() {
+    for(int i=0;i<height;i++) {
+      cellExtendedValue[i] = 0.0;
+    }
   }
 
   float *cells;
+  NVGcolor  *cellColor;
+  float *cellExtendedValue;
+
+
   uint16_t width;
   uint16_t height;
   float lowRange;
@@ -238,6 +289,12 @@ struct OneDimensionalCells : Cells {
   float rotateX = 0;
   float lastRotateX = 0;
   float phasePosition;
+
+  float shiftEX = 0;
+  float shiftEY = 0;
+  float rotateEX = 0;
+  float lastRotateEX = 0;
+  float ePhasePosition;
 
 
   uint8_t pinXAxisValues = 0;
@@ -317,7 +374,7 @@ struct OneDimensionalCellsWithRollover : OneDimensionalCells {
     return adjustedValue;
   }
 
-  void setCell(int16_t value, int16_t position) override {
+  void setCell(int16_t value, int16_t position, bool setRange) override {
     if (position >= height || position < 0) {
       return;
     }
@@ -351,13 +408,63 @@ struct OneDimensionalCellsWithRollover : OneDimensionalCells {
         adjustedValue = rolloverModeX == WRAP_AROUND_ROLLOVER_MODE ? adjustedValue - width : width;
     }
 
-    cells[adjustedPosition] = floatForValue(adjustedValue);
+    if(!setRange) {
+      cells[adjustedPosition] = floatForValue(adjustedValue);
+    } else {
+      cellExtendedValue[adjustedPosition] = abs(cells[adjustedPosition] - floatForValue(value)) / (totalRange); 
+    }
 
     lastPosition = position;
     lastValue = value;
     readyForExpander = true;
 
     dirty = true;
+  }
+
+  virtual float extendedValueForPosition(uint16_t position) override {
+    int16_t adjustedPosition = position + (shiftY * height) + (shiftEY * height);
+    if(adjustedPosition < 0) {
+        if(rolloverModeY == WRAP_AROUND_ROLLOVER_MODE) {
+          do {
+            adjustedPosition +=height;
+          }
+          while (adjustedPosition < 0);
+        } else {
+          adjustedPosition = 0;  
+        }
+    } else if (adjustedPosition >= height) {
+      if(rolloverModeY == WRAP_AROUND_ROLLOVER_MODE) {
+        do {
+          adjustedPosition -=height;
+        }
+        while(adjustedPosition >= height);
+      } else {
+        adjustedPosition = height -1;
+      }
+    }
+
+
+    float value = cellExtendedValue[adjustedPosition];
+//fprintf(stderr, "evp %u %f \n",adjustedPosition,value);
+    float adjustedValue = value + (shiftEX);
+
+    //Rotation
+    if(rotateEX !=0) {
+      if(rotateEX != lastRotateEX) {
+        ePhasePosition = abs(cos(M_PI * rotateEX));
+        lastRotateEX = rotateEX;
+      }
+      adjustedValue = adjustedValue * ePhasePosition;
+    }
+
+
+    if (adjustedValue < 0) {
+        adjustedValue = 0;
+    } else if (adjustedValue > 1) {
+        adjustedValue = 1;
+    }
+
+    return adjustedValue;
   }
  
 

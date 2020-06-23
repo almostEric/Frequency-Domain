@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="18"
+   height="18"
+   id="svg18411"
+   sodipodi:docname="knob_small.svg"
+   style="fill:#000000"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata18415">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3840"
+     inkscape:window-height="2115"
+     id="namedview18413"
+     showgrid="false"
+     inkscape:zoom="6.7428571"
+     inkscape:cx="-19.427966"
+     inkscape:cy="17.5"
+     inkscape:window-x="-13"
+     inkscape:window-y="-13"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg18411" />
+  <defs
+     id="SvgjsDefs1001" />
+  <polygon
+     id="SvgjsPolygon1006"
+     points="9,32.464164 14.547981,34.483464 20.452019,34.483464 26,32.464164 30.522756,28.669121 33.474775,23.556074 34.5,17.741732 33.474775,11.927389 30.522756,6.8143424 26,3.0192999 20.452019,1 14.547981,1 9,3.0192999 4.4772445,6.8143424 1.5252254,11.927389 0.5,17.741732 1.5252254,23.556074 4.4772445,28.669121 "
+     transform="matrix(0.52075965,0,0,0.5266968,-0.12818152,-0.294004)"
+     style="fill:#988903;stroke:#e8b923;stroke-width:0.5" />
+  <rect
+     id="SvgjsRect1007"
+     width="1.0415193"
+     height="3.1601808"
+     x="8.4643526"
+     y="0.23269081"
+     style="fill:#381800;stroke-width:0.52371985" />
+  <ellipse
+     id="SvgjsCircle1008"
+     cx="8.9851122"
+     cy="8.9231892"
+     rx="7.0302553"
+     ry="7.1104069"
+     style="fill:#583903;stroke:#e8b923;stroke-width:0.26185992" />
+</svg>

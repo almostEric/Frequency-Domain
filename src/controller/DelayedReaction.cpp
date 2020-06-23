@@ -246,15 +246,15 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
         break; // Do nothing
       case 1:
         if(attenuationLinked)
-          attenuationCells->setCell(value,position);
+          attenuationCells->setCell(value,position,false);
         break; // Attenuverter
       case 2:
         if(delayTimeLinked)
-          delayTimeCells->setCell(value,position);
+          delayTimeCells->setCell(value,position,false);
         break; // DelayTime
       case 3:
         if(feedbackLinked)
-          feedbackCells->setCell(value,position);
+          feedbackCells->setCell(value,position,false);
         break; // FeedBack
     }
     leftExpander.messageFlipRequested = true;		
