@@ -618,14 +618,15 @@ void GrainsOfWrathModule::process(const ProcessArgs &args) {
       } else if (samplePosition[sampleIndex] < startPosition[sampleIndex]) {
         samplePosition[sampleIndex] = stopPosition[sampleIndex];
       }
+      float reverseParamValue = inputs[REVERSE_GRAIN_SAMPLES_INPUT].getChannels() != 1 ? inputs[REVERSE_GRAIN_SAMPLES_INPUT].getVoltage(sampleIndex) : inputs[REVERSE_GRAIN_SAMPLES_INPUT].getVoltage();
       if(freezeTriggerMode) {
-        if(inputs[REVERSE_GRAIN_SAMPLES_INPUT].getVoltage(sampleIndex) <= 0) {
+        if(reverseParamValue <= 0) {
           reverseGrains[sampleIndex] = false;
         } else {
           reverseGrains[sampleIndex] = true;
         }
       } else {
-        if(reverseTrigger[sampleIndex].process(inputs[REVERSE_GRAIN_SAMPLES_INPUT].getVoltage(sampleIndex))) {
+        if(reverseTrigger[sampleIndex].process(reverseParamValue)) {
           reverseGrains[sampleIndex] = !reverseGrains[sampleIndex];
         }
       }
@@ -633,22 +634,24 @@ void GrainsOfWrathModule::process(const ProcessArgs &args) {
     }
 
     for(uint8_t liveInputIndex=0; liveInputIndex < inputs[LIVE_INPUT].getChannels(); liveInputIndex++) {
+      float freezeParamValue = inputs[LIVE_FREEZE_INPUT].getChannels() != 1 ? inputs[LIVE_FREEZE_INPUT].getVoltage(liveInputIndex) : inputs[LIVE_FREEZE_INPUT].getVoltage();
+      float reverseParamValue = inputs[REVERSE_GRAIN_LIVE_INPUT].getChannels() != 1 ? inputs[REVERSE_GRAIN_LIVE_INPUT].getVoltage(liveInputIndex) : inputs[REVERSE_GRAIN_LIVE_INPUT].getVoltage();
       if(freezeTriggerMode) {
-        if(inputs[LIVE_FREEZE_INPUT].getVoltage(liveInputIndex) <= 0) {
+        if(freezeParamValue <= 0) {
           liveVoiceFrozen[liveInputIndex] = false;
         } else {
           liveVoiceFrozen[liveInputIndex] = true;
         }
-        if(inputs[REVERSE_GRAIN_LIVE_INPUT].getVoltage(liveInputIndex) <= 0) {
+        if(reverseParamValue <= 0) {
           reverseGrains[liveInputIndex+MAX_SAMPLES] = false;
         } else {
           reverseGrains[liveInputIndex+MAX_SAMPLES] = true;
         }
       } else {
-        if(freezeTrigger[liveInputIndex].process(inputs[LIVE_FREEZE_INPUT].getVoltage(liveInputIndex))) {
+        if(freezeTrigger[liveInputIndex].process(freezeParamValue)) {
           liveVoiceFrozen[liveInputIndex] = !liveVoiceFrozen[liveInputIndex];
         }
-        if(reverseTrigger[liveInputIndex+MAX_SAMPLES].process(inputs[REVERSE_GRAIN_LIVE_INPUT].getVoltage(liveInputIndex))) {
+        if(reverseTrigger[liveInputIndex+MAX_SAMPLES].process(reverseParamValue)) {
           reverseGrains[liveInputIndex+MAX_SAMPLES] = !reverseGrains[liveInputIndex+MAX_SAMPLES];
         }
       }
