@@ -68,14 +68,28 @@ struct DisplayPlayStatus : FramebufferWidget {
     if (!module)
       return;
 
-    nvgFillColor(args.vg, nvgRGB(0x3a, 0x73, 0x27)); //CRT Green	
-    nvgStrokeColor(args.vg, nvgRGB(0x3a, 0x73, 0x27)); //CRT Green	
+    //nvgStrokeColor(args.vg, nvgRGB(0x3a, 0x73, 0x27)); //CRT Green	
     float fc = float(module->frameCount);
     if(fc > 0) {
       for(uint8_t i=0;i<MAX_VOICE_COUNT;i++) {
-        float x = (module->frameIndex[i]) / fc * 238;
-  			nvgBeginPath(args.vg);
+        float x = (module->frameIndex[i]) / fc * 327;
+        nvgFillColor(args.vg, nvgRGB(0x3a, 0x83, 0x27)); //CRT Green	
+        nvgBeginPath(args.vg);
         nvgRect(args.vg,x,i*2,2,2);
+        nvgFill(args.vg);
+
+        //Start position
+        x = (module->startPosition[i]) * 327;
+        nvgFillColor(args.vg, nvgRGB(0x23, 0x23, 0xca)); //CRT Blue	
+        nvgBeginPath(args.vg);
+        nvgRect(args.vg,x,i*2,1,2);
+        nvgFill(args.vg);
+
+        //Stop position
+        x = (module->stopPosition[i]) * 327;
+        nvgFillColor(args.vg, nvgRGB(0x7a, 0x23, 0x27)); //CRT Red	
+        nvgBeginPath(args.vg);
+        nvgRect(args.vg,x,i*2,1,2);
         nvgFill(args.vg);
       }
     }
@@ -137,7 +151,7 @@ struct FreudianSlipWidget : ModuleWidget {
         dh->module = module;
       //}
       dh->box.pos = Vec(141, 23.5);
-      dh->box.size = Vec(238, 64);
+      dh->box.size = Vec(328, 64);
       addChild(dh);
     }
 
@@ -147,7 +161,7 @@ struct FreudianSlipWidget : ModuleWidget {
         dps->module = module;
       //} 
       dps->box.pos = Vec(141, 23.5);
-      dps->box.size = Vec(238, 64);
+      dps->box.size = Vec(328, 64);
       addChild(dps);
       
     }
@@ -243,13 +257,35 @@ struct FreudianSlipWidget : ModuleWidget {
     }
 
 
-    addParam(createParam<LightSmallKnob>(Vec(247.5, 174), module, FreudianSlipModule::PLAY_SPEED_PARAM));
+    addParam(createParam<LightSmallKnob>(Vec(247.5, 174), module, FreudianSlipModule::START_POS_PARAM));
+    {
+      SmallArcDisplay *c = new SmallArcDisplay();
+      if (module) {
+        c->percentage = &module->startPositionPercentage;
+      }
+      c->box.pos = Vec(251, 178);
+      c->box.size = Vec(30, 30);
+      addChild(c);
+    }
+
+    addParam(createParam<LightSmallKnob>(Vec(337.5, 174), module, FreudianSlipModule::STOP_POS_PARAM));
+    {
+      SmallArcDisplay *c = new SmallArcDisplay();
+      if (module) {
+        c->percentage = &module->stopPositionPercentage;
+      }
+      c->box.pos = Vec(341, 178);
+      c->box.size = Vec(30, 30);
+      addChild(c);
+    }
+
+    addParam(createParam<LightSmallKnob>(Vec(428.5, 174), module, FreudianSlipModule::PLAY_SPEED_PARAM));
     {
       SmallBidirectionalArcDisplay *c = new SmallBidirectionalArcDisplay();
       if (module) {
         c->percentage = &module->playSpeedPercentage;
       }
-      c->box.pos = Vec(251, 177.5);
+      c->box.pos = Vec(432, 178);
       c->box.size = Vec(30, 30);
       addChild(c);
     }
@@ -287,10 +323,13 @@ struct FreudianSlipWidget : ModuleWidget {
     addInput(createInput<LightPort>(Vec(105, 342), module, FreudianSlipModule::PLAY_INPUT));
     // addInput(createInput<LightPort>(Vec(347, 340), module, FreudianSlipModule::INPUT_2));
 
-    addOutput(createOutput<LightPort>(Vec(331, 342), module, FreudianSlipModule::OUTPUT_L));
-    addOutput(createOutput<LightPort>(Vec(353, 342), module, FreudianSlipModule::OUTPUT_R));
+    addOutput(createOutput<LightPort>(Vec(421, 342), module, FreudianSlipModule::OUTPUT_L));
+    addOutput(createOutput<LightPort>(Vec(443, 342), module, FreudianSlipModule::OUTPUT_R));
 
-    addOutput(createOutput<LightPort>(Vec(292, 342), module, FreudianSlipModule::EOC_OUTPUT));
+    addParam(createParam<RecButton>(Vec(318, 348), module, FreudianSlipModule::EOC_MODE_PARAM));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(320, 349), module, FreudianSlipModule::EOC_MODE_LIGHT));
+
+    addOutput(createOutput<LightPort>(Vec(382, 342), module, FreudianSlipModule::EOC_OUTPUT));
 
 
     addParam(createParam<RecButton>(Vec(190, 348), module, FreudianSlipModule::LOOP_PARAM));
@@ -374,7 +413,66 @@ struct FreudianSlipWidget : ModuleWidget {
       addInput(createInput<LightPort>(Vec(290, 275), module, FreudianSlipModule::RM_MIX_SHIFT_Y_CV));
     }
 
+    // Start
+    {
+      CellBarGrid *startPosDisplay = new CellBarGrid();
+      if (module) {
+        startPosDisplay->cells = module->startPositionCells;
+        startPosDisplay->gridName = "Start Position";
+      }
 
+      startPosDisplay->box.pos = Vec(224, 104.5);
+      startPosDisplay->box.size = Vec(64, 64);
+      addChild(startPosDisplay);
+
+      addInput(createInput<LightPort>(Vec(199, 100), module, FreudianSlipModule::START_POS_SHIFT_X_CV));
+      addInput(createInput<LightPort>(Vec(199, 127), module, FreudianSlipModule::START_POS_SHIFT_Y_CV));
+      addInput(createInput<LightPort>(Vec(199, 154), module, FreudianSlipModule::START_POS_ROTATE_X_CV));
+
+    }
+
+
+    // Stop
+    {
+      CellBarGrid *stopPosDisplay = new CellBarGrid();
+      if (module) {
+        stopPosDisplay->cells = module->stopPositionCells;
+        stopPosDisplay->gridName = "Stop Position";
+      }
+
+      stopPosDisplay->box.pos = Vec(314, 104.5);
+      stopPosDisplay->box.size = Vec(64, 64);
+      addChild(stopPosDisplay);
+
+      addInput(createInput<LightPort>(Vec(290, 100), module, FreudianSlipModule::STOP_POS_SHIFT_X_CV));
+      addInput(createInput<LightPort>(Vec(290, 127), module, FreudianSlipModule::STOP_POS_SHIFT_Y_CV));
+      addInput(createInput<LightPort>(Vec(290, 154), module, FreudianSlipModule::STOP_POS_ROTATE_X_CV));
+
+    }
+
+    addParam(createParam<RecButton>(Vec(286, 186), module, FreudianSlipModule::POSITION_MODE_PARAM));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(288, 187), module, FreudianSlipModule::POSITION_MODE_LIGHT));
+
+
+
+
+
+    // Play Speed
+    {
+      CellBarGrid *playSpeedDisplay = new CellBarGrid(31);
+      if (module) {
+        playSpeedDisplay->cells = module->playSpeedCells;
+        playSpeedDisplay->gridName = "Play Speed";
+      } 
+
+      playSpeedDisplay->box.pos = Vec(405, 104.5);
+      playSpeedDisplay->box.size = Vec(64, 64);
+      addChild(playSpeedDisplay);
+
+      addInput(createInput<LightPort>(Vec(380, 100), module, FreudianSlipModule::PLAY_SPEED_SHIFT_X_CV));
+      addInput(createInput<LightPort>(Vec(380, 127), module, FreudianSlipModule::PLAY_SPEED_SHIFT_Y_CV));
+      addInput(createInput<LightPort>(Vec(380, 154), module, FreudianSlipModule::PLAY_SPEED_ROTATE_X_CV));
+    }
 
     // Panning
     {
@@ -384,34 +482,18 @@ struct FreudianSlipWidget : ModuleWidget {
         panningDisplay->gridName = "Panning";
       }
 
-      panningDisplay->box.pos = Vec(315, 104.5);
+      panningDisplay->box.pos = Vec(405, 243);
       panningDisplay->box.size = Vec(64, 64);
       addChild(panningDisplay);
 
-      addInput(createInput<LightPort>(Vec(290, 100), module, FreudianSlipModule::PAN_SHIFT_X_CV));
-      addInput(createInput<LightPort>(Vec(290, 127), module, FreudianSlipModule::PAN_SHIFT_Y_CV));
-      addInput(createInput<LightPort>(Vec(290, 154), module, FreudianSlipModule::PAN_ROTATE_X_CV));
+      addInput(createInput<LightPort>(Vec(380, 240), module, FreudianSlipModule::PAN_SHIFT_X_CV));
+      addInput(createInput<LightPort>(Vec(380, 267), module, FreudianSlipModule::PAN_SHIFT_Y_CV));
+      addInput(createInput<LightPort>(Vec(380, 294), module, FreudianSlipModule::PAN_ROTATE_X_CV));
 
     }
 
 
-      // Play Speed
-    {
-      CellBarGrid *playSpeedDisplay = new CellBarGrid(31);
-      if (module) {
-        playSpeedDisplay->cells = module->playSpeedCells;
-        playSpeedDisplay->gridName = "Play Speed";
-      } 
 
-      playSpeedDisplay->box.pos = Vec(224, 104.5);
-      playSpeedDisplay->box.size = Vec(64, 64);
-      addChild(playSpeedDisplay);
-
-      addInput(createInput<LightPort>(Vec(199, 100), module, FreudianSlipModule::PLAY_SPEED_SHIFT_X_CV));
-      addInput(createInput<LightPort>(Vec(199, 127), module, FreudianSlipModule::PLAY_SPEED_SHIFT_Y_CV));
-      addInput(createInput<LightPort>(Vec(199, 154), module, FreudianSlipModule::PLAY_SPEED_ROTATE_X_CV));
-
-    }
         
 
     addChild(createWidget<ScrewBlack>(Vec(RACK_GRID_WIDTH-12, 0)));

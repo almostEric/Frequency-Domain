@@ -22,6 +22,8 @@ FreudianSlipModule::FreudianSlipModule() {
     configParam(FM_AMOUNT, 0.0f, 1.0f, 0.0f, "FM Amount","%",0,100);
     configParam(RM_MIX, 0.0f, 1.0f, 0.0f, "AM/RM Mix","%",0,100);
     configParam(PLAY_SPEED_PARAM, -3.0f, 3.0f, 1.0f, "Play Speed","%",0,100);
+    configParam(START_POS_PARAM, 0.0f, 1.0f, 0.0f, "Start Position","%",0,100);
+    configParam(STOP_POS_PARAM, -1.0f, 0.0f, 0.0f, "Stop Position","%",0,100);
 
     configParam(RING_MODULATION, 0.0f, 1.0f, 0.0f, "Ring Modulation");
 
@@ -70,6 +72,8 @@ FreudianSlipModule::FreudianSlipModule() {
     ringModulationMixCells = new OneDimensionalCellsWithRollover(32, 32, 0, 1,PIN_ROLLOVER_MODE, WRAP_AROUND_ROLLOVER_MODE);
     panningCells = new OneDimensionalCellsWithRollover(32, 32, -1, 1, PIN_ROLLOVER_MODE, WRAP_AROUND_ROLLOVER_MODE);
     playSpeedCells = new OneDimensionalCellsWithRollover(32, 32, -3, 3, PIN_ROLLOVER_MODE, WRAP_AROUND_ROLLOVER_MODE);
+    startPositionCells = new OneDimensionalCellsWithRollover(32, 32, 0, 1,PIN_ROLLOVER_MODE, WRAP_AROUND_ROLLOVER_MODE);
+    stopPositionCells = new OneDimensionalCellsWithRollover(32, 32, 0, 1,PIN_ROLLOVER_MODE, WRAP_AROUND_ROLLOVER_MODE,1.0);
 
 
     srand(time(NULL));
@@ -102,6 +106,9 @@ FreudianSlipModule::~FreudianSlipModule() {
   delete ringModulationMixCells;
   delete panningCells;
   delete playSpeedCells;
+  delete startPositionCells;
+  delete stopPositionCells;
+
 }
 
 void FreudianSlipModule::onReset() {
@@ -115,9 +122,13 @@ void FreudianSlipModule::onReset() {
     ringModulationMixCells->reset();
     panningCells->reset();
     playSpeedCells->reset();
+    startPositionCells->reset();
+    stopPositionCells->reset();
 
-    // ring modulator off
-    rmActive = false;
+    loopMode = false;
+    positionMode = false;
+    eocMode= false;
+
 }
 
 void FreudianSlipModule::dataFromJson(json_t *root) {
@@ -149,6 +160,14 @@ void FreudianSlipModule::dataFromJson(json_t *root) {
     json_t *lm = json_object_get(root, "loopMode");
     if (json_is_boolean(lm)) {
         loopMode = json_boolean_value(lm);
+    }
+    json_t *pm = json_object_get(root, "positionMode");
+    if (json_is_boolean(pm)) {
+        positionMode = json_boolean_value(pm);
+    }
+    json_t *em = json_object_get(root, "eocMode");
+    if (json_is_boolean(em)) {
+        eocMode = json_boolean_value(em);
     }
 
     for(int i=0;i<MAX_VOICE_COUNT;i++) {
@@ -182,6 +201,16 @@ void FreudianSlipModule::dataFromJson(json_t *root) {
         if (playSpeedJ) {
             playSpeedCells->cells[i] = json_real_value(playSpeedJ);
         }
+        buf = "startPosition-" + std::to_string(i) ;
+        json_t *startPositionJ = json_object_get(root, buf.c_str());
+        if (startPositionJ) {
+            startPositionCells->cells[i] = json_real_value(startPositionJ);
+        }
+        buf = "stopPosition-" + std::to_string(i) ;
+        json_t *stopPositionJ = json_object_get(root, buf.c_str());
+        if (stopPositionJ) {
+            stopPositionCells->cells[i] = json_real_value(stopPositionJ);
+        }
     }
 }
 
@@ -193,6 +222,8 @@ json_t *FreudianSlipModule::dataToJson() {
     json_object_set(root, "rmActive", json_boolean(rmActive));
     json_object_set(root, "warpBasedOnFundamental", json_boolean(warpBasedOnFundamental));
     json_object_set(root, "loopMode", json_boolean(loopMode));
+    json_object_set(root, "positionMode", json_boolean(positionMode));
+    json_object_set(root, "eocMode", json_boolean(eocMode));
     for(int i=0;i<MAX_VOICE_COUNT;i++) {
         std::string buf = "fmMatrix-" + std::to_string(i) ;
         json_object_set(root, buf.c_str(),json_real((float) frequencyModulationCells->cells[i]));
@@ -206,6 +237,10 @@ json_t *FreudianSlipModule::dataToJson() {
         json_object_set(root, buf.c_str(),json_real((float) panningCells->cells[i]));
         buf = "playSpeed-" + std::to_string(i) ;
         json_object_set(root, buf.c_str(),json_real((float) playSpeedCells->cells[i]));
+        buf = "startPosition-" + std::to_string(i) ;
+        json_object_set(root, buf.c_str(),json_real((float) startPositionCells->cells[i]));
+        buf = "stopPosition-" + std::to_string(i) ;
+        json_object_set(root, buf.c_str(),json_real((float) stopPositionCells->cells[i]));
     }
 
     return root;
@@ -251,47 +286,12 @@ void FreudianSlipModule::loadSample(std::string path) {
 
 
 		fileLoaded = true;
-		//vector<double>().swap(displayBuff);
-		// for (int i=0; i < floor(totalSampleC); i = i + floor(totalSampleC/130)) { // Replace with spectral histogram
-		// 	displayBuff.push_back(playBuffer[0][i]);
-		// }
 		fileDesc = rack::string::filename(path).substr(0,80) + "\n";
 		fileDesc += std::to_string(channels)+ " channel" + (channels > 1 ? "s" : "") + ", ";
 		fileDesc += std::to_string(playerSampleRate)+ " Hz" + "\n";
 
         //fprintf(stderr, "%s \n", fileDesc.c_str());
-
-		if (reload) {
-			DIR* rep = NULL;
-			struct dirent* dirp = NULL;
-			std::string dir = path.empty() ? NULL : rack::string::directory(path);
-
-			rep = opendir(dir.c_str());
-			int i = 0;
-			fichier.clear();
-			while ((dirp = readdir(rep)) != NULL) {
-				std::string name = dirp->d_name;
-
-				std::size_t found = name.find(".wav",name.length()-5);
-				if (found==std::string::npos) found = name.find(".WAV",name.length()-5);
-
-  				if (found!=std::string::npos) {
-					fichier.push_back(name);
-					if ((dir + "/" + name)==path) {sampnumber = i;}
-					i=i+1;
-					}
-				}
-//----added by Joakim Lindbom
-		sort(fichier.begin(), fichier.end());  // Linux needs this to get files in right order
-            for (int o=0;o<int(fichier.size()-1); o++) {
-                if ((dir + "/" + fichier[o])==path) {
-                    sampnumber = o;
-                }
-            }
-//---------------
-			closedir(rep);
-			reload = false;
-		}
+		
         lastPath = path;
         analysisStatus = 0;
 	}
@@ -418,6 +418,21 @@ void FreudianSlipModule::process(const ProcessArgs &args) {
         return;
     }
 
+    if (positionModeTrigger.process(params[POSITION_MODE_PARAM].getValue())) {
+        positionMode = !positionMode;
+    }
+    lights[POSITION_MODE_LIGHT+0].value = positionMode ? 0.0 : 1.0;
+    lights[POSITION_MODE_LIGHT+1].value = positionMode ? 0.0 : 1.0;
+    lights[POSITION_MODE_LIGHT+2].value = positionMode ? 0.0 : 0.2;
+
+    if (eocModeTrigger.process(params[EOC_MODE_PARAM].getValue())) {
+        eocMode = !eocMode;
+    }
+    lights[EOC_MODE_LIGHT+0].value = eocMode ? 0.8 : 0.0;
+    lights[EOC_MODE_LIGHT+1].value = eocMode ? 0.4 : 0.6;
+    lights[EOC_MODE_LIGHT+2].value = 0.0;
+
+
     if (loopTrigger.process(params[LOOP_PARAM].getValue() + inputs[LOOP_INPUT].getVoltage())) {
         loopMode = !loopMode;
     }
@@ -425,12 +440,6 @@ void FreudianSlipModule::process(const ProcessArgs &args) {
     lights[LOOP_MODE_LIGHT+1].value = loopMode;
     lights[LOOP_MODE_LIGHT+2].value = loopMode ? 0.2 : 0.0;
 
-    if (rmTrigger.process(params[RING_MODULATION].getValue())) {
-        rmActive = !rmActive;
-    }
-    lights[RING_MODULATION_ENABLED_LIGHT+0].value = rmActive;
-    lights[RING_MODULATION_ENABLED_LIGHT+1].value = rmActive;
-    lights[RING_MODULATION_ENABLED_LIGHT+2].value = rmActive ? 0.2 : 0.0;
 
     if (warpUseFundamentalTrigger.process(params[FREQ_WARP_USE_FUNDAMENTAL].getValue())) {
         warpBasedOnFundamental = !warpBasedOnFundamental;
@@ -449,7 +458,7 @@ void FreudianSlipModule::process(const ProcessArgs &args) {
         play = true;
         samplesPlayed = 0;
         for(int v=0;v<MAX_VOICE_COUNT;v++) {
-            frameIndex[v]= 0; 
+            frameIndex[v]= frameCount * startPosition[v]; 
             framePlayedCount[v] = 0;
             frameSubIndex[v] = 0.0;
             framesCompleted[v] = false;     
@@ -502,6 +511,29 @@ void FreudianSlipModule::process(const ProcessArgs &args) {
     ringModulationMixCells->shiftY = rmMixShiftY;
     rmMixPercentage = params[RM_MIX].getValue();
 
+    float startPositionShiftX = inputs[START_POS_SHIFT_X_CV].getVoltage() / 5.0  + params[START_POS_PARAM].getValue();
+    float startPositionShiftY = inputs[START_POS_SHIFT_Y_CV].getVoltage() / 5.0;
+    float startPositionRotateX = inputs[START_POS_ROTATE_X_CV].getVoltage() / 5.0;
+    startPositionCells->shiftX = startPositionShiftX;
+    startPositionCells->shiftY = startPositionShiftY;
+    startPositionCells->rotateX = startPositionRotateX;
+    startPositionPercentage = params[START_POS_PARAM].getValue();
+
+    float stopPositionShiftX = inputs[STOP_POS_SHIFT_X_CV].getVoltage() / 5.0  + params[STOP_POS_PARAM].getValue();
+    float stopPositionShiftY = inputs[STOP_POS_SHIFT_Y_CV].getVoltage() / 5.0;
+    float stopPositionRotateX = inputs[STOP_POS_ROTATE_X_CV].getVoltage() / 5.0;
+    stopPositionCells->shiftX = stopPositionShiftX;
+    stopPositionCells->shiftY = stopPositionShiftY;
+    stopPositionCells->rotateX = stopPositionRotateX;
+    stopPositionPercentage = params[STOP_POS_PARAM].getValue() + 1.0;
+
+    float playSpeedShiftX = inputs[PLAY_SPEED_SHIFT_X_CV].getVoltage() / 5.0 + params[PLAY_SPEED_PARAM].getValue() / 6.0;
+    float playSpeedShiftY = inputs[PLAY_SPEED_SHIFT_Y_CV].getVoltage() / 5.0;
+    float playSpeedRotateX = inputs[PLAY_SPEED_ROTATE_X_CV].getVoltage() / 5.0;
+    playSpeedCells->shiftX = playSpeedShiftX;
+    playSpeedCells->shiftY = playSpeedShiftY;
+    playSpeedCells->rotateX = playSpeedRotateX;
+    playSpeedPercentage = params[PLAY_SPEED_PARAM].getValue() / 3.0;
 
     float panShiftX = inputs[PAN_SHIFT_X_CV].getVoltage() / 5.0;
     float panShiftY = inputs[PAN_SHIFT_Y_CV].getVoltage() / 5.0;
@@ -510,14 +542,23 @@ void FreudianSlipModule::process(const ProcessArgs &args) {
     panningCells->shiftY = panShiftY;
     panningCells->rotateX = panRotateX;
 
-    float playSpeedShiftX = inputs[PLAY_SPEED_SHIFT_X_CV].getVoltage() / 5.0 + params[PLAY_SPEED_PARAM].getValue() / 6.0;
-    //float playSpeedShiftX = inputs[PLAY_SPEED_SHIFT_X_CV].getVoltage() / 5.0;
-    float playSpeedShiftY = inputs[PLAY_SPEED_SHIFT_Y_CV].getVoltage() / 5.0;
-    float playSpeedRotateX = inputs[PLAY_SPEED_ROTATE_X_CV].getVoltage() / 5.0;
-    playSpeedCells->shiftX = playSpeedShiftX;
-    playSpeedCells->shiftY = playSpeedShiftY;
-    playSpeedCells->rotateX = playSpeedRotateX;
-    playSpeedPercentage = params[PLAY_SPEED_PARAM].getValue() / 3.0;
+    //get cell changes
+    if(samplesPlayed % 1024 == 0) {
+        for (uint8_t voiceIndex = 0; voiceIndex < MAX_VOICE_COUNT; voiceIndex++) {
+            fmMatrix[voiceIndex] = frequencyModulationCells->displayValueForPosition(voiceIndex);
+            fmAmount[voiceIndex] = frequencyModulationAmountCells->valueForPosition(voiceIndex);
+            rmMatrix[voiceIndex] = ringModulationCells->displayValueForPosition(voiceIndex);
+            rmMix[voiceIndex] = ringModulationMixCells->valueForPosition(voiceIndex);
+            panning[voiceIndex] = panningCells->valueForPosition(voiceIndex);
+            playSpeed[voiceIndex] = playSpeedCells->valueForPosition(voiceIndex);
+            startPosition[voiceIndex]= startPositionCells->valueForPosition(voiceIndex);
+            stopPosition[voiceIndex]= stopPositionCells->valueForPosition(voiceIndex);
+        }
+        samplesPlayed =0;
+    }
+    samplesPlayed ++;
+
+
 
     randomizeStepAmount = paramValue(RANDOMIZE_PARAM, RANDOMIZE_CV, 0, 1.0);
     randomizeStepPercentage = randomizeStepAmount;
@@ -529,9 +570,9 @@ void FreudianSlipModule::process(const ProcessArgs &args) {
     if(play && analysisStatus == 2) {
         float randomStep = (((float) rand()/RAND_MAX) * randomizeStepAmount * frameCount / 100.0) - (randomizeStepAmount * float(frameCount) / 200.0); // Calculate it once so every voice is in sync, tends to go forward, but not always
             //fprintf(stderr, "%f\n", randomStep);
-        bool allFramesPlayed = true;
+        bool allFramesPlayed = !eocMode;
         for(int v=0;v<MAX_VOICE_COUNT;v++) {
-            //fprintf(stderr, "%i %i %f %i\n", allFramesPlayed, frameIndex[v], playSpeed[v], frameCount);
+            //fprintf(stderr, "%i %i %f %i\n", loopMode, frameIndex[v], playSpeed[v], frameCount);
             if(!framesCompleted[v]) {
                 frameSubIndex[v] += playSpeed[v];
                 if(frameSubIndex[v] >= hopSizeInBytes) {
@@ -545,8 +586,17 @@ void FreudianSlipModule::process(const ProcessArgs &args) {
                     if(frameIndex[v] < 0) {
                         frameIndex[v] += frameCount;
                     }
+                    int32_t distanceToTravel;
+                    if(positionMode) {
+                        distanceToTravel= playSpeed[v] >=0 ?
+                        (stopPosition[v] > startPosition[v] ? frameCount * (stopPosition[v]-startPosition[v]) :  frameCount * (1.0 - startPosition[v]+stopPosition[v])) :
+                        (stopPosition[v] > startPosition[v] ? frameCount * (1.0 - stopPosition[v]+startPosition[v]) :  frameCount * (startPosition[v] - stopPosition[v])); 
+                    } else {
+                        distanceToTravel = frameCount * abs(stopPosition[v] - startPosition[v]);
+                    }
+
                     framePlayedCount[v]+=1;
-                    if(framePlayedCount[v] >= frameCount) {
+                    if(framePlayedCount[v] >= distanceToTravel) {
                         framesCompleted[v] = true;
                     }
                 }
@@ -561,13 +611,22 @@ void FreudianSlipModule::process(const ProcessArgs &args) {
                     if(frameIndex[v] < 0) {
                         frameIndex[v] += frameCount;
                     }
+                    int32_t distanceToTravel;
+                    if(positionMode) {
+                        distanceToTravel= playSpeed[v] >=0 ?
+                        (stopPosition[v] > startPosition[v] ? frameCount * (stopPosition[v]-startPosition[v]) :  frameCount * (1.0 - startPosition[v]+stopPosition[v])) :
+                        (stopPosition[v] > startPosition[v] ? frameCount * (1.0 - stopPosition[v]+startPosition[v]) :  frameCount * (startPosition[v] - stopPosition[v])); 
+                    } else {
+                        distanceToTravel = frameCount * abs(stopPosition[v] - startPosition[v]);
+                    }
+                    
                     framePlayedCount[v]+=1;
-                    if(framePlayedCount[v] >= frameCount) {
+                    if(framePlayedCount[v] >= distanceToTravel) {
                         framesCompleted[v] = true;
                     }
                 }
             }
-            allFramesPlayed = allFramesPlayed & framesCompleted[v];
+            allFramesPlayed = eocMode ? allFramesPlayed || framesCompleted[v] : allFramesPlayed && framesCompleted[v];
         }
 
         if(allFramesPlayed) {
@@ -577,7 +636,7 @@ void FreudianSlipModule::process(const ProcessArgs &args) {
             } else {
                 samplesPlayed = 0;
                 for(int v=0;v<MAX_VOICE_COUNT;v++) {
-                    frameIndex[v]= 0; 
+                    frameIndex[v]= frameCount * startPosition[v]; 
                     framePlayedCount[v] = 0;
                     frameSubIndex[v] = 0.0;
                     framesCompleted[v] = false;     
@@ -585,21 +644,6 @@ void FreudianSlipModule::process(const ProcessArgs &args) {
             }
             return;
         }
-
-
-        //get cell changes
-        if(samplesPlayed % 1024 == 0) {
-            for (uint8_t voiceIndex = 0; voiceIndex < MAX_VOICE_COUNT; voiceIndex++) {
-                fmMatrix[voiceIndex] = frequencyModulationCells->displayValueForPosition(voiceIndex);
-                fmAmount[voiceIndex] = frequencyModulationAmountCells->valueForPosition(voiceIndex);
-                rmMatrix[voiceIndex] = ringModulationCells->displayValueForPosition(voiceIndex);
-                rmMix[voiceIndex] = ringModulationMixCells->valueForPosition(voiceIndex);
-                panning[voiceIndex] = panningCells->valueForPosition(voiceIndex);
-                playSpeed[voiceIndex] = playSpeedCells->valueForPosition(voiceIndex);
-            }
-        }
-        samplesPlayed ++;
-
 
         //Parallel version
         float_4 frequency1 = 0;

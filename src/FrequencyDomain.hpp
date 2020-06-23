@@ -12,3 +12,4 @@ extern Model *modelFreudianSlip;
 extern Model *modelHarmonicConvergence;
 extern Model *modelDelayedReaction;
 extern Model *modelMorphology;
+extern Model *modelGrainsOfWrath;
