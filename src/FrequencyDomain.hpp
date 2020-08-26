@@ -8,8 +8,9 @@ extern Plugin *pluginInstance;
 // module widgets
 ////////////////////
 
-extern Model *modelFreudianSlip;
-extern Model *modelHarmonicConvergence;
+extern Model *modelBallOfConfusion;
 extern Model *modelDelayedReaction;
-extern Model *modelMorphology;
+extern Model *modelFreudianSlip;
 extern Model *modelGrainsOfWrath;
+extern Model *modelHarmonicConvergence;
+extern Model *modelMorphology;

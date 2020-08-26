@@ -378,11 +378,11 @@ void GrainsOfWrathModule::spawnGrain() {
   int8_t voice =  weightedProbability(actualVoiceWeighting,MAX_VOICE_COUNT, weightScaling, rnd);
 
   if(voice < MAX_SAMPLES && totalSampleC[voice] < 1) { //Bail if nothing there
-       fprintf(stderr, "empty voice chosen... %u \n",voice);
+       //fprintf(stderr, "empty voice chosen... %u \n",voice);
     return;
   }
   if(voice > MAX_VOICE_COUNT || voice < 0) {
-       fprintf(stderr, "bad voice chosen... %u \n",voice);
+       //fprintf(stderr, "bad voice chosen... %u \n",voice);
     return;
   }
   
@@ -684,8 +684,11 @@ void GrainsOfWrathModule::process(const ProcessArgs &args) {
       outL += grainValue * std::min(1.0 - individualGrainPanning[i],1.0);
       outR += grainValue * std::min(individualGrainPanning[i]+1.0,1.0);;
 
+      uint8_t voice = individualGrainVoice[i];
+      float lineInput = voice < MAX_SAMPLES ? inputs[V_OCT_SAMPLE_INPUT].getVoltage(voice) : inputs[V_OCT_LIVE_INPUT].getVoltage(voice-MAX_SAMPLES);
+      float liveVoicePitch = lineInput >= 0 ? lineInput + 1.0 : 1.0 / (1.0-lineInput);
 
-      individualGrainPosition[i] += individualGrainPitch[i]; 
+      individualGrainPosition[i] += (individualGrainPitch[i] * liveVoicePitch); 
       if(individualGrainPosition[i] >= grainSize) { //Remove grain
         //fprintf(stderr, "killing %llu of %llu and %llu\n",i,nbrGrains,individualGrainPanning.size());
         grains.erase(grains.begin() + i);

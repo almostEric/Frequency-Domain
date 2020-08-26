@@ -15,3 +15,17 @@ T interpolate(T input1, T input2, T balance, T low = 0, T high = 100, Interpolat
 
   return output;
 }
+
+
+template <typename T>
+T bilinearInterpolate(T q11,T q12,T q21,T q22,T x, T y,T low = 0, T high = 1) {
+
+  T total = high - low;
+
+  T fxy1 = ((high-x) / total * q11) + ((x-low) / total * q21);
+  T fxy2 = ((high-x) / total * q12) + ((x-low) / total * q22);
+
+  T fx = ((high-y) / total * fxy1) + ((y-low) / total * fxy2); 
+
+  return fx;
+}
