@@ -284,6 +284,10 @@ struct GrainsOfWrathWidget : ModuleWidget {
     addInput(createInput<LightPort>(Vec(298, 342), module, GrainsOfWrathModule::REVERSE_GRAIN_LIVE_INPUT));
 
 
+    addInput(createInput<LightPort>(Vec(336, 342), module, GrainsOfWrathModule::V_OCT_SAMPLE_INPUT));
+    addInput(createInput<LightPort>(Vec(358, 342), module, GrainsOfWrathModule::V_OCT_LIVE_INPUT));
+
+
     addOutput(createOutput<LightPort>(Vec(411, 342), module, GrainsOfWrathModule::OUTPUT_L));
     addOutput(createOutput<LightPort>(Vec(433, 342), module, GrainsOfWrathModule::OUTPUT_R));
 

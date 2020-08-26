@@ -85,6 +85,8 @@ struct GrainsOfWrathModule : Module {
         REVERSE_GRAIN_LIVE_INPUT,        
         REVERSE_GRAIN_SAMPLES_INPUT,        
         RESET_INPUT,
+        V_OCT_SAMPLE_INPUT,
+        V_OCT_LIVE_INPUT,
         NUM_INPUTS
     };
     enum OutputIds { OUTPUT_L, OUTPUT_R, DEBUG_OUTPUT, NUM_OUTPUTS };
