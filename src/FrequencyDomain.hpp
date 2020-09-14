@@ -9,6 +9,7 @@ extern Plugin *pluginInstance;
 ////////////////////
 
 extern Model *modelBallOfConfusion;
+extern Model *modelBoxOfRevelation;
 extern Model *modelDelayedReaction;
 extern Model *modelFreudianSlip;
 extern Model *modelGrainsOfWrath;

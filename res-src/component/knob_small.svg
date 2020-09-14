@@ -13,7 +13,7 @@
    id="svg18411"
    sodipodi:docname="knob_small.svg"
    style="fill:#000000"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
   <metadata
      id="metadata18415">
     <rdf:RDF>
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -35,31 +35,32 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="3840"
-     inkscape:window-height="2115"
+     inkscape:window-width="1920"
+     inkscape:window-height="1058"
      id="namedview18413"
      showgrid="false"
-     inkscape:zoom="6.7428571"
-     inkscape:cx="17.5"
-     inkscape:cy="17.5"
-     inkscape:window-x="-13"
-     inkscape:window-y="-13"
+     inkscape:zoom="26.971428"
+     inkscape:cx="19.131356"
+     inkscape:cy="8.6016948"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg18411" />
+     inkscape:current-layer="svg18411"
+     inkscape:document-rotation="0" />
   <defs
      id="SvgjsDefs1001" />
   <polygon
      id="SvgjsPolygon1006"
      points="9,32.464164 14.547981,34.483464 20.452019,34.483464 26,32.464164 30.522756,28.669121 33.474775,23.556074 34.5,17.741732 33.474775,11.927389 30.522756,6.8143424 26,3.0192999 20.452019,1 14.547981,1 9,3.0192999 4.4772445,6.8143424 1.5252254,11.927389 0.5,17.741732 1.5252254,23.556074 4.4772445,28.669121 "
      transform="matrix(0.52075965,0,0,0.5266968,-0.12818152,-0.294004)"
-     style="fill:#988903;stroke:#e8b923;stroke-width:0.5" />
+     style="fill:#442d03;stroke:#e8b923;stroke-width:0.5;fill-opacity:1" />
   <rect
      id="SvgjsRect1007"
      width="1.0415193"
      height="3.1601808"
      x="8.4643526"
      y="0.23269081"
-     style="fill:#381800;stroke-width:0.52371985" />
+     style="fill:#e8b923;stroke-width:0.52371985;fill-opacity:1" />
   <ellipse
      id="SvgjsCircle1008"
      cx="8.9851122"

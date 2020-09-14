@@ -172,14 +172,14 @@ struct BCDisplaySphere : FramebufferWidget {
     nvgStrokeWidth(args.vg, 0.5);
     
 
+    float f = 1.5;
+    float sphereRadius = 68.0; //Probably needs to be smaller
+
     for(uint64_t i=0;i<module->sphere.size();i++) {
         float x = module->sphere[i].xRotated; 
         float y = module->sphere[i].yRotated;
         float z = module->sphere[i].zRotated + 2; //pushing it back so no non-zero
         uint16_t fileId = module->sphere[i].fileId;
-
-        float f = 1.5;
-        float sphereRadius = 68.0; //Probably needs to be smaller
 
         float xPrime =  x * f/z * sphereRadius + sphereRadius - 4.0;
         float yPrime =  y * f/z * sphereRadius + sphereRadius - 4.0;
@@ -241,15 +241,21 @@ struct BCDisplayWaveFiles : FramebufferWidget {
 
       for(uint64_t j=0;j<4;j++) {
         if(module->waveTableWeighting[j] > 0) {
-          nvgFillColor(args.vg,nvgRGB(0xf0-(0xc0 * module->waveTableWeighting[j]),0xff,0x1f)); 	
+          if(module->morphMode == module->MORPH_TRANSFER && j==0) {
+            nvgFillColor(args.vg,nvgRGB(0xf0,0x4f,0x0f)); 	
+          } else {
+            nvgFillColor(args.vg,nvgRGB(0xf0-(0xc0 * module->waveTableWeighting[j]),0xff,0x1f)); 	
+          }
           char text[128];
           snprintf(text, sizeof(text), "%s", module->waveTableNames[module->waveTablesInUse[j]].c_str());
           nvgTextAlign(args.vg,NVG_ALIGN_LEFT);
           nvgText(args.vg, 2, j*7.2+7, text, NULL);
 
-          snprintf(text, sizeof(text), "%.1f", module->waveTableWeighting[j] * 100.0 );
-          nvgTextAlign(args.vg,NVG_ALIGN_RIGHT);
-          nvgText(args.vg, 74, j*7.2+7, text, NULL);
+          if(module->morphMode != module->MORPH_TRANSFER || j!=0) {
+            snprintf(text, sizeof(text), "%.1f", module->waveTableWeighting[j] * 100.0 );
+            nvgTextAlign(args.vg,NVG_ALIGN_RIGHT);
+            nvgText(args.vg, 74, j*7.2+7, text, NULL);
+          }
         }
       }
       
@@ -308,7 +314,7 @@ struct BCDisplaySyncMode : FramebufferWidget {
     nvgTextLetterSpacing(args.vg, -0.5);
     nvgFillColor(args.vg,nvgRGB(0x1f,0xf0,0x1f)); 	
     char text[128];
-    snprintf(text, sizeof(text), "%s", module->syncModes[module->syncMode ? 1 : 0].c_str());
+    snprintf(text, sizeof(text), "%s", module->syncModes[module->syncMode].c_str());
     nvgText(args.vg, 2, 7, text, NULL);      
   }
 };
@@ -360,7 +366,7 @@ struct BallOfConfusionWidget : ModuleWidget {
       //if (module) {
         dmm->module = module;
       //}   
-      dmm->box.pos = Vec(8, 258);
+      dmm->box.pos = Vec(8, 263);
       dmm->box.size = Vec(32, 10);
       addChild(dmm);
     }
@@ -370,8 +376,8 @@ struct BallOfConfusionWidget : ModuleWidget {
       //if (module) {
         dsm->module = module;
       //}   
-      dsm->box.pos = Vec(182, 168);
-      dsm->box.size = Vec(22, 10);
+      dsm->box.pos = Vec(176, 170);
+      dsm->box.size = Vec(32, 10);
       addChild(dsm);
     }
 
@@ -417,13 +423,13 @@ struct BallOfConfusionWidget : ModuleWidget {
 
   
 
-    addParam(createParam<LightSmallKnob>(Vec(19.5, 129), module, BallOfConfusionModule::FREQUENCY_PARAM));
+    addParam(createParam<LightSmallKnob>(Vec(19, 129), module, BallOfConfusionModule::FREQUENCY_PARAM));
     {
       SmallArcDisplay *c = new SmallArcDisplay();
       if (module) {
         c->percentage = &module->tuningPercentage;
       }
-      c->box.pos = Vec(24, 132.5);
+      c->box.pos = Vec(22.5, 132.5);
       c->box.size = Vec(30, 30);
       addChild(c);
     }
@@ -456,37 +462,67 @@ struct BallOfConfusionWidget : ModuleWidget {
     addInput(createInput<LightPort>(Vec(191, 127), module, BallOfConfusionModule::SYNC_POSITION_INPUT));
 
 
-    addParam(createParam<LightSmallKnobSnap>(Vec(45, 268), module, BallOfConfusionModule::SPECTRUM_SHIFT_PARAM));
+    addParam(createParam<LightSmallKnob>(Vec(45, 221), module, BallOfConfusionModule::SPECTRUM_SHIFT_PARAM));
     {
       SmallBidirectionalArcDisplay *c = new SmallBidirectionalArcDisplay();
       if (module) {
         c->percentage = &module->spectrumShiftPercentage;
       }
-      c->box.pos = Vec(48.5, 271.5);
+      c->box.pos = Vec(48.5, 224.5);
       c->box.size = Vec(30, 30);
       addChild(c);
     }
-    addInput(createInput<LightPort>(Vec(60, 250), module, BallOfConfusionModule::SPECTRUM_SHIFT_INPUT));
+    addInput(createInput<LightPort>(Vec(60, 203), module, BallOfConfusionModule::SPECTRUM_SHIFT_INPUT));
+
+
+    addParam(createParam<LightSmallKnob>(Vec(10, 221), module, BallOfConfusionModule::WAVEFOLD_AMOUNT_PARAM));
+    {
+      SmallArcDisplay *c = new SmallArcDisplay();
+      if (module) {
+        c->percentage = &module->wavefoldAmountPercentage;
+      }
+      c->box.pos = Vec(13.5, 224.5);
+      c->box.size = Vec(30, 30);
+      addChild(c);
+    }
+    addInput(createInput<LightPort>(Vec(25, 203), module, BallOfConfusionModule::WAVEFOLD_AMOUNT_INPUT));
+
+
+
+    // Harmonics
+    {
+      CellVerticalBarGrid *harmonicShiftDisplay = new CellVerticalBarGrid(15);
+      if (module) {
+        harmonicShiftDisplay->cells = module->harmonicShiftCells;
+        harmonicShiftDisplay->cellHeight = 1.0; 
+        harmonicShiftDisplay->gridName = "Harmonic Matrix";
+      }
+
+      harmonicShiftDisplay->box.pos = Vec(50.5, 263);
+      harmonicShiftDisplay->box.size = Vec(32, 32);
+      addChild(harmonicShiftDisplay);
+
+      addInput(createInput<LightPort>(Vec(40, 294.5), module, BallOfConfusionModule::HARMONIC_SHIFT_X_INPUT));
+      addInput(createInput<LightPort>(Vec(62, 294.5), module, BallOfConfusionModule::HARMONIC_SHIFT_Y_INPUT));
+    }
 
 
 
 
 
+    addParam(createParam<RecButton>(Vec(176, 182), module, BallOfConfusionModule::SYNC_MODE_PARAM));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(178, 183), module, BallOfConfusionModule::SYNC_MODE_LIGHT));
 
-    addParam(createParam<RecButton>(Vec(178, 180), module, BallOfConfusionModule::SYNC_MODE_PARAM));
-    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(180, 181), module, BallOfConfusionModule::SYNC_MODE_LIGHT));
-
-    addParam(createParam<RecButton>(Vec(8, 272), module, BallOfConfusionModule::MORPH_MODE_PARAM));
-    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(10, 273), module, BallOfConfusionModule::MORPH_MODE_LIGHT));
+    addParam(createParam<RecButton>(Vec(8, 277), module, BallOfConfusionModule::MORPH_MODE_PARAM));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(10, 278), module, BallOfConfusionModule::MORPH_MODE_LIGHT));
 
 
     addInput(createInput<LightPort>(Vec(48, 127), module, BallOfConfusionModule::V_OCTAVE_INPUT));
-    addInput(createInput<LightPort>(Vec(8, 176), module, BallOfConfusionModule::FM_INPUT));
-    addInput(createInput<LightPort>(Vec(44, 176), module, BallOfConfusionModule::SYNC_INPUT));
-    addInput(createInput<LightPort>(Vec(14, 208), module, BallOfConfusionModule::PHASE_INPUT));
+    addInput(createInput<LightPort>(Vec(5, 166), module, BallOfConfusionModule::FM_INPUT));
+    addInput(createInput<LightPort>(Vec(32, 166), module, BallOfConfusionModule::SYNC_INPUT));
+    addInput(createInput<LightPort>(Vec(59, 166), module, BallOfConfusionModule::PHASE_INPUT));
 
-    addOutput(createOutput<LightPort>(Vec(20, 305), module, BallOfConfusionModule::OUTPUT_L));
-    // addOutput(createOutput<LightPort>(Vec(197, 342), module, BallOfConfusionModule::OUTPUT_R));
+    addOutput(createOutput<LightPort>(Vec(20, 315), module, BallOfConfusionModule::OUTPUT_L));
 
 
 
@@ -523,20 +559,6 @@ struct BallOfConfusionWidget : ModuleWidget {
     menu->addChild(additionalSample);
 
     menu->addChild(new ScatterSlider(boc));    
-
-
-		// {
-    //   OptionsMenuItem* mi = new OptionsMenuItem("Window Function");
-		// 	mi->addItem(OptionMenuItem("None", [fs]() { return fs->windowFunctionId == 0; }, [fs]() { fs->windowFunctionId = 0; }));
-		// 	mi->addItem(OptionMenuItem("Triangle", [fs]() { return fs->windowFunctionId == 1; }, [fs]() { fs->windowFunctionId = 1; }));
-		// 	mi->addItem(OptionMenuItem("Welch", [fs]() { return fs->windowFunctionId == 2; }, [fs]() { fs->windowFunctionId = 2; }));
-		// 	mi->addItem(OptionMenuItem("Sine", [fs]() { return fs->windowFunctionId == 3; }, [fs]() { fs->windowFunctionId = 3; }));
-		// 	mi->addItem(OptionMenuItem("Hanning", [fs]() { return fs->windowFunctionId == 4; }, [fs]() { fs->windowFunctionId = 4; }));
-		// 	mi->addItem(OptionMenuItem("Blackman", [fs]() { return fs->windowFunctionId == 5; }, [fs]() { fs->windowFunctionId = 5; }));
-		// 	mi->addItem(OptionMenuItem("Nutall", [fs]() { return fs->windowFunctionId == 6; }, [fs]() { fs->windowFunctionId = 6; }));
-		// 	mi->addItem(OptionMenuItem("Kaiser", [fs]() { return fs->windowFunctionId == 7; }, [fs]() { fs->windowFunctionId = 7; }));
-		// 	OptionsMenuItem::addToMenu(mi, menu);
-		// }
   }
 };
 

@@ -1,9 +1,12 @@
 #include "../FrequencyDomain.hpp"
 #include "../model/dsp/FFT.hpp"
 #include "../model/dsp/WindowFunction.hpp"
+#include "../model/dsp/Binning.hpp"
 #include "../model/Buffer.hpp"
 #include "../model/point3d.hpp"
 #include "../model/noise/noise.hpp"
+#include "../model/Oscillator.hpp"
+#include "../model/Cells.hpp"
 
 #include <cstdint>
 #include <vector>
@@ -21,117 +24,10 @@ using rack::simd::float_4;
 
 #define WAV_TABLE_SIZE 2048
 #define MAX_MORPHED_WAVETABLES 4
-#define MAX_SAMPLES 16
-#define MAX_LIVE_INPUTS 16
-#define MAX_VOICE_COUNT 32
 #define MAX_POLYPHONY 16
-#define MAX_BUFFER_SIZE 32768 //2^15
-#define MORPH_MODES 3
-
-template <int OVERSAMPLE, int QUALITY, typename T>
-struct VoltageControlledOscillator {
-	bool soft = false;
-	bool syncEnabled = false;
-	// For optimizing in serial code
-	int channels = 0;
-
-	T lastSyncValue = 0.f;
-	T phase = 0.f;
-    T softSyncPhase = 1.0f;
-	T freq;
-    T basePhase = 0.f;
-	T syncDirection = 1.f;
-
-	T oscValue = 0.f;
-
-	void setPitch(T pitch) {
-		freq = dsp::FREQ_C4 * dsp::approxExp2_taylor5(pitch + 30) / 1073741824;
-	}
-
-    void setBasePhase(T initialPhase) {
-        //Apply change, then remember
-        phase += initialPhase - basePhase;
-        phase -= simd::floor(phase);
-        basePhase = initialPhase;
-    }
-
-    void setSoftSyncPhase(T ssPhase) {
-        //Apply change, then remember
-        softSyncPhase = ssPhase;
-    }
-
-	
-	void process(float deltaTime, T syncValue) {
-		// Advance phase
-		T deltaPhase = simd::clamp(freq * deltaTime, 1e-6f, 0.35f);
-		// if (soft) {
-		// 	// Reverse direction
-		// 	deltaPhase *= syncDirection;
-		// }
-		// else {
-		// 	// Reset back to forward
-		// 	syncDirection = 1.f;
-		// }
-		phase += deltaPhase;
-		// Wrap phase
-		phase -= simd::floor(phase);
-
-
-        // Detect sync
-		// Might be NAN or outside of [0, 1) range
-		if (syncEnabled) {
-			T deltaSync = syncValue - lastSyncValue;
-			T syncCrossing = -lastSyncValue / deltaSync;
-			lastSyncValue = syncValue;
-			T sync = (0.f < syncCrossing) & (syncCrossing <= 1.f) & (syncValue >= 0.f);
-			int syncMask = simd::movemask(sync);
-			if (syncMask) {
-				if (soft) {
-                    T newPhase = simd::ifelse(phase >= softSyncPhase, basePhase, phase);					
-                    phase = newPhase;                    
-					//syncDirection = simd::ifelse(sync, -syncDirection, syncDirection);
-				}
-				// else {
-					// T newPhase = simd::ifelse(sync, (1.f - syncCrossing) * deltaPhase, phase);
-					// // Insert minBLEP for sync
-					// for (int i = 0; i < channels; i++) {
-					// 	if (syncMask & (1 << i)) {
-					// 		T mask = simd::movemaskInverse<T>(1 << i);
-					// 		float p = syncCrossing[i] - 1.f;
-					// 		T x;
-					// 		x = mask & (sqr(newPhase) - sqr(phase));
-					// 		sqrMinBlep.insertDiscontinuity(p, x);
-					// 		x = mask & (saw(newPhase) - saw(phase));
-					// 		sawMinBlep.insertDiscontinuity(p, x);
-					// 		x = mask & (tri(newPhase) - tri(phase));
-					// 		triMinBlep.insertDiscontinuity(p, x);
-					// 		x = mask & (sin(newPhase) - sin(phase));
-					// 		sinMinBlep.insertDiscontinuity(p, x);
-					// 	}
-					// }
-                    phase = basePhase;
-				// }
-			}
-		}
-
-		// Table Ubdex
-		oscValue = wt(phase);
-		
-		}
-
-	T wt(T phase) {
-		return phase * WAV_TABLE_SIZE;
-	}
-	T wt() {
-		return oscValue;
-	}
-    // uint16_t wti() {
-	// 	return uint16_t(oscValue);
-	// }
-
-
-};
-
+#define NBR_MORPH_MODES 4
+#define NBR_SYNC_MODES 3
+#define MAX_HARMONICS 16
 
 
 struct BallOfConfusionModule : Module {
@@ -148,6 +44,8 @@ struct BallOfConfusionModule : Module {
         MORPH_MODE_PARAM,
         SYNC_POSITION_PARAM,
         SPECTRUM_SHIFT_PARAM,
+        WAVEFOLD_AMOUNT_PARAM,
+        WWAVEFOLD_SYMMETRY_PARAM,
         NUM_PARAMS
     };
 
@@ -162,6 +60,9 @@ struct BallOfConfusionModule : Module {
         SYNC_INPUT,
         SYNC_POSITION_INPUT,
         SPECTRUM_SHIFT_INPUT,
+        WAVEFOLD_AMOUNT_INPUT,
+        HARMONIC_SHIFT_X_INPUT,
+        HARMONIC_SHIFT_Y_INPUT,
         NUM_INPUTS
     };
     enum OutputIds { OUTPUT_L, OUTPUT_R, DEBUG_OUTPUT, NUM_OUTPUTS };
@@ -174,6 +75,11 @@ struct BallOfConfusionModule : Module {
         NUM_LIGHTS = ROLL_QUANTIZED_LIGHT + 3
     };
 
+    enum MorphModes { MORPH_INTERPOLATE, MORPH_SPECTRAL, MORPH_SPECTRAL_0_PHASE, MORPH_TRANSFER };
+
+    enum SyncModes { SYNC_HARD, SYNC_SOFT, SYNC_SOFT_REVERSE };
+
+
     BallOfConfusionModule ();
     ~BallOfConfusionModule ();
 
@@ -185,6 +91,7 @@ struct BallOfConfusionModule : Module {
     void fibonacci_sphere(uint16_t samples);
     void rotateSphere(float yaw,float pitch,float roll);
     void buildActualWaveTable();
+    void calculateWaveFolding();
     void process (const ProcessArgs &args) override;
     float paramValue (uint16_t, uint16_t, float, float);
 
@@ -195,11 +102,11 @@ struct BallOfConfusionModule : Module {
 
 
 
-    std::vector<std::vector<float>> playBuffer[MAX_SAMPLES];
     std::vector<point3d> sphere;
     std::vector<uint16_t> waveTableFileSampleCount;
     std::vector<float> waveTableList;
     std::vector<float> waveTableSpectralList;
+    std::vector<uint16_t> waveTableFundamentalHarmonicList;
     std::vector<std::string> waveTableNames;
 
     uint16_t waveTablePathCount = 0;
@@ -210,11 +117,22 @@ struct BallOfConfusionModule : Module {
     float waveTableWeighting[4] = {0};
 
     float actualWaveTable[WAV_TABLE_SIZE] = {0};
+    float ifftWaveTable[WAV_TABLE_SIZE] = {0};
+    float prefoldedWaveTable[WAV_TABLE_SIZE] = {0};
 
     float fftBuffer[WAV_TABLE_SIZE] = {0}; 
 
-    std::string morphModes[MORPH_MODES] ={"Interpolate","Spectral","Spectral 0"};
-    std::string syncModes[2] ={"Hard","Soft"};
+    float magnitudeBuffer[WAV_TABLE_SIZE] = {0}; 
+    float phaseBuffer[WAV_TABLE_SIZE] = {0}; 
+
+    Binning *binnings;
+    Result bins[1] = { { 0, 0, 0 } };
+    float harmonicShiftAmount[16] = {0};
+    float lastHarmonicShiftAmount[16] = {0};
+
+
+    std::string morphModes[NBR_MORPH_MODES] ={"Interpolate","Spectral","Spectral 0","Transfer"};
+    std::string syncModes[NBR_SYNC_MODES] ={"Hard","Soft","Soft Reverse"};
 
 
     bool loading = false;
@@ -237,9 +155,10 @@ struct BallOfConfusionModule : Module {
     dsp::SchmittTrigger morphModeTrigger,syncModeTrigger;
     //dsp::PulseGenerator endOfSamplePulse;
 
-	VoltageControlledOscillator<16, 16, float_4> oscillators[4];
+	WavelessOscillator<16, 16, WAV_TABLE_SIZE, float_4> oscillators[4];
 
     bool rebuild = false;
+    bool recalculateWave = false;
 
     float yaw=0;
     float pitch=0;
@@ -257,24 +176,22 @@ struct BallOfConfusionModule : Module {
     float phase=0;
     float currentWavePosition = 0;
 
-    bool syncMode = false; // true = soft
+    int syncMode = SYNC_HARD; 
     float syncPosition = 1;
-
-    uint8_t windowFunctionId = 4;
 
     int16_t spectrumShift = 0;
     int16_t lastSpectrumShift = 0;
 
+    float wavefoldAmount = 1.0;
+    float wavefoldSymmetry = 0.0;
+    float lastWavefoldAmount = -1.0;
+    float lastWavefoldSymmetry = -1.0;
+    bool recalcFold = false;
+
     float sampleRate;
-    // uint64_t sampleCounter = 0;
-    // uint64_t lastGrainSampleCount = 0;
+    
 
-    float windowFunctionSize = 0; 
-    // uint8_t windowFunctionId;
-    // uint8_t lastWindowFunctionId;
-
-
-
+    OneDimensionalCells *harmonicShiftCells;
 
     // percentages
     float yawPercentage = 0;
@@ -285,16 +202,7 @@ struct BallOfConfusionModule : Module {
     float fmAmountPercentage = 0;
     float syncPositionPercentage = 0;
     float spectrumShiftPercentage = 0;
-
-
-    // //Grain Vectors
-    // std::vector<std::vector<float>> grains;
-    // std::vector<uint8_t> individualGrainVoice;
-    // std::vector<float> individualGrainPosition;
-    // std::vector<float> individualGrainPitch;
-    // std::vector<float> individualGrainPanning;
-    // std::vector<uint8_t> individualGrainWindowFunction;
-    // std::vector<uint64_t> individualGrainSpawnTime;
-    // std::vector<bool> individualGrainReversed;
+    float wavefoldAmountPercentage = 0;
+    float wavefoldSymmetryPercentage = 0;
 
 };

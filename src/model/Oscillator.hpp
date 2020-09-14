@@ -88,3 +88,92 @@ struct Oscillator {
   T pw50;
   T pw25;
 };
+
+
+template <int OVERSAMPLE, int QUALITY, int WAV_TABLE_SIZE, typename T>
+struct WavelessOscillator {
+	bool soft = false;
+	bool softReverse = false;
+	bool syncEnabled = false;
+	// For optimizing in serial code
+	int channels = 0;
+
+	T lastSyncValue = 0.f;
+	T phase = 0.f;
+    T softSyncPhase = 1.0f;
+	T freq;
+    T basePhase = 0.f;
+	T syncDirection = 1.f;
+
+	T oscValue = 0.f;
+
+	void setPitch(T pitch) {
+		freq = dsp::FREQ_C4 * dsp::approxExp2_taylor5(pitch + 30) / 1073741824;
+	}
+
+    void setBasePhase(T initialPhase) {
+        //Apply change, then remember
+        phase += initialPhase - basePhase;
+        phase -= simd::floor(phase);
+        basePhase = initialPhase;
+    }
+
+    void setSoftSyncPhase(T ssPhase) {
+        //Apply change, then remember
+        softSyncPhase = ssPhase;
+    }
+
+	
+	void process(float deltaTime, T syncValue) {
+		// Advance phase
+		T deltaPhase = simd::clamp(freq * deltaTime, 1e-6f, 0.35f);
+		if (softReverse) {
+			// Reverse direction
+			deltaPhase *= syncDirection;
+		}
+		else {
+			// Reset back to forward
+			syncDirection = 1.f;
+		}
+		phase += deltaPhase;
+		// Wrap phase
+		phase -= simd::floor(phase);
+
+
+        // Detect sync
+		// Might be NAN or outside of [0, 1) range
+		if (syncEnabled) {
+			T deltaSync = syncValue - lastSyncValue;
+			T syncCrossing = -lastSyncValue / deltaSync;
+			lastSyncValue = syncValue;
+			T sync = (0.f < syncCrossing) & (syncCrossing <= 1.f) & (syncValue >= 0.f);
+			int syncMask = simd::movemask(sync);
+			if (syncMask) {
+				if (soft) {
+            if(softReverse) {
+                syncDirection = simd::ifelse(phase >= softSyncPhase, syncDirection, -syncDirection);
+            } else {            
+              T newPhase = simd::ifelse(phase >= softSyncPhase, phase, basePhase);					
+              phase = newPhase;                    
+            }
+				} else {
+          phase = basePhase;
+        }
+			}
+		}
+
+		// Table Ubdex
+		oscValue = wt(phase);
+		
+		}
+
+	T wt(T phase) {
+		return phase * WAV_TABLE_SIZE;
+	}
+	T wt() {
+		return oscValue;
+	}
+
+
+};
+

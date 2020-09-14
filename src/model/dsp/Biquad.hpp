@@ -81,6 +81,8 @@ public:
     this->Q = Q;
     this->Fc = Fc;
     setPeakGain(peakGainDB);
+    calcBiquad();
+    
   }
 
   T process(T in) {
@@ -90,7 +92,7 @@ public:
     return out;
   }
 
-  void calcBiquad(void) {
+  void calcBiquad() {
     T norm;
     T V = pow(10, fabs(peakGain) / 20.0);
     T K = tan(M_PI * Fc);
@@ -129,10 +131,12 @@ public:
       a2 = a0;
       b1 = a1;
       b2 = (1 - K / Q + K * K) * norm;
+
+      //fprintf(stderr, "BoR -- Notch Coefficients Calculated  \n");
       break;
 
     case bq_type_peak:
-      if (movemask(peakGain >= 0) == 0xF) { // boost
+      if (peakGain >= 0.0) { // boost
         norm = 1 / (1 + 1 / Q * K + K * K);
         a0 = (1 + V / Q * K + K * K) * norm;
         a1 = 2 * (K * K - 1) * norm;
@@ -149,7 +153,7 @@ public:
       }
       break;
     case bq_type_lowshelf:
-      if (movemask(peakGain >= 0) == 0xF) { // boost
+      if (peakGain >= 0.0) { // boost
         norm = 1 / (1 + sqrt(2) * K + K * K);
         a0 = (1 + sqrt(2 * V) * K + V * K * K) * norm;
         a1 = 2 * (V * K * K - 1) * norm;
@@ -166,7 +170,7 @@ public:
       }
       break;
     case bq_type_highshelf:
-      if (movemask(peakGain >= 0) == 0xF) { // boost
+      if (peakGain >= 0.0) { // boost
         norm = 1 / (1 + sqrt(2) * K + K * K);
         a0 = (V + sqrt(2 * V) * K + K * K) * norm;
         a1 = 2 * (K * K - V) * norm;
@@ -196,6 +200,21 @@ public:
     }
 
     return;
+  }
+
+  T frequencyResponse(T frequency) {
+    T w = 2.0*M_PI*frequency;  
+    T numerator = a0*a0 + a1*a1 + a2*a2 + 2.0*(a0*a1 + a1*a2)*cos(w) + 2.0*a0*a2*cos(2.0*w);
+    T denominator = 1.0 + b1*b1 + b2*b2 + 2.0*(b1 + b1*b2)*cos(w) + 2.0*b2*cos(2.0*w);
+    T magnitude = sqrt(numerator / denominator);
+
+    // magnitude = simd::ifelse(simd::isNan(magnitude),0.0,magnitude);
+    
+
+    // fprintf(stderr, "Fc: %F, F:%f w:%f n:%f d:%f m:%f \n",Fc[0],frequency[0],w[0],numerator[0],denominator[0],magnitude[0]);
+
+
+    return magnitude;
   }
 
 protected:

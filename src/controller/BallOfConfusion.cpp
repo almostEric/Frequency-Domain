@@ -9,6 +9,7 @@ using namespace frequencydomain::dsp;
 BallOfConfusionModule::BallOfConfusionModule() {
     config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
 
+    sampleRate = APP->engine->getSampleRate();
 
 
     configParam(YAW_PARAM, -1.0f, 1.0f, 0.0f, "Yaw Rotation","%",0,100);
@@ -19,23 +20,21 @@ BallOfConfusionModule::BallOfConfusionModule() {
 
     configParam(FREQUENCY_PARAM, -54.f, 54.f, 0.f, "Frequency", " Hz", dsp::FREQ_SEMITONE, dsp::FREQ_C4);
 
-
+  
     configParam(SYNC_POSITION_PARAM, 0.0f, 1.0f, 1.0f, "Sync Position","%",0,100);
 
     configParam(SPECTRUM_SHIFT_PARAM, -64.0f, 64.0f, 0.0f, "Spectrum Shift","Band(s)");
 
-    // configParam(RING_MODULATION, 0.0f, 1.0f, 0.0f, "Ring Modulation");
+    configParam(WAVEFOLD_AMOUNT_PARAM, 1.0f, 4.0f, 1.0f, "Fold Amount");
+    configParam(WWAVEFOLD_SYMMETRY_PARAM, -1.0f, 1.0f, 0.0f, "Symmetry","%",0,100);
+
 
     sphere.resize(0);
     fft = new FFT(WAV_TABLE_SIZE); //Might need to double suze
 
-    //grains.resize(200);
+    binnings = new Binning(WAV_TABLE_SIZE, sampleRate);
 
-    sampleRate = APP->engine->getSampleRate();
-
-    windowFunctionSize = sampleRate / 5.0;
-
-    windowFunction = new WindowFunction<float>(windowFunctionSize);
+    harmonicShiftCells = new OneDimensionalCellsWithRollover(32, 16, -4 , 4, PIN_ROLLOVER_MODE,WRAP_AROUND_ROLLOVER_MODE);
 
   
     srand(time(NULL));
@@ -44,10 +43,9 @@ BallOfConfusionModule::BallOfConfusionModule() {
 }
 
 BallOfConfusionModule::~BallOfConfusionModule() {
-
-  delete windowFunction;
-  
-
+  delete fft;
+  delete binnings;
+  delete harmonicShiftCells;
 }
 
 void BallOfConfusionModule::onReset() {
@@ -62,6 +60,7 @@ void BallOfConfusionModule::onReset() {
   waveTableFileSampleCount.resize(0);
   waveTableList.resize(0);
   waveTableSpectralList.resize(0);
+  waveTableFundamentalHarmonicList.resize(0);
   sphere.resize(0);
 }
 
@@ -84,8 +83,8 @@ void BallOfConfusionModule::dataFromJson(json_t *root) {
     }
 
     json_t *smJ = json_object_get(root, "syncMode");
-    if (json_boolean_value(smJ)) {
-      syncMode = json_boolean_value(smJ);
+    if (json_integer_value(smJ)) {
+      syncMode = json_integer_value(smJ);
     }
 
     uint16_t tempPathCount = 0;
@@ -94,8 +93,14 @@ void BallOfConfusionModule::dataFromJson(json_t *root) {
       tempPathCount = json_integer_value(wtfcJ);
     }
 
-  // loadFromDirectory.resize(waveTableFileCount);
-  // lastPath.resize(waveTableFileCount);
+
+    for(int i=0;i<MAX_HARMONICS;i++) {
+      std::string buf = "harmonicShift-" + std::to_string(i) ;
+      json_t *fmmJ = json_object_get(root, buf.c_str());
+      if (fmmJ) {
+          harmonicShiftCells->cells[i] = json_real_value(fmmJ);
+      }
+    }
 
 
   for(int i=0;i<tempPathCount;i++) {
@@ -131,8 +136,13 @@ json_t *BallOfConfusionModule::dataToJson() {
   json_t *root = json_object();
   json_object_set(root, "scatterPercent", json_real(scatterPercent));
   json_object_set(root, "morphMode", json_integer(morphMode));
-  json_object_set(root, "syncMode", json_boolean(syncMode));
+  json_object_set(root, "syncMode", json_integer(syncMode));
   json_object_set(root, "waveTablePathCount", json_integer(waveTablePathCount));
+
+  for(int i=0;i<MAX_HARMONICS;i++) {
+    std::string buf = "harmonicShift-" + std::to_string(i) ;
+    json_object_set(root, buf.c_str(),json_real((float) harmonicShiftCells->cells[i]));
+  }
 
   for(int i=0;i<waveTablePathCount;i++) {
     std::string lfd = "loadFromDirectory-" + std::to_string(i) ;
@@ -158,9 +168,9 @@ float BallOfConfusionModule::paramValue (uint16_t param, uint16_t input, float l
 }
 
 
-void BallOfConfusionModule::clearSamples() {
+// void BallOfConfusionModule::clearSamples() {
 
-}
+// }
 
 
 void BallOfConfusionModule::loadDirectory(std::string path) {
@@ -169,7 +179,7 @@ void BallOfConfusionModule::loadDirectory(std::string path) {
   std::string dir = path.empty() ? NULL : rack::string::directory(path);
 
         //fprintf(stderr, "opening directory...%s files \n",dir.c_str());
-
+  loading = true;
   waveTablePathCount = 1;
 
   rep = opendir(dir.c_str());
@@ -196,6 +206,7 @@ void BallOfConfusionModule::loadDirectory(std::string path) {
   waveTableFileSampleCount.clear();
   waveTableList.clear();
   waveTableSpectralList.clear();
+  waveTableFundamentalHarmonicList.clear();
   waveTableNames.clear();
 
 
@@ -209,16 +220,20 @@ void BallOfConfusionModule::loadDirectory(std::string path) {
   
   sphere.clear();
   fibonacci_sphere(waveTableCount);
+  loading = false;
 }
 
 void BallOfConfusionModule::loadIndividualWavefile(std::string path) {
   std::string dir = path.empty() ? NULL : rack::string::directory(path);
 
 //fprintf(stderr, "opening individual file...%s \n",path.c_str());
+  loading = true;
+  
   fichier.clear();
   waveTableFileSampleCount.clear();
   waveTableList.clear();
   waveTableSpectralList.clear();
+  waveTableFundamentalHarmonicList.clear();
   waveTableNames.clear();
 
   waveTableCount =0;
@@ -233,6 +248,7 @@ void BallOfConfusionModule::loadIndividualWavefile(std::string path) {
 void BallOfConfusionModule::loadAdditionalWavefile(std::string path) {
   std::string dir = path.empty() ? NULL : rack::string::directory(path);
 
+  loading = true;
   rebuild = true;
 
 //fprintf(stderr, "opening additional file...%s, %i \n",path.c_str(), waveTablePathCount);
@@ -247,6 +263,8 @@ void BallOfConfusionModule::loadAdditionalWavefile(std::string path) {
   
   sphere.clear();
   fibonacci_sphere(waveTableCount);
+  
+  loading = false;
   
 }
 
@@ -276,7 +294,8 @@ void BallOfConfusionModule::loadSample(uint8_t slot, std::string path) {
       fftIndex++;
       if(fftIndex == WAV_TABLE_SIZE) {
         std::string fullName = fichier[slot];        
-        waveTableNames.push_back(fullName.substr(0,fullName.length()-4) + " / " + std::to_string(sampleIndex));
+        int nameLength = fullName.length()-4; 
+        waveTableNames.push_back(fullName.substr(0,std::min(nameLength,40)) + " / " + std::to_string(sampleIndex));
         sampleIndex++;
         fftIndex = 0;
         fft->fft(fftBuffer);
@@ -286,10 +305,14 @@ void BallOfConfusionModule::loadSample(uint8_t slot, std::string path) {
           float phase = std::atan2(outValue.i, outValue.r);
           waveTableSpectralList.push_back(magnitude);
           waveTableSpectralList.push_back(phase);
+          magnitudeBuffer[j] = magnitude;
+          phaseBuffer[j] = phase;
         }
+        binnings->topN(1, magnitudeBuffer, phaseBuffer, bins, (FFTSortMode) 0);
+        waveTableFundamentalHarmonicList.push_back(bins[0].binNumber);
+
       }
 		}
-		//totalSampleC[slot] = playBuffer[slot][0].size();
 		drwav_free(pSampleData);
     loading = false;
 
@@ -390,29 +413,45 @@ void BallOfConfusionModule::rotateSphere(float yaw,float pitch,float roll) {
       }
     }
   }
-//  for (uint16_t c = 0; c < MAX_MORPHED_WAVETABLES; c++) {
-//     fprintf(stderr, "wt %u in use ID:%i d:%f   x:%f  y:%f   z:%f \n",c,waveTablesInUse[c],waveTableDistance[c],sphere[waveTablesInUse[c]].xRotated,sphere[waveTablesInUse[c]].yRotated,sphere[waveTablesInUse[c]].zRotated);
-//  }    
-//  fprintf(stderr, "\n");
 }
 
 
 void BallOfConfusionModule::buildActualWaveTable() {
-  float totalWeight = (waveTableDistance[0] * waveTableDistance[1] * waveTableDistance[2]) + 
-                        (waveTableDistance[1] * waveTableDistance[2] * waveTableDistance[3]) + 
-                        (waveTableDistance[0] * waveTableDistance[2] * waveTableDistance[3]) + 
-                        (waveTableDistance[0] * waveTableDistance[1] * waveTableDistance[3]);
 
-   //fprintf(stderr, "o:%i nx:%i ny:%i f:%i  fd:%f   x:%f y:%f \n",currentTable,nearestX,nearestY,furthest,furthestDistance,std::abs(sphere[currentTable].xRotated),std::abs(sphere[currentTable].yRotated));
+  uint16_t fundamentalBin = 1;
 
-  waveTableWeighting[0] = (waveTableDistance[1] * waveTableDistance[2] * waveTableDistance[3] / totalWeight);
-  waveTableWeighting[1] = (waveTableDistance[0] * waveTableDistance[2] * waveTableDistance[3] / totalWeight);
-  waveTableWeighting[2] = (waveTableDistance[0] * waveTableDistance[1] * waveTableDistance[3] / totalWeight);
-  waveTableWeighting[3] = (waveTableDistance[0] * waveTableDistance[1] * waveTableDistance[2] / totalWeight);
+  if(morphMode < MORPH_TRANSFER) {
+    float totalWeight = (waveTableDistance[0] * waveTableDistance[1] * waveTableDistance[2]) + 
+                          (waveTableDistance[1] * waveTableDistance[2] * waveTableDistance[3]) + 
+                          (waveTableDistance[0] * waveTableDistance[2] * waveTableDistance[3]) + 
+                          (waveTableDistance[0] * waveTableDistance[1] * waveTableDistance[3]);
+
+    waveTableWeighting[0] = (waveTableDistance[1] * waveTableDistance[2] * waveTableDistance[3] / totalWeight);
+    waveTableWeighting[1] = (waveTableDistance[0] * waveTableDistance[2] * waveTableDistance[3] / totalWeight);
+    waveTableWeighting[2] = (waveTableDistance[0] * waveTableDistance[1] * waveTableDistance[3] / totalWeight);
+    waveTableWeighting[3] = (waveTableDistance[0] * waveTableDistance[1] * waveTableDistance[2] / totalWeight);
+
+    for(int c=0;c<4;c++) {
+      fundamentalBin += waveTableFundamentalHarmonicList[waveTablesInUse[c]] * waveTableWeighting[c];
+    }
+
+
+  } else {
+    float totalWeight = (waveTableDistance[1] * waveTableDistance[2]) + 
+                          (waveTableDistance[2] * waveTableDistance[3]) + 
+                          (waveTableDistance[1] * waveTableDistance[3]);
+
+    waveTableWeighting[0] = 1.0;
+    waveTableWeighting[1] = (waveTableDistance[2] * waveTableDistance[3] / totalWeight);
+    waveTableWeighting[2] = (waveTableDistance[1] * waveTableDistance[3] / totalWeight);
+    waveTableWeighting[3] = (waveTableDistance[1] * waveTableDistance[2] / totalWeight);
+  }
+
+
 
   uint16_t j = 0;
   for(int i=0;i<WAV_TABLE_SIZE;i++) {
-    if(morphMode == 0) { //interpolation
+    if(morphMode == MORPH_INTERPOLATE) { 
       float interpolatedValue = 0;
       for (uint16_t c = 0; c < MAX_MORPHED_WAVETABLES; c++) {
         int16_t adjustedI = (i + spectrumShift*c*4) % (WAV_TABLE_SIZE);
@@ -420,8 +459,8 @@ void BallOfConfusionModule::buildActualWaveTable() {
           adjustedI += (WAV_TABLE_SIZE);
         interpolatedValue +=waveTableList[waveTablesInUse[c]*WAV_TABLE_SIZE+adjustedI] * waveTableWeighting[c];
       }      
-      actualWaveTable[i] = interpolatedValue;
-    } else { //spectral morph
+      prefoldedWaveTable[i] = interpolatedValue;
+    } else if (morphMode == MORPH_SPECTRAL || morphMode == MORPH_SPECTRAL_0_PHASE) { 
       if(i % 2 == 1) {
 
         float interpolatedMagnitude = 0;
@@ -430,31 +469,65 @@ void BallOfConfusionModule::buildActualWaveTable() {
           int16_t adjustedI = (i + spectrumShift*c*2) % (WAV_TABLE_SIZE);
           if(adjustedI < 0)
             adjustedI += (WAV_TABLE_SIZE);
-
+  
           interpolatedMagnitude +=waveTableSpectralList[waveTablesInUse[c]*WAV_TABLE_SIZE+adjustedI-1] * waveTableWeighting[c];
           if(morphMode == 1) {
             interpolatedPhase +=waveTableSpectralList[waveTablesInUse[c]*WAV_TABLE_SIZE+adjustedI] * waveTableWeighting[c];          
           }
-        }      
+        }
+        if(j % fundamentalBin == 0) {
+          int harmonic = j / fundamentalBin;
+          if(harmonic < 16) {
+            interpolatedMagnitude *= harmonicShiftAmount[harmonic];
+          }
+        }
         fft->in[j].r = interpolatedMagnitude*cos(interpolatedPhase);
         fft->in[j].i = interpolatedMagnitude*sin(interpolatedPhase);
         j++;
       }
+    } else { //transfer function
+      float interpolatedValue = 0;
+      for (uint16_t c = 1; c < MAX_MORPHED_WAVETABLES; c++) {
+        int16_t adjustedI = (i + spectrumShift*c*4) % (WAV_TABLE_SIZE);
+        if(adjustedI < 0)
+          adjustedI += (WAV_TABLE_SIZE);
+        interpolatedValue +=waveTableList[waveTablesInUse[c]*WAV_TABLE_SIZE+adjustedI] * waveTableWeighting[c];
+      }
+      interpolatedValue = clamp((interpolatedValue+1) * (WAV_TABLE_SIZE / 2),0.0,WAV_TABLE_SIZE-1.0);      
+      // fprintf(stderr, "!!!! transfer interpolated point %f \n",interpolatedValue);
+      prefoldedWaveTable[i] =  waveTableList[waveTablesInUse[0]*WAV_TABLE_SIZE+interpolatedValue]; // i for now - should be interpolated value after it is scaled
+
     }
 
 
   }
-  if (morphMode > 0) { //Inverse FFT
+  if (morphMode == MORPH_SPECTRAL || morphMode == MORPH_SPECTRAL_0_PHASE) { //Inverse FFT
     for(uint16_t j = WAV_TABLE_SIZE / 2; j < WAV_TABLE_SIZE;j++) {
         fft->in[j].r = 0;
         fft->in[j].i = 0; 
     }
-    fft->ifft(actualWaveTable);
+    fft->ifft(ifftWaveTable);
     for(uint16_t j =0;j<WAV_TABLE_SIZE;j++) {
-      actualWaveTable[j] = clamp(actualWaveTable[j],-1.0,1.0);
+      prefoldedWaveTable[j] = clamp(ifftWaveTable[j],-1.0,1.0);
     }
   }
+}
 
+void BallOfConfusionModule::calculateWaveFolding() {
+  for(int i=0;i<WAV_TABLE_SIZE;i++) {
+
+    float foldedValue = (prefoldedWaveTable[i]) * wavefoldAmount;
+    while(foldedValue < -1.0 || foldedValue > 1.0) {
+      if(foldedValue < -1.0) {
+        foldedValue = -1.0-foldedValue ;
+      }
+      if(foldedValue > 1.0) {
+        foldedValue = 1.0 - foldedValue;
+      }
+    }
+
+    actualWaveTable[i] = foldedValue;
+  }
 }
 
 void BallOfConfusionModule::process(const ProcessArgs &args) {
@@ -470,114 +543,160 @@ void BallOfConfusionModule::process(const ProcessArgs &args) {
   spectrumShift = paramValue(SPECTRUM_SHIFT_PARAM,SPECTRUM_SHIFT_INPUT,-64.0f,64.0f);
   spectrumShiftPercentage = spectrumShift / 64.0;
 
+  wavefoldAmount = paramValue(WAVEFOLD_AMOUNT_PARAM,WAVEFOLD_AMOUNT_INPUT,1.0f,4.0f);
+  wavefoldAmountPercentage = (wavefoldAmount-1.0) / 3.0;
+
+  float harmonicShiftX = inputs[HARMONIC_SHIFT_X_INPUT].getVoltage() / 5.0;
+  float harmonicShiftY = inputs[HARMONIC_SHIFT_Y_INPUT].getVoltage() / 5.0;
+  harmonicShiftCells->shiftY = harmonicShiftX; //Axis are reversed
+  harmonicShiftCells->shiftX = harmonicShiftY;
+
 
   const float epsilon = .001;
 
 
   if (morphModeTrigger.process(params[MORPH_MODE_PARAM].getValue())) {
-    morphMode = (morphMode + 1) % MORPH_MODES; //Will have more
+    morphMode = (morphMode + 1) % NBR_MORPH_MODES; //Will have more
   }
   switch(morphMode) {
-    case 0 : //Interpolate
+    case MORPH_INTERPOLATE : 
     lights[MORPH_MODE_LIGHT+0].value = 0;
     lights[MORPH_MODE_LIGHT+1].value = 0;
     lights[MORPH_MODE_LIGHT+2].value = 0.0;
     break;
-    case 1 : //Spectral
+    case MORPH_SPECTRAL : 
     lights[MORPH_MODE_LIGHT+0].value = 1;
     lights[MORPH_MODE_LIGHT+1].value = 1;
     lights[MORPH_MODE_LIGHT+2].value = 0.2;
     break;
-    case 2 : //Spectral 0 Phase
+    case MORPH_SPECTRAL_0_PHASE : 
     lights[MORPH_MODE_LIGHT+0].value = .2;
     lights[MORPH_MODE_LIGHT+1].value = 1;
     lights[MORPH_MODE_LIGHT+2].value = 1;
     break;
+    case MORPH_TRANSFER : 
+    lights[MORPH_MODE_LIGHT+0].value = 0.8;
+    lights[MORPH_MODE_LIGHT+1].value = 0.4;
+    lights[MORPH_MODE_LIGHT+2].value = 0.05;
+    break;
   }
 
   if (syncModeTrigger.process(params[SYNC_MODE_PARAM].getValue())) {
-    syncMode = !syncMode; 
+    syncMode = (syncMode + 1) % NBR_SYNC_MODES; 
   }
-  lights[SYNC_MODE_LIGHT+0].value = syncMode;
-  lights[SYNC_MODE_LIGHT+1].value = syncMode;
-  lights[SYNC_MODE_LIGHT+2].value = syncMode ? 0.2 : 0.0;
+  switch(syncMode) {
+    case 0 : //HARD
+    lights[SYNC_MODE_LIGHT+0].value = 0;
+    lights[SYNC_MODE_LIGHT+1].value = 0;
+    lights[SYNC_MODE_LIGHT+2].value = 0.0;
+    break;
+    case 1 : //SOFT
+    lights[SYNC_MODE_LIGHT+0].value = 1;
+    lights[SYNC_MODE_LIGHT+1].value = 1;
+    lights[SYNC_MODE_LIGHT+2].value = 0.2;
+    break;
+    case 2 : //SOFT REVERSE
+    lights[SYNC_MODE_LIGHT+0].value = .2;
+    lights[SYNC_MODE_LIGHT+1].value = 1;
+    lights[SYNC_MODE_LIGHT+2].value = 1;
+    break;
+  }
 
   if(lastScatterPercent != scatterPercent) {
+    loading = true;
     sphere.clear();
     fibonacci_sphere(waveTableCount);
     lastScatterPercent = scatterPercent;
+    loading = false;
   }
 
-  if(sphere.size() > 0 && (rebuild || morphMode != lastMorphMode || std::abs(yaw-lastYaw) > epsilon || std::abs(pitch-lastPitch) > epsilon || std::abs(roll-lastRoll) > epsilon || lastSpectrumShift != spectrumShift)) {
+  //get cell changes
+  if(samplesPlayed % 1024 == 0) {
+      for (uint8_t harmonicIndex = 0; harmonicIndex < 16; harmonicIndex++) {
+          harmonicShiftAmount[harmonicIndex] = std::pow(2,harmonicShiftCells->valueForPosition(harmonicIndex));
+          if(lastHarmonicShiftAmount[harmonicIndex] != harmonicShiftAmount[harmonicIndex]) {
+            recalculateWave = true;
+            lastHarmonicShiftAmount[harmonicIndex] = harmonicShiftAmount[harmonicIndex];
+          }
+      }
+      samplesPlayed =0;
+  }
+  samplesPlayed ++;
+
+
+  if(sphere.size() > 0 && !loading && (rebuild || std::abs(yaw-lastYaw) > epsilon || std::abs(pitch-lastPitch) > epsilon || std::abs(roll-lastRoll) > epsilon)) {
     rotateSphere(yaw,pitch,roll);
-    buildActualWaveTable();
-    lastMorphMode = morphMode;
     lastYaw = yaw;
     lastPitch = pitch;
     lastRoll = roll;
-    lastSpectrumShift = spectrumShift;
     rebuild = false;
+    recalculateWave = true;
+  }
+
+  if(recalculateWave || morphMode != lastMorphMode || lastSpectrumShift != spectrumShift) {
+    buildActualWaveTable();
+    lastMorphMode = morphMode;
+    lastSpectrumShift = spectrumShift;
+    recalculateWave = false;
+    recalcFold = true;
+  }
+
+  if(recalcFold || std::abs(wavefoldAmount-lastWavefoldAmount) > epsilon) {
+    calculateWaveFolding();
+    recalcFold = false;
+    lastWavefoldAmount = wavefoldAmount;
   }
 
 
-		float freqParam = params[FREQUENCY_PARAM].getValue() / 12.f;
-		//float fmParam = dsp::quadraticBipolar(params[FM_PARAM].getValue());
-		float fmParam = paramValue(FM_AMOUNT,FM_AMOUNT_INPUT,0.0f,1.0f);;
-    fmAmountPercentage = fmParam;
 
-		syncPosition = paramValue(SYNC_POSITION_PARAM,SYNC_POSITION_INPUT,0.0f,1.0f);
-    syncPositionPercentage = syncPosition;
+  float freqParam = params[FREQUENCY_PARAM].getValue() / 12.f;
+  tuningPercentage = (freqParam / 9.0) + 0.5;
+  //float fmParam = dsp::quadraticBipolar(params[FM_PARAM].getValue());
+  float fmParam = paramValue(FM_AMOUNT,FM_AMOUNT_INPUT,0.0f,1.0f);;
+  fmAmountPercentage = fmParam;
 
-		int channels = std::max(inputs[V_OCTAVE_INPUT].getChannels(), 1);
+  syncPosition = paramValue(SYNC_POSITION_PARAM,SYNC_POSITION_INPUT,0.0f,1.0f);
+  syncPositionPercentage = syncPosition;
 
-    int channelIndex = 0;
-		for (int c = 0; c < channels; c += 4) {
-			auto* oscillator = &oscillators[c / 4];
-			oscillator->channels = std::min(channels - c, 4);
-			oscillator->soft = syncMode;
-      oscillator->setSoftSyncPhase(syncPosition);
+  int channels = std::max(inputs[V_OCTAVE_INPUT].getChannels(), 1);
 
-			float_4 pitch = freqParam;
-			pitch += inputs[V_OCTAVE_INPUT].getVoltageSimd<float_4>(c);
-			if (inputs[FM_INPUT].isConnected()) {
-				pitch += fmParam * inputs[FM_INPUT].getPolyVoltageSimd<float_4>(c);
-			}
-			oscillator->setPitch(pitch);
-      if(inputs[PHASE_INPUT].isConnected()) {
-        float_4 phase = simd::clamp(inputs[PHASE_INPUT].getPolyVoltageSimd<float_4>(c)/5.0,0,1);
-        oscillator->setBasePhase(phase);
-      }
+  int channelIndex = 0;
+  for (int c = 0; c < channels; c += 4) {
+    auto* oscillator = &oscillators[c / 4];
+    oscillator->channels = std::min(channels - c, 4);
+    oscillator->soft = syncMode > 0;
+    oscillator->softReverse = syncMode == 2;
+    oscillator->setSoftSyncPhase(syncPosition);
 
-			oscillator->syncEnabled = inputs[SYNC_INPUT].isConnected();
-			oscillator->process(args.sampleTime, inputs[SYNC_INPUT].getPolyVoltageSimd<float_4>(c));
+    float_4 pitch = freqParam;
+    pitch += inputs[V_OCTAVE_INPUT].getVoltageSimd<float_4>(c);
+    if (inputs[FM_INPUT].isConnected()) {
+      pitch += fmParam * inputs[FM_INPUT].getPolyVoltageSimd<float_4>(c);
+    }
+    oscillator->setPitch(pitch);
+    if(inputs[PHASE_INPUT].isConnected()) {
+      float_4 phase = simd::clamp(inputs[PHASE_INPUT].getPolyVoltageSimd<float_4>(c)/5.0,0,1);
+      oscillator->setBasePhase(phase);
+    }
 
-			// Set output
-      for(int i=0;i<4;i++) {
-        float tableIndex = oscillator->wt()[i];
-        int mainIndex = std::floor(tableIndex);
-        int nextIndex = (mainIndex + 1) % WAV_TABLE_SIZE;
-        float mainValue = actualWaveTable[mainIndex];
-        float nextValue = actualWaveTable[nextIndex];
-        float balance = tableIndex - mainIndex;
-        float interpolatedValue = interpolate(mainValue,nextValue,balance,0.0f,1.0f);
-        
-        //outputs[OUTPUT_L].setVoltage(5.f * actualWaveTable[int(tableIndex)], channelIndex);
-        outputs[OUTPUT_L].setVoltage(5.f * interpolatedValue, channelIndex);
-        channelIndex++;
-      }
-		}
+    oscillator->syncEnabled = inputs[SYNC_INPUT].isConnected();
+    oscillator->process(args.sampleTime, inputs[SYNC_INPUT].getPolyVoltageSimd<float_4>(c));
 
-		outputs[OUTPUT_L].setChannels(channels);
+    // Set output
+    for(int i=0;i<4;i++) {
+      float tableIndex = oscillator->wt()[i];
+      int mainIndex = std::floor(tableIndex);
+      int nextIndex = (mainIndex + 1) % WAV_TABLE_SIZE;
+      float mainValue = actualWaveTable[mainIndex];
+      float nextValue = actualWaveTable[nextIndex];
+      float balance = tableIndex - mainIndex;
+      float interpolatedValue = interpolate(mainValue,nextValue,balance,0.0f,1.0f);
+      
+      outputs[OUTPUT_L].setVoltage(5.f * interpolatedValue, channelIndex);
+      channelIndex++;
+    }
+  }
 
-    // outputs[OUTPUT_L].setVoltage(outL);
-    // outputs[OUTPUT_R].setVoltage(outR);
-   
-    
+  outputs[OUTPUT_L].setChannels(channels);
+      
 }
-
-  
-//   for (uint8_t i = 0; i < 16; i++) {
-//     outputs[DEBUG_OUTPUT].setVoltage(debugOutput[i], i);
-//   }
-//  outputs[DEBUG_OUTPUT].setChannels(16);
-//}
