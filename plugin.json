@@ -1,7 +1,7 @@
 {
   "slug": "FrequencyDomain",
   "name": "Frequency Domain",
-  "version": "1.7.0",
+  "version": "1.8.3",
   "license": "Proprietary",
   "brand": "Frequency Domain",
 	"author": "almostEric with JerrySV",
@@ -12,11 +12,19 @@
 
   "modules": [
     {
-      "slug": "HarmonicConvergence",
-      "name": "Harmonic Convergence",
-      "description": "Resynthesis Engine",
+      "slug": "BallOfConfusion",
+      "name": "Ball of Confusion",
+      "description": "Spherical Morphing Wavetable Oscillator",
       "tags": [
-        "Synth voice"
+        "Oscillator","Digital","Sampler"
+      ]
+    },
+    {
+      "slug": "BoxOfRevelation",
+      "name": "Box of Revelation",
+      "description": "3 Dimensional Cube Filter",
+      "tags": [
+        "Filter","Effect"
       ]
     },
     {
@@ -36,14 +44,6 @@
       ]
     },
     {
-      "slug": "Morphology",
-      "name": "Morphology",
-      "description": "Spectral Morpher",
-      "tags": [
-        "Vocoder","Effect"
-      ]
-    },
-    {
       "slug": "GrainsOfWrath",
       "name": "Grains Of Wrath",
       "description": "Spewer of Grains of varying dispositions",
@@ -52,12 +52,20 @@
       ]
     },
     {
-      "slug": "BallOfConfusion",
-      "name": "Ball of Confusion",
-      "description": "Spherical Morphing Wavetable Oscillator",
+      "slug": "HarmonicConvergence",
+      "name": "Harmonic Convergence",
+      "description": "Resynthesis Engine",
       "tags": [
-        "Oscillator","Digital","Sampler"
+        "Synth voice"
       ]
-    }
+    },
+    {
+      "slug": "Morphology",
+      "name": "Morphology",
+      "description": "Spectral Morpher",
+      "tags": [
+        "Vocoder","Effect"
+      ]
+    }    
   ]
 }

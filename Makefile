@@ -14,7 +14,7 @@ CONTROLLERS += $(wildcard src/controller/*.cpp)
 VIEWS += $(wildcard src/view/*.cpp)
 
 # Models
-MODELS += $(wildcard src/model/*.cpp) $(wildcard src/model/fft/*.c) $(wildcard src/model/noise/*.cpp)
+MODELS += $(wildcard src/model/*.cpp) $(wildcard src/model/dsp/*.cpp) $(wildcard src/model/fft/*.c) $(wildcard src/model/noise/*.cpp)
 
 # Add .cpp and .c files to the build
 SOURCES += $(wildcard src/*.cpp) $(CONTROLLERS) $(VIEWS) $(MODELS)

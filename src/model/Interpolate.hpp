@@ -29,3 +29,26 @@ T bilinearInterpolate(T q11,T q12,T q21,T q22,T x, T y,T low = 0, T high = 1) {
 
   return fx;
 }
+
+
+template <typename T>
+T trilinearInterpolate(T c000,T c100,T c010,T c110,T c001,T c101,T c011,T c111, T x, T y,T z, T low = 0, T high = 1) {
+
+  //T total = high - low;
+
+  // T xd = (high - x) / total;
+  // T yd = (high - y) / total;
+  // T zd = (high - z) / total;
+
+  T c00 = c000*(1-x) + c100*x;
+  T c01 = c001*(1-x) + c101*x;
+  T c10 = c010*(1-x) + c110*x;
+  T c11 = c011*(1-x) + c111*x;
+  
+  T c0 = c00*(1-y) + c10*y;
+  T c1 = c01*(1-y) + c11*y;
+
+  T c = c0*(1-z) + c1*z;
+
+  return c;
+}

@@ -144,11 +144,11 @@ struct FreudianSlipModule : Module {
     float histogram[NUM_UI_FRAMES][NUM_UI_BANDS] = {{0.0}};
 
 
-    // binning, 36 bins to work with
+    // binning, 32 bins to work with
     Binning *binnings1;
-    Result bins1[MAX_VOICE_COUNT] = { { 0, 0 } };
+    Result bins1[MAX_VOICE_COUNT] = { { 0, 0, 0 } };
     Binning *binnings2;
-    Result bins2[MAX_VOICE_COUNT] = { { 0, 0 } };
+    Result bins2[MAX_VOICE_COUNT] = { { 0, 0, 0 } };
 
     std::vector<Result> voiceAnalysis1;
     std::vector<Result> voiceAnalysis2;

@@ -1,11 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="35" height="35" fill="#000000">
-  <defs id="SvgjsDefs1001"></defs>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="knob.svg"
+   id="svg1459"
+   fill="#000000"
+   height="35"
+   width="35"
+   version="1.1">
+  <metadata
+     id="metadata1463">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:current-layer="svg1459"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-6"
+     inkscape:window-x="-6"
+     inkscape:cy="17.5"
+     inkscape:cx="17.5"
+     inkscape:zoom="25.428571"
+     showgrid="false"
+     id="namedview1461"
+     inkscape:window-height="1058"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <defs
+     id="SvgjsDefs1001" />
   <polygon
-    id="SvgjsPolygon1006"
-    points="20.45201902033782,1 14.547980979662185,1 9.000000000000004,3.019299936872077 4.477244466977375,6.814342436536364 1.525225446639558,11.927389364671164 0.5,17.741731801207532 1.5252254466395545,23.556074237743896 4.477244466977371,28.669121165878703 8.999999999999993,32.46416366554299 14.547980979662185,34.48346360241507 20.452019020337808,34.48346360241507 26,32.46416366554299 30.52275553302262,28.669121165878707 33.47477455336045,23.5560742377439 34.5,17.74173180120754 33.47477455336044,11.927389364671164 30.52275553302263,6.81434243653637 26.000000000000007,3.019299936872084"
-    fill="#988903"
-    stroke="#e8b923"
-    stroke-width="0.5"></polygon>
-  <rect id="SvgjsRect1007" width="2" height="6" fill="#381800" x="16.5" y="1"></rect>
-  <circle id="SvgjsCircle1008" r="13.5" cx="17.5" cy="17.5" fill="#583903" stroke="#e8b923" stroke-width="0.5"></circle>
+     style="fill:#362302;fill-opacity:1"
+     stroke-width="0.5"
+     stroke="#e8b923"
+     fill="#988903"
+     points="20.45201902033782,1 14.547980979662185,1 9.000000000000004,3.019299936872077 4.477244466977375,6.814342436536364 1.525225446639558,11.927389364671164 0.5,17.741731801207532 1.5252254466395545,23.556074237743896 4.477244466977371,28.669121165878703 8.999999999999993,32.46416366554299 14.547980979662185,34.48346360241507 20.452019020337808,34.48346360241507 26,32.46416366554299 30.52275553302262,28.669121165878707 33.47477455336045,23.5560742377439 34.5,17.74173180120754 33.47477455336044,11.927389364671164 30.52275553302263,6.81434243653637 26.000000000000007,3.019299936872084"
+     id="SvgjsPolygon1006" />
+  <rect
+     y="1"
+     x="16.5"
+     fill="#381800"
+     height="6"
+     width="2"
+     id="SvgjsRect1007" />
+  <circle
+     stroke-width="0.5"
+     stroke="#e8b923"
+     fill="#583903"
+     cy="17.5"
+     cx="17.5"
+     r="13.5"
+     id="SvgjsCircle1008" />
 </svg>

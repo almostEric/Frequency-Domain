@@ -111,14 +111,6 @@ struct OneDimensionalCells : Cells {
     return uint16_t(((value - lowRange) / totalRange) * (width-1));
   }
 
-  // float floatForExtendedValue(uint16_t value) {
-  //   return (value / float(width)) * totalRange;
-  // }
-
-  // uint16_t intForExtendedValue(float value) {
-  //   return uint16_t(value / totalRange * (width-1));
-  // }
-
 
   virtual float valueForPosition(uint16_t position)  {
     int16_t adjustedPosition = position + (shiftY * height);

@@ -700,6 +700,208 @@ struct CellBarGrid : FramebufferWidget {
 
 };
 
+struct CellVerticalBarGrid : FramebufferWidget {
+  OneDimensionalCells *cells = nullptr;
+  float initX = 0;
+  float initY = 0;
+  float dragX = 0;
+  float dragY = 0;
+  float cellWidth = 2.0;
+  float cellHeight = 2.0;
+  uint16_t xAxis = 0;
+  std::string gridName = "";
+  bool currentlyTurningOn = false;
+  bool setRange = false;
+
+  CellVerticalBarGrid(uint16_t xAxis = 0) {
+    this->xAxis = xAxis;
+    this->gridName = gridName;
+  }
+
+  void step () override {
+    if (cells && (*cells).dirty) {
+      dirty = true;
+      (*cells).dirty = false;
+    } else {
+      dirty = false;
+    }
+
+    FramebufferWidget::step();
+  }
+
+  void onButton(const event::Button &e) override {
+    if (e.action == GLFW_PRESS && e.button == GLFW_MOUSE_BUTTON_LEFT) {
+      e.consume(this);
+      if (cells) {
+        initX = e.pos.x;
+        initY = e.pos.y;
+        currentlyTurningOn = !cells->active(e.pos.x, e.pos.y);
+        cells->setCell(e.pos.y / cellHeight,e.pos.x / cellWidth,setRange);
+        //cells->setCell(e.pos.x / cellWidth, e.pos.y / cellHeight,setRange);
+      }
+    }
+    if (e.action == GLFW_PRESS && e.button == GLFW_MOUSE_BUTTON_RIGHT) {
+      //module->selectionSet(type, id);
+      createContextMenu();
+      e.consume(this);
+    }
+  }
+
+  void onDragStart(const event::DragStart &e) override {
+    dragX = APP->scene->rack->mousePos.x;
+    dragY = APP->scene->rack->mousePos.y;
+  }
+
+  void onDragMove(const event::DragMove &e) override {
+    float newDragX = APP->scene->rack->mousePos.x;
+    float newDragY = APP->scene->rack->mousePos.y;
+
+    cells->setCell( (initY+(newDragY-dragY)) / cellWidth,(initX+(newDragX-dragX)) / cellHeight,setRange);
+  }
+
+  void draw(const DrawArgs &args) override {
+    //background
+    nvgFillColor(args.vg, nvgRGB(20, 30, 33));
+    nvgBeginPath(args.vg);
+    nvgRect(args.vg, 0, 0, box.size.x, box.size.y);
+    nvgFill(args.vg);
+
+    if (cells) {
+      // for (uint16_t y = 0; y < cells->height; y++) {
+      //   nvgFillColor(args.vg, cells->cellColor[y]); 
+      //   uint16_t x = cells->displayValueForPosition(y);
+      //   nvgBeginPath(args.vg);
+      //   int16_t sizeOffset = x*cellWidth >= yAxis ? cellWidth : -cellWidth;
+      //   int16_t placeOffset = x*cellWidth >= yAxis ? 0 : cellWidth;
+      //   nvgRect(args.vg, yAxis + placeOffset, y*cellHeight, x*cellWidth + sizeOffset-yAxis, cellHeight);
+      //   nvgFill(args.vg);
+      // }
+
+
+
+      for (uint16_t x = 0; x < cells->height; x++) {
+        nvgFillColor(args.vg, cells->cellColor[x]); 
+        uint16_t y = cells->width - cells->displayValueForPosition(cells->height-x);
+        nvgBeginPath(args.vg);
+        int16_t sizeOffset = y*cellHeight >= xAxis ? -cellHeight : cellHeight;
+        int16_t placeOffset = y*cellHeight >= xAxis ? 0 : cellHeight;
+        nvgRect(args.vg,x*cellWidth, xAxis + placeOffset , cellWidth, y*cellHeight + sizeOffset-xAxis);
+        nvgFill(args.vg);
+      }
+
+
+      // draw x axis pin line
+      // if (cells->pinXAxisValues > 0) {
+      //   nvgStrokeColor(args.vg, nvgRGBA(0x1a, 0x13, 0xc7, 0xF0)); //translucent blue
+      //   nvgStrokeWidth(args.vg, 1.0);
+      //   nvgBeginPath(args.vg);
+      //   float x = cells->pinXAxisPosition * (cells->width-1) * cellWidth + 1;
+      //   nvgMoveTo(args.vg,x,0);
+      //   nvgLineTo(args.vg,x,cells->height * cellHeight);
+      //   nvgStroke(args.vg);		
+      // }
+    }
+  }
+
+  void createContextMenu() {
+		ui::Menu* menu = createMenu();
+		menu->addChild(construct<MenuLabel>(&MenuLabel::text, gridName.c_str()));
+
+    DrawShapeMenuItem *drawMaxShape = new DrawShapeMenuItem();
+		drawMaxShape->text = "All Maximum";// 
+		drawMaxShape->cells = cells;
+		drawMaxShape->shape= 0;
+		menu->addChild(drawMaxShape);
+
+    DrawShapeMenuItem *drawMinShape = new DrawShapeMenuItem();
+		drawMinShape->text = "All Minimum";// 
+		drawMinShape->cells = cells;
+		drawMinShape->shape= 1;
+		menu->addChild(drawMinShape);
+
+    DrawShapeMenuItem *drawMediumShape = new DrawShapeMenuItem();
+		drawMediumShape->text = "All Half";// 
+		drawMediumShape->cells = cells;
+		drawMediumShape->shape= 2;
+		menu->addChild(drawMediumShape);
+
+    DrawShapeMenuItem *drawTriangleShape = new DrawShapeMenuItem();
+		drawTriangleShape->text = "Triangle";// 
+		drawTriangleShape->cells = cells;
+		drawTriangleShape->shape= 3;
+		menu->addChild(drawTriangleShape);
+
+    DrawShapeMenuItem *drawSinShape = new DrawShapeMenuItem();
+		drawSinShape->text = "Sine";// 
+		drawSinShape->cells = cells;
+		drawSinShape->shape= 4;
+		menu->addChild(drawSinShape);
+
+    DrawShapeMenuItem *drawRampShape = new DrawShapeMenuItem();
+		drawRampShape->text = "Ramp";// 
+		drawRampShape->cells = cells;
+		drawRampShape->shape= 5;
+		menu->addChild(drawRampShape);
+
+    DrawShapeMenuItem *drawRandomShape = new DrawShapeMenuItem();
+		drawRandomShape->text = "Random";// 
+		drawRandomShape->cells = cells;
+		drawRandomShape->shape= 6;
+		menu->addChild(drawRandomShape);
+
+    ChangeShapeMenuItem *flipHorizontal = new ChangeShapeMenuItem();
+		flipHorizontal->text = "Flip Horizontal";// 
+		flipHorizontal->cells = cells;
+		flipHorizontal->flipDirection=-1;
+		menu->addChild(flipHorizontal);
+
+    ChangeShapeMenuItem *flipVertical = new ChangeShapeMenuItem();
+		flipVertical->text = "Flip Vertical";// 
+		flipVertical->cells = cells;
+		flipVertical->flipDirection=1;
+		menu->addChild(flipVertical);
+
+    ChangeShapeMenuItem *reduceByHalf = new ChangeShapeMenuItem();
+		reduceByHalf->text = "Reduce By Half";// 
+		reduceByHalf->cells = cells;
+		reduceByHalf->reductionAmount=0.5;
+		menu->addChild(reduceByHalf);
+
+    ChangeShapeMenuItem *shiftLeft = new ChangeShapeMenuItem();
+		shiftLeft->text = "Shift Left";// 
+		shiftLeft->cells = cells;
+		shiftLeft->shiftDirection=1;
+		menu->addChild(shiftLeft);
+
+    ChangeShapeMenuItem *shiftRight = new ChangeShapeMenuItem();
+		shiftRight->text = "Shift Right";// 
+		shiftRight->cells = cells;
+		shiftRight->shiftDirection=-1;
+		menu->addChild(shiftRight);
+
+	}
+
+  struct DrawShapeMenuItem : MenuItem {
+    OneDimensionalCells *cells;
+    uint8_t shape;
+
+    void onAction(const event::Action& e) override {
+      cells->drawShape(shape);
+    }
+    };
+
+  struct ChangeShapeMenuItem : MenuItem {
+    OneDimensionalCells *cells;
+    int flipDirection = 0;
+    int shiftDirection = 0;
+    float reductionAmount =0.0;
+
+    void onAction(const event::Action& e) override {
+      cells->changeShape(flipDirection,shiftDirection,reductionAmount);
+    }
+  };
+
+};
 
 struct DisplayBarGrid : FramebufferWidget {
   float *graph= nullptr;

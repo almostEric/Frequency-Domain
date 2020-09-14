@@ -19,6 +19,7 @@ enum FFTSortMode {
 struct Result {
   float magnitude;
   float frequency;
+  uint16_t binNumber;
   bool operator<(const Result& a) const {
     return magnitude > a.magnitude;
   }
@@ -44,6 +45,7 @@ struct Binning {
     for (uint16_t c = 0; c < count; c++) {
       outData[c].frequency = 0;
       outData[c].magnitude = 0;
+      outData[c].binNumber = 0;
     }
 
 
@@ -57,7 +59,6 @@ struct Binning {
       float freqAdjustment = binSize * inPhaseData[i] / M_PI;
       //freqAdjustment = 0;
       float freq = (i * binSize) + freqAdjustment;
-
       float magnitude = inMagData[i];
 
       bool newFrequency = true;
@@ -67,6 +68,7 @@ struct Binning {
         if (abs(outData[c].frequency - freq) < freqDiffThreshold) {
           newFrequency = false;
           if(magnitude > outData[c].magnitude) {
+            outData[c].binNumber = i;
             outData[c].frequency = freq;
             outData[c].magnitude = magnitude;
           }
@@ -80,12 +82,14 @@ struct Binning {
           if (magnitude < minMagnitude) {
             minMagnitude = magnitude;
           }
+          outData[i].binNumber = i;
           outData[i].frequency = freq;
           outData[i].magnitude = magnitude;
         } else if (magnitude > minMagnitude) {
           // otherwise find the lowest slot and replace it
           for (uint16_t c = 0; c < count; c++) {
             if (outData[c].magnitude == minMagnitude) {
+              outData[c].binNumber = i;
               outData[c].frequency = freq;
               outData[c].magnitude = magnitude;
               break;

@@ -74,9 +74,9 @@ struct LightSmallKnob : BaseKnob {
 
     setSvg(APP->window->loadSvg(asset::plugin(pluginInstance, "res/component/knob_small.svg")));
     shadow.setBox(box);
-    shadow.setSize(0.8);
+    shadow.setSize(0.4);
     shadow.setStrength(0.2);
-    shadow.setShadowPosition(2, 3.5);
+    shadow.setShadowPosition(1, 1.75);
   }
 };
 
@@ -88,8 +88,8 @@ struct LightSmallKnobSnap : BaseKnob {
 
     setSvg(APP->window->loadSvg(asset::plugin(pluginInstance, "res/component/knob_small.svg")));
     shadow.setBox(box);
-    shadow.setSize(0.8);
+    shadow.setSize(0.4);
     shadow.setStrength(0.2);
-    shadow.setShadowPosition(2, 3.5);
+    shadow.setShadowPosition(1, 1.75);
   }
 };
