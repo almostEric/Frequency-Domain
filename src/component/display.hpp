@@ -545,7 +545,8 @@ struct CellBarGrid : FramebufferWidget {
       if (cells) {
         initX = e.pos.x;
         initY = e.pos.y;
-        currentlyTurningOn = !cells->active(e.pos.x, e.pos.y);
+
+        currentlyTurningOn = !cells->active(e.pos.x / cellWidth, e.pos.y / cellHeight);        
         cells->setCell(e.pos.x / cellWidth, e.pos.y / cellHeight,setRange);
       }
     }
@@ -735,9 +736,14 @@ struct CellVerticalBarGrid : FramebufferWidget {
       if (cells) {
         initX = e.pos.x;
         initY = e.pos.y;
-        currentlyTurningOn = !cells->active(e.pos.x, e.pos.y);
-        cells->setCell(e.pos.y / cellHeight,e.pos.x / cellWidth,setRange);
-        //cells->setCell(e.pos.x / cellWidth, e.pos.y / cellHeight,setRange);
+
+       fprintf(stderr, "mouse values: %f %f   %f  %f   %u %u  \n",e.pos.x,e.pos.y,cellHeight,cellWidth,cells->height,cells->width);
+
+
+        currentlyTurningOn = !cells->active(cells->width - 0 - (e.pos.y / cellHeight), std::floor(cells->height - 1 - (e.pos.x / cellWidth)));
+        cells->setCell(cells->width - 0 - (e.pos.y / cellHeight),std::floor(cells->height - 1 - (e.pos.x / cellWidth)),setRange);
+
+
       }
     }
     if (e.action == GLFW_PRESS && e.button == GLFW_MOUSE_BUTTON_RIGHT) {
@@ -756,7 +762,7 @@ struct CellVerticalBarGrid : FramebufferWidget {
     float newDragX = APP->scene->rack->mousePos.x;
     float newDragY = APP->scene->rack->mousePos.y;
 
-    cells->setCell( (initY+(newDragY-dragY)) / cellWidth,(initX+(newDragX-dragX)) / cellHeight,setRange);
+    cells->setCell( (cells->width - 0 - (initY+(newDragY-dragY)) / cellHeight),std::floor(cells->height - 1 - ((initX+(newDragX-dragX)) / cellWidth)),setRange);    
   }
 
   void draw(const DrawArgs &args) override {
@@ -767,21 +773,10 @@ struct CellVerticalBarGrid : FramebufferWidget {
     nvgFill(args.vg);
 
     if (cells) {
-      // for (uint16_t y = 0; y < cells->height; y++) {
-      //   nvgFillColor(args.vg, cells->cellColor[y]); 
-      //   uint16_t x = cells->displayValueForPosition(y);
-      //   nvgBeginPath(args.vg);
-      //   int16_t sizeOffset = x*cellWidth >= yAxis ? cellWidth : -cellWidth;
-      //   int16_t placeOffset = x*cellWidth >= yAxis ? 0 : cellWidth;
-      //   nvgRect(args.vg, yAxis + placeOffset, y*cellHeight, x*cellWidth + sizeOffset-yAxis, cellHeight);
-      //   nvgFill(args.vg);
-      // }
-
-
 
       for (uint16_t x = 0; x < cells->height; x++) {
         nvgFillColor(args.vg, cells->cellColor[x]); 
-        uint16_t y = cells->width - cells->displayValueForPosition(cells->height-x);
+        uint16_t y = cells->width - 1 - cells->displayValueForPosition(cells->height - 1 - x);
         nvgBeginPath(args.vg);
         int16_t sizeOffset = y*cellHeight >= xAxis ? -cellHeight : cellHeight;
         int16_t placeOffset = y*cellHeight >= xAxis ? 0 : cellHeight;
@@ -852,13 +847,13 @@ struct CellVerticalBarGrid : FramebufferWidget {
     ChangeShapeMenuItem *flipHorizontal = new ChangeShapeMenuItem();
 		flipHorizontal->text = "Flip Horizontal";// 
 		flipHorizontal->cells = cells;
-		flipHorizontal->flipDirection=-1;
+		flipHorizontal->flipDirection=1;
 		menu->addChild(flipHorizontal);
 
     ChangeShapeMenuItem *flipVertical = new ChangeShapeMenuItem();
 		flipVertical->text = "Flip Vertical";// 
 		flipVertical->cells = cells;
-		flipVertical->flipDirection=1;
+		flipVertical->flipDirection=-1;
 		menu->addChild(flipVertical);
 
     ChangeShapeMenuItem *reduceByHalf = new ChangeShapeMenuItem();
@@ -867,17 +862,17 @@ struct CellVerticalBarGrid : FramebufferWidget {
 		reduceByHalf->reductionAmount=0.5;
 		menu->addChild(reduceByHalf);
 
-    ChangeShapeMenuItem *shiftLeft = new ChangeShapeMenuItem();
-		shiftLeft->text = "Shift Left";// 
-		shiftLeft->cells = cells;
-		shiftLeft->shiftDirection=1;
-		menu->addChild(shiftLeft);
+    ChangeShapeMenuItem *shiftUp = new ChangeShapeMenuItem();
+		shiftUp->text = "Shift Up";// 
+		shiftUp->cells = cells;
+		shiftUp->shiftDirection=1;
+		menu->addChild(shiftUp);
 
-    ChangeShapeMenuItem *shiftRight = new ChangeShapeMenuItem();
-		shiftRight->text = "Shift Right";// 
-		shiftRight->cells = cells;
-		shiftRight->shiftDirection=-1;
-		menu->addChild(shiftRight);
+    ChangeShapeMenuItem *shiftDown = new ChangeShapeMenuItem();
+		shiftDown->text = "Shift Down";// 
+		shiftDown->cells = cells;
+		shiftDown->shiftDirection=-1;
+		menu->addChild(shiftDown);
 
 	}
 

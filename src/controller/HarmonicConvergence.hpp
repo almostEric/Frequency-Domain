@@ -96,9 +96,9 @@ struct HarmonicConvergenceModule : Module {
 
   // binning, 36 bins to work with
   Binning *binnings1;
-  Result bins1[MAX_VOICE_COUNT] = { { 0, 0 } };
+  Result bins1[MAX_VOICE_COUNT] = { { 0, 0, 0 } };
   Binning *binnings2;
-  Result bins2[MAX_VOICE_COUNT] = { { 0, 0 } };
+  Result bins2[MAX_VOICE_COUNT] = { { 0, 0, 0 } };
   WindowFunction<float> *windowFunction1;
   WindowFunction<float> *windowFunction2;
   dsp::SchmittTrigger rmTrigger,warpUseFundamentalTrigger, morphModeTrigger;

@@ -476,7 +476,7 @@ void BallOfConfusionModule::buildActualWaveTable() {
           }
         }
         if(j % fundamentalBin == 0) {
-          int harmonic = j / fundamentalBin;
+          uint16_t harmonic = j / fundamentalBin;
           if(harmonic < 16) {
             interpolatedMagnitude *= harmonicShiftAmount[harmonic];
           }
@@ -624,29 +624,30 @@ void BallOfConfusionModule::process(const ProcessArgs &args) {
   samplesPlayed ++;
 
 
-  if(sphere.size() > 0 && !loading && (rebuild || std::abs(yaw-lastYaw) > epsilon || std::abs(pitch-lastPitch) > epsilon || std::abs(roll-lastRoll) > epsilon)) {
-    rotateSphere(yaw,pitch,roll);
-    lastYaw = yaw;
-    lastPitch = pitch;
-    lastRoll = roll;
-    rebuild = false;
-    recalculateWave = true;
-  }
+  if(sphere.size() > 0 && !loading) {
+    if(rebuild || std::abs(yaw-lastYaw) > epsilon || std::abs(pitch-lastPitch) > epsilon || std::abs(roll-lastRoll) > epsilon) {
+      rotateSphere(yaw,pitch,roll);
+      lastYaw = yaw;
+      lastPitch = pitch;
+      lastRoll = roll;
+      rebuild = false;
+      recalculateWave = true;
+    }
 
-  if(recalculateWave || morphMode != lastMorphMode || lastSpectrumShift != spectrumShift) {
-    buildActualWaveTable();
-    lastMorphMode = morphMode;
-    lastSpectrumShift = spectrumShift;
-    recalculateWave = false;
-    recalcFold = true;
-  }
+    if(recalculateWave || morphMode != lastMorphMode || lastSpectrumShift != spectrumShift) {
+      buildActualWaveTable();
+      lastMorphMode = morphMode;
+      lastSpectrumShift = spectrumShift;
+      recalculateWave = false;
+      recalcFold = true;
+    }
 
-  if(recalcFold || std::abs(wavefoldAmount-lastWavefoldAmount) > epsilon) {
-    calculateWaveFolding();
-    recalcFold = false;
-    lastWavefoldAmount = wavefoldAmount;
+    if(recalcFold || std::abs(wavefoldAmount-lastWavefoldAmount) > epsilon) {
+      calculateWaveFolding();
+      recalcFold = false;
+      lastWavefoldAmount = wavefoldAmount;
+    }
   }
-
 
 
   float freqParam = params[FREQUENCY_PARAM].getValue() / 12.f;
