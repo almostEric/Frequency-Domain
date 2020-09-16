@@ -218,6 +218,16 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
     if(nbrCubeModels > 0 && currentModel != -1 && currentModel != lastModel) {
         nbrfilterLevels = 0;
         for(int s=0;s<NBR_FILTER_STAGES;s++) {
+            switch(cubeModels[currentModel].filterModel[s]) {
+                case FILTER_MODEL_BIQUAD:
+                default:
+                    delete pFilter[s][0];
+                    delete pFilter[s][1];
+
+                    pFilter[s][0] = new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0);
+                    pFilter[s][1] = new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0);
+                break;
+            }
             if(cubeModels[currentModel].filterLevel[s]+1 > nbrfilterLevels) {
                 nbrfilterLevels = cubeModels[currentModel].filterLevel[s]+1;
             }
@@ -312,6 +322,10 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
 
             pFilter[s][0]->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
             pFilter[s][1]->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
+
+            pFilter[s][0]->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
+            pFilter[s][1]->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
+
         }
 
 
