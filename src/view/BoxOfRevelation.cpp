@@ -62,7 +62,7 @@ struct BRDisplayFilterResponse : FramebufferWidget {
       nvgStroke(args.vg);
     }
 
-    if (!module || module->nbrFilterModels == 0 || module->currentModel == -1) 
+    if (!module || module->nbrCubeModels == 0 || module->currentModel == -1) 
       return;
 
         //fprintf(stderr, "Point x:%i l:%i freq:%f response:%f  gain: %f  \n",x,l,frequency,response,levelResponse);
@@ -78,7 +78,7 @@ struct BRDisplayFilterResponse : FramebufferWidget {
         int filtersInLevel = 0;
         double levelResponse = 0;
         for(int s=0;s<NBR_FILTER_STAGES;s++) {
-            if(module->filterModels[module->currentModel].filterLevel[s] == l) {
+            if(module->cubeModels[module->currentModel].filterLevel[s] == l) {
               levelResponse += module->pFilter[s][0]->frequencyResponse(frequency) * module->attenuation[s]; 
               filtersInLevel +=1;
         // fprintf(stderr, "Point x:%i l:%i freq:%f response:%f  level response: %f  \n",x,l,frequency[0],response[0],levelResponse[0]);
@@ -190,7 +190,7 @@ struct BRDisplayModelName : FramebufferWidget {
     nvgRect(args.vg, 0, 0, box.size.x, box.size.y);
     nvgFill(args.vg);
 
-    if (!module || module->nbrFilterModels == 0 || module->currentModel == -1) 
+    if (!module || module->nbrCubeModels == 0 || module->currentModel == -1) 
       return;
 
     nvgFontSize(args.vg, 18);
@@ -198,7 +198,7 @@ struct BRDisplayModelName : FramebufferWidget {
     nvgTextLetterSpacing(args.vg, -0.5);
     nvgFillColor(args.vg,nvgRGB(0x1f,0xf0,0x1f)); 	
     char text[128];
-    snprintf(text, sizeof(text), "%s", module->filterModels[module->currentModel].modelName.c_str()); // needs to use model #
+    snprintf(text, sizeof(text), "%s", module->cubeModels[module->currentModel].modelName.c_str()); // needs to use model #
     nvgText(args.vg, 2, 14, text, NULL);      
   }
 };

@@ -82,8 +82,8 @@ struct BoxOfRevelationModule : Module {
 
     std::string lastPath;
 
-    std::vector<cubeFilterModel> filterModels;
-    int nbrFilterModels = 0;
+    std::vector<cubeFilterModel> cubeModels;
+    int nbrCubeModels = 0;
     double makeupGain = 0; //In dB
     double makeupAttenuation = 1.0; //actual multiplier
 

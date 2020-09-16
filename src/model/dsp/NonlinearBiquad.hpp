@@ -24,6 +24,8 @@ enum NLType {
 
 enum NLFunction {
     NLFC_CUBIC_SOFT_CLIP,    // cubic soft clipping
+    NLFC_HARD_CLIP,    // hard clipping
+    NLFC_TANH_CLIP,    // tanh  clipping
 };
 
 template <typename T> class NonlinearBiquad : public Biquad<T> {
@@ -40,21 +42,32 @@ public:
 
     void setNonLinearType (NLType type) {
         switch(type) {
-        case NLBQ_ALL:
-            processFunc = &NonlinearBiquad::process_ALL;
-            return;
+            case NLBQ_ALL:
+                processFunc = &NonlinearBiquad::process_ALL;
+                return;
 
-        case NLBQ_NLFB:
-            processFunc = &NonlinearBiquad::process_NLFB;
-            return;
+            case NLBQ_NLFB:
+                processFunc = &NonlinearBiquad::process_NLFB;
+                return;
 
-        case NLBQ_NLState:
-            processFunc = &NonlinearBiquad::process_NLState;
-            return;
+            case NLBQ_NLState:
+                processFunc = &NonlinearBiquad::process_NLState;
+                return;
+            case NLBQ_NONE:
+            default:
+                processFunc = &NonlinearBiquad::process;
+        }
+    }
 
-        case NLBQ_NONE:
-        default:
-            processFunc = &NonlinearBiquad::process;
+    void setNonLinearFunction(NLFunction nlfunction) {
+        switch(nlfunction) {
+            case NLFC_TANH_CLIP:
+                //processFunc = &NonlinearBiquad::process_ALL;
+                break;
+            case NLFC_CUBIC_SOFT_CLIP:
+            default:
+                //processFunc = &NonlinearBiquad::process;
+                break;
         }
     }
 
@@ -90,9 +103,24 @@ public:
      * For more information: https://ccrma.stanford.edu/~jos/pasp/Cubic_Soft_Clipper.html
      */
     inline T nonlinearity(T x) const noexcept {
+        return cubicSoftClip(x);
+    }
+
+    T cubicSoftClip(T x) const noexcept {
         x = clamp(drive * x, -1.0f, 1.0f);
         return (x - x*x*x / (T) 3) / drive;
     }
+
+    T hardClip(T x) const noexcept {
+        x = clamp(drive * x, -1.0f, 1.0f);
+        return x / drive;
+    }
+
+    T tanhClip(T x) const noexcept {
+        x = clamp(drive * x, -1.0f, 1.0f);
+        return std::tanh(x) / drive;
+    }
+
 
     using ProcessFunc = T (NonlinearBiquad::*) (T);
     ProcessFunc processFunc = &NonlinearBiquad::process;

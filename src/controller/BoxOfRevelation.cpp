@@ -38,8 +38,8 @@ BoxOfRevelationModule::~BoxOfRevelationModule() {
 
 void BoxOfRevelationModule::onReset() {
     //fprintf(stderr, "resetting...  \n");
-    filterModels.clear();
-    nbrFilterModels = 0;
+    cubeModels.clear();
+    nbrCubeModels = 0;
     lastPath = asset::plugin(pluginInstance,"res/presets/defaultFilterCubes.json");
     loadCubeFile(lastPath);
     currentModel = 0;
@@ -97,7 +97,7 @@ void BoxOfRevelationModule::loadCubeFile(std::string path)  {
 
     lastPath = path;
     currentModel = -1;
-    filterModels.clear();
+    cubeModels.clear();
     
 
     json_t *modelsJ = json_object_get(rootJ, "models");
@@ -195,7 +195,7 @@ void BoxOfRevelationModule::loadCubeFile(std::string path)  {
                         
                     }                    
                 }
-                filterModels.push_back(model);
+                cubeModels.push_back(model);
             }
         }
     }
@@ -204,8 +204,8 @@ void BoxOfRevelationModule::loadCubeFile(std::string path)  {
     currentModel = 0;
     lastModel = -1;
     //fprintf(stderr, "Loading cube - reconfiguring params %llu \n",filterModels.size());
-    nbrFilterModels = filterModels.size();
-    reConfigParam(FILTER_MODEL_PARAM,0,nbrFilterModels-1,0);
+    nbrCubeModels = cubeModels.size();
+    reConfigParam(FILTER_MODEL_PARAM,0,nbrCubeModels-1,0);
 }
 
 void BoxOfRevelationModule::process(const ProcessArgs &args) {
@@ -213,13 +213,13 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
     const float epsilon = .001; 
     sampleRate = args.sampleRate;
 
-    currentModel = paramValue(FILTER_MODEL_PARAM,FILTER_MODEL_INPUT,0.0f,nbrFilterModels-1); 
-    modelPercentage = float(currentModel) / (nbrFilterModels > 1 ? nbrFilterModels-1 : 1);
-    if(nbrFilterModels > 0 && currentModel != -1 && currentModel != lastModel) {
+    currentModel = paramValue(FILTER_MODEL_PARAM,FILTER_MODEL_INPUT,0.0f,nbrCubeModels-1); 
+    modelPercentage = float(currentModel) / (nbrCubeModels > 1 ? nbrCubeModels-1 : 1);
+    if(nbrCubeModels > 0 && currentModel != -1 && currentModel != lastModel) {
         nbrfilterLevels = 0;
         for(int s=0;s<NBR_FILTER_STAGES;s++) {
-            if(filterModels[currentModel].filterLevel[s]+1 > nbrfilterLevels) {
-                nbrfilterLevels = filterModels[currentModel].filterLevel[s]+1;
+            if(cubeModels[currentModel].filterLevel[s]+1 > nbrfilterLevels) {
+                nbrfilterLevels = cubeModels[currentModel].filterLevel[s]+1;
             }
         }
     }   
@@ -235,20 +235,20 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
     zMorphPercentage = zMorph;
 
 
-    if(currentModel != -1 && nbrFilterModels > 0 && (currentModel != lastModel || std:: abs(frequency-lastFrequency) > epsilon || std::abs(yMorph-lastYMoprh) > epsilon || std::abs(zMorph-lastZMoprh) > epsilon)) {
+    if(currentModel != -1 && nbrCubeModels > 0 && (currentModel != lastModel || std:: abs(frequency-lastFrequency) > epsilon || std::abs(yMorph-lastYMoprh) > epsilon || std::abs(zMorph-lastZMoprh) > epsilon)) {
 
         currentPoint.x = frequency;
         currentPoint.y = yMorph;
         currentPoint.z = zMorph;
 
-        makeupGain = trilinearInterpolate(filterModels[currentModel].vertex[0][0][0].makeupGain,
-                                            filterModels[currentModel].vertex[1][0][0].makeupGain,
-                                            filterModels[currentModel].vertex[0][1][0].makeupGain,
-                                            filterModels[currentModel].vertex[1][1][0].makeupGain,
-                                            filterModels[currentModel].vertex[0][0][1].makeupGain,
-                                            filterModels[currentModel].vertex[1][0][1].makeupGain,
-                                            filterModels[currentModel].vertex[0][1][1].makeupGain,
-                                            filterModels[currentModel].vertex[1][1][1].makeupGain,
+        makeupGain = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].makeupGain,
+                                            cubeModels[currentModel].vertex[1][0][0].makeupGain,
+                                            cubeModels[currentModel].vertex[0][1][0].makeupGain,
+                                            cubeModels[currentModel].vertex[1][1][0].makeupGain,
+                                            cubeModels[currentModel].vertex[0][0][1].makeupGain,
+                                            cubeModels[currentModel].vertex[1][0][1].makeupGain,
+                                            cubeModels[currentModel].vertex[0][1][1].makeupGain,
+                                            cubeModels[currentModel].vertex[1][1][1].makeupGain,
                                             frequency,yMorph,zMorph);
 
         makeupAttenuation = powf(10,makeupGain / 20.0f);
@@ -257,45 +257,45 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
 
 
         for(int s=0;s<NBR_FILTER_STAGES;s++) {
-            float cutOffFrequeny = trilinearInterpolate(filterModels[currentModel].vertex[0][0][0].filterParameters[s].Fc,
-                                                        filterModels[currentModel].vertex[1][0][0].filterParameters[s].Fc,
-                                                        filterModels[currentModel].vertex[0][1][0].filterParameters[s].Fc,
-                                                        filterModels[currentModel].vertex[1][1][0].filterParameters[s].Fc,
-                                                        filterModels[currentModel].vertex[0][0][1].filterParameters[s].Fc,
-                                                        filterModels[currentModel].vertex[1][0][1].filterParameters[s].Fc,
-                                                        filterModels[currentModel].vertex[0][1][1].filterParameters[s].Fc,
-                                                        filterModels[currentModel].vertex[1][1][1].filterParameters[s].Fc,
+            float cutOffFrequeny = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].Fc,
+                                                        cubeModels[currentModel].vertex[1][0][0].filterParameters[s].Fc,
+                                                        cubeModels[currentModel].vertex[0][1][0].filterParameters[s].Fc,
+                                                        cubeModels[currentModel].vertex[1][1][0].filterParameters[s].Fc,
+                                                        cubeModels[currentModel].vertex[0][0][1].filterParameters[s].Fc,
+                                                        cubeModels[currentModel].vertex[1][0][1].filterParameters[s].Fc,
+                                                        cubeModels[currentModel].vertex[0][1][1].filterParameters[s].Fc,
+                                                        cubeModels[currentModel].vertex[1][1][1].filterParameters[s].Fc,
                                                         frequency,yMorph,zMorph);
 
-            float _q = trilinearInterpolate(filterModels[currentModel].vertex[0][0][0].filterParameters[s].Q,
-                                            filterModels[currentModel].vertex[1][0][0].filterParameters[s].Q,
-                                            filterModels[currentModel].vertex[0][1][0].filterParameters[s].Q,
-                                            filterModels[currentModel].vertex[1][1][0].filterParameters[s].Q,
-                                            filterModels[currentModel].vertex[0][0][1].filterParameters[s].Q,
-                                            filterModels[currentModel].vertex[1][0][1].filterParameters[s].Q,
-                                            filterModels[currentModel].vertex[0][1][1].filterParameters[s].Q,
-                                            filterModels[currentModel].vertex[1][1][1].filterParameters[s].Q,
+            float _q = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].Q,
+                                            cubeModels[currentModel].vertex[1][0][0].filterParameters[s].Q,
+                                            cubeModels[currentModel].vertex[0][1][0].filterParameters[s].Q,
+                                            cubeModels[currentModel].vertex[1][1][0].filterParameters[s].Q,
+                                            cubeModels[currentModel].vertex[0][0][1].filterParameters[s].Q,
+                                            cubeModels[currentModel].vertex[1][0][1].filterParameters[s].Q,
+                                            cubeModels[currentModel].vertex[0][1][1].filterParameters[s].Q,
+                                            cubeModels[currentModel].vertex[1][1][1].filterParameters[s].Q,
                                             frequency,yMorph,zMorph);
 
-            float _drive = trilinearInterpolate(filterModels[currentModel].vertex[0][0][0].filterParameters[s].drive,
-                filterModels[currentModel].vertex[1][0][0].filterParameters[s].drive,
-                filterModels[currentModel].vertex[0][1][0].filterParameters[s].drive,
-                filterModels[currentModel].vertex[1][1][0].filterParameters[s].drive,
-                filterModels[currentModel].vertex[0][0][1].filterParameters[s].drive,
-                filterModels[currentModel].vertex[1][0][1].filterParameters[s].drive,
-                filterModels[currentModel].vertex[0][1][1].filterParameters[s].drive,
-                filterModels[currentModel].vertex[1][1][1].filterParameters[s].drive,
+            float _drive = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].drive,
+                cubeModels[currentModel].vertex[1][0][0].filterParameters[s].drive,
+                cubeModels[currentModel].vertex[0][1][0].filterParameters[s].drive,
+                cubeModels[currentModel].vertex[1][1][0].filterParameters[s].drive,
+                cubeModels[currentModel].vertex[0][0][1].filterParameters[s].drive,
+                cubeModels[currentModel].vertex[1][0][1].filterParameters[s].drive,
+                cubeModels[currentModel].vertex[0][1][1].filterParameters[s].drive,
+                cubeModels[currentModel].vertex[1][1][1].filterParameters[s].drive,
                 frequency,yMorph,zMorph);
 
 
-            float _gain = trilinearInterpolate(filterModels[currentModel].vertex[0][0][0].filterParameters[s].gain,
-                                                    filterModels[currentModel].vertex[1][0][0].filterParameters[s].gain,
-                                                    filterModels[currentModel].vertex[0][1][0].filterParameters[s].gain,
-                                                    filterModels[currentModel].vertex[1][1][0].filterParameters[s].gain,
-                                                    filterModels[currentModel].vertex[0][0][1].filterParameters[s].gain,
-                                                    filterModels[currentModel].vertex[1][0][1].filterParameters[s].gain,
-                                                    filterModels[currentModel].vertex[0][1][1].filterParameters[s].gain,
-                                                    filterModels[currentModel].vertex[1][1][1].filterParameters[s].gain,
+            float _gain = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].gain,
+                                                    cubeModels[currentModel].vertex[1][0][0].filterParameters[s].gain,
+                                                    cubeModels[currentModel].vertex[0][1][0].filterParameters[s].gain,
+                                                    cubeModels[currentModel].vertex[1][1][0].filterParameters[s].gain,
+                                                    cubeModels[currentModel].vertex[0][0][1].filterParameters[s].gain,
+                                                    cubeModels[currentModel].vertex[1][0][1].filterParameters[s].gain,
+                                                    cubeModels[currentModel].vertex[0][1][1].filterParameters[s].gain,
+                                                    cubeModels[currentModel].vertex[1][1][1].filterParameters[s].gain,
                                                     frequency,yMorph,zMorph);
 
 
@@ -307,11 +307,11 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
             
 
     //fprintf(stderr, " Params stage:%i FT:%i Fc:%f Q:%f pDB:%f att:%f  \n",s,filterModels[currentModel].filterType[s],cutOffFrequeny,_q,_gain,attenuation[s]);
-            pFilter[s][0]->setNLBiquad(filterModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
-            pFilter[s][1]->setNLBiquad(filterModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
+            pFilter[s][0]->setNLBiquad(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
+            pFilter[s][1]->setNLBiquad(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
 
-            pFilter[s][0]->setNonLinearType((NLType) filterModels[currentModel].filterNonlinearityStructure[s]);
-            pFilter[s][1]->setNonLinearType((NLType) filterModels[currentModel].filterNonlinearityStructure[s]);
+            pFilter[s][0]->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
+            pFilter[s][1]->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
         }
 
 
@@ -328,14 +328,14 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
     double processedOut[2];
     double out[2] = {0.0};
         
-    if(nbrFilterModels > 0) {
+    if(nbrCubeModels > 0) {
         processedIn[0] = inputs[INPUT_L].getVoltage() / 5.0;
         processedIn[1] = inputs[INPUT_R].getVoltage() / 5.0;
         //fprintf(stderr, "initial out %f %f  \n",out[0],out[1]);
         for(int l=0;l<nbrfilterLevels;l++) {
             float filtersInLevel = 0;
             for(int s=0;s<NBR_FILTER_STAGES;s++) {
-                if(filterModels[currentModel].filterLevel[s] == l) {
+                if(cubeModels[currentModel].filterLevel[s] == l) {
                     for(int c=0;c<NBR_CHANNELS;c++) {
                         processedOut[c] = pFilter[s][c]->processSample(processedIn[c]);
                         out[c]+=(processedOut[c] * attenuation[s]);
