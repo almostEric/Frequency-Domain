@@ -5,6 +5,7 @@ struct individualFilterParameters {
 
     float Fc;
     float Q;
+    float drive;
     float gain;
 };
 

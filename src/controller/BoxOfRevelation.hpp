@@ -62,7 +62,6 @@ struct BoxOfRevelationModule : Module {
     ~BoxOfRevelationModule ();
 
     void loadCubeFile(std::string path);
-    void saveCubeFile(std::string path);
     void process (const ProcessArgs &args) override;
     float paramValue (uint16_t, uint16_t, float, float);
     void reConfigParam(int paramId, float minValue, float maxValue, float defaultValue);
@@ -73,13 +72,11 @@ struct BoxOfRevelationModule : Module {
     json_t *dataToJson() override;
 
 
-    //dsp::SchmittTrigger morphModeTrigger,syncModeTrigger;
-    //dsp::PulseGenerator endOfSamplePulse;
-
     NonlinearBiquad<double>* pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
 
     double Fc[NBR_FILTER_STAGES] = {0};
     double Q[NBR_FILTER_STAGES] = {0};
+    double drive[NBR_FILTER_STAGES] = {0};
     double gain[NBR_FILTER_STAGES] = {0};
     double attenuation[NBR_FILTER_STAGES] = {0};
 

@@ -2,6 +2,33 @@
   "models": [
     {
       "modelName": "2 Pole LP",
+      "filterModels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityStructures": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityFunctions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
       "filterTypes": [
         0,
         0,
@@ -31,42 +58,49 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 20.0,
               "Q": 0.2000008,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 20.0,
               "Q": 0.2000008,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 20.0,
               "Q": 0.2000008,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 2.0,
               "Q": 0.2000008,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 20.0,
               "Q": 0.2000008,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 20.0,
               "Q": 0.2000008,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -81,42 +115,49 @@
               "filterNumber": 0,
               "Fc": 10000.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -131,42 +172,49 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -181,42 +229,49 @@
               "filterNumber": 0,
               "Fc": 10000.0,
               "Q": 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 200.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -231,42 +286,49 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": -10.0
             },
             {
               "filterNumber": 5,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": -24.0
             },
             {
               "filterNumber": 6,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": -24.0
             }
           ]
@@ -281,42 +343,49 @@
               "filterNumber": 0,
               "Fc": 10000.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 20.0,
               "Q": 0.717000008,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -331,42 +400,49 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -381,42 +457,49 @@
               "filterNumber": 0,
               "Fc": 10000.0,
               "Q": 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": -12.0
             },
             {
               "filterNumber": 6,
               "Fc": 20.0,
               "Q": 0.20,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -425,6 +508,33 @@
     },
     {
       "modelName": "LP and HP Parallel",
+      "filterModels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityStructures": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityFunctions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
       "filterTypes": [
         0,
         1,
@@ -454,42 +564,49 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 16000.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -504,42 +621,49 @@
               "filterNumber": 0,
               "Fc": 15000.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 200.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -554,42 +678,49 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 16000.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 20.0,
               "Q": 9.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 900.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -604,42 +735,49 @@
               "filterNumber": 0,
               "Fc": 15000.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 200.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 200.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -654,42 +792,49 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 16000.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -704,42 +849,49 @@
               "filterNumber": 0,
               "Fc": 15000.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 600.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -754,42 +906,49 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 16000.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 20.0,
               "Q": 0.25,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 5,
               "Fc": 1000.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 1100.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -804,42 +963,49 @@
               "filterNumber": 0,
               "Fc": 15000.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 600.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 20.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -848,6 +1014,33 @@
     },
     {
       "modelName": "Vowel Cube - AEIO",
+      "filterModels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityStructures": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityFunctions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
       "filterTypes": [
         2,
         2,
@@ -877,42 +1070,49 @@
               "filterNumber": 0,
               "Fc": 600.0, 
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 1040.0,
               "Q": 15.0,
+              "drive" : 1.0,
               "gain": -7.0
             },
             {
               "filterNumber": 2,
               "Fc": 2250.0,
               "Q": 21.0,
+              "drive" : 1.0,
               "gain": -9.0
             },
             {
               "filterNumber": 3,
               "Fc": 2450.0,
               "Q": 20.0,
+              "drive" : 1.0,
               "gain": -9.0
             },
             {
               "filterNumber": 4,
               "Fc": 2750.0,
               "Q": 21.0,
+              "drive" : 1.0,
               "gain": -20.0
             },
             {
               "filterNumber": 5,
               "Fc": 180.0,
               "Q": 0.717,
+              "drive" : 1.0,
               "gain": -120.0
             },
             {
               "filterNumber": 6,
               "Fc": 180.0,
               "Q": 0.717,
+              "drive" : 1.0,
               "gain": -120.0
             }
           ]
@@ -927,42 +1127,49 @@
               "filterNumber": 0,
               "Fc": 800.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 1150.0,
               "Q": 12.0,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 2,
               "Fc": 2900.0,
               "Q": 24.0,
+              "drive" : 1.0,
               "gain": -32.0
             },
             {
               "filterNumber": 3,
               "Fc": 3900.0,
               "Q": 30.0,
+              "drive" : 1.0,
               "gain": -20.0
             },
             {
               "filterNumber": 4,
               "Fc": 4950.0,
               "Q": 35.0,
+              "drive" : 1.0,
               "gain": -50.0
             },
             {
               "filterNumber": 5,
               "Fc": 180.0,
               "Q": 0.816999972,
+              "drive" : 1.0,
               "gain": -120.0
             },
             {
               "filterNumber": 6,
               "Fc": 180.0,
               "Q": 0.816999972,
+              "drive" : 1.0,
               "gain": -120.0
             }
           ]
@@ -977,42 +1184,49 @@
               "filterNumber": 0,
               "Fc": 400.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 1620.0,
               "Q": 20.0,
+              "drive" : 1.0,
               "gain": -12.0
             },
             {
               "filterNumber": 2,
               "Fc": 2400.0,
               "Q": 24.0,
+              "drive" : 1.0,
               "gain": -9.0
             },
             {
               "filterNumber": 3,
               "Fc": 2800.0,
               "Q": 23.0,
+              "drive" : 1.0,
               "gain": -12.0
             },
             {
               "filterNumber": 4,
               "Fc": 3100.0,
               "Q": 26.0,
+              "drive" : 1.0,
               "gain": -18.0
             },
             {
               "filterNumber": 5,
               "Fc": 180.0,
               "Q": 0.717,
+              "drive" : 1.0,
               "gain": -120.0
             },
             {
               "filterNumber": 6,
               "Fc": 180.0,
               "Q": 0.717,
+              "drive" : 1.0,
               "gain": -120.0
             }
           ]
@@ -1027,42 +1241,49 @@
               "filterNumber": 0,
               "Fc": 350.0,
               "Q": 6.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 2000.0,
               "Q": 20.0,
+              "drive" : 1.0,
               "gain": -20.0
             },
             {
               "filterNumber": 2,
               "Fc": 2800.0,
               "Q": 23.0,
+              "drive" : 1.0,
               "gain": -15.0
             },
             {
               "filterNumber": 3,
               "Fc": 3600.0,
               "Q": 24.0,
+              "drive" : 1.0,
               "gain": -40.0
             },
             {
               "filterNumber": 4,
               "Fc": 4950.0,
               "Q": 25.0,
+              "drive" : 1.0,
               "gain": -56.0
             },
             {
               "filterNumber": 5,
               "Fc": 180.0,
               "Q": 0.717,
+              "drive" : 1.0,
               "gain": -120.0
             },
             {
               "filterNumber": 6,
               "Fc": 180.0,
               "Q": 0.717,
+              "drive" : 1.0,
               "gain": -120.0
             }
           ]
@@ -1077,42 +1298,49 @@
               "filterNumber": 0,
               "Fc": 250.0,
               "Q": 4.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 1750.0,
               "Q": 19.0,
+              "drive" : 1.0,
               "gain": -30.0
             },
             {
               "filterNumber": 2,
               "Fc": 2600.0,
               "Q": 26.0,
+              "drive" : 1.0,
               "gain": -16.0
             },
             {
               "filterNumber": 3,
               "Fc": 3050.0,
               "Q": 25.0,
+              "drive" : 1.0,
               "gain": -22.0
             },
             {
               "filterNumber": 4,
               "Fc": 3340.0,
               "Q": 28.0,
+              "drive" : 1.0,
               "gain": -28.0
             },
             {
               "filterNumber": 5,
               "Fc": 180.0,
               "Q": 0.816999972,
+              "drive" : 1.0,
               "gain": -120.0
             },
             {
               "filterNumber": 6,
               "Fc": 1100.0,
               "Q": 0.816999972,
+              "drive" : 1.0,
               "gain": -120.0
             }
           ]
@@ -1127,42 +1355,49 @@
               "filterNumber": 0,
               "Fc": 270.0,
               "Q": 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 2140.0,
               "Q": 24.0,
+              "drive" : 1.0,
               "gain": -12.0
             },
             {
               "filterNumber": 2,
               "Fc": 2950.0,
               "Q": 30.0,
+              "drive" : 1.0,
               "gain": -26.0
             },
             {
               "filterNumber": 3,
               "Fc": 3900.0,
               "Q": 33.0,
+              "drive" : 1.0,
               "gain": -26.0
             },
             {
               "filterNumber": 4,
               "Fc": 4950.0,
               "Q": 41.0,
+              "drive" : 1.0,
               "gain": -44.0
             },
             {
               "filterNumber": 5,
               "Fc": 180.0,
               "Q": 0.816999972,
+              "drive" : 1.0,
               "gain": -120.0
             },
             {
               "filterNumber": 6,
               "Fc": 180.0,
               "Q": 0.816999972,
+              "drive" : 1.0,
               "gain": -120.0
             }
           ]
@@ -1177,42 +1412,49 @@
               "filterNumber": 0,
               "Fc": 400.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 750.0,
               "Q": 9.0,
+              "drive" : 1.0,
               "gain": -11.0
             },
             {
               "filterNumber": 2,
               "Fc": 2400.0,
               "Q": 24.0,
+              "drive" : 1.0,
               "gain": -21.0
             },
             {
               "filterNumber": 3,
               "Fc": 2600.0,
               "Q": 22.0,
+              "drive" : 1.0,
               "gain": -20.0
             },
             {
               "filterNumber": 4,
               "Fc": 2900.0,
               "Q": 24.0,
+              "drive" : 1.0,
               "gain": -40.0
             },
             {
               "filterNumber": 5,
               "Fc": 180.0,
               "Q": 0.717,
+              "drive" : 1.0,
               "gain": -120.0
             },
             {
               "filterNumber": 6,
               "Fc": 180.0,
               "Q": 0.717,
+              "drive" : 1.0,
               "gain": -120.0
             }
           ]
@@ -1227,42 +1469,49 @@
               "filterNumber": 0,
               "Fc": 450.0,
               "Q": 6.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 800.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": -11.0
             },
             {
               "filterNumber": 2,
               "Fc": 2830.0,
               "Q": 28.0,
+              "drive" : 1.0,
               "gain": -22.0
             },
             {
               "filterNumber": 3,
               "Fc": 3800.0,
               "Q": 29.0,
+              "drive" : 1.0,
               "gain": -22.0
             },
             {
               "filterNumber": 4,
               "Fc": 4950.0,
               "Q": 37.0,
+              "drive" : 1.0,
               "gain": -50.0
             },
             {
               "filterNumber": 5,
               "Fc": 13500.0,
               "Q": 0.717,
+              "drive" : 1.0,
               "gain": -120.0
             },
             {
               "filterNumber": 6,
               "Fc": 180.0,
               "Q": 0.717,
+              "drive" : 1.0,
               "gain": -120.0
             }
           ]
@@ -1271,6 +1520,33 @@
     },
     {
       "modelName": "Formant Notcher",
+      "filterModels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityStructures": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityFunctions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
       "filterTypes": [
         3,
         3,
@@ -1300,42 +1576,49 @@
               "filterNumber": 0,
               "Fc": 600.0, 
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 1040.0,
               "Q": 3.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 2250.0,
               "Q": 0.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 2450.0,
               "Q": 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 2750.0,
               "Q": 5.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 3550.0,
               "Q": 8.0,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 6,
               "Fc": 4200.0,
               "Q": 9.0,
+              "drive" : 1.0,
               "gain": -6.0
             }
           ]
@@ -1350,42 +1633,49 @@
               "filterNumber": 0,
               "Fc": 800.0,
               "Q": 2.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 1150.0,
               "Q": 3.0,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 2,
               "Fc": 2900.0,
               "Q": 6.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 3900.0,
               "Q": 7.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 4950.0,
               "Q": 9.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 5700.0,
               "Q": 11.0,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 6,
               "Fc": 6600.0,
               "Q": 14.0,
+              "drive" : 1.0,
               "gain": -6.0
             }
           ]
@@ -1400,42 +1690,49 @@
               "filterNumber": 0,
               "Fc": 400.0,
               "Q": 2.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 1620.0,
               "Q": 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 2400.0,
               "Q": 6.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 2800.0,
               "Q": 5.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 3100.0,
               "Q": 6.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 3500.0,
               "Q": 7.0,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 6,
               "Fc": 3900.0,
               "Q": 9.0,
+              "drive" : 1.0,
               "gain": -6.0
             }
           ]
@@ -1450,42 +1747,49 @@
               "filterNumber": 0,
               "Fc": 350.0,
               "Q": 1.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 2000.0,
               "Q": 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 2800.0,
               "Q": 6.25,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 3600.0,
               "Q": 6.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 4950.0,
               "Q": 6.75,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 5600.0,
               "Q": 7.5,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 6,
               "Fc": 6320.0,
               "Q": 9.0,
+              "drive" : 1.0,
               "gain": -6.0
             }
           ]
@@ -1500,42 +1804,49 @@
               "filterNumber": 0,
               "Fc": 250.0,
               "Q": 1.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 1750.0,
               "Q": 4.75,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 2600.0,
               "Q": 6.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 3050.0,
               "Q": 6.15,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 3340.0,
               "Q": 7.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 3600.0,
               "Q": 8.5,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 6,
               "Fc": 7100.0,
               "Q": 9.2,
+              "drive" : 1.0,
               "gain": -6.0
             }
           ]
@@ -1550,42 +1861,49 @@
               "filterNumber": 0,
               "Fc": 270.0,
               "Q": 1.75,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 2140.0,
               "Q": 6.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 2950.0,
               "Q": 7.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 3900.0,
               "Q": 8.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 4950.0,
               "Q": 11.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 5400.0,
               "Q": 14.0,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 6,
               "Fc": 8800.0,
               "Q": 16.0,
+              "drive" : 1.0,
               "gain": -6.0
             }
           ]
@@ -1600,42 +1918,49 @@
               "filterNumber": 0,
               "Fc": 400.0,
               "Q": 2.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 750.0,
               "Q": 2.75,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 2400.0,
               "Q": 6.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 2600.0,
               "Q": 5.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 2900.0,
               "Q": 6.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 3200.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 6,
               "Fc": 7500.0,
               "Q": 1.5,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -1650,42 +1975,49 @@
               "filterNumber": 0,
               "Fc": 450.0,
               "Q": 1.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 800.0,
               "Q": 2.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 2830.0,
               "Q": 7.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 3800.0,
               "Q": 7.25,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 4950.0,
               "Q": 6.75,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 5500.0,
               "Q": 1.717,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 10800.0,
               "Q": 2.717,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -1694,6 +2026,33 @@
     },
     {
       "modelName": "Filtered Notcher",
+      "filterModels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityStructures": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityFunctions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
       "filterTypes": [
         1,
         3,
@@ -1723,42 +2082,49 @@
               "filterNumber": 0,
               "Fc": 400.0, 
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 1040.0,
               "Q": 3.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 2250.0,
               "Q": 0.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 2450.0,
               "Q": 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 2750.0,
               "Q": 5.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 3550.0,
               "Q": 8.0,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 6,
               "Fc": 4200.0,
               "Q": 9.0,
+              "drive" : 1.0,
               "gain": -6.0
             }
           ]
@@ -1773,42 +2139,49 @@
               "filterNumber": 0,
               "Fc": 1800.0,
               "Q": 2.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 4150.0,
               "Q": 3.0,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 2,
               "Fc": 5900.0,
               "Q": 6.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 6800.0,
               "Q": 7.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 8350.0,
               "Q": 9.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 10000.0,
               "Q": 11.0,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 6,
               "Fc": 12600.0,
               "Q": 14.0,
+              "drive" : 1.0,
               "gain": -6.0
             }
           ]
@@ -1823,42 +2196,49 @@
               "filterNumber": 0,
               "Fc": 400.0,
               "Q": 2.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 1620.0,
               "Q": 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 2400.0,
               "Q": 6.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 2800.0,
               "Q": 5.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 3100.0,
               "Q": 6.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 3500.0,
               "Q": 7.0,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 6,
               "Fc": 3900.0,
               "Q": 9.0,
+              "drive" : 1.0,
               "gain": -6.0
             }
           ]
@@ -1873,42 +2253,49 @@
               "filterNumber": 0,
               "Fc": 2350.0,
               "Q": 1.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 3500.0,
               "Q": 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 5200.0,
               "Q": 6.25,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 6600.0,
               "Q": 6.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 8950.0,
               "Q": 6.75,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 9600.0,
               "Q": 7.5,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 6,
               "Fc": 12320.0,
               "Q": 9.0,
+              "drive" : 1.0,
               "gain": -6.0
             }
           ]
@@ -1923,42 +2310,49 @@
               "filterNumber": 0,
               "Fc": 250.0,
               "Q": 1.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 1750.0,
               "Q": 4.75,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 2600.0,
               "Q": 6.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 3050.0,
               "Q": 6.15,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 3340.0,
               "Q": 7.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 3600.0,
               "Q": 8.5,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 6,
               "Fc": 5100.0,
               "Q": 9.2,
+              "drive" : 1.0,
               "gain": -6.0
             }
           ]
@@ -1973,42 +2367,49 @@
               "filterNumber": 0,
               "Fc": 3270.0,
               "Q": 1.75,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 4140.0,
               "Q": 6.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 5150.0,
               "Q": 7.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 6200.0,
               "Q": 8.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 7950.0,
               "Q": 11.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 9400.0,
               "Q": 14.0,
+              "drive" : 1.0,
               "gain": -6.0
             },
             {
               "filterNumber": 6,
               "Fc": 12800.0,
               "Q": 16.0,
+              "drive" : 1.0,
               "gain": -6.0
             }
           ]
@@ -2023,42 +2424,49 @@
               "filterNumber": 0,
               "Fc": 400.0,
               "Q": 4.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 750.0,
               "Q": 2.75,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 2400.0,
               "Q": 6.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 2600.0,
               "Q": 5.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 2900.0,
               "Q": 6.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 3200.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 7500.0,
               "Q": 1.5,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -2073,42 +2481,49 @@
               "filterNumber": 0,
               "Fc": 3450.0,
               "Q": 3.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 4400.0,
               "Q": 2.5,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 5230.0,
               "Q": 7.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 6300.0,
               "Q": 7.25,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 7950.0,
               "Q": 6.75,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 9500.0,
               "Q": 1.717,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 12800.0,
               "Q": 2.717,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -2117,6 +2532,33 @@
     },
     {
       "modelName": "Lowrider",
+      "filterModels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityStructures": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityFunctions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
       "filterTypes": [
         0,
         2,
@@ -2146,42 +2588,49 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 200.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 500.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 1000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 2000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 3000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 5000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -2196,42 +2645,49 @@
               "filterNumber": 0,
               "Fc": 7000.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 200.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 500.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 1000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 2000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 3000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 5000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -2246,42 +2702,49 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 200.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 500.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 1000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 2000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 3000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 5000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -2296,42 +2759,49 @@
               "filterNumber": 0,
               "Fc": 7000.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 200.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 500.0,
               "Q": 3.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 1000.0,
               "Q": 4.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 2000.0,
               "Q": 5.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 3000.0,
               "Q": 6.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 5000.0,
               "Q": 7.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -2346,42 +2816,49 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 600.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 1020.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 2000.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 4000.0,
               "Q": 9.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 6000.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 7000.0,
               "Q": 2.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -2396,42 +2873,49 @@
               "filterNumber": 0,
               "Fc": 7000.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 600.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 1020.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 2000.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 4000.0,
               "Q": 9.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 6000.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 7000.0,
               "Q": 2.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -2446,42 +2930,49 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 600.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 1020.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 2000.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 4000.0,
               "Q": 9.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 6000.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 7000.0,
               "Q": 2.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -2496,42 +2987,49 @@
               "filterNumber": 0,
               "Fc": 7000.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 1600.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 2020.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 3000.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 6000.0,
               "Q": 9.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 8000.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 12000.0,
               "Q": 2.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
         ]
@@ -2540,6 +3038,33 @@
     },
     {
       "modelName": "Hirider",
+      "filterModels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityStructures": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityFunctions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
       "filterTypes": [
         1,
         2,
@@ -2569,42 +3094,49 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 200.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 500.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 1000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 2000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 3000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 5000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -2619,42 +3151,49 @@
               "filterNumber": 0,
               "Fc": 7000.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 200.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 500.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 1000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 2000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 3000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 5000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -2669,42 +3208,49 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 200.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 500.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 1000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 2000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 3000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 5000.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -2719,42 +3265,49 @@
               "filterNumber": 0,
               "Fc": 7000.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 200.0,
               "Q": 2.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 500.0,
               "Q": 3.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 1000.0,
               "Q": 4.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 2000.0,
               "Q": 5.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 3000.0,
               "Q": 6.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 5000.0,
               "Q": 7.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -2769,42 +3322,49 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 600.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 1020.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 2000.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 4000.0,
               "Q": 9.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 6000.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 7000.0,
               "Q": 2.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -2819,42 +3379,49 @@
               "filterNumber": 0,
               "Fc": 7000.0,
               "Q": 0.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 600.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 1020.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 2000.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 4000.0,
               "Q": 9.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 6000.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 7000.0,
               "Q": 2.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -2869,42 +3436,49 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 600.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 1020.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 2000.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 4000.0,
               "Q": 9.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 6000.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 7000.0,
               "Q": 2.2,
+              "drive" : 1.0,
               "gain": 0.0
             }
           ]
@@ -2919,42 +3493,2579 @@
               "filterNumber": 0,
               "Fc": 7000.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 1600.0,
               "Q": 10.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 2,
               "Fc": 2020.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 3,
               "Fc": 3000.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 4,
               "Fc": 6000.0,
               "Q": 9.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 5,
               "Fc": 8000.0,
               "Q": 8.2,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 6,
               "Fc": 12000.0,
               "Q": 2.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+        ]
+        }
+      ]
+    },
+    {
+      "modelName": "NL 2 Pole LP",
+      "filterModels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityStructures": [
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityFunctions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterTypes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "filterLevels": [
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "vertexes": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 20.0,
+              "Q": 0.2000008,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 20.0,
+              "Q": 0.2000008,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 20.0,
+              "Q": 0.2000008,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 2.0,
+              "Q": 0.2000008,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2000008,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2000008,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 10000.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "Q": 5.0,
+              "drive" : 5.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 10000.0,
+              "Q": 5.0,
+              "drive" : 5.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 200.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": -10.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": -24.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": -24.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 1,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 10000.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 20.0,
+              "Q": 0.717000008,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 1,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "Q": 5.0,
+              "drive" : 5.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 1,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 10000.0,
+              "Q": 5.0,
+              "drive" : 5.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": -12.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.20,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelName": "NL LP and HP Parallel",
+      "filterModels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityStructures": [
+        3,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityFunctions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterTypes": [
+        0,
+        1,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "filterLevels": [
+        0,
+        0,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "vertexes": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 16000.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 15000.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 200.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "Q": 10.0,
+              "drive" : 5.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 16000.0,
+              "Q": 0.2,
+              "drive" : 5.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 20.0,
+              "Q": 9.0,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 900.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 15000.0,
+              "Q": 10.0,
+              "drive" : 5.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 200.0,
+              "Q": 0.2,
+              "drive" : 5.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 200.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 16000.0,
+              "Q": 10.0,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 1,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 15000.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 600.0,
+              "Q": 10.0,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 1,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "Q": 10.0,
+              "drive" : 5.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 16000.0,
+              "Q": 10.0,
+              "drive" : 5.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 20.0,
+              "Q": 0.25,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": -6.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 1000.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 1100.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 1,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 15000.0,
+              "Q": 10.0,
+              "drive" : 5.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 600.0,
+              "Q": 10.0,
+              "drive" : 5.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelName": "NL Growel Cube - AEIO",
+      "filterModels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityStructures": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        0,
+        0
+      ],  
+      "filterNonLinearityFunctions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterTypes": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "filterLevels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        -1
+      ],
+      "vertexes": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "makeupGain": 18.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 600.0, 
+              "Q": 10.0,
+              "drive" : 2.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 1040.0,
+              "Q": 15.0,
+              "drive" : 2.0,
+              "gain": -7.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 2250.0,
+              "Q": 21.0,
+              "drive" : 2.0,
+              "gain": -9.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 2450.0,
+              "Q": 20.0,
+              "drive" : 2.0,
+              "gain": -9.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 2750.0,
+              "Q": 21.0,
+              "drive" : 2.0,
+              "gain": -20.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 180.0,
+              "Q": 0.717,
+              "drive" : 1.0,
+              "gain": -120.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 180.0,
+              "Q": 0.717,
+              "drive" : 1.0,
+              "gain": -120.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "makeupGain": 18.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 800.0,
+              "Q": 10.0,
+              "drive" : 2.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 1150.0,
+              "Q": 12.0,
+              "drive" : 2.0,
+              "gain": -6.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 2900.0,
+              "Q": 24.0,
+              "drive" : 2.0,
+              "gain": -32.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 3900.0,
+              "Q": 30.0,
+              "drive" : 2.0,
+              "gain": -20.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 4950.0,
+              "Q": 35.0,
+              "drive" : 2.0,
+              "gain": -50.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 180.0,
+              "Q": 0.816999972,
+              "drive" : 1.0,
+              "gain": -120.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 180.0,
+              "Q": 0.816999972,
+              "drive" : 1.0,
+              "gain": -120.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "makeupGain": 18.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 400.0,
+              "Q": 10.0,
+              "drive" : 5.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 1620.0,
+              "Q": 20.0,
+              "drive" : 5.0,
+              "gain": -12.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 2400.0,
+              "Q": 24.0,
+              "drive" : 5.0,
+              "gain": -9.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 2800.0,
+              "Q": 23.0,
+              "drive" : 5.0,
+              "gain": -12.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 3100.0,
+              "Q": 26.0,
+              "drive" : 5.0,
+              "gain": -18.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 180.0,
+              "Q": 0.717,
+              "drive" : 1.0,
+              "gain": -120.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 180.0,
+              "Q": 0.717,
+              "drive" : 1.0,
+              "gain": -120.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+          "makeupGain": 18.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 350.0,
+              "Q": 6.0,
+              "drive" : 5.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 2000.0,
+              "Q": 20.0,
+              "drive" : 5.0,
+              "gain": -20.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 2800.0,
+              "Q": 23.0,
+              "drive" : 5.0,
+              "gain": -15.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 3600.0,
+              "Q": 24.0,
+              "drive" : 5.0,
+              "gain": -40.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 4950.0,
+              "Q": 25.0,
+              "drive" : 5.0,
+              "gain": -56.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 180.0,
+              "Q": 0.717,
+              "drive" : 1.0,
+              "gain": -120.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 180.0,
+              "Q": 0.717,
+              "drive" : 1.0,
+              "gain": -120.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1,
+          "makeupGain": 18.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 250.0,
+              "Q": 4.0,
+              "drive" : 2.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 1750.0,
+              "Q": 19.0,
+              "drive" : 2.0,
+              "gain": -30.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 2600.0,
+              "Q": 26.0,
+              "drive" : 2.0,
+              "gain": -16.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 3050.0,
+              "Q": 25.0,
+              "drive" : 2.0,
+              "gain": -22.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 3340.0,
+              "Q": 28.0,
+              "drive" : 2.0,
+              "gain": -28.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 180.0,
+              "Q": 0.816999972,
+              "drive" : 1.0,
+              "gain": -120.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 1100.0,
+              "Q": 0.816999972,
+              "drive" : 1.0,
+              "gain": -120.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 1,
+          "makeupGain": 18.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 270.0,
+              "Q": 5.0,
+              "drive" : 2.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 2140.0,
+              "Q": 24.0,
+              "drive" : 2.0,
+              "gain": -12.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 2950.0,
+              "Q": 30.0,
+              "drive" : 2.0,
+              "gain": -26.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 3900.0,
+              "Q": 33.0,
+              "drive" : 2.0,
+              "gain": -26.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 4950.0,
+              "Q": 41.0,
+              "drive" : 2.0,
+              "gain": -44.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 180.0,
+              "Q": 0.816999972,
+              "drive" : 1.0,
+              "gain": -120.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 180.0,
+              "Q": 0.816999972,
+              "drive" : 1.0,
+              "gain": -120.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 1,
+          "makeupGain": 18.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 400.0,
+              "Q": 10.0,
+              "drive" : 5.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 750.0,
+              "Q": 9.0,
+              "drive" : 5.0,
+              "gain": -11.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 2400.0,
+              "Q": 24.0,
+              "drive" : 5.0,
+              "gain": -21.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 2600.0,
+              "Q": 22.0,
+              "drive" : 5.0,
+              "gain": -20.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 2900.0,
+              "Q": 24.0,
+              "drive" : 5.0,
+              "gain": -40.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 180.0,
+              "Q": 0.717,
+              "drive" : 1.0,
+              "gain": -120.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 180.0,
+              "Q": 0.717,
+              "drive" : 1.0,
+              "gain": -120.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 1,
+          "makeupGain": 18.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 450.0,
+              "Q": 6.0,
+              "drive" : 5.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 800.0,
+              "Q": 10.0,
+              "drive" : 5.0,
+              "gain": -11.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 2830.0,
+              "Q": 28.0,
+              "drive" : 5.0,
+              "gain": -22.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 3800.0,
+              "Q": 29.0,
+              "drive" : 5.0,
+              "gain": -22.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 4950.0,
+              "Q": 37.0,
+              "drive" : 5.0,
+              "gain": -50.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 13500.0,
+              "Q": 0.717,
+              "drive" : 1.0,
+              "gain": -120.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 180.0,
+              "Q": 0.717,
+              "drive" : 1.0,
+              "gain": -120.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelName": "NL Lowrider",
+      "filterModels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityStructures": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],  
+      "filterNonLinearityFunctions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterTypes": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "filterLevels": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "vertexes": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "Q": 0.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 200.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 500.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1000.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 2000.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 3000.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 5000.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 7000.0,
+              "Q": 0.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 200.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 500.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1000.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 2000.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 3000.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 5000.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "Q": 10.0,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 200.0,
+              "Q": 2.0,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 500.0,
+              "Q": 2.0,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1000.0,
+              "Q": 2.0,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 2000.0,
+              "Q": 2.0,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 3000.0,
+              "Q": 2.0,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 5000.0,
+              "Q": 2.0,
+              "drive" : 6.5,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 7000.0,
+              "Q": 10.0,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 200.0,
+              "Q": 2.0,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 500.0,
+              "Q": 3.0,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1000.0,
+              "Q": 4.2,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 2000.0,
+              "Q": 5.2,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 3000.0,
+              "Q": 6.2,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 5000.0,
+              "Q": 7.2,
+              "drive" : 6.5,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "Q": 0.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 600.0,
+              "Q": 10.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 1020.0,
+              "Q": 8.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 2000.0,
+              "Q": 8.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 4000.0,
+              "Q": 9.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 6000.0,
+              "Q": 8.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 7000.0,
+              "Q": 2.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 1,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 7000.0,
+              "Q": 0.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 600.0,
+              "Q": 10.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 1020.0,
+              "Q": 8.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 2000.0,
+              "Q": 8.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 4000.0,
+              "Q": 9.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 6000.0,
+              "Q": 8.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 7000.0,
+              "Q": 2.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 1,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "Q": 10.0,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 600.0,
+              "Q": 10.0,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 1020.0,
+              "Q": 8.2,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 2000.0,
+              "Q": 8.2,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 4000.0,
+              "Q": 9.2,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 6000.0,
+              "Q": 8.2,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 7000.0,
+              "Q": 2.2,
+              "drive" : 6.5,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 1,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 7000.0,
+              "Q": 10.0,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 1600.0,
+              "Q": 10.0,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 2020.0,
+              "Q": 8.2,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 3000.0,
+              "Q": 8.2,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 6000.0,
+              "Q": 9.2,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 8000.0,
+              "Q": 8.2,
+              "drive" : 6.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 12000.0,
+              "Q": 2.2,
+              "drive" : 6.5,
+              "gain": 0.0
+            }
+        ]
+        }
+      ]
+    },
+    {
+      "modelName": "NL Hirider",
+      "filterModels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityStructures": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],  
+      "filterNonLinearityFunctions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterTypes": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "filterLevels": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "vertexes": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "Q": 0.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 200.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 500.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1000.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 2000.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 3000.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 5000.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 7000.0,
+              "Q": 0.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 200.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 500.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1000.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 2000.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 3000.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 5000.0,
+              "Q": 2.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "Q": 10.0,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 200.0,
+              "Q": 2.0,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 500.0,
+              "Q": 2.0,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1000.0,
+              "Q": 2.0,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 2000.0,
+              "Q": 2.0,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 3000.0,
+              "Q": 2.0,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 5000.0,
+              "Q": 2.0,
+              "drive" : 7.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 7000.0,
+              "Q": 10.0,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 200.0,
+              "Q": 2.0,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 500.0,
+              "Q": 3.0,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1000.0,
+              "Q": 4.2,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 2000.0,
+              "Q": 5.2,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 3000.0,
+              "Q": 6.2,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 5000.0,
+              "Q": 7.2,
+              "drive" : 7.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "Q": 0.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 600.0,
+              "Q": 10.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 1020.0,
+              "Q": 8.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 2000.0,
+              "Q": 8.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 4000.0,
+              "Q": 9.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 6000.0,
+              "Q": 8.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 7000.0,
+              "Q": 2.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 1,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 7000.0,
+              "Q": 0.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 600.0,
+              "Q": 10.0,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 1020.0,
+              "Q": 8.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 2000.0,
+              "Q": 8.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 4000.0,
+              "Q": 9.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 6000.0,
+              "Q": 8.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 7000.0,
+              "Q": 2.2,
+              "drive" : 1.5,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 1,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "Q": 10.0,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 600.0,
+              "Q": 10.0,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 1020.0,
+              "Q": 8.2,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 2000.0,
+              "Q": 8.2,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 4000.0,
+              "Q": 9.2,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 6000.0,
+              "Q": 8.2,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 7000.0,
+              "Q": 2.2,
+              "drive" : 7.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 1,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 7000.0,
+              "Q": 10.0,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 1600.0,
+              "Q": 10.0,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 2020.0,
+              "Q": 8.2,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 3000.0,
+              "Q": 8.2,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 6000.0,
+              "Q": 9.2,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 8000.0,
+              "Q": 8.2,
+              "drive" : 7.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 12000.0,
+              "Q": 2.2,
+              "drive" : 7.0,
               "gain": 0.0
             }
         ]
