@@ -2,12 +2,13 @@
 
 #include <cstdint>
 #include "cubeVertexFilterParameters.hpp"
-  
+
+enum FilterModels {
+  FILTER_MODEL_BIQUAD
+};
+
 // one vertex of filter paramaters
 struct cubeFilterModel {
-    enum FilterModels {
-      FILTER_MODEL_BIQUAD
-    };
     
 
     cubeFilterModel(std::string modelName) {
