@@ -73,7 +73,7 @@ struct BoxOfRevelationModule : Module {
     json_t *dataToJson() override;
 
 
-    NonlinearBiquad<double>* pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
+    std::unique_ptr<NonlinearBiquad<double>> pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
 
     double Fc[NBR_FILTER_STAGES] = {0};
     double Q[NBR_FILTER_STAGES] = {0};
