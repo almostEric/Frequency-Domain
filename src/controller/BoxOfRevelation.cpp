@@ -17,7 +17,7 @@ BoxOfRevelationModule::BoxOfRevelationModule() {
 
     for(int c=0;c<NBR_CHANNELS;c++) {
         for(int s=0;s<NBR_FILTER_STAGES;s++) {
-            pFilter[s][c] = new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0);
+            pFilter[s][c].reset(new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0));
         }
     }
     onReset();
@@ -220,11 +220,8 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
             switch(cubeModels[currentModel].filterModel[s]) {
                 case FILTER_MODEL_BIQUAD:
                 default:
-                    delete pFilter[s][0];
-                    delete pFilter[s][1];
-
-                    pFilter[s][0] = new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0);
-                    pFilter[s][1] = new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0);
+                    pFilter[s][0].reset(new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0));
+                    pFilter[s][1].reset(new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0));
                 break;
             }
             if(cubeModels[currentModel].filterLevel[s]+1 > nbrfilterLevels) {
