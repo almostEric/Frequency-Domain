@@ -8,6 +8,7 @@
 #include "../model/dsp/NonlinearBiquad.hpp"
 #include "../model/cubeFilterModel.hpp"
 #include "../model/cubeFilterPoint.hpp"
+#include "../model/Interpolate.hpp"
 
 
 #include <cstdint>

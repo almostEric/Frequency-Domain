@@ -1,6 +1,5 @@
 #include "BoxOfRevelation.hpp"
 #include <cmath>
-#include "../model/Interpolate.hpp"
 
 
 BoxOfRevelationModule::BoxOfRevelationModule() {
@@ -166,7 +165,7 @@ void BoxOfRevelationModule::loadCubeFile(std::string path)  {
                         int filterNumber = filterIndex;
                         float Fc = 15000;
                         float _q = .707;
-                        float _drive = 0.0;
+                        float _drive = 1.0;
                         float _gain = 0.0;
                         json_t *filterNumberJ = json_object_get(filterJ, "filterNumber");
                         if(filterNumberJ)
