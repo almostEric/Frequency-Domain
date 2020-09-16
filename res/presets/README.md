@@ -8,7 +8,7 @@ Each filter has a Non-liearity structure
 Structures: 0-None, 1-Non-linear states,2-Non-linear feedback,3-Nonlinear states and feeback
 
 Each filter has a Non-linearity function
-Currently only one Structure: 0-Soft Clipping
+Functions: 0-Soft Clipping, 1-Hard Clipping, 2-Tanh Clipping
 
 Each filter has a type:
 Filter Types: 0-Low Pass, 1-High Pass, 2-Band Pass, 3-Notch, 4-Peak, 5-Low Shelf, 6-High Shelf, 7-All Pass.
