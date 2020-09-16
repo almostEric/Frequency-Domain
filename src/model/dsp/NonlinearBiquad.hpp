@@ -41,6 +41,8 @@ public:
     }
 
     void setNonLinearType (NLType type) {
+        nlType = type;
+
         switch(type) {
             case NLBQ_ALL:
                 processFunc = &NonlinearBiquad::process_ALL;
@@ -62,11 +64,14 @@ public:
     void setNonLinearFunction(NLFunction nlfunction) {
         switch(nlfunction) {
             case NLFC_TANH_CLIP:
-                //processFunc = &NonlinearBiquad::process_ALL;
+                nlFunc = &NonlinearBiquad::tanhClip;
+                break;
+            case NLFC_HARD_CLIP:
+                nlFunc = &NonlinearBiquad::hardClip;
                 break;
             case NLFC_CUBIC_SOFT_CLIP:
             default:
-                //processFunc = &NonlinearBiquad::process;
+                processFunc = &NonlinearBiquad::cubicSoftClip;
                 break;
         }
     }
@@ -98,33 +103,78 @@ public:
       return out;
     }
 
+    inline T nonlinearity(T x) {
+        return (this->*nlFunc)(x);
+    }
+
     /**
      * Simple cubic soft-clipping nonlinearity.
      * For more information: https://ccrma.stanford.edu/~jos/pasp/Cubic_Soft_Clipper.html
      */
-    inline T nonlinearity(T x) const noexcept {
-        return cubicSoftClip(x);
-    }
-
-    T cubicSoftClip(T x) const noexcept {
-        x = clamp(drive * x, -1.0f, 1.0f);
+    inline T cubicSoftClip(T x) {
+        x = std::max(std::min(drive * x, (T) 1), (T) -1);
         return (x - x*x*x / (T) 3) / drive;
     }
 
-    T hardClip(T x) const noexcept {
-        x = clamp(drive * x, -1.0f, 1.0f);
+    inline T hardClip(T x) {
+        x = std::max(std::min(drive * x, (T) 1), (T) -1);
         return x / drive;
     }
 
-    T tanhClip(T x) const noexcept {
-        x = clamp(drive * x, -1.0f, 1.0f);
-        return std::tanh(x) / drive;
+    inline T tanhClip(T x) {
+        return std::tanh(drive * x) / drive;
     }
 
+    // derivative of saturating NL function, needed for visualizer
+    inline T clipDeriv(T x) const noexcept {
+        T th = std::tanh(x);
+        return (T) 1 - th*th;
+    }
 
     using ProcessFunc = T (NonlinearBiquad::*) (T);
     ProcessFunc processFunc = &NonlinearBiquad::process;
 
+    T frequencyResponse(T frequency) override {
+        T w = 2.0*M_PI*frequency;
+
+        // copy coefficients
+        T a0_prime = this->a0;
+        T a1_prime = this->a1;
+        T a2_prime = this->a2;
+        T b1_prime = this->b1;
+        T b2_prime = this->b2;
+
+        // adjust coefficients for nonlinear function
+        if(nlType == NLType::NLBQ_NLState) {
+            T g = clipDeriv(drive / (T) 10);
+            a1_prime *= g;
+            b1_prime *= g;
+            a2_prime *= g * g;
+            b2_prime *= g * g;
+        }
+        else if(nlType == NLType::NLBQ_NLFB) {
+            T g = clipDeriv(drive / (T) 10);
+            b1_prime *= g;
+            b2_prime *= g;
+        }
+        else if(nlType == NLType::NLBQ_ALL) {
+            T g = clipDeriv(drive / (T) 10);
+            a1_prime *= g;
+            b1_prime *= g * g;
+            a2_prime *= g * g;
+            b2_prime *= g * g * g;
+        }
+
+        T numerator = a0_prime*a0_prime + a1_prime*a1_prime + a2_prime*a2_prime + 2.0*(a0_prime*a1_prime + a1_prime*a2_prime)*cos(w) + 2.0*a0_prime*a2_prime*cos(2.0*w);
+        T denominator = 1.0 + b1_prime*b1_prime + b2_prime*b2_prime + 2.0*(b1_prime + b1_prime*b2_prime)*cos(w) + 2.0*b2_prime*cos(2.0*w);
+        T magnitude = sqrt(numerator / denominator);
+
+        return magnitude;
+    }
+
 private:
+    ProcessFunc nlFunc = &NonlinearBiquad::cubicSoftClip;
+
+    NLType nlType = NLType::NLBQ_NONE;
     T drive = 1.0;
 };
