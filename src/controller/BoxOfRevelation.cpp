@@ -113,8 +113,29 @@ void BoxOfRevelationModule::loadCubeFile(std::string path)  {
                 std::string modelName = json_string_value(modelNameJ);
                 cubeFilterModel model = cubeFilterModel(modelName);
 
-                json_t *filterTypesJ = json_object_get(modelJ, "filterTypes");
+                json_t *filterModelsJ = json_object_get(modelJ, "filterModels");
                 size_t filterIndex;
+                json_t *filterModelJ;
+                json_array_foreach(filterModelsJ, filterIndex, filterModelJ) {
+                    int filterModel = json_integer_value(filterModelJ);
+                    model.filterModel[filterIndex] = filterModel;
+                }
+
+                json_t *filterNLStructuresJ = json_object_get(modelJ, "filterNonLinearityStructures");
+                json_t *filterNLStructureJ;
+                json_array_foreach(filterNLStructuresJ, filterIndex, filterNLStructureJ) {
+                    int filterNLStructure = json_integer_value(filterNLStructureJ);
+                    model.filterNonlinearityStructure[filterIndex] = filterNLStructure;
+                }
+
+                json_t *filterNLFunctionsJ = json_object_get(modelJ, "filterNonLinearityFunctions");
+                json_t *filterNLFunctionJ;
+                json_array_foreach(filterNLFunctionsJ, filterIndex, filterNLFunctionJ) {
+                    int filterNLFunction = json_integer_value(filterNLFunctionJ);
+                    model.filterNonlinearityFunction[filterIndex] = filterNLFunction;
+                }
+
+                json_t *filterTypesJ = json_object_get(modelJ, "filterTypes");
                 json_t *filterTypeJ;
                 json_array_foreach(filterTypesJ, filterIndex, filterTypeJ) {
                     int filterType = json_integer_value(filterTypeJ);
@@ -145,7 +166,8 @@ void BoxOfRevelationModule::loadCubeFile(std::string path)  {
                         int filterNumber = filterIndex;
                         float Fc = 15000;
                         float _q = .707;
-                        float _gain = 0;
+                        float _drive = 0.0;
+                        float _gain = 0.0;
                         json_t *filterNumberJ = json_object_get(filterJ, "filterNumber");
                         if(filterNumberJ)
                             filterNumber = json_integer_value(filterNumberJ);
@@ -158,12 +180,17 @@ void BoxOfRevelationModule::loadCubeFile(std::string path)  {
                         if(qJ)
                             _q = json_real_value(qJ);
 
+                        json_t *driveJ = json_object_get(filterJ, "drive");
+                        if(driveJ)
+                            _drive = json_real_value(driveJ);
+
                         json_t *gainJ = json_object_get(filterJ, "gain");
                         if(gainJ)
                             _gain = json_real_value(gainJ);
 
                         model.vertex[x][y][z].filterParameters[filterNumber].Fc = Fc;
                         model.vertex[x][y][z].filterParameters[filterNumber].Q = _q;
+                        model.vertex[x][y][z].filterParameters[filterNumber].drive = _drive;
                         model.vertex[x][y][z].filterParameters[filterNumber].gain = _gain;
                         
                     }                    
@@ -179,65 +206,6 @@ void BoxOfRevelationModule::loadCubeFile(std::string path)  {
     //fprintf(stderr, "Loading cube - reconfiguring params %llu \n",filterModels.size());
     nbrFilterModels = filterModels.size();
     reConfigParam(FILTER_MODEL_PARAM,0,nbrFilterModels-1,0);
-}
-
-void BoxOfRevelationModule::saveCubeFile(std::string path) {
-    json_t *root = json_object();    
-    json_t *array = json_array();
-
-    for(int i=0;i<filterModels.size();i++) {
-        json_t *model = json_object();
-        json_object_set_new(model, "modelName", json_string(filterModels[i].modelName.c_str()));
-
-        json_t *filterTypes = json_array();
-        for(int j=0;j<NBR_FILTER_STAGES;j++) {
-            json_array_append_new(filterTypes, json_integer(filterModels[i].filterType[j]));
-        }	
-        json_object_set_new(model, "filterTypes", filterTypes);
-
-        json_t *filterLevels = json_array();
-        for(int j=0;j<NBR_FILTER_STAGES;j++) {
-            json_array_append_new(filterLevels, json_integer(filterModels[i].filterLevel[j]));
-        }	
-        json_object_set_new(model, "filterLevels", filterLevels);
-
-        json_t *vertexes = json_array();
-        for(int z=0;z<2;z++) {
-            for(int y=0;y<2;y++) {
-                for(int x=0;x<2;x++) {
-                    json_t *vertex = json_object();
-                    json_t *filters = json_array();
-                    for(int j=0;j<NBR_FILTER_STAGES;j++) {
-                        json_t *filter = json_object();
-                        json_object_set_new(filter, "filter number", json_integer(j));
-                        json_object_set_new(filter, "Fc", json_real(filterModels[i].vertex[x][y][z].filterParameters[j].Fc));
-                        json_object_set_new(filter, "Q", json_real(filterModels[i].vertex[x][y][z].filterParameters[j].Q));
-                        json_object_set_new(filter, "gain", json_real(filterModels[i].vertex[x][y][z].filterParameters[j].gain));
-                        json_array_append_new(filters, filter);
-                    }
-                    json_object_set_new(vertex, "x", json_integer(x));                        	
-                    json_object_set_new(vertex, "y", json_integer(y));                        	
-                    json_object_set_new(vertex, "z", json_integer(z));                        	
-                    json_object_set_new(vertex, "filters", filters);                        	
-                    json_array_append_new(vertexes, vertex);
-                }
-            }
-        }
-        json_object_set_new(model, "vertexes", vertexes);
-
-        json_array_append_new(array, model);
-    }
-    
-    FILE* file = fopen(path.c_str(), "w");
-	if (!file)
-		return;
-
-    json_object_set_new(root, "models", array);	
-
-    json_dumpf(root, file, JSON_INDENT(2) | JSON_REAL_PRECISION(9));
-	json_decref(root);
-
-    fclose(file);
 }
 
 void BoxOfRevelationModule::process(const ProcessArgs &args) {
@@ -309,6 +277,17 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
                                             filterModels[currentModel].vertex[1][1][1].filterParameters[s].Q,
                                             frequency,yMorph,zMorph);
 
+            float _drive = trilinearInterpolate(filterModels[currentModel].vertex[0][0][0].filterParameters[s].drive,
+                filterModels[currentModel].vertex[1][0][0].filterParameters[s].drive,
+                filterModels[currentModel].vertex[0][1][0].filterParameters[s].drive,
+                filterModels[currentModel].vertex[1][1][0].filterParameters[s].drive,
+                filterModels[currentModel].vertex[0][0][1].filterParameters[s].drive,
+                filterModels[currentModel].vertex[1][0][1].filterParameters[s].drive,
+                filterModels[currentModel].vertex[0][1][1].filterParameters[s].drive,
+                filterModels[currentModel].vertex[1][1][1].filterParameters[s].drive,
+                frequency,yMorph,zMorph);
+
+
             float _gain = trilinearInterpolate(filterModels[currentModel].vertex[0][0][0].filterParameters[s].gain,
                                                     filterModels[currentModel].vertex[1][0][0].filterParameters[s].gain,
                                                     filterModels[currentModel].vertex[0][1][0].filterParameters[s].gain,
@@ -322,17 +301,17 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
 
             Fc[s] = cutOffFrequeny;
             Q[s] = _q;
+            drive[s] = _drive;
             gain[s] = _gain;
 			attenuation[s] = powf(10,_gain / 20.0f);
             
 
     //fprintf(stderr, " Params stage:%i FT:%i Fc:%f Q:%f pDB:%f att:%f  \n",s,filterModels[currentModel].filterType[s],cutOffFrequeny,_q,_gain,attenuation[s]);
-            pFilter[s][0]->setBiquad(filterModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,0);
-            pFilter[s][1]->setBiquad(filterModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,0);
+            pFilter[s][0]->setNLBiquad(filterModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
+            pFilter[s][1]->setNLBiquad(filterModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
 
-            // @TODO: make this parameterized, not hardcoded
-            pFilter[s][0]->setType(NLType::NLBQ_ALL);
-            pFilter[s][1]->setType(NLType::NLBQ_ALL);
+            pFilter[s][0]->setNonLinearType((NLType) filterModels[currentModel].filterNonlinearityStructure[s]);
+            pFilter[s][1]->setNonLinearType((NLType) filterModels[currentModel].filterNonlinearityStructure[s]);
         }
 
 

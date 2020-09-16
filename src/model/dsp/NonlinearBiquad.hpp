@@ -22,6 +22,10 @@ enum NLType {
     NLBQ_ALL,     // apply nonlinearities to both states and feedback paths
 };
 
+enum NLFunction {
+    NLFC_CUBIC_SOFT_CLIP,    // cubic soft clipping
+};
+
 template <typename T> class NonlinearBiquad : public Biquad<T> {
 public:
     NonlinearBiquad() = default;
@@ -29,7 +33,12 @@ public:
     NonlinearBiquad(int type, T Fc, T Q, T peakGainDB) :
         Biquad<T>(type, Fc, Q, peakGainDB) {}
 
-    void setType (NLType type) {
+    void setNLBiquad(int type, T Fc, T Q, T drive, T peakGainDB) {
+        this->drive = drive;
+        this->setBiquad(type,Fc,Q,peakGainDB);
+    }
+
+    void setNonLinearType (NLType type) {
         switch(type) {
         case NLBQ_ALL:
             processFunc = &NonlinearBiquad::process_ALL;
@@ -80,7 +89,7 @@ public:
      * Simple cubic soft-clipping nonlinearity.
      * For more information: https://ccrma.stanford.edu/~jos/pasp/Cubic_Soft_Clipper.html
      */
-    inline T nonlinearity(T x, T drive = (T) 5) const noexcept {
+    inline T nonlinearity(T x) const noexcept {
         x = clamp(drive * x, -1.0f, 1.0f);
         return (x - x*x*x / (T) 3) / drive;
     }
@@ -89,5 +98,5 @@ public:
     ProcessFunc processFunc = &NonlinearBiquad::process;
 
 private:
-
+    T drive = 1.0;
 };
