@@ -5,6 +5,7 @@
 #include "../model/point3d.hpp"
 #include "../model/noise/noise.hpp"
 #include "../model/dsp/Biquad.hpp"
+#include "../model/dsp/NonlinearBiquad.hpp"
 #include "../model/cubeFilterModel.hpp"
 #include "../model/cubeFilterPoint.hpp"
 
@@ -75,7 +76,7 @@ struct BoxOfRevelationModule : Module {
     //dsp::SchmittTrigger morphModeTrigger,syncModeTrigger;
     //dsp::PulseGenerator endOfSamplePulse;
 
-    Biquad<double>* pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
+    NonlinearBiquad<double>* pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
 
     double Fc[NBR_FILTER_STAGES] = {0};
     double Q[NBR_FILTER_STAGES] = {0};

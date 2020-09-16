@@ -18,7 +18,7 @@ BoxOfRevelationModule::BoxOfRevelationModule() {
 
     for(int c=0;c<NBR_CHANNELS;c++) {
         for(int s=0;s<NBR_FILTER_STAGES;s++) {
-            pFilter[s][c] = new Biquad<double>(bq_type_bandpass, 0.5 , 0.207, 0);
+            pFilter[s][c] = new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0);
         }
     }
     onReset();
@@ -329,6 +329,10 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
     //fprintf(stderr, " Params stage:%i FT:%i Fc:%f Q:%f pDB:%f att:%f  \n",s,filterModels[currentModel].filterType[s],cutOffFrequeny,_q,_gain,attenuation[s]);
             pFilter[s][0]->setBiquad(filterModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,0);
             pFilter[s][1]->setBiquad(filterModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,0);
+
+            // @TODO: make this parameterized, not hardcoded
+            pFilter[s][0]->setType(NLType::NLBQ_ALL);
+            pFilter[s][1]->setType(NLType::NLBQ_ALL);
         }
 
 
@@ -354,7 +358,7 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
             for(int s=0;s<NBR_FILTER_STAGES;s++) {
                 if(filterModels[currentModel].filterLevel[s] == l) {
                     for(int c=0;c<NBR_CHANNELS;c++) {
-                        processedOut[c] = pFilter[s][c]->process(processedIn[c]);
+                        processedOut[c] = pFilter[s][c]->processSample(processedIn[c]);
                         out[c]+=(processedOut[c] * attenuation[s]);
                     }
                     filtersInLevel+=1;
