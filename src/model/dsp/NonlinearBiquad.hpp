@@ -71,7 +71,7 @@ public:
                 break;
             case NLFC_CUBIC_SOFT_CLIP:
             default:
-                processFunc = &NonlinearBiquad::cubicSoftClip;
+                nlFunc = &NonlinearBiquad::cubicSoftClip;
                 break;
         }
     }

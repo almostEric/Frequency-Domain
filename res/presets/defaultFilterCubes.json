@@ -3600,7 +3600,7 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 0.2,
-              "drive" : 0.1,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
@@ -3657,7 +3657,7 @@
               "filterNumber": 0,
               "Fc": 10000.0,
               "Q": 0.2,
-              "drive" : 0.1,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
@@ -3714,7 +3714,7 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 5.0,
-              "drive" : 0.1,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
@@ -3771,7 +3771,7 @@
               "filterNumber": 0,
               "Fc": 10000.0,
               "Q": 5.0,
-              "drive" : 0.1,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
