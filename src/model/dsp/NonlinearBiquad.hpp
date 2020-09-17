@@ -26,6 +26,7 @@ enum NLFunction {
     NLFC_CUBIC_SOFT_CLIP,    // cubic soft clipping
     NLFC_HARD_CLIP,    // hard clipping
     NLFC_TANH_CLIP,    // tanh  clipping
+    NLFC_DOUBLE_SOFT_CLIP,    // double soft clipping
 };
 
 template <typename T> class NonlinearBiquad : public Biquad<T> {
@@ -63,6 +64,9 @@ public:
 
     void setNonLinearFunction(NLFunction nlfunction) {
         switch(nlfunction) {
+            case NLFC_DOUBLE_SOFT_CLIP:
+                nlFunc = &NonlinearBiquad::doubleSoftClip;
+                break;
             case NLFC_TANH_CLIP:
                 nlFunc = &NonlinearBiquad::tanhClip;
                 break;
@@ -124,6 +128,15 @@ public:
     inline T tanhClip(T x) {
         return std::tanh(drive * x) / drive;
     }
+
+    inline T doubleSoftClip(T x) {
+        x = std::max(std::min(drive * x, (T) 1), (T) -1);
+        T u = x == 0.0 ? 0.0 : x > 0 ? x - 0.5 : x + 0.5;
+        x = 0.75 * (u - u*u*u / (T) 3);
+        x = u == 0.0 ? 0.0 : u > 0 ? x + 0.5 : x - 0.5;
+        return x / drive;
+    }
+
 
     // derivative of saturating NL function, needed for visualizer
     inline T clipDeriv(T x) const noexcept {
