@@ -319,8 +319,8 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
             pFilter[s][0]->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
             pFilter[s][1]->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
 
-            // pFilter[s][0]->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
-            // pFilter[s][1]->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
+            pFilter[s][0]->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
+            pFilter[s][1]->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
 
         }
 
