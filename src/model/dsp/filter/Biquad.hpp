@@ -22,6 +22,7 @@
 // process() is called.
 #pragma once
 
+//#include "Filter.hpp"
 #include <cmath>
 #include <simd/vector.hpp>
 #include <simd/sse_mathfun.h>
@@ -41,7 +42,7 @@ enum {
   bq_type_allpass
 };
 
-template <typename T> class Biquad {
+template <typename T> class Biquad : public Filter<T> {
 public:
   Biquad() {
     type = bq_type_lowpass;
@@ -56,6 +57,8 @@ public:
   Biquad(int type, T Fc, T Q, T peakGainDB) {
     setBiquad(type, Fc, Q, peakGainDB);
     z1 = z2 = 0.0;
+
+    count = 0;
   }
 
   virtual ~Biquad() { }
@@ -89,6 +92,9 @@ public:
     T out = in * a0 + z1;
     z1 = in * a1 + z2 - b1 * out;
     z2 = in * a2 - b2 * out;
+
+    fprintf(stderr, "i:%i in:%f a0:%f z1:%f z2:%f  out:%f     a1:%f a2:%f  b1:%f b2:%f  \n",count, in,a0,z1,z2,out,a1,a2,b1,b2);
+    count++;
     return out;
   }
 
@@ -222,4 +228,6 @@ protected:
   T a0, a1, a2, b1, b2;
   T Fc, Q, peakGain;
   T z1, z2;
+
+  int count;
 };

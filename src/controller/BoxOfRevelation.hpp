@@ -4,9 +4,9 @@
 #include "../model/Buffer.hpp"
 #include "../model/point3d.hpp"
 #include "../model/noise/noise.hpp"
-#include "../model/dsp/Biquad.hpp"
-#include "../model/dsp/NonlinearBiquad.hpp"
-#include "../model/dsp/ChebyshevI.hpp"
+#include "../model/dsp/filter/Filter.hpp"
+#include "../model/dsp/filter/NonlinearBiquad.hpp"
+#include "../model/dsp/filter/ChebyshevI.hpp"
 #include "../model/cubeFilterModel.hpp"
 #include "../model/cubeFilterPoint.hpp"
 #include "../model/Interpolate.hpp"
@@ -74,8 +74,9 @@ struct BoxOfRevelationModule : Module {
     json_t *dataToJson() override;
 
 
-    std::unique_ptr<NonlinearBiquad<double>> pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
-    std::unique_ptr<ChebyshevI<double>> cFilter[NBR_FILTER_STAGES][NBR_CHANNELS]; //temporary until we get abstract class set up
+    //std::unique_ptr<NonlinearBiquad<double>> pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
+    std::unique_ptr<Filter<double>> pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
+    //std::unique_ptr<ChebyshevI<double>> cFilter[NBR_FILTER_STAGES][NBR_CHANNELS]; //temporary until we get abstract class set up
 
     double Fc[NBR_FILTER_STAGES] = {0};
     double Q[NBR_FILTER_STAGES] = {0};
