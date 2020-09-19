@@ -4,7 +4,8 @@
 #include "cubeVertexFilterParameters.hpp"
 
 enum FilterModels {
-  FILTER_MODEL_BIQUAD
+  FILTER_MODEL_BIQUAD,
+  FILTER_MODEL_CHEBYSHEV
 };
 
 // one vertex of filter paramaters

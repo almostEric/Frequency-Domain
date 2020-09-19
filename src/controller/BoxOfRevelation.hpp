@@ -6,6 +6,7 @@
 #include "../model/noise/noise.hpp"
 #include "../model/dsp/Biquad.hpp"
 #include "../model/dsp/NonlinearBiquad.hpp"
+#include "../model/dsp/ChebyshevI.hpp"
 #include "../model/cubeFilterModel.hpp"
 #include "../model/cubeFilterPoint.hpp"
 #include "../model/Interpolate.hpp"
@@ -74,6 +75,7 @@ struct BoxOfRevelationModule : Module {
 
 
     std::unique_ptr<NonlinearBiquad<double>> pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
+    std::unique_ptr<ChebyshevI<double>> cFilter[NBR_FILTER_STAGES][NBR_CHANNELS]; //temporary until we get abstract class set up
 
     double Fc[NBR_FILTER_STAGES] = {0};
     double Q[NBR_FILTER_STAGES] = {0};
