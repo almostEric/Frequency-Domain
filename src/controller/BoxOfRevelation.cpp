@@ -318,17 +318,23 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
     //fprintf(stderr, " Params stage:%i FT:%i Fc:%f Q:%f pDB:%f att:%f  \n",s,cubeModels[currentModel].filterType[s],cutOffFrequeny,_q,_gain,attenuation[s]);
 
             if(cubeModels[currentModel].filterModel[s] == FILTER_MODEL_BIQUAD) {
-                ((NonlinearBiquad<double>) pFilter[s][0])->setNLBiquad(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
-                ((NonlinearBiquad<double>) pFilter[s][1])->setNLBiquad(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
+                std::unique_ptr<NonlinearBiquad<double>> pDerived0(static_cast<NonlinearBiquad<double>*>(pFilter[s][0].release()));
+                std::unique_ptr<NonlinearBiquad<double>> pDerived1(static_cast<NonlinearBiquad<double>*>(pFilter[s][1].release()));
 
-                ((NonlinearBiquad<double>) pFilter[s][0])->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
-                ((NonlinearBiquad<double>) pFilter[s][1])->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
+                pDerived0->setNLBiquad(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
+                pDerived1->setNLBiquad(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
 
-                ((NonlinearBiquad<double>) pFilter[s][0])->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
-                ((NonlinearBiquad<double>) pFilter[s][1])->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
+                pDerived0->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
+                pDerived1->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
+
+                pDerived0->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
+                pDerived1->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
             } else {
-                ((ChebyshevI<double>) pFilter[s][0])->setChebyshevI(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,0.0,0);
-                ((ChebyshevI<double>) pFilter[s][1])->setChebyshevI(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,0.0,0);
+                std::unique_ptr<ChebyshevI<double>> pDerived0(static_cast<ChebyshevI<double>*>(pFilter[s][0].release()));
+                std::unique_ptr<ChebyshevI<double>> pDerived1(static_cast<ChebyshevI<double>*>(pFilter[s][1].release()));
+
+                pDerived0->setChebyshevI(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,0.0,0);
+                pDerived1->setChebyshevI(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,0.0,0);
             }
         }
 
