@@ -70,13 +70,13 @@ struct BRDisplayFilterResponse : FramebufferWidget {
     float driveLevel = 0.0;
     float filtersInLevel = 0;
     for(int s=0;s<NBR_FILTER_STAGES;s++) {
-        if(module->cubeModels[module->currentModel].filterLevel[s] >= 0) {
+        if(module->cubeModels[module->currentModel].filterLevel[s] >= 0 && module->cubeModels[module->currentModel].filterNonlinearityStructure[s] != 0) {
           driveLevel += module->drive[s]; 
           filtersInLevel +=1.0;
         }
     }
     if(filtersInLevel > 0) {
-      driveLevel = clamp(driveLevel/filtersInLevel,1.0,6.0) - 1.0;
+      driveLevel = clamp(driveLevel/filtersInLevel,0.1,5.0);
     }
 
 //driveLevel = 0.0;
