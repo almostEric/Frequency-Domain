@@ -219,8 +219,8 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
         for(int s=0;s<NBR_FILTER_STAGES;s++) {
             switch(cubeModels[currentModel].filterModel[s]) {
                 case FILTER_MODEL_CHEBYSHEV:
-                    cFilter[s][0].reset(new ChebyshevI<double>(c1_type_lowpass, 0.5 , 0.1, 0));
-                    cFilter[s][1].reset(new ChebyshevI<double>(c1_type_lowpass, 0.5 , 0.1, 0));
+                    pFilter[s][0].reset(new ChebyshevI<double>(c1_type_lowpass, 0.5 , 0.1, 0));
+                    pFilter[s][1].reset(new ChebyshevI<double>(c1_type_lowpass, 0.5 , 0.1, 0));
                 break;
                 case FILTER_MODEL_BIQUAD:
                 default:
@@ -318,17 +318,17 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
     //fprintf(stderr, " Params stage:%i FT:%i Fc:%f Q:%f pDB:%f att:%f  \n",s,cubeModels[currentModel].filterType[s],cutOffFrequeny,_q,_gain,attenuation[s]);
 
             if(cubeModels[currentModel].filterModel[s] == FILTER_MODEL_BIQUAD) {
-                pFilter[s][0]->setNLBiquad(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
-                pFilter[s][1]->setNLBiquad(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
+                ((NonlinearBiquad<double>) pFilter[s][0])->setNLBiquad(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
+                ((NonlinearBiquad<double>) pFilter[s][1])->setNLBiquad(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
 
-                pFilter[s][0]->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
-                pFilter[s][1]->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
+                ((NonlinearBiquad<double>) pFilter[s][0])->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
+                ((NonlinearBiquad<double>) pFilter[s][1])->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
 
-                pFilter[s][0]->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
-                pFilter[s][1]->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
+                ((NonlinearBiquad<double>) pFilter[s][0])->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
+                ((NonlinearBiquad<double>) pFilter[s][1])->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
             } else {
-                cFilter[s][0]->setChebyshevI(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,0.0,0);
-                cFilter[s][1]->setChebyshevI(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,0.0,0);
+                ((ChebyshevI<double>) pFilter[s][0])->setChebyshevI(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,0.0,0);
+                ((ChebyshevI<double>) pFilter[s][1])->setChebyshevI(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,0.0,0);
             }
         }
 
@@ -356,11 +356,7 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
                 if(cubeModels[currentModel].filterLevel[s] == l) {
                     //for(int c=0;c<NBR_CHANNELS;c++) {
                     for(int c=0;c<1;c++) {
-                        if(cubeModels[currentModel].filterModel[s] == FILTER_MODEL_BIQUAD) {
-                            processedOut[c] = pFilter[s][c]->processSample(processedIn[c]);
-                        } else {
-                            processedOut[c] = cFilter[s][c]->process(processedIn[c]);
-                        }
+                        processedOut[c] = pFilter[s][c]->process(processedIn[c]);
                         out[c]+=(processedOut[c] * attenuation[s]);
                     }
                     filtersInLevel+=1;
