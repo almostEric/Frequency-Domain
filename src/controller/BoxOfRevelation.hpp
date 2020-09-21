@@ -75,7 +75,8 @@ struct BoxOfRevelationModule : Module {
 
 
     //std::unique_ptr<NonlinearBiquad<double>> pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
-    std::unique_ptr<Filter<double>> pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
+    //std::unique_ptr<Filter<double>> pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
+    Filter<double> pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
     //std::unique_ptr<ChebyshevI<double>> cFilter[NBR_FILTER_STAGES][NBR_CHANNELS]; //temporary until we get abstract class set up
 
     double Fc[NBR_FILTER_STAGES] = {0};
