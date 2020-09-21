@@ -6595,7 +6595,7 @@
         1,
         2,
         1,
-        1,
+        2,
         1
       ],  
       "filterNonLinearityFunctions": [
@@ -6858,7 +6858,7 @@
           "x": 0,
           "y": 0,
           "z": 1,
-          "makeupGain": 12.0,
+          "makeupGain": 6.0,
           "filters": [
             {
               "filterNumber": 0,
@@ -6972,7 +6972,7 @@
           "x": 0,
           "y": 1,
           "z": 1,
-          "makeupGain": 12.0,
+          "makeupGain": 6.0,
           "filters": [
             {
               "filterNumber": 0,
