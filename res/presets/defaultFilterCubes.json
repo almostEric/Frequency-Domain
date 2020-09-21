@@ -4840,14 +4840,14 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 0.2,
-              "drive" : 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 16000.0,
               "Q": 10.0,
-              "drive" : 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
@@ -4897,14 +4897,14 @@
               "filterNumber": 0,
               "Fc": 15000.0,
               "Q": 0.2,
-              "drive" : 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 600.0,
               "Q": 10.0,
-              "drive" : 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
@@ -4954,14 +4954,14 @@
               "filterNumber": 0,
               "Fc": 100.0,
               "Q": 10.0,
-              "drive" : 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 16000.0,
               "Q": 10.0,
-              "drive" : 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
@@ -5011,14 +5011,14 @@
               "filterNumber": 0,
               "Fc": 15000.0,
               "Q": 10.0,
-              "drive" : 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
               "filterNumber": 1,
               "Fc": 600.0,
               "Q": 10.0,
-              "drive" : 5.0,
+              "drive" : 1.0,
               "gain": 0.0
             },
             {
@@ -6575,512 +6575,6 @@
               "gain": 0.0
             }
         ]
-        }
-      ]
-    },
-    {
-      "modelName": "Chebyshev 2 Pole LP",
-      "filterModels": [
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],  
-      "filterNonLinearityStructures": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],  
-      "filterNonLinearityFunctions": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],  
-      "filterTypes": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "filterLevels": [
-        0,
-        -1,
-        -1,
-        -1,
-        -1,
-        -1,
-        -1
-      ],
-      "vertexes": [
-        {
-          "x": 0,
-          "y": 0,
-          "z": 0,
-          "makeupGain": 0.0,
-          "filters": [
-            {
-              "filterNumber": 0,
-              "Fc": 100.0,
-              "Q": 0.05,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 1,
-              "Fc": 20.0,
-              "Q": 0.2000008,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 2,
-              "Fc": 20.0,
-              "Q": 0.2000008,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 3,
-              "Fc": 20.0,
-              "Q": 0.2000008,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 4,
-              "Fc": 2.0,
-              "Q": 0.2000008,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 5,
-              "Fc": 20.0,
-              "Q": 0.2000008,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 6,
-              "Fc": 20.0,
-              "Q": 0.2000008,
-              "drive" : 1.0,
-              "gain": 0.0
-            }
-          ]
-        },
-        {
-          "x": 1,
-          "y": 0,
-          "z": 0,
-          "makeupGain": 0.0,
-          "filters": [
-            {
-              "filterNumber": 0,
-              "Fc": 10000.0,
-              "Q": 0.05,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 1,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 2,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 3,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 4,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 5,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 6,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            }
-          ]
-        },
-        {
-          "x": 0,
-          "y": 1,
-          "z": 0,
-          "makeupGain": 0.0,
-          "filters": [
-            {
-              "filterNumber": 0,
-              "Fc": 100.0,
-              "Q": 0.25,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 1,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 2,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 3,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 4,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 5,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 6,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            }
-          ]
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "z": 0,
-          "makeupGain": 0.0,
-          "filters": [
-            {
-              "filterNumber": 0,
-              "Fc": 10000.0,
-              "Q": 0.25,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 1,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 2,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 3,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 4,
-              "Fc": 200.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 5,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 6,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            }
-          ]
-        },
-        {
-          "x": 0,
-          "y": 0,
-          "z": 1,
-          "makeupGain": 0.0,
-          "filters": [
-            {
-              "filterNumber": 0,
-              "Fc": 100.0,
-              "Q": 0.05,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 1,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 2,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 3,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 4,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": -10.0
-            },
-            {
-              "filterNumber": 5,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": -24.0
-            },
-            {
-              "filterNumber": 6,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": -24.0
-            }
-          ]
-        },
-        {
-          "x": 1,
-          "y": 0,
-          "z": 1,
-          "makeupGain": 0.0,
-          "filters": [
-            {
-              "filterNumber": 0,
-              "Fc": 10000.0,
-              "Q": 0.05,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 1,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 2,
-              "Fc": 20.0,
-              "Q": 0.717000008,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 3,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 4,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 5,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 6,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            }
-          ]
-        },
-        {
-          "x": 0,
-          "y": 1,
-          "z": 1,
-          "makeupGain": 0.0,
-          "filters": [
-            {
-              "filterNumber": 0,
-              "Fc": 100.0,
-              "Q": 0.25,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 1,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 2,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 3,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 4,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 5,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 6,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            }
-          ]
-        },
-        {
-          "x": 1,
-          "y": 1,
-          "z": 1,
-          "makeupGain": 0.0,
-          "filters": [
-            {
-              "filterNumber": 0,
-              "Fc": 10000.0,
-              "Q": 0.25,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 1,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 2,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 3,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 4,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": 0.0
-            },
-            {
-              "filterNumber": 5,
-              "Fc": 20.0,
-              "Q": 0.2,
-              "drive" : 1.0,
-              "gain": -12.0
-            },
-            {
-              "filterNumber": 6,
-              "Fc": 20.0,
-              "Q": 0.20,
-              "drive" : 1.0,
-              "gain": 0.0
-            }
-          ]
         }
       ]
     }
