@@ -1,10 +1,10 @@
 {
   "slug": "FrequencyDomain",
   "name": "Frequency Domain",
-  "version": "1.8.3",
+  "version": "1.8.5",
   "license": "Proprietary",
   "brand": "Frequency Domain",
-	"author": "almostEric with JerrySV",
+	"author": "almostEric with JerrySV, Jatin Chowdhury",
   "authorEmail": "almostEric@frozenwastelandmodules.com",
 	"manualUrl": "https://github.com/almostEric/Frequency-Domain-Manual/blob/master/README.md",
 	"donateUrl": "https://paypal.me/FrozenWasteland",
@@ -16,7 +16,7 @@
       "name": "Ball of Confusion",
       "description": "Spherical Morphing Wavetable Oscillator",
       "tags": [
-        "Oscillator","Digital","Sampler"
+        "Oscillator","Digital","Sampler","Polyphonic"
       ]
     },
     {
@@ -40,7 +40,7 @@
       "name": "Delayed Reaction",
       "description": "Spectrum based delay",
       "tags": [
-        "Delay"
+        "Delay","Effect"
       ]
     },
     {
@@ -48,7 +48,7 @@
       "name": "Grains Of Wrath",
       "description": "Spewer of Grains of varying dispositions",
       "tags": [
-        "Granular","Sampler","Effect"
+        "Granular","Sampler","Effect","Polyphonic"
       ]
     },
     {
