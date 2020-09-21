@@ -317,7 +317,7 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
 
     //fprintf(stderr, " Params stage:%i FT:%i Fc:%f Q:%f pDB:%f att:%f  \n",s,cubeModels[currentModel].filterType[s],cutOffFrequeny,_q,_gain,attenuation[s]);
 
-            if(cubeModels[currentModel].filterModel[s] == FILTER_MODEL_BIQUAD) {                                
+            //if(cubeModels[currentModel].filterModel[s] == FILTER_MODEL_BIQUAD) {                                
                 pFilter[s][0]->setFilterParameters(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
                 pFilter[s][1]->setFilterParameters(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
 
@@ -326,10 +326,10 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
 
                 pFilter[s][0]->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
                 pFilter[s][1]->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
-            } else {                
-                pFilter[s][0]->setFilterParameters(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,0.0,_drive,0);
-                pFilter[s][1]->setFilterParameters(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,0.0,_drive,0);
-            }
+            // } else {                
+            //     pFilter[s][0]->setFilterParameters(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,0.0,_drive,0);
+            //     pFilter[s][1]->setFilterParameters(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,0.0,_drive,0);
+            // }
         }
 
 
