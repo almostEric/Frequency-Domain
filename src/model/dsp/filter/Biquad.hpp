@@ -22,6 +22,7 @@
 // process() is called.
 #pragma once
 
+//#include "Filter.hpp"
 #include <cmath>
 #include <simd/vector.hpp>
 #include <simd/sse_mathfun.h>
@@ -41,7 +42,7 @@ enum {
   bq_type_allpass
 };
 
-template <typename T> class Biquad {
+template <typename T> class Biquad : public Filter<T> {
 public:
   Biquad() {
     type = bq_type_lowpass;
@@ -56,9 +57,11 @@ public:
   Biquad(int type, T Fc, T Q, T peakGainDB) {
     setBiquad(type, Fc, Q, peakGainDB);
     z1 = z2 = 0.0;
+
+    count = 0;
   }
 
-  ~Biquad() { }
+  virtual ~Biquad() { }
 
   void setType(int type) {
     this->type = type;
@@ -85,10 +88,13 @@ public:
     
   }
 
-  T process(T in) {
+  T process(T in) override {
     T out = in * a0 + z1;
     z1 = in * a1 + z2 - b1 * out;
     z2 = in * a2 - b2 * out;
+
+    fprintf(stderr, "i:%i in:%f a0:%f z1:%f z2:%f  out:%f     a1:%f a2:%f  b1:%f b2:%f  \n",count, in,a0,z1,z2,out,a1,a2,b1,b2);
+    count++;
     return out;
   }
 
@@ -202,7 +208,7 @@ public:
     return;
   }
 
-  T frequencyResponse(T frequency) {
+  virtual T frequencyResponse(T frequency) override {
     T w = 2.0*M_PI*frequency;  
     T numerator = a0*a0 + a1*a1 + a2*a2 + 2.0*(a0*a1 + a1*a2)*cos(w) + 2.0*a0*a2*cos(2.0*w);
     T denominator = 1.0 + b1*b1 + b2*b2 + 2.0*(b1 + b1*b2)*cos(w) + 2.0*b2*cos(2.0*w);
@@ -222,4 +228,6 @@ protected:
   T a0, a1, a2, b1, b2;
   T Fc, Q, peakGain;
   T z1, z2;
+
+  int count;
 };

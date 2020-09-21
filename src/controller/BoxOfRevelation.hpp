@@ -4,9 +4,12 @@
 #include "../model/Buffer.hpp"
 #include "../model/point3d.hpp"
 #include "../model/noise/noise.hpp"
-#include "../model/dsp/Biquad.hpp"
+#include "../model/dsp/filter/Filter.hpp"
+#include "../model/dsp/filter/NonlinearBiquad.hpp"
+#include "../model/dsp/filter/ChebyshevI.hpp"
 #include "../model/cubeFilterModel.hpp"
 #include "../model/cubeFilterPoint.hpp"
+#include "../model/Interpolate.hpp"
 
 
 #include <cstdint>
@@ -61,7 +64,6 @@ struct BoxOfRevelationModule : Module {
     ~BoxOfRevelationModule ();
 
     void loadCubeFile(std::string path);
-    void saveCubeFile(std::string path);
     void process (const ProcessArgs &args) override;
     float paramValue (uint16_t, uint16_t, float, float);
     void reConfigParam(int paramId, float minValue, float maxValue, float defaultValue);
@@ -72,20 +74,20 @@ struct BoxOfRevelationModule : Module {
     json_t *dataToJson() override;
 
 
-    //dsp::SchmittTrigger morphModeTrigger,syncModeTrigger;
-    //dsp::PulseGenerator endOfSamplePulse;
-
-    Biquad<double>* pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
+    std::unique_ptr<Filter<double>> pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
+    //std::unique_ptr<NonlinearBiquad<double>> pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
+    //std::unique_ptr<ChebyshevI<double>> cFilter[NBR_FILTER_STAGES][NBR_CHANNELS]; //temporary until we get abstract class set up
 
     double Fc[NBR_FILTER_STAGES] = {0};
     double Q[NBR_FILTER_STAGES] = {0};
+    double drive[NBR_FILTER_STAGES] = {0};
     double gain[NBR_FILTER_STAGES] = {0};
     double attenuation[NBR_FILTER_STAGES] = {0};
 
     std::string lastPath;
 
-    std::vector<cubeFilterModel> filterModels;
-    int nbrFilterModels = 0;
+    std::vector<cubeFilterModel> cubeModels;
+    int nbrCubeModels = 0;
     double makeupGain = 0; //In dB
     double makeupAttenuation = 1.0; //actual multiplier
 

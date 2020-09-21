@@ -62,13 +62,33 @@ struct BRDisplayFilterResponse : FramebufferWidget {
       nvgStroke(args.vg);
     }
 
-    if (!module || module->nbrFilterModels == 0 || module->currentModel == -1) 
+    if (!module || module->nbrCubeModels == 0 || module->currentModel == -1) 
       return;
 
         //fprintf(stderr, "Point x:%i l:%i freq:%f response:%f  gain: %f  \n",x,l,frequency,response,levelResponse);
 
+    float driveLevel = 0.0;
+    float filtersInLevel = 0;
+    for(int s=0;s<NBR_FILTER_STAGES;s++) {
+        if(module->cubeModels[module->currentModel].filterLevel[s] >= 0 && module->cubeModels[module->currentModel].filterNonlinearityStructure[s] != 0) {
+          driveLevel += module->drive[s]; 
+          filtersInLevel +=1.0;
+        }
+    }
+    if(filtersInLevel > 0) {
+      driveLevel = clamp(driveLevel/filtersInLevel,0.1,5.0);
+    }
+
+//driveLevel = 0.0;
+    float r = interpolate(176.0f,255.0f,driveLevel,0.0f,5.0f);
+    float g = interpolate(176.0f,0.0f,driveLevel,0.0f,5.0f);
+    float b = interpolate(255.0f,0.0f,driveLevel,0.0f,5.0f);
+
+        // fprintf(stderr, "drive level: %f  r:%f g:%f b:%f \n",driveLevel,r,g,b);
+
     nvgBeginPath(args.vg);  
-    nvgStrokeColor(args.vg, nvgRGB(0xb0,0xb0,0xff));
+    //nvgStrokeColor(args.vg, nvgRGB(0xb0,0xb0,0xff));
+    nvgStrokeColor(args.vg, nvgRGB(r,g,b));
     nvgStrokeWidth(args.vg, 1);
     for(int x=0;x<204;x+=1) {
       double frequency = std::pow(10,x/87.18f + 2.0f) / module->sampleRate;
@@ -78,7 +98,7 @@ struct BRDisplayFilterResponse : FramebufferWidget {
         int filtersInLevel = 0;
         double levelResponse = 0;
         for(int s=0;s<NBR_FILTER_STAGES;s++) {
-            if(module->filterModels[module->currentModel].filterLevel[s] == l) {
+            if(module->cubeModels[module->currentModel].filterLevel[s] == l) {
               levelResponse += module->pFilter[s][0]->frequencyResponse(frequency) * module->attenuation[s]; 
               filtersInLevel +=1;
         // fprintf(stderr, "Point x:%i l:%i freq:%f response:%f  level response: %f  \n",x,l,frequency[0],response[0],levelResponse[0]);
@@ -190,7 +210,7 @@ struct BRDisplayModelName : FramebufferWidget {
     nvgRect(args.vg, 0, 0, box.size.x, box.size.y);
     nvgFill(args.vg);
 
-    if (!module || module->nbrFilterModels == 0 || module->currentModel == -1) 
+    if (!module || module->nbrCubeModels == 0 || module->currentModel == -1) 
       return;
 
     nvgFontSize(args.vg, 18);
@@ -198,7 +218,7 @@ struct BRDisplayModelName : FramebufferWidget {
     nvgTextLetterSpacing(args.vg, -0.5);
     nvgFillColor(args.vg,nvgRGB(0x1f,0xf0,0x1f)); 	
     char text[128];
-    snprintf(text, sizeof(text), "%s", module->filterModels[module->currentModel].modelName.c_str()); // needs to use model #
+    snprintf(text, sizeof(text), "%s", module->cubeModels[module->currentModel].modelName.c_str()); // needs to use model #
     nvgText(args.vg, 2, 14, text, NULL);      
   }
 };
