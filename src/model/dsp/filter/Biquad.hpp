@@ -41,7 +41,7 @@ enum {
   bq_type_allpass
 };
 
-template <typename T> class Biquad {
+template <typename T> class Biquad : public Filter<T> {
 public:
   Biquad() {
     type = bq_type_lowpass;
@@ -85,7 +85,7 @@ public:
     
   }
 
-  T process(T in) {
+  T process(T in) override {
     T out = in * a0 + z1;
     z1 = in * a1 + z2 - b1 * out;
     z2 = in * a2 - b2 * out;
@@ -202,7 +202,7 @@ public:
     return;
   }
 
-  virtual T frequencyResponse(T frequency) {
+  virtual T frequencyResponse(T frequency) override {
     T w = 2.0*M_PI*frequency;  
     T numerator = a0*a0 + a1*a1 + a2*a2 + 2.0*(a0*a1 + a1*a2)*cos(w) + 2.0*a0*a2*cos(2.0*w);
     T denominator = 1.0 + b1*b1 + b2*b2 + 2.0*(b1 + b1*b2)*cos(w) + 2.0*b2*cos(2.0*w);

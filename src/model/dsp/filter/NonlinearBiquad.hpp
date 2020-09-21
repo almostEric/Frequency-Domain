@@ -14,20 +14,14 @@
  */
 
 #include "Biquad.hpp"
+//#include "NonlinearFunctions.hpp"
 
-enum NLType {
-    NLBQ_NONE,    // plain biquad
-    NLBQ_NLState, // apply nonlinearities to states
-    NLBQ_NLFB,    // apply nonlinearities to feedback paths
-    NLBQ_ALL,     // apply nonlinearities to both states and feedback paths
-};
-
-enum NLFunction {
-    NLFC_CUBIC_SOFT_CLIP,    // cubic soft clipping
-    NLFC_HARD_CLIP,    // hard clipping
-    NLFC_TANH_CLIP,    // tanh  clipping
-    NLFC_DOUBLE_SOFT_CLIP,    // double soft clipping
-};
+// enum NLType {
+//     NLBQ_NONE,    // plain biquad
+//     NLBQ_NLState, // apply nonlinearities to states
+//     NLBQ_NLFB,    // apply nonlinearities to feedback paths
+//     NLBQ_ALL,     // apply nonlinearities to both states and feedback paths
+// };
 
 template <typename T> class NonlinearBiquad : public Biquad<T> {
 public:
@@ -36,12 +30,13 @@ public:
     NonlinearBiquad(int type, T Fc, T Q, T peakGainDB) :
         Biquad<T>(type, Fc, Q, peakGainDB) {}
 
-    void setNLBiquad(int type, T Fc, T Q, T drive, T peakGainDB) {
+    //void setNLBiquad(int type, T Fc, T Q, T drive, T peakGainDB) {
+    void setFilterParameters(int type, T Fc, T Q, T drive, T peakGainDB) override {
         this->drive = drive;
         this->setBiquad(type,Fc,Q,peakGainDB);
     }
 
-    void setNonLinearType (NLType type) {
+    void setNonLinearType (NLType type) override {
         nlType = type;
 
         switch(type) {
@@ -58,30 +53,37 @@ public:
                 return;
             case NLBQ_NONE:
             default:
-                processFunc = &NonlinearBiquad::process;
+                processFunc = &NonlinearBiquad::process_NONE;
         }
     }
 
-    void setNonLinearFunction(NLFunction nlfunction) {
+    void setNonLinearFunction(NLFunction nlfunction) override {
         switch(nlfunction) {
             case NLFC_DOUBLE_SOFT_CLIP:
-                nlFunc = &NonlinearBiquad::doubleSoftClip;
+                nlFunc = &doubleSoftClip;
                 break;
             case NLFC_TANH_CLIP:
-                nlFunc = &NonlinearBiquad::tanhClip;
+                nlFunc = &tanhClip;
                 break;
             case NLFC_HARD_CLIP:
-                nlFunc = &NonlinearBiquad::hardClip;
+                nlFunc = &hardClip;
                 break;
             case NLFC_CUBIC_SOFT_CLIP:
             default:
-                nlFunc = &NonlinearBiquad::cubicSoftClip;
+                nlFunc = &cubicSoftClip;
                 break;
         }
     }
 
-    T processSample(T in) {
+    T process(T in) override {
         return (this->*processFunc)(in);
+    }
+
+    T process_NONE(T in) {
+        T out = in * this->a0 + this->z1;
+        this->z1 = in * this->a1 + this->z2 - this->b1 * out;
+        this->z2 = in * this->a2 - this->b2 * out;
+        return out;
     }
 
     T process_NLState(T in) {
@@ -108,43 +110,13 @@ public:
     }
 
     inline T nonlinearity(T x) {
-        return (this->*nlFunc)(x);
+        return (this->nlFunc)(x,drive);
     }
 
-    /**
-     * Simple cubic soft-clipping nonlinearity.
-     * For more information: https://ccrma.stanford.edu/~jos/pasp/Cubic_Soft_Clipper.html
-     */
-    inline T cubicSoftClip(T x) {
-        x = std::max(std::min(drive * x, (T) 1), (T) -1);
-        return (x - x*x*x / (T) 3) / drive;
-    }
-
-    inline T hardClip(T x) {
-        x = std::max(std::min(drive * x, (T) 1), (T) -1);
-        return x / drive;
-    }
-
-    inline T tanhClip(T x) {
-        return std::tanh(drive * x) / drive;
-    }
-
-    inline T doubleSoftClip(T x) {
-        x = std::max(std::min(drive * x, (T) 1), (T) -1);
-        T u = x == 0.0 ? 0.0 : x > 0 ? x - 0.5 : x + 0.5;
-        x = 0.75 * (u - u*u*u / (T) 3);
-        x = u == 0.0 ? 0.0 : u > 0 ? x + 0.5 : x - 0.5;
-        return x / drive;
-    }
-
-
-    // derivative of saturating NL function, needed for visualizer
-    inline T clipDeriv(T x) const noexcept {
-        T th = std::tanh(x);
-        return (T) 1 - th*th;
-    }
 
     using ProcessFunc = T (NonlinearBiquad::*) (T);
+    using NonlinearFunc = T (*) (T, T);
+    
     ProcessFunc processFunc = &NonlinearBiquad::process;
 
     T frequencyResponse(T frequency) override {
@@ -186,7 +158,7 @@ public:
     }
 
 private:
-    ProcessFunc nlFunc = &NonlinearBiquad::cubicSoftClip;
+    NonlinearFunc nlFunc = &cubicSoftClip;
 
     NLType nlType = NLType::NLBQ_NONE;
     T drive = 1.0;
