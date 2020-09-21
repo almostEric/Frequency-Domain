@@ -113,7 +113,8 @@ public:
     }
 
     inline T nonlinearity(T x) {
-        return (this->*nlFunc)(x,drive);
+        // return (this->*nlFunc)(x,drive);
+        return (this->nlFunc)(x,drive);
     }
 
     T frequencyResponse(T frequency) override {

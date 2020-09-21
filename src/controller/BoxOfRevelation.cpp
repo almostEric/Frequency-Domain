@@ -17,7 +17,8 @@ BoxOfRevelationModule::BoxOfRevelationModule() {
 
     for(int c=0;c<NBR_CHANNELS;c++) {
         for(int s=0;s<NBR_FILTER_STAGES;s++) {
-            pFilter[s][c].reset(new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0));
+            //pFilter[s][c].reset(new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0));
+            pFilter[s][c] = new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0);
         }
     }
     onReset();
@@ -219,13 +220,17 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
         for(int s=0;s<NBR_FILTER_STAGES;s++) {
             switch(cubeModels[currentModel].filterModel[s]) {
                 case FILTER_MODEL_CHEBYSHEV:
-                    pFilter[s][0].reset(new ChebyshevI<double>(c1_type_lowpass, 0.5 , 0.1, 0));
-                    pFilter[s][1].reset(new ChebyshevI<double>(c1_type_lowpass, 0.5 , 0.1, 0));
+                    // pFilter[s][0].reset(new ChebyshevI<double>(c1_type_lowpass, 0.5 , 0.1, 0));
+                    // pFilter[s][1].reset(new ChebyshevI<double>(c1_type_lowpass, 0.5 , 0.1, 0));
+                    pFilter[s][0] = new ChebyshevI<double>(c1_type_lowpass, 0.5 , 0.1, 0);
+                    pFilter[s][1] = new ChebyshevI<double>(c1_type_lowpass, 0.5 , 0.1, 0);
                 break;
                 case FILTER_MODEL_BIQUAD:
                 default:
-                    pFilter[s][0].reset(new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0));
-                    pFilter[s][1].reset(new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0));
+                    // pFilter[s][0].reset(new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0));
+                    // pFilter[s][1].reset(new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0));
+                    pFilter[s][0] = new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0);
+                    pFilter[s][1] = new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0);
             }
             if(cubeModels[currentModel].filterLevel[s]+1 > nbrfilterLevels) {
                 nbrfilterLevels = cubeModels[currentModel].filterLevel[s]+1;
@@ -266,6 +271,10 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
 
 
         for(int s=0;s<NBR_FILTER_STAGES;s++) {
+
+            // if(cubeModels[currentModel].filterLevel[s] == -1) //skip unused filters
+            //     continue; 
+
             float cutOffFrequeny = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].Fc,
                                                         cubeModels[currentModel].vertex[1][0][0].filterParameters[s].Fc,
                                                         cubeModels[currentModel].vertex[0][1][0].filterParameters[s].Fc,
@@ -315,11 +324,15 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
 			attenuation[s] = powf(10,_gain / 20.0f);
             
 
-    //fprintf(stderr, " Params stage:%i FT:%i Fc:%f Q:%f pDB:%f att:%f  \n",s,cubeModels[currentModel].filterType[s],cutOffFrequeny,_q,_gain,attenuation[s]);
 
             if(cubeModels[currentModel].filterModel[s] == FILTER_MODEL_BIQUAD) {
-                std::unique_ptr<NonlinearBiquad<double>> pDerived0(static_cast<NonlinearBiquad<double>*>(pFilter[s][0].release()));
-                std::unique_ptr<NonlinearBiquad<double>> pDerived1(static_cast<NonlinearBiquad<double>*>(pFilter[s][1].release()));
+    fprintf(stderr, "BIQAUD Params stage:%i FT:%i Fc:%f Q:%f pDB:%f att:%f  \n",s,cubeModels[currentModel].filterType[s],cutOffFrequeny,_q,_gain,attenuation[s]);
+                NonlinearBiquad<double> pDerived0(static_cast<NonlinearBiquad<double>*>(pFilter[s][0]));
+                NonlinearBiquad<double> pDerived1(static_cast<NonlinearBiquad<double>*>(pFilter[s][1]));
+
+                // std::unique_ptr<NonlinearBiquad<double>> pDerived0(static_cast<NonlinearBiquad<double>*>(pFilter[s][0].release()));
+                // std::unique_ptr<NonlinearBiquad<double>> pDerived1(static_cast<NonlinearBiquad<double>*>(pFilter[s][1].release()));
+
 
                 pDerived0->setNLBiquad(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
                 pDerived1->setNLBiquad(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
@@ -330,8 +343,9 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
                 pDerived0->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
                 pDerived1->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
             } else {
-                std::unique_ptr<ChebyshevI<double>> pDerived0(static_cast<ChebyshevI<double>*>(pFilter[s][0].release()));
-                std::unique_ptr<ChebyshevI<double>> pDerived1(static_cast<ChebyshevI<double>*>(pFilter[s][1].release()));
+    fprintf(stderr, "Chebyshev Params stage:%i FT:%i Fc:%f Q:%f pDB:%f att:%f  \n",s,cubeModels[currentModel].filterType[s],cutOffFrequeny,_q,_gain,attenuation[s]);
+                ChebyshevI<double> pDerived0(static_cast<ChebyshevI<double>*>(pFilter[s][0]));
+                ChebyshevI<double> pDerived1(static_cast<ChebyshevI<double>*>(pFilter[s][1]));
 
                 pDerived0->setChebyshevI(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,0.0,0);
                 pDerived1->setChebyshevI(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,0.0,0);
@@ -355,15 +369,14 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
     if(nbrCubeModels > 0) {
         processedIn[0] = inputs[INPUT_L].getVoltage() / 5.0;
         processedIn[1] = inputs[INPUT_R].getVoltage() / 5.0;
-        //fprintf(stderr, "initial out %f %f  \n",out[0],out[1]);
+        // fprintf(stderr, "initial out %f %f  \n",out[0],out[1]);
         for(int l=0;l<nbrfilterLevels;l++) {
             float filtersInLevel = 0;
             for(int s=0;s<NBR_FILTER_STAGES;s++) {
                 if(cubeModels[currentModel].filterLevel[s] == l) {
-                    //for(int c=0;c<NBR_CHANNELS;c++) {
-                    for(int c=0;c<1;c++) {
-                        processedOut[c] = pFilter[s][c]->process(processedIn[c]);
-                        out[c]+=(processedOut[c] * attenuation[s]);
+                    for(int c=0;c<NBR_CHANNELS;c++) {
+                        // processedOut[c] = (pFilter[s][c].get())->process(processedIn[c]);
+                        // out[c]+=(processedOut[c] * attenuation[s]);
                     }
                     filtersInLevel+=1;
                 }
