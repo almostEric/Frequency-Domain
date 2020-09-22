@@ -127,6 +127,98 @@ struct BRDisplayFilterResponse : FramebufferWidget {
 
 };  
 
+struct BRDisplayFilterTopology : FramebufferWidget {
+  BoxOfRevelationModule *module;
+  std::shared_ptr<Font> font;
+
+  BRDisplayFilterTopology() {
+    font = APP->window->loadFont(asset::plugin(pluginInstance, "res/fonts/routed-gothic.ttf"));
+  }
+
+
+  void draw(const DrawArgs &args) override {
+    //background
+    nvgFillColor(args.vg, nvgRGB(20, 30, 33));
+    nvgBeginPath(args.vg);
+    nvgRect(args.vg, 0, 0, box.size.x, box.size.y);
+    nvgFill(args.vg);
+
+
+    if (!module) 
+      return;
+
+
+    nvgStrokeColor(args.vg, nvgRGB(0xb0,0xb0,0x2f));
+    nvgStrokeWidth(args.vg, 0.25);
+    for(int l=0;l<module->nbrfilterLevels;l++) {
+      int filtersInLevel = 0; 
+      for(int s=0;s<NBR_FILTER_STAGES;s++) {
+        if(module->cubeModels[module->currentModel].filterLevel[s] == l) {
+          filtersInLevel +=1;
+        }
+      }      
+      int levelIndex = 0;
+      for(int s=0;s<NBR_FILTER_STAGES;s++) {          
+        if(module->cubeModels[module->currentModel].filterLevel[s] == l) {
+          float xPos = levelIndex*7.0 + (25.0 - filtersInLevel*3.5);
+          float yPos = l*7.0 + (25.5 - module->nbrfilterLevels*3.5);
+          nvgBeginPath(args.vg);
+          nvgRect(args.vg, xPos, yPos , 6.0, 6.0);
+          nvgStroke(args.vg);
+          nvgBeginPath(args.vg);
+          switch(module->cubeModels[module->currentModel].filterNonlinearityStructure[s]) {
+            case NLBQ_NONE :
+              nvgFillColor(args.vg, nvgRGB(0x1f,0xf0,0x1f));
+              break;
+            case NLBQ_NLState :
+              nvgFillColor(args.vg, nvgRGB(0xf0,0x80,0x1f));
+              break;
+            case NLBQ_NLFB :
+              nvgFillColor(args.vg, nvgRGB(0xf0,0xf0,0x1f));
+              break;
+            case NLBQ_ALL :
+              nvgFillColor(args.vg, nvgRGB(0xf0,0x1f,0x1f));
+              break;
+          }
+
+          switch(module->cubeModels[module->currentModel].filterType[s]) {
+            case 0:
+              nvgMoveTo(args.vg,xPos,yPos);
+              nvgLineTo(args.vg,xPos+6.0,yPos+6.0);
+              nvgLineTo(args.vg,xPos,yPos+6.0);
+              nvgLineTo(args.vg,xPos,yPos);
+              break;
+            case 1:
+              nvgMoveTo(args.vg,xPos,yPos+6.0);
+              nvgLineTo(args.vg,xPos+6.0,yPos);
+              nvgLineTo(args.vg,xPos+6.0,yPos+6.0);
+              nvgLineTo(args.vg,xPos,yPos+6.0);
+              break;
+            case 2:
+              nvgMoveTo(args.vg,xPos,yPos+6.0);
+              nvgLineTo(args.vg,xPos+3.0,yPos);
+              nvgLineTo(args.vg,xPos+6.0,yPos+6.0);
+              nvgLineTo(args.vg,xPos,yPos+6.0);
+              break;
+            case 3:
+              nvgMoveTo(args.vg,xPos,yPos);
+              nvgLineTo(args.vg,xPos+3.0,yPos+6.0);
+              nvgLineTo(args.vg,xPos+5.0,yPos);
+              nvgLineTo(args.vg,xPos,yPos);
+              break;
+            default:
+            break;
+          }
+          nvgFill(args.vg);
+          levelIndex++;
+        }
+      }      
+    }
+
+    
+  }
+};
+
 struct BRDisplayCube : FramebufferWidget {
   BoxOfRevelationModule *module;
   std::shared_ptr<Font> font;
@@ -255,15 +347,15 @@ struct BoxOfRevelationWidget : ModuleWidget {
       addChild(dc);
     }
 
-    // {
-    //   BCDisplayWaveFiles *dwf = new BCDisplayWaveFiles();    
-    //   //if (module) {
-    //     dwf->module = module;
-    //   //}   
-    //   dwf->box.pos = Vec(86.5, 172.5);
-    //   dwf->box.size = Vec(76, 32);
-    //   addChild(dwf);
-    // }
+    {
+      BRDisplayFilterTopology *dft = new BRDisplayFilterTopology();    
+      //if (module) {
+        dft->module = module;
+      //}   
+      dft->box.pos = Vec(164, 164.5);
+      dft->box.size = Vec(50, 50);
+      addChild(dft);
+    }
 
     {
       BRDisplayModelName *dmn = new BRDisplayModelName();    
@@ -276,17 +368,17 @@ struct BoxOfRevelationWidget : ModuleWidget {
     }
 
 
-    addParam(createParam<LightKnobSnap>(Vec(168, 172), module, BoxOfRevelationModule::FILTER_MODEL_PARAM));
+    addParam(createParam<LightKnobSnap>(Vec(168, 232), module, BoxOfRevelationModule::FILTER_MODEL_PARAM));
     {
       ArcDisplay *c = new ArcDisplay();
       if (module) {
         c->percentage = &module->modelPercentage;
       }
-      c->box.pos = Vec(175, 178);
+      c->box.pos = Vec(175, 238);
       c->box.size = Vec(60, 60);
       addChild(c);
     }
-    addInput(createInput<LightPort>(Vec(198, 204), module, BoxOfRevelationModule::FILTER_MODEL_INPUT));
+    addInput(createInput<LightPort>(Vec(199, 264), module, BoxOfRevelationModule::FILTER_MODEL_INPUT));
 
     
 
