@@ -8,7 +8,7 @@ BoxOfRevelationModule::BoxOfRevelationModule() {
     config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
 
 
-    configParam(FREQUENCY_PARAM, 1.0f, 10.0f, 1.0f, "Frequency","%",0,100);
+    configParam(FREQUENCY_PARAM, 0.0f, 1.0f, 0.0f, "Frequency","%",0,100);
     configParam(Y_PARAM, 0.0f, 1.0f, 0.0f, "Y","%",0,100);
     configParam(Z_PARAM, 0.0f, 1.0f, 0.0f, "Z","%",0,100);
 
@@ -234,8 +234,9 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
     }   
     //fprintf(stderr, "current model %i fiter levels %i  \n",currentModel,nbrfilterLevels);
 
-    frequency = paramValue(FREQUENCY_PARAM,FREQUENCY_INPUT,1.0f,10.0f);
-    frequencyPercentage = (frequency-1.0) / 9.0;
+    frequency = paramValue(FREQUENCY_PARAM,FREQUENCY_INPUT,0.0f,1.0f);
+    frequencyPercentage = frequency;
+    frequency = (frequency*9.0) + 1.0;
     frequency = std::log10(frequency);
 
     yMorph = paramValue(Y_PARAM,Y_INPUT,0.0f,1.0f);
