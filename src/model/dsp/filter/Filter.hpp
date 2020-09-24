@@ -20,11 +20,11 @@ template <typename T> class Filter{
 
 public:
 
-    virtual void setNonLinearType (NLType type);
+    virtual void setNonLinearType (NLType type) {}
 
-    virtual void setNonLinearFunction(NLFunction nlfunction);
+    virtual void setNonLinearFunction(NLFunction nlfunction) {}
 
-    virtual void setFilterParameters(int type, T Fc, T Q, T drive, T peakGainDB);
+    virtual void setFilterParameters(int type, T Fc, T Q, T drive, T peakGainDB) {}
 
     virtual T process(T in);
 

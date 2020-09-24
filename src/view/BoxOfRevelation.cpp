@@ -90,8 +90,8 @@ struct BRDisplayFilterResponse : FramebufferWidget {
     //nvgStrokeColor(args.vg, nvgRGB(0xb0,0xb0,0xff));
     nvgStrokeColor(args.vg, nvgRGB(r,g,b));
     nvgStrokeWidth(args.vg, 1);
-    for(int x=0;x<204;x+=1) {
-      double frequency = std::pow(10,x/87.18f + 2.0f) / module->sampleRate;
+    for(float x=0.0f; x<204.0f; x+=1.0f) {
+      double frequency = std::pow(10.0f, x/87.18f + 2.0f) / module->sampleRate;
       double response = 1;
       
       for(int l=0;l<module->nbrfilterLevels;l++) {
@@ -106,18 +106,18 @@ struct BRDisplayFilterResponse : FramebufferWidget {
         }
         if(filtersInLevel > 0) {
           levelResponse = levelResponse / std::sqrt(filtersInLevel);
-          response =  response * levelResponse;
+          response *= levelResponse;
         }
       }
       //attenuation[s] = powf(10,_gain / 20.0f);
-      response = std::log10(response * module->makeupAttenuation) * 20 + 50;
-      response = clamp(response,0.0,100);
+      double responseDB = std::log10(std::max(std::abs(response * module->makeupAttenuation), 1.0e-4)) * 20;
+      float responseYCoord = clamp(50.0f - (float) responseDB, 0.0f, 100.0f);
         // fprintf(stderr, "Point x:%i response:%f  \n",x,response[0]);
 
       if(x < 1)
-        nvgMoveTo(args.vg,0,100.0 - response);
+        nvgMoveTo(args.vg, 0.0f, responseYCoord);
       else  
-        nvgLineTo(args.vg,x,100.0 - response);
+        nvgLineTo(args.vg, x, responseYCoord);
     
     }
     nvgStroke(args.vg);
