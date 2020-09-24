@@ -352,24 +352,22 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
         processedIn[1] = inputs[INPUT_R].getVoltage() / 5.0;
         //fprintf(stderr, "initial out %f %f  \n",out[0],out[1]);
         for(int l=0;l<nbrfilterLevels;l++) {
+            out[0] = 0;
+            out[1] = 0;
             float filtersInLevel = 0;
             for(int s=0;s<NBR_FILTER_STAGES;s++) {
                 if(cubeModels[currentModel].filterLevel[s] == l) {
                     for(int c=0;c<NBR_CHANNELS;c++) {
-                    //for(int c=0;c<1;c++) {
-                        //if(cubeModels[currentModel].filterModel[s] == FILTER_MODEL_BIQUAD) {
                         processedOut[c] = pFilter[s][c]->process(processedIn[c]);
-                        // } else {
-                        //     processedOut[c] = cFilter[s][c]->process(processedIn[c]);
-                        // }
-                        out[c]+=(processedOut[c] * attenuation[s]);
+                        out[c]+=processedOut[c] * attenuation[s];
                     }
                     filtersInLevel+=1;
                 }
             }
             if(filtersInLevel > 0) {
                 for(int c=0;c<NBR_CHANNELS;c++) {
-                    out[c] = out[c]/std::sqrt(filtersInLevel);
+                    out[c] = out[c]/filtersInLevel;
+                    //out[c] = out[c]/std::sqrt(filtersInLevel);
                     processedIn[c] = out[c]; // Input for next level
                 }
             }
@@ -377,7 +375,7 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
 
 
         for(int c=0;c<NBR_CHANNELS;c++) {
-            out[c] = out[c] * makeupAttenuation * 5.0; // Needs to be renamed, not really attenuation
+            out[c] = clamp(out[c] * makeupAttenuation * 5.0,-10.0f,10.0f); // Needs to be renamed, not really attenuation
             //fprintf(stderr, "OUTOUT %i %f %f  \n",c,in,processedIn * 5.0);
             outputs[OUTPUT_L+c].setVoltage(out[c]);
         }
