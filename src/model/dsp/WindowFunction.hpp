@@ -107,7 +107,8 @@ struct WindowFunction {
     }
 
     T SinWindow(float phase) {
-        return sinf(2 * M_PI * phase);
+        //return sinf(2 * M_PI * phase);
+        return sinf(M_PI * phase);
     }
 
 	T HanningWindow(float phase) {

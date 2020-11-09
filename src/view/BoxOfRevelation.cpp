@@ -148,8 +148,6 @@ struct BRDisplayFilterTopology : FramebufferWidget {
       return;
 
 
-    nvgStrokeColor(args.vg, nvgRGB(0xb0,0xb0,0x2f));
-    nvgStrokeWidth(args.vg, 0.25);
     for(int l=0;l<module->nbrfilterLevels;l++) {
       int filtersInLevel = 0; 
       for(int s=0;s<NBR_FILTER_STAGES;s++) {
@@ -159,27 +157,55 @@ struct BRDisplayFilterTopology : FramebufferWidget {
       }      
       int levelIndex = 0;
       for(int s=0;s<NBR_FILTER_STAGES;s++) {          
+        nvgStrokeWidth(args.vg, 0.5);
         if(module->cubeModels[module->currentModel].filterLevel[s] == l) {
           float xPos = levelIndex*7.0 + (25.0 - filtersInLevel*3.5);
           float yPos = l*7.0 + (25.5 - module->nbrfilterLevels*3.5);
           nvgBeginPath(args.vg);
           nvgRect(args.vg, xPos, yPos , 6.0, 6.0);
+          switch(module->cubeModels[module->currentModel].filterModel[s]) {
+            case FILTER_MODEL_BIQUAD :
+                nvgStrokeColor(args.vg, nvgRGB(0xb0,0xb0,0x2f));
+                break;
+            case FILTER_MODEL_COMB :
+                nvgStrokeColor(args.vg, nvgRGB(0x2f,0xb0,0xb0));
+                break;
+          }
           nvgStroke(args.vg);
+
           nvgBeginPath(args.vg);
           switch(module->cubeModels[module->currentModel].filterNonlinearityStructure[s]) {
             case NLBQ_NONE :
               nvgFillColor(args.vg, nvgRGB(0x1f,0xf0,0x1f));
+              nvgStrokeColor(args.vg, nvgRGB(0x1f,0xf0,0x1f));
               break;
             case NLBQ_NLState :
               nvgFillColor(args.vg, nvgRGB(0xf0,0x80,0x1f));
+              nvgStrokeColor(args.vg, nvgRGB(0xf0,0x80,0x1f));
               break;
             case NLBQ_NLFB :
               nvgFillColor(args.vg, nvgRGB(0xf0,0xf0,0x1f));
+              nvgStrokeColor(args.vg, nvgRGB(0xf0,0xf0,0x1f));
               break;
             case NLBQ_ALL :
               nvgFillColor(args.vg, nvgRGB(0xf0,0x1f,0x1f));
+              nvgStrokeColor(args.vg, nvgRGB(0xf0,0x1f,0x1f));
               break;
           }
+
+          //Draw weird comb shape
+          if(module->cubeModels[module->currentModel].filterModel[s] == FILTER_MODEL_COMB) {
+                nvgStrokeWidth(args.vg, 1.0);
+                nvgBeginPath(args.vg);
+                nvgMoveTo(args.vg,xPos+2.0,yPos+6.0);
+                nvgLineTo(args.vg,xPos+2.0,yPos+2.0);
+                nvgMoveTo(args.vg,xPos+4.0,yPos+6.0);
+                nvgLineTo(args.vg,xPos+4.0,yPos+2.0);
+                nvgStroke(args.vg);
+                continue;
+          }
+
+
 
           switch(module->cubeModels[module->currentModel].filterType[s]) {
             case 0:

@@ -7,6 +7,10 @@ struct individualFilterParameters {
     float Q;
     float drive;
     float gain;
+    float feedforwardAmount;
+    float feedbackAmount;
+    float feedforwardGain;
+    float feedbackGain;
 };
 
 struct cubeVertexFilterParameters {

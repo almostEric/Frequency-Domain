@@ -96,7 +96,7 @@ struct DelayedReactionModule : Module {
 
   FFT *fft;
   FFT *feedbackfft;
-  DelayLine delayLine[4096];
+  FFTDelayLine delayLine[4096];
   uint8_t frameSize;
   uint16_t nbrBands;
   uint8_t lastFrameSize;

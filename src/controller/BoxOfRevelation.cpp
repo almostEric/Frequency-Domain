@@ -163,35 +163,79 @@ void BoxOfRevelationModule::loadCubeFile(std::string path)  {
                     json_t *filterJ;
                     json_array_foreach(filtersJ, filterIndex, filterJ) {
                         int filterNumber = filterIndex;
-                        float Fc = 15000;
-                        float _q = .707;
-                        float _drive = 1.0;
+                        switch (model.filterModel[filterIndex]) {
+                            case FILTER_MODEL_BIQUAD:
+                                {
+                                float Fc = 15000;
+                                float _q = .707;
+                                float _drive = 1.0;
+                                json_t *filterNumberJ = json_object_get(filterJ, "filterNumber");
+                                if(filterNumberJ)
+                                    filterNumber = json_integer_value(filterNumberJ);
+
+                                json_t *FcJ = json_object_get(filterJ, "Fc");
+                                if(FcJ)
+                                    Fc = json_real_value(FcJ);
+
+                                json_t *qJ = json_object_get(filterJ, "Q");
+                                if(qJ)
+                                    _q = json_real_value(qJ);
+
+                                json_t *driveJ = json_object_get(filterJ, "drive");
+                                if(driveJ)
+                                    _drive = json_real_value(driveJ);
+
+                                model.vertex[x][y][z].filterParameters[filterNumber].Fc = Fc;
+                                model.vertex[x][y][z].filterParameters[filterNumber].Q = _q;
+                                model.vertex[x][y][z].filterParameters[filterNumber].drive = _drive;
+                                break;
+                                }
+                            case FILTER_MODEL_COMB:
+                                {
+                                float _feedforwardAmount = 0;
+                                float _feedbackAmount = 0;
+                                float _feedforwardGain = 0.0;
+                                float _feedbackGain = 0.0;
+                                float _drive = 1.0;
+
+                                json_t *filterNumberJ = json_object_get(filterJ, "filterNumber");
+                                if(filterNumberJ)
+                                    filterNumber = json_integer_value(filterNumberJ);
+
+                                json_t *FfaJ = json_object_get(filterJ, "feedforwardAmount");
+                                if(FfaJ)
+                                    _feedforwardAmount = json_real_value(FfaJ);
+
+                                json_t *FfbJ = json_object_get(filterJ, "feedbackAmount");
+                                if(FfbJ)
+                                    _feedbackAmount = json_real_value(FfbJ);
+
+                                json_t *ffgJ = json_object_get(filterJ, "feedforwardGain");
+                                if(ffgJ)
+                                    _feedforwardGain = json_real_value(ffgJ);
+
+                                json_t *fbgJ = json_object_get(filterJ, "feedbackGain");
+                                if(fbgJ)
+                                    _feedbackGain = json_real_value(fbgJ);
+
+                                json_t *driveJ = json_object_get(filterJ, "drive");
+                                if(driveJ)
+                                    _drive = json_real_value(driveJ);
+
+                                model.vertex[x][y][z].filterParameters[filterNumber].feedforwardAmount = _feedforwardAmount;
+                                model.vertex[x][y][z].filterParameters[filterNumber].feedbackAmount = _feedbackAmount;
+                                model.vertex[x][y][z].filterParameters[filterNumber].feedforwardGain = _feedforwardGain;
+                                model.vertex[x][y][z].filterParameters[filterNumber].feedbackGain = _feedbackGain;
+                                model.vertex[x][y][z].filterParameters[filterNumber].drive = _drive;
+                                break;
+                                }
+                        }
                         float _gain = 0.0;
-                        json_t *filterNumberJ = json_object_get(filterJ, "filterNumber");
-                        if(filterNumberJ)
-                            filterNumber = json_integer_value(filterNumberJ);
-
-                        json_t *FcJ = json_object_get(filterJ, "Fc");
-                        if(FcJ)
-                            Fc = json_real_value(FcJ);
-
-                        json_t *qJ = json_object_get(filterJ, "Q");
-                        if(qJ)
-                            _q = json_real_value(qJ);
-
-                        json_t *driveJ = json_object_get(filterJ, "drive");
-                        if(driveJ)
-                            _drive = json_real_value(driveJ);
-
                         json_t *gainJ = json_object_get(filterJ, "gain");
                         if(gainJ)
                             _gain = json_real_value(gainJ);
-
-                        model.vertex[x][y][z].filterParameters[filterNumber].Fc = Fc;
-                        model.vertex[x][y][z].filterParameters[filterNumber].Q = _q;
-                        model.vertex[x][y][z].filterParameters[filterNumber].drive = _drive;
                         model.vertex[x][y][z].filterParameters[filterNumber].gain = _gain;
-                        
+
                     }                    
                 }
                 cubeModels.push_back(model);
@@ -221,7 +265,11 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
                 case FILTER_MODEL_CHEBYSHEV:
                     pFilter[s][0].reset(new ChebyshevI<double>(c1_type_lowpass, 0.5 , 0.1, 0));
                     pFilter[s][1].reset(new ChebyshevI<double>(c1_type_lowpass, 0.5 , 0.1, 0));
-                break;
+                    break;
+                case FILTER_MODEL_COMB:
+                    pFilter[s][0].reset(new CombFilter<double>(0, 0.0 , 0.0 , 0.0, 0.0));
+                    pFilter[s][1].reset(new CombFilter<double>(0, 0.0 , 0.0 , 0.0, 0.0));
+                    break;
                 case FILTER_MODEL_BIQUAD:
                 default:
                     pFilter[s][0].reset(new NonlinearBiquad<double>(bq_type_bandpass, 0.5 , 0.207, 0));
@@ -267,70 +315,132 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
 
 
         for(int s=0;s<NBR_FILTER_STAGES;s++) {
-            float cutOffFrequeny = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].Fc,
-                                                        cubeModels[currentModel].vertex[1][0][0].filterParameters[s].Fc,
-                                                        cubeModels[currentModel].vertex[0][1][0].filterParameters[s].Fc,
-                                                        cubeModels[currentModel].vertex[1][1][0].filterParameters[s].Fc,
-                                                        cubeModels[currentModel].vertex[0][0][1].filterParameters[s].Fc,
-                                                        cubeModels[currentModel].vertex[1][0][1].filterParameters[s].Fc,
-                                                        cubeModels[currentModel].vertex[0][1][1].filterParameters[s].Fc,
-                                                        cubeModels[currentModel].vertex[1][1][1].filterParameters[s].Fc,
+            if(cubeModels[currentModel].filterModel[s] == FILTER_MODEL_BIQUAD || cubeModels[currentModel].filterModel[s] == FILTER_MODEL_CHEBYSHEV) {
+                float cutOffFrequeny = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].Fc,
+                                                            cubeModels[currentModel].vertex[1][0][0].filterParameters[s].Fc,
+                                                            cubeModels[currentModel].vertex[0][1][0].filterParameters[s].Fc,
+                                                            cubeModels[currentModel].vertex[1][1][0].filterParameters[s].Fc,
+                                                            cubeModels[currentModel].vertex[0][0][1].filterParameters[s].Fc,
+                                                            cubeModels[currentModel].vertex[1][0][1].filterParameters[s].Fc,
+                                                            cubeModels[currentModel].vertex[0][1][1].filterParameters[s].Fc,
+                                                            cubeModels[currentModel].vertex[1][1][1].filterParameters[s].Fc,
+                                                            frequency,yMorph,zMorph);
+
+                float _q = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].Q,
+                                                cubeModels[currentModel].vertex[1][0][0].filterParameters[s].Q,
+                                                cubeModels[currentModel].vertex[0][1][0].filterParameters[s].Q,
+                                                cubeModels[currentModel].vertex[1][1][0].filterParameters[s].Q,
+                                                cubeModels[currentModel].vertex[0][0][1].filterParameters[s].Q,
+                                                cubeModels[currentModel].vertex[1][0][1].filterParameters[s].Q,
+                                                cubeModels[currentModel].vertex[0][1][1].filterParameters[s].Q,
+                                                cubeModels[currentModel].vertex[1][1][1].filterParameters[s].Q,
+                                                frequency,yMorph,zMorph);
+
+                float _drive = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].drive,
+                    cubeModels[currentModel].vertex[1][0][0].filterParameters[s].drive,
+                    cubeModels[currentModel].vertex[0][1][0].filterParameters[s].drive,
+                    cubeModels[currentModel].vertex[1][1][0].filterParameters[s].drive,
+                    cubeModels[currentModel].vertex[0][0][1].filterParameters[s].drive,
+                    cubeModels[currentModel].vertex[1][0][1].filterParameters[s].drive,
+                    cubeModels[currentModel].vertex[0][1][1].filterParameters[s].drive,
+                    cubeModels[currentModel].vertex[1][1][1].filterParameters[s].drive,
+                    frequency,yMorph,zMorph);
+
+                Fc[s] = cutOffFrequeny;
+                Q[s] = _q;
+                drive[s] = _drive;
+
+                pFilter[s][0]->setFilterParameters(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
+                pFilter[s][1]->setFilterParameters(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
+
+            } else { // COMB FILTER
+                float _feedforwardAmount = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].feedforwardAmount,
+                                                cubeModels[currentModel].vertex[1][0][0].filterParameters[s].feedforwardAmount,
+                                                cubeModels[currentModel].vertex[0][1][0].filterParameters[s].feedforwardAmount,
+                                                cubeModels[currentModel].vertex[1][1][0].filterParameters[s].feedforwardAmount,
+                                                cubeModels[currentModel].vertex[0][0][1].filterParameters[s].feedforwardAmount,
+                                                cubeModels[currentModel].vertex[1][0][1].filterParameters[s].feedforwardAmount,
+                                                cubeModels[currentModel].vertex[0][1][1].filterParameters[s].feedforwardAmount,
+                                                cubeModels[currentModel].vertex[1][1][1].filterParameters[s].feedforwardAmount,
+                                                frequency,yMorph,zMorph);
+
+                float _feedbackAmount = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].feedbackAmount,
+                                                cubeModels[currentModel].vertex[1][0][0].filterParameters[s].feedbackAmount,
+                                                cubeModels[currentModel].vertex[0][1][0].filterParameters[s].feedbackAmount,
+                                                cubeModels[currentModel].vertex[1][1][0].filterParameters[s].feedbackAmount,
+                                                cubeModels[currentModel].vertex[0][0][1].filterParameters[s].feedbackAmount,
+                                                cubeModels[currentModel].vertex[1][0][1].filterParameters[s].feedbackAmount,
+                                                cubeModels[currentModel].vertex[0][1][1].filterParameters[s].feedbackAmount,
+                                                cubeModels[currentModel].vertex[1][1][1].filterParameters[s].feedbackAmount,
+                                                frequency,yMorph,zMorph);
+
+                float _feedforwardGain = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].feedforwardGain,
+                    cubeModels[currentModel].vertex[1][0][0].filterParameters[s].feedforwardGain,
+                    cubeModels[currentModel].vertex[0][1][0].filterParameters[s].feedforwardGain,
+                    cubeModels[currentModel].vertex[1][1][0].filterParameters[s].feedforwardGain,
+                    cubeModels[currentModel].vertex[0][0][1].filterParameters[s].feedforwardGain,
+                    cubeModels[currentModel].vertex[1][0][1].filterParameters[s].feedforwardGain,
+                    cubeModels[currentModel].vertex[0][1][1].filterParameters[s].feedforwardGain,
+                    cubeModels[currentModel].vertex[1][1][1].filterParameters[s].feedforwardGain,
+                    frequency,yMorph,zMorph);
+
+
+                float _feedbackGain = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].feedbackGain,
+                                                        cubeModels[currentModel].vertex[1][0][0].filterParameters[s].feedbackGain,
+                                                        cubeModels[currentModel].vertex[0][1][0].filterParameters[s].feedbackGain,
+                                                        cubeModels[currentModel].vertex[1][1][0].filterParameters[s].feedbackGain,
+                                                        cubeModels[currentModel].vertex[0][0][1].filterParameters[s].feedbackGain,
+                                                        cubeModels[currentModel].vertex[1][0][1].filterParameters[s].feedbackGain,
+                                                        cubeModels[currentModel].vertex[0][1][1].filterParameters[s].feedbackGain,
+                                                        cubeModels[currentModel].vertex[1][1][1].filterParameters[s].feedbackGain,
                                                         frequency,yMorph,zMorph);
 
-            float _q = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].Q,
-                                            cubeModels[currentModel].vertex[1][0][0].filterParameters[s].Q,
-                                            cubeModels[currentModel].vertex[0][1][0].filterParameters[s].Q,
-                                            cubeModels[currentModel].vertex[1][1][0].filterParameters[s].Q,
-                                            cubeModels[currentModel].vertex[0][0][1].filterParameters[s].Q,
-                                            cubeModels[currentModel].vertex[1][0][1].filterParameters[s].Q,
-                                            cubeModels[currentModel].vertex[0][1][1].filterParameters[s].Q,
-                                            cubeModels[currentModel].vertex[1][1][1].filterParameters[s].Q,
+                float _drive = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].drive,
+                    cubeModels[currentModel].vertex[1][0][0].filterParameters[s].drive,
+                    cubeModels[currentModel].vertex[0][1][0].filterParameters[s].drive,
+                    cubeModels[currentModel].vertex[1][1][0].filterParameters[s].drive,
+                    cubeModels[currentModel].vertex[0][0][1].filterParameters[s].drive,
+                    cubeModels[currentModel].vertex[1][0][1].filterParameters[s].drive,
+                    cubeModels[currentModel].vertex[0][1][1].filterParameters[s].drive,
+                    cubeModels[currentModel].vertex[1][1][1].filterParameters[s].drive,
+                    frequency,yMorph,zMorph);
+
+                
+                feedforwardDelay[s] = _feedforwardAmount;
+                feedbackDelay[s] = _feedbackAmount;
+                feedforwardGain[s] = _feedforwardGain;
+                feedbackGain[s] = _feedbackGain;
+                drive[s] = _drive;
+
+                pFilter[s][0]->setFilterParameters(cubeModels[currentModel].filterType[s],_feedforwardAmount,_feedbackAmount,_feedforwardGain,_feedbackGain,_drive);
+                pFilter[s][1]->setFilterParameters(cubeModels[currentModel].filterType[s],_feedforwardAmount,_feedbackAmount,_feedforwardGain,_feedbackGain,_drive);
+
+            }
+
+            pFilter[s][0]->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
+            pFilter[s][1]->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
+
+            pFilter[s][0]->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
+            pFilter[s][1]->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
+
+        
+            float _gain = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].gain,
+                                            cubeModels[currentModel].vertex[1][0][0].filterParameters[s].gain,
+                                            cubeModels[currentModel].vertex[0][1][0].filterParameters[s].gain,
+                                            cubeModels[currentModel].vertex[1][1][0].filterParameters[s].gain,
+                                            cubeModels[currentModel].vertex[0][0][1].filterParameters[s].gain,
+                                            cubeModels[currentModel].vertex[1][0][1].filterParameters[s].gain,
+                                            cubeModels[currentModel].vertex[0][1][1].filterParameters[s].gain,
+                                            cubeModels[currentModel].vertex[1][1][1].filterParameters[s].gain,
                                             frequency,yMorph,zMorph);
 
-            float _drive = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].drive,
-                cubeModels[currentModel].vertex[1][0][0].filterParameters[s].drive,
-                cubeModels[currentModel].vertex[0][1][0].filterParameters[s].drive,
-                cubeModels[currentModel].vertex[1][1][0].filterParameters[s].drive,
-                cubeModels[currentModel].vertex[0][0][1].filterParameters[s].drive,
-                cubeModels[currentModel].vertex[1][0][1].filterParameters[s].drive,
-                cubeModels[currentModel].vertex[0][1][1].filterParameters[s].drive,
-                cubeModels[currentModel].vertex[1][1][1].filterParameters[s].drive,
-                frequency,yMorph,zMorph);
-
-
-            float _gain = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].gain,
-                                                    cubeModels[currentModel].vertex[1][0][0].filterParameters[s].gain,
-                                                    cubeModels[currentModel].vertex[0][1][0].filterParameters[s].gain,
-                                                    cubeModels[currentModel].vertex[1][1][0].filterParameters[s].gain,
-                                                    cubeModels[currentModel].vertex[0][0][1].filterParameters[s].gain,
-                                                    cubeModels[currentModel].vertex[1][0][1].filterParameters[s].gain,
-                                                    cubeModels[currentModel].vertex[0][1][1].filterParameters[s].gain,
-                                                    cubeModels[currentModel].vertex[1][1][1].filterParameters[s].gain,
-                                                    frequency,yMorph,zMorph);
-
-
-            Fc[s] = cutOffFrequeny;
-            Q[s] = _q;
-            drive[s] = _drive;
+            
             gain[s] = _gain;
-			attenuation[s] = powf(10,_gain / 20.0f);
+            attenuation[s] = powf(10,_gain / 20.0f);
             
 
     //fprintf(stderr, " Params stage:%i FT:%i Fc:%f Q:%f pDB:%f att:%f  \n",s,cubeModels[currentModel].filterType[s],cutOffFrequeny,_q,_gain,attenuation[s]);
 
-            if(cubeModels[currentModel].filterModel[s] == FILTER_MODEL_BIQUAD) {                                
-                pFilter[s][0]->setFilterParameters(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
-                pFilter[s][1]->setFilterParameters(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
-
-                pFilter[s][0]->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
-                pFilter[s][1]->setNonLinearType((NLType) cubeModels[currentModel].filterNonlinearityStructure[s]);
-
-                pFilter[s][0]->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
-                pFilter[s][1]->setNonLinearFunction((NLFunction) cubeModels[currentModel].filterNonlinearityFunction[s]);
-            } else {                
-                pFilter[s][0]->setFilterParameters(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,0.0,_drive,0);
-                pFilter[s][1]->setFilterParameters(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,0.0,_drive,0);
-            }
         }
 
 

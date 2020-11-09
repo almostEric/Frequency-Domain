@@ -3,7 +3,6 @@
 
 #include "../FrequencyDomain.hpp"
 #include "../model/dsp/FFT.hpp"
-#include "../model/DelayLine.hpp"
 #include "../model/dsp/WindowFunction.hpp"
 #include "../model/Buffer.hpp"
 #include "../model/dsp/Binning.hpp"

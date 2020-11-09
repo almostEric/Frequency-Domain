@@ -27,6 +27,7 @@ using rack::simd::float_4;
 #define MAX_POLYPHONY 16
 #define NBR_MORPH_MODES 4
 #define NBR_SYNC_MODES 3
+#define NBR_WAVEFOLD_MODES 2
 #define MAX_HARMONICS 16
 
 
@@ -45,7 +46,7 @@ struct BallOfConfusionModule : Module {
         SYNC_POSITION_PARAM,
         SPECTRUM_SHIFT_PARAM,
         WAVEFOLD_AMOUNT_PARAM,
-        WWAVEFOLD_SYMMETRY_PARAM,
+        WAVEFOLD_MODE_PARAM,
         NUM_PARAMS
     };
 
@@ -69,7 +70,8 @@ struct BallOfConfusionModule : Module {
     enum LightIds {
         SYNC_MODE_LIGHT,
         MORPH_MODE_LIGHT = SYNC_MODE_LIGHT + 3,
-        YAW_QUANTIZED_LIGHT = MORPH_MODE_LIGHT + 3,
+        WAVEFOLD_MODE_LIGHT = MORPH_MODE_LIGHT + 3,
+        YAW_QUANTIZED_LIGHT = WAVEFOLD_MODE_LIGHT + 3,
         PITCH_QUANTIZED_LIGHT = YAW_QUANTIZED_LIGHT + 3,
         ROLL_QUANTIZED_LIGHT = PITCH_QUANTIZED_LIGHT + 3,
         NUM_LIGHTS = ROLL_QUANTIZED_LIGHT + 3
@@ -78,6 +80,8 @@ struct BallOfConfusionModule : Module {
     enum MorphModes { MORPH_INTERPOLATE, MORPH_SPECTRAL, MORPH_SPECTRAL_0_PHASE, MORPH_TRANSFER };
 
     enum SyncModes { SYNC_HARD, SYNC_SOFT, SYNC_SOFT_REVERSE };
+
+    enum WaveFoldModes { WAVEFOLD_INVERT, WAVEFOLD_DECIMATE };
 
 
     BallOfConfusionModule ();
@@ -133,6 +137,7 @@ struct BallOfConfusionModule : Module {
 
     std::string morphModes[NBR_MORPH_MODES] ={"Interpolate","Spectral","Spectral 0","Transfer"};
     std::string syncModes[NBR_SYNC_MODES] ={"Hard","Soft","Soft Reverse"};
+    std::string waveFoldModes[NBR_SYNC_MODES] ={"Invert","Decimate"};
 
 
     bool loading = false;
@@ -152,7 +157,7 @@ struct BallOfConfusionModule : Module {
     FFT *fft;
 
     GaussianNoiseGenerator _gauss;
-    dsp::SchmittTrigger morphModeTrigger,syncModeTrigger;
+    dsp::SchmittTrigger morphModeTrigger,syncModeTrigger,wavefoldModeTrigger;
     //dsp::PulseGenerator endOfSamplePulse;
 
 	WavelessOscillator<16, 16, WAV_TABLE_SIZE, float_4> oscillators[4];
@@ -181,6 +186,9 @@ struct BallOfConfusionModule : Module {
 
     int16_t spectrumShift = 0;
     int16_t lastSpectrumShift = 0;
+
+    int waveFoldMode = 0;
+    int lastWaveFoldMode = -1;
 
     float wavefoldAmount = 1.0;
     float wavefoldSymmetry = 0.0;

@@ -11,9 +11,9 @@
    height="380"
    cursor="default"
    id="SvgjsSvg1006"
-   sodipodi:docname="BallOfConfusion.svg"
+   sodipodi:docname="DanceThisMeshAround.svg"
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   width="225"
+   width="270"
    version="1.1">
   <metadata
      id="metadata7215">
@@ -29,10 +29,10 @@
   </metadata>
   <sodipodi:namedview
      borderopacity="1"
-     inkscape:zoom="4.0538462"
+     inkscape:zoom="2.0269231"
      inkscape:cy="277.93769"
      gridtolerance="10"
-     inkscape:cx="139.80673"
+     inkscape:cx="1.666319"
      inkscape:window-height="1058"
      inkscape:measure-start="21.6858,252.097"
      inkscape:pagecheckerboard="true"
@@ -55,6 +55,12 @@
      inkscape:document-rotation="0" />
   <defs
      id="SvgjsDefs1007">
+    <rect
+       x="175.14231"
+       y="327.59013"
+       width="30.588235"
+       height="54.269449"
+       id="rect2086" />
     <linearGradient
        inkscape:collect="always"
        id="linearGradientInner">
@@ -76,7 +82,7 @@
        x2="450"
        y2="380"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.5,0,0,1,-2.9999998,6)" />
+       gradientTransform="matrix(0.6,0,0,1,-3.5999998,6)" />
     <style
        id="Routed Gothic">@import url(file://fonts/routed-gothic.ttf);</style>
     <clipPath
@@ -105,16 +111,16 @@
     </clipPath>
   </defs>
   <path
-     d="M 0,0 H 225 V 380 H 0 Z"
+     d="M 0,0 H 270 V 380 H 0 Z"
      id="SvgjsRect1008"
-     style="visibility:visible;fill:url(#linearGradientOuter);fill-opacity:1;stroke:none;stroke-width:0.684654;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="visibility:visible;fill:url(#linearGradientOuter);fill-opacity:1;stroke:none;stroke-width:0.750001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      visibility="visible"
      inkscape:connector-curvature="0" />
   <g
      aria-label="OUTPUT"
      id="text47"
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     transform="translate(-407,-25.999996)">
+     transform="translate(-195,-35.94141)">
     <path
        d="m 421.66797,366.73047 q 0.35547,0.39062 0.54297,0.95703 0.1914,0.56641 0.1914,1.28516 0,0.71875 -0.19531,1.28906 -0.19141,0.5664 -0.53906,0.94531 -0.35938,0.39453 -0.85156,0.59375 Q 420.32812,372 419.69922,372 q -0.61328,0 -1.11719,-0.20313 -0.5,-0.20312 -0.85156,-0.58984 -0.35156,-0.38672 -0.54297,-0.94922 Q 417,369.69531 417,368.97266 q 0,-0.71094 0.1875,-1.27344 0.1875,-0.56641 0.54687,-0.96875 0.34375,-0.38281 0.85157,-0.58594 0.51172,-0.20312 1.11328,-0.20312 0.625,0 1.12109,0.20703 0.5,0.20312 0.84766,0.58203 z m -0.0703,2.24219 q 0,-1.13282 -0.50782,-1.7461 -0.50781,-0.61719 -1.38672,-0.61719 -0.88671,0 -1.39453,0.61719 -0.5039,0.61328 -0.5039,1.7461 0,1.14453 0.51562,1.7539 0.51563,0.60547 1.38281,0.60547 0.86719,0 1.37891,-0.60547 0.51563,-0.60937 0.51563,-1.7539 z"
        style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
@@ -161,7 +167,7 @@
   </g>
   <g
      id="g6916-2"
-     transform="matrix(0.5,0,0,0.5,-61.245796,178.67379)">
+     transform="matrix(0.5,0,0,0.5,28.254579,-33.3262)">
     <path
        id="SvgjsLine1307-6-8"
        style="stroke:#e8b923;stroke-width:0.75"
@@ -371,230 +377,18 @@
        style="fill:#988903;stroke:#583903;stroke-width:0.75"
        d="m 320.41574,351.65237 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18" />
   </g>
-  <g
-     id="g6916-0"
-     transform="matrix(0.5,0,0,0.5,-122.7458,-37.3262)">
-    <path
-       id="SvgjsLine1307-6-6"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -18.18652,10.5" />
-    <path
-       id="SvgjsLine1308-2-6"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -18.09653,8.51557" />
-    <path
-       id="SvgjsLine1309-4-0"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -18.74564,6.97144" />
-    <path
-       id="SvgjsLine1310-4-20"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -19.26324,5.37842" />
-    <path
-       id="SvgjsLine1311-0-9"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -19.64575,3.74762" />
-    <path
-       id="SvgjsLine1312-4-8"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -20.88495,2.1951" />
-    <path
-       id="SvgjsLine1313-4-0"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -19.9956,0.41886" />
-    <path
-       id="SvgjsLine1314-7-4"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 282.4552,350.39658" />
-    <path
-       id="SvgjsLine1315-0-7"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -19.78546,-2.92166" />
-    <path
-       id="SvgjsLine1316-9-10"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -19.47159,-4.56701" />
-    <path
-       id="SvgjsLine1317-8-4"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -19.9722,-6.48935" />
-    <path
-       id="SvgjsLine1318-3-7"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -18.43725,-7.7503" />
-    <path
-       id="SvgjsLine1319-2-5"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -17.72406,-9.26593" />
-    <path
-       id="SvgjsLine1320-0-8"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 285.52917,340.93585" />
-    <path
-       id="SvgjsLine1321-9-3"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -15.9306,-12.09195" />
-    <path
-       id="SvgjsLine1322-2-81"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 286.80969,337.60065" />
-    <path
-       id="SvgjsLine1323-6-8"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 288.72479,337.073" />
-    <path
-       id="SvgjsLine1324-7-7"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 289.9928,335.97852" />
-    <path
-       id="SvgjsLine1325-6-1"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 291.3479,334.99396" />
-    <path
-       id="SvgjsLine1326-9-9"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -9.63507,-17.52609" />
-    <path
-       id="SvgjsLine1327-0-4"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -8.54147,-19.18441" />
-    <path
-       id="SvgjsLine1328-8-1"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -6.57733,-18.88748" />
-    <path
-       id="SvgjsLine1329-3-5"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -4.97378,-19.37161" />
-    <path
-       id="SvgjsLine1330-1-1"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 299.08035,331.9325" />
-    <path
-       id="SvgjsLine1331-2-9"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -1.67355,-19.92984" />
-    <path
-       id="SvgjsLine1332-5-7"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 V 330.6524" />
-    <path
-       id="SvgjsLine1333-0-1"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 1.67355,-19.92984" />
-    <path
-       id="SvgjsLine1334-5-5"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 3.33539,-19.71987" />
-    <path
-       id="SvgjsLine1335-2-1"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 4.97379,-19.37161" />
-    <path
-       id="SvgjsLine1336-1-1"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 6.57733,-18.88748" />
-    <path
-       id="SvgjsLine1337-7-5"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 8.54147,-19.18441" />
-    <path
-       id="SvgjsLine1338-2-4"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 9.63507,-17.52609" />
-    <path
-       id="SvgjsLine1339-8-3"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 11.06784,-16.65841" />
-    <path
-       id="SvgjsLine1340-7-72"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 12.42294,-15.67385" />
-    <path
-       id="SvgjsLine1341-5-6"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 316.10669,337.073" />
-    <path
-       id="SvgjsLine1342-2-2"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 15.60605,-14.05172" />
-    <path
-       id="SvgjsLine1343-7-4"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 15.9306,-12.09195" />
-    <path
-       id="SvgjsLine1344-0-4"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 16.88657,-10.71652" />
-    <path
-       id="SvgjsLine1345-8-7"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 17.72406,-9.26593" />
-    <path
-       id="SvgjsLine1346-5-4"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 18.43726,-7.7503" />
-    <path
-       id="SvgjsLine1347-0-6"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 19.9722,-6.48935" />
-    <path
-       id="SvgjsLine1348-5-1"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 19.47159,-4.56701" />
-    <path
-       id="SvgjsLine1349-6-21"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 19.78546,-2.92166" />
-    <path
-       id="SvgjsLine1350-1-0"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 19.96054,-1.25579" />
-    <path
-       id="SvgjsLine1351-5-4"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 19.99561,0.41886" />
-    <path
-       id="SvgjsLine1352-4-2"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 20.88495,2.1951" />
-    <path
-       id="SvgjsLine1353-2-7"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 19.64575,3.74762" />
-    <path
-       id="SvgjsLine1354-5-1"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 19.26325,5.37842" />
-    <path
-       id="SvgjsLine1355-6-3"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 18.74564,6.97144" />
-    <path
-       id="SvgjsLine1356-6-8"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 18.09653,8.51557" />
-    <path
-       id="SvgjsLine1357-8-07"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 18.18652,10.5" />
-    <path
-       id="SvgjsCircle1358-7-1"
-       style="fill:#988903;stroke:#583903;stroke-width:0.75"
-       d="m 320.41574,351.65237 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18" />
-  </g>
   <path
-     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.394612;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 10.197306,23.197306 H 214.80269 V 123.80269 H 10.197306 Z"
+     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 10.25,23.25 H 138.75082 V 123.75082 H 10.25 Z"
      id="rect4936-0-8-4-4-4"
      inkscape:connector-curvature="0" />
   <path
-     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.500264;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 86.250132,212.25013 H 214.74986 V 340.74986 H 86.250132 Z"
+     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 158.25,23.25 H 258.75052 V 123.75054 H 158.25 Z"
      id="rect4936-0-8-4-4-0"
      inkscape:connector-curvature="0" />
   <g
-     transform="matrix(0.5,0,0,0.5,-11.745796,178.67379)"
+     transform="matrix(0.5,0,0,0.5,78.254579,-33.3262)"
      id="g6916-0-1">
     <path
        id="SvgjsLine1307-6-6-1"
@@ -806,734 +600,23 @@
        d="m 320.41574,351.65237 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18" />
   </g>
   <text
-     style="font-size:16px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     style="font-size:14.6667px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text5"
-     x="113.26562"
+     x="134.62784"
      font-size="16px"
-     y="18">BALL OF CONFUSION</text>
-  <g
-     id="g6916-0-1-6"
-     transform="matrix(0.5,0,0,0.5,37.254204,178.67379)">
-    <path
-       d="m 302.41574,351.65237 -18.18652,10.5"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1307-6-6-1-5" />
-    <path
-       d="m 302.41574,351.65237 -18.09653,8.51557"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1308-2-6-0-4" />
-    <path
-       d="m 302.41574,351.65237 -18.74564,6.97144"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1309-4-0-2-7" />
-    <path
-       d="m 302.41574,351.65237 -19.26324,5.37842"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1310-4-20-7-2" />
-    <path
-       d="m 302.41574,351.65237 -19.64575,3.74762"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1311-0-9-4-6" />
-    <path
-       d="m 302.41574,351.65237 -20.88495,2.1951"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1312-4-8-1-0" />
-    <path
-       d="m 302.41574,351.65237 -19.9956,0.41886"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1313-4-0-8-5" />
-    <path
-       d="M 302.41574,351.65237 282.4552,350.39658"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1314-7-4-8-9" />
-    <path
-       d="m 302.41574,351.65237 -19.78546,-2.92166"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1315-0-7-1-4" />
-    <path
-       d="m 302.41574,351.65237 -19.47159,-4.56701"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1316-9-10-5-7" />
-    <path
-       d="m 302.41574,351.65237 -19.9722,-6.48935"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1317-8-4-9-1" />
-    <path
-       d="m 302.41574,351.65237 -18.43725,-7.7503"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1318-3-7-7-3" />
-    <path
-       d="m 302.41574,351.65237 -17.72406,-9.26593"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1319-2-5-7-0" />
-    <path
-       d="M 302.41574,351.65237 285.52917,340.93585"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1320-0-8-8-7" />
-    <path
-       d="m 302.41574,351.65237 -15.9306,-12.09195"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1321-9-3-7-8" />
-    <path
-       d="M 302.41574,351.65237 286.80969,337.60065"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1322-2-81-4-7" />
-    <path
-       d="M 302.41574,351.65237 288.72479,337.073"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1323-6-8-8-1" />
-    <path
-       d="M 302.41574,351.65237 289.9928,335.97852"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1324-7-7-1-6" />
-    <path
-       d="M 302.41574,351.65237 291.3479,334.99396"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1325-6-1-2-4" />
-    <path
-       d="m 302.41574,351.65237 -9.63507,-17.52609"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1326-9-9-9-4" />
-    <path
-       d="m 302.41574,351.65237 -8.54147,-19.18441"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1327-0-4-05-3" />
-    <path
-       d="m 302.41574,351.65237 -6.57733,-18.88748"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1328-8-1-8-3" />
-    <path
-       d="m 302.41574,351.65237 -4.97378,-19.37161"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1329-3-5-9-9" />
-    <path
-       d="M 302.41574,351.65237 299.08035,331.9325"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1330-1-1-6-6" />
-    <path
-       d="m 302.41574,351.65237 -1.67355,-19.92984"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1331-2-9-8-6" />
-    <path
-       d="M 302.41574,351.65237 V 330.6524"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1332-5-7-6-4" />
-    <path
-       d="m 302.41574,351.65237 1.67355,-19.92984"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1333-0-1-0-0" />
-    <path
-       d="m 302.41574,351.65237 3.33539,-19.71987"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1334-5-5-1-3" />
-    <path
-       d="m 302.41574,351.65237 4.97379,-19.37161"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1335-2-1-7-9" />
-    <path
-       d="m 302.41574,351.65237 6.57733,-18.88748"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1336-1-1-68-7" />
-    <path
-       d="m 302.41574,351.65237 8.54147,-19.18441"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1337-7-5-26-3" />
-    <path
-       d="m 302.41574,351.65237 9.63507,-17.52609"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1338-2-4-0-0" />
-    <path
-       d="m 302.41574,351.65237 11.06784,-16.65841"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1339-8-3-4-0" />
-    <path
-       d="m 302.41574,351.65237 12.42294,-15.67385"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1340-7-72-76-1" />
-    <path
-       d="M 302.41574,351.65237 316.10669,337.073"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1341-5-6-5-8" />
-    <path
-       d="m 302.41574,351.65237 15.60605,-14.05172"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1342-2-2-7-8" />
-    <path
-       d="m 302.41574,351.65237 15.9306,-12.09195"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1343-7-4-0-5" />
-    <path
-       d="m 302.41574,351.65237 16.88657,-10.71652"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1344-0-4-6-8" />
-    <path
-       d="m 302.41574,351.65237 17.72406,-9.26593"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1345-8-7-6-7" />
-    <path
-       d="m 302.41574,351.65237 18.43726,-7.7503"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1346-5-4-9-3" />
-    <path
-       d="m 302.41574,351.65237 19.9722,-6.48935"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1347-0-6-3-5" />
-    <path
-       d="m 302.41574,351.65237 19.47159,-4.56701"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1348-5-1-37-6" />
-    <path
-       d="m 302.41574,351.65237 19.78546,-2.92166"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1349-6-21-04-4" />
-    <path
-       d="m 302.41574,351.65237 19.96054,-1.25579"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1350-1-0-27-8" />
-    <path
-       d="m 302.41574,351.65237 19.99561,0.41886"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1351-5-4-5-7" />
-    <path
-       d="m 302.41574,351.65237 20.88495,2.1951"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1352-4-2-1-8" />
-    <path
-       d="m 302.41574,351.65237 19.64575,3.74762"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1353-2-7-7-7" />
-    <path
-       d="m 302.41574,351.65237 19.26325,5.37842"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1354-5-1-65-1" />
-    <path
-       d="m 302.41574,351.65237 18.74564,6.97144"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1355-6-3-9-7" />
-    <path
-       d="m 302.41574,351.65237 18.09653,8.51557"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1356-6-8-1-2" />
-    <path
-       d="m 302.41574,351.65237 18.18652,10.5"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1357-8-07-8-7" />
-    <path
-       d="m 320.41574,351.65237 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18"
-       style="fill:#988903;stroke:#583903;stroke-width:0.75"
-       id="SvgjsCircle1358-7-1-8-4" />
-  </g>
-  <g
-     transform="matrix(0.5,0,0,0.5,28.59858,-37.3262)"
-     id="g6916-0-1-6-0">
-    <path
-       id="SvgjsLine1307-6-6-1-5-9"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -18.18652,10.5" />
-    <path
-       id="SvgjsLine1308-2-6-0-4-4"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -18.09653,8.51557" />
-    <path
-       id="SvgjsLine1309-4-0-2-7-2"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -18.74564,6.97144" />
-    <path
-       id="SvgjsLine1310-4-20-7-2-6"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -19.26324,5.37842" />
-    <path
-       id="SvgjsLine1311-0-9-4-6-2"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -19.64575,3.74762" />
-    <path
-       id="SvgjsLine1312-4-8-1-0-4"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -20.88495,2.1951" />
-    <path
-       id="SvgjsLine1313-4-0-8-5-9"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -19.9956,0.41886" />
-    <path
-       id="SvgjsLine1314-7-4-8-9-1"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 282.4552,350.39658" />
-    <path
-       id="SvgjsLine1315-0-7-1-4-0"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -19.78546,-2.92166" />
-    <path
-       id="SvgjsLine1316-9-10-5-7-2"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -19.47159,-4.56701" />
-    <path
-       id="SvgjsLine1317-8-4-9-1-0"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -19.9722,-6.48935" />
-    <path
-       id="SvgjsLine1318-3-7-7-3-7"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -18.43725,-7.7503" />
-    <path
-       id="SvgjsLine1319-2-5-7-0-4"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -17.72406,-9.26593" />
-    <path
-       id="SvgjsLine1320-0-8-8-7-1"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 285.52917,340.93585" />
-    <path
-       id="SvgjsLine1321-9-3-7-8-7"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -15.9306,-12.09195" />
-    <path
-       id="SvgjsLine1322-2-81-4-7-2"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 286.80969,337.60065" />
-    <path
-       id="SvgjsLine1323-6-8-8-1-9"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 288.72479,337.073" />
-    <path
-       id="SvgjsLine1324-7-7-1-6-0"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 289.9928,335.97852" />
-    <path
-       id="SvgjsLine1325-6-1-2-4-3"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 291.3479,334.99396" />
-    <path
-       id="SvgjsLine1326-9-9-9-4-7"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -9.63507,-17.52609" />
-    <path
-       id="SvgjsLine1327-0-4-05-3-6"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -8.54147,-19.18441" />
-    <path
-       id="SvgjsLine1328-8-1-8-3-6"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -6.57733,-18.88748" />
-    <path
-       id="SvgjsLine1329-3-5-9-9-9"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -4.97378,-19.37161" />
-    <path
-       id="SvgjsLine1330-1-1-6-6-5"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 299.08035,331.9325" />
-    <path
-       id="SvgjsLine1331-2-9-8-6-5"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 -1.67355,-19.92984" />
-    <path
-       id="SvgjsLine1332-5-7-6-4-6"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 V 330.6524" />
-    <path
-       id="SvgjsLine1333-0-1-0-0-2"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 1.67355,-19.92984" />
-    <path
-       id="SvgjsLine1334-5-5-1-3-9"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 3.33539,-19.71987" />
-    <path
-       id="SvgjsLine1335-2-1-7-9-4"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 4.97379,-19.37161" />
-    <path
-       id="SvgjsLine1336-1-1-68-7-0"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 6.57733,-18.88748" />
-    <path
-       id="SvgjsLine1337-7-5-26-3-1"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 8.54147,-19.18441" />
-    <path
-       id="SvgjsLine1338-2-4-0-0-9"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 9.63507,-17.52609" />
-    <path
-       id="SvgjsLine1339-8-3-4-0-9"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 11.06784,-16.65841" />
-    <path
-       id="SvgjsLine1340-7-72-76-1-5"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 12.42294,-15.67385" />
-    <path
-       id="SvgjsLine1341-5-6-5-8-9"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="M 302.41574,351.65237 316.10669,337.073" />
-    <path
-       id="SvgjsLine1342-2-2-7-8-0"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 15.60605,-14.05172" />
-    <path
-       id="SvgjsLine1343-7-4-0-5-6"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 15.9306,-12.09195" />
-    <path
-       id="SvgjsLine1344-0-4-6-8-9"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 16.88657,-10.71652" />
-    <path
-       id="SvgjsLine1345-8-7-6-7-8"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 17.72406,-9.26593" />
-    <path
-       id="SvgjsLine1346-5-4-9-3-2"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 18.43726,-7.7503" />
-    <path
-       id="SvgjsLine1347-0-6-3-5-5"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 19.9722,-6.48935" />
-    <path
-       id="SvgjsLine1348-5-1-37-6-5"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 19.47159,-4.56701" />
-    <path
-       id="SvgjsLine1349-6-21-04-4-2"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 19.78546,-2.92166" />
-    <path
-       id="SvgjsLine1350-1-0-27-8-0"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 19.96054,-1.25579" />
-    <path
-       id="SvgjsLine1351-5-4-5-7-8"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 19.99561,0.41886" />
-    <path
-       id="SvgjsLine1352-4-2-1-8-4"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 20.88495,2.1951" />
-    <path
-       id="SvgjsLine1353-2-7-7-7-6"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 19.64575,3.74762" />
-    <path
-       id="SvgjsLine1354-5-1-65-1-6"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 19.26325,5.37842" />
-    <path
-       id="SvgjsLine1355-6-3-9-7-1"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 18.74564,6.97144" />
-    <path
-       id="SvgjsLine1356-6-8-1-2-7"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 18.09653,8.51557" />
-    <path
-       id="SvgjsLine1357-8-07-8-7-6"
-       style="stroke:#e8b923;stroke-width:0.75"
-       d="m 302.41574,351.65237 18.18652,10.5" />
-    <path
-       id="SvgjsCircle1358-7-1-8-4-1"
-       style="fill:#988903;stroke:#583903;stroke-width:0.75"
-       d="m 320.41574,351.65237 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18" />
-  </g>
+     y="18">DANCE THIS MESH AROUND</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-6-1-4"
-     x="89.875"
+     x="180.87538"
      font-size="8px"
-     y="370.81641">YAW</text>
+     y="174.9375">TOPOLOGY</text>
   <text
-     y="370.92188"
+     y="174.92188"
      font-size="8px"
-     x="141.51562"
+     x="228.51601"
      id="text106-6-1-4-9"
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision">PITCH</text>
-  <text
-     y="370.9375"
-     font-size="8px"
-     x="189.60156"
-     id="text106-6-1-4-4"
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision">ROLL</text>
-  <text
-     y="155.81641"
-     font-size="8px"
-     x="116.875"
-     id="text106-6-1-4-40"
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision">FM AMT</text>
-  <text
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-1-4-40-6"
-     x="189.81442"
-     font-size="8px"
-     y="155.9375">SYNC POS</text>
-  <text
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-1-4-40-0"
-     x="28.645538"
-     font-size="8px"
-     y="156.04649">FREQ</text>
-  <text
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-1-4-40-60"
-     x="59.265625"
-     font-size="8px"
-     y="156.07812">V/Oct</text>
-  <text
-     y="195.97266"
-     font-size="8px"
-     x="16.890625"
-     id="text106-6-1-4-40-0-8"
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision">FM</text>
-  <text
-     y="196.07812"
-     font-size="8px"
-     x="71.964844"
-     id="text106-6-1-4-40-0-6"
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision">θ</text>
-  <text
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-1-4-40-0-6-6"
-     x="44.460938"
-     font-size="8px"
-     y="196.07812">SYNC</text>
-  <g
-     transform="matrix(0.5,0,0,0.5,-40.923241,-37.3262)"
-     id="g6916-0-0">
-    <path
-       d="m 302.41574,351.65237 -18.18652,10.5"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1307-6-6-16" />
-    <path
-       d="m 302.41574,351.65237 -18.09653,8.51557"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1308-2-6-5" />
-    <path
-       d="m 302.41574,351.65237 -18.74564,6.97144"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1309-4-0-4" />
-    <path
-       d="m 302.41574,351.65237 -19.26324,5.37842"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1310-4-20-8" />
-    <path
-       d="m 302.41574,351.65237 -19.64575,3.74762"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1311-0-9-1" />
-    <path
-       d="m 302.41574,351.65237 -20.88495,2.1951"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1312-4-8-19" />
-    <path
-       d="m 302.41574,351.65237 -19.9956,0.41886"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1313-4-0-6" />
-    <path
-       d="M 302.41574,351.65237 282.4552,350.39658"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1314-7-4-0" />
-    <path
-       d="m 302.41574,351.65237 -19.78546,-2.92166"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1315-0-7-6" />
-    <path
-       d="m 302.41574,351.65237 -19.47159,-4.56701"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1316-9-10-4" />
-    <path
-       d="m 302.41574,351.65237 -19.9722,-6.48935"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1317-8-4-0" />
-    <path
-       d="m 302.41574,351.65237 -18.43725,-7.7503"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1318-3-7-3" />
-    <path
-       d="m 302.41574,351.65237 -17.72406,-9.26593"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1319-2-5-2" />
-    <path
-       d="M 302.41574,351.65237 285.52917,340.93585"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1320-0-8-7" />
-    <path
-       d="m 302.41574,351.65237 -15.9306,-12.09195"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1321-9-3-9" />
-    <path
-       d="M 302.41574,351.65237 286.80969,337.60065"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1322-2-81-7" />
-    <path
-       d="M 302.41574,351.65237 288.72479,337.073"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1323-6-8-1" />
-    <path
-       d="M 302.41574,351.65237 289.9928,335.97852"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1324-7-7-2" />
-    <path
-       d="M 302.41574,351.65237 291.3479,334.99396"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1325-6-1-7" />
-    <path
-       d="m 302.41574,351.65237 -9.63507,-17.52609"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1326-9-9-4" />
-    <path
-       d="m 302.41574,351.65237 -8.54147,-19.18441"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1327-0-4-8" />
-    <path
-       d="m 302.41574,351.65237 -6.57733,-18.88748"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1328-8-1-9" />
-    <path
-       d="m 302.41574,351.65237 -4.97378,-19.37161"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1329-3-5-4" />
-    <path
-       d="M 302.41574,351.65237 299.08035,331.9325"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1330-1-1-7" />
-    <path
-       d="m 302.41574,351.65237 -1.67355,-19.92984"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1331-2-9-88" />
-    <path
-       d="M 302.41574,351.65237 V 330.6524"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1332-5-7-5" />
-    <path
-       d="m 302.41574,351.65237 1.67355,-19.92984"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1333-0-1-4" />
-    <path
-       d="m 302.41574,351.65237 3.33539,-19.71987"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1334-5-5-2" />
-    <path
-       d="m 302.41574,351.65237 4.97379,-19.37161"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1335-2-1-9" />
-    <path
-       d="m 302.41574,351.65237 6.57733,-18.88748"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1336-1-1-9" />
-    <path
-       d="m 302.41574,351.65237 8.54147,-19.18441"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1337-7-5-5" />
-    <path
-       d="m 302.41574,351.65237 9.63507,-17.52609"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1338-2-4-7" />
-    <path
-       d="m 302.41574,351.65237 11.06784,-16.65841"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1339-8-3-8" />
-    <path
-       d="m 302.41574,351.65237 12.42294,-15.67385"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1340-7-72-4" />
-    <path
-       d="M 302.41574,351.65237 316.10669,337.073"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1341-5-6-2" />
-    <path
-       d="m 302.41574,351.65237 15.60605,-14.05172"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1342-2-2-0" />
-    <path
-       d="m 302.41574,351.65237 15.9306,-12.09195"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1343-7-4-02" />
-    <path
-       d="m 302.41574,351.65237 16.88657,-10.71652"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1344-0-4-8" />
-    <path
-       d="m 302.41574,351.65237 17.72406,-9.26593"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1345-8-7-4" />
-    <path
-       d="m 302.41574,351.65237 18.43726,-7.7503"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1346-5-4-6" />
-    <path
-       d="m 302.41574,351.65237 19.9722,-6.48935"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1347-0-6-8" />
-    <path
-       d="m 302.41574,351.65237 19.47159,-4.56701"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1348-5-1-8" />
-    <path
-       d="m 302.41574,351.65237 19.78546,-2.92166"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1349-6-21-0" />
-    <path
-       d="m 302.41574,351.65237 19.96054,-1.25579"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1350-1-0-9" />
-    <path
-       d="m 302.41574,351.65237 19.99561,0.41886"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1351-5-4-4" />
-    <path
-       d="m 302.41574,351.65237 20.88495,2.1951"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1352-4-2-2" />
-    <path
-       d="m 302.41574,351.65237 19.64575,3.74762"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1353-2-7-0" />
-    <path
-       d="m 302.41574,351.65237 19.26325,5.37842"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1354-5-1-0" />
-    <path
-       d="m 302.41574,351.65237 18.74564,6.97144"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1355-6-3-6" />
-    <path
-       d="m 302.41574,351.65237 18.09653,8.51557"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1356-6-8-3" />
-    <path
-       d="m 302.41574,351.65237 18.18652,10.5"
-       style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1357-8-07-2" />
-    <path
-       d="m 320.41574,351.65237 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18"
-       style="fill:#988903;stroke:#583903;stroke-width:0.75"
-       id="SvgjsCircle1358-7-1-1" />
-  </g>
-  <text
-     y="315.9375"
-     font-size="8px"
-     x="23.445312"
-     id="text106-6-1-4-40-0-9"
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision">MORPH</text>
-  <path
-     inkscape:connector-curvature="0"
-     id="rect4936-0-8-4-4-0-4"
-     d="m 86.24836,172.24836 h 76.50328 v 32.50328 H 86.24836 Z"
-     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-  <path
-     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.188848;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 7.594424,279.59442 h 32.811152 v 10.81116 H 7.594424 Z"
-     id="rect4936-0-8-4-4-0-4-2"
-     inkscape:connector-curvature="0" />
-  <path
-     inkscape:connector-curvature="0"
-     id="rect4936-0-8-4-4-0-4-2-6"
-     d="m 175.59442,169.59443 h 32.81115 v 10.81116 h -32.81115 z"
-     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.188848;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-  <text
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-1-4-40-0-9-1"
-     x="191.39218"
-     font-size="8px"
-     y="205.92188">SYNC TYPE</text>
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision">SIZE</text>
   <text
      id="text2228"
      y="352.99219"
@@ -1546,480 +629,2209 @@
        id="tspan2226"
        sodipodi:role="line">FREQUENCY DOMAIN</tspan></text>
   <text
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-1-4-40-0-9-8"
-     x="62.616753"
+     y="335.81641"
      font-size="8px"
-     y="248.92188">SHIFT</text>
+     x="21.707092"
+     id="text106-6-1-4-1"
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision">INPUT</text>
+  <text
+     xml:space="preserve"
+     id="text2084"
+     style="fill:black;fill-opacity:1;stroke:none;font-family:Arial;font-style:normal;font-weight:bold;font-size:13.33333333px;line-height:1.25;letter-spacing:0px;word-spacing:0px;text-align:center;-inkscape-font-specification:'Arial Bold';font-stretch:normal;font-variant:normal;white-space:pre;shape-inside:url(#rect2086);" />
   <g
-     transform="matrix(0.5,0,0,0.5,-97.245796,54.6738)"
-     id="g6916-0-01">
+     transform="matrix(0.5,0,0,0.5,-131.7458,-33.3262)"
+     id="g6916-2-8">
     <path
        d="m 302.41574,351.65237 -18.18652,10.5"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1307-6-6-6" />
+       id="SvgjsLine1307-6-8-4" />
     <path
        d="m 302.41574,351.65237 -18.09653,8.51557"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1308-2-6-9" />
+       id="SvgjsLine1308-2-9-6" />
     <path
        d="m 302.41574,351.65237 -18.74564,6.97144"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1309-4-0-8" />
+       id="SvgjsLine1309-4-6-2" />
     <path
        d="m 302.41574,351.65237 -19.26324,5.37842"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1310-4-20-0" />
+       id="SvgjsLine1310-4-2-2" />
     <path
        d="m 302.41574,351.65237 -19.64575,3.74762"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1311-0-9-43" />
+       id="SvgjsLine1311-0-7-1" />
     <path
        d="m 302.41574,351.65237 -20.88495,2.1951"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1312-4-8-4" />
+       id="SvgjsLine1312-4-1-7" />
     <path
        d="m 302.41574,351.65237 -19.9956,0.41886"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1313-4-0-0" />
+       id="SvgjsLine1313-4-5-1" />
     <path
        d="M 302.41574,351.65237 282.4552,350.39658"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1314-7-4-1" />
+       id="SvgjsLine1314-7-0-3" />
     <path
        d="m 302.41574,351.65237 -19.78546,-2.92166"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1315-0-7-9" />
+       id="SvgjsLine1315-0-6-6" />
     <path
        d="m 302.41574,351.65237 -19.47159,-4.56701"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1316-9-10-46" />
+       id="SvgjsLine1316-9-1-9" />
     <path
        d="m 302.41574,351.65237 -19.9722,-6.48935"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1317-8-4-1" />
+       id="SvgjsLine1317-8-5-3" />
     <path
        d="m 302.41574,351.65237 -18.43725,-7.7503"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1318-3-7-5" />
+       id="SvgjsLine1318-3-2-7" />
     <path
        d="m 302.41574,351.65237 -17.72406,-9.26593"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1319-2-5-25" />
+       id="SvgjsLine1319-2-0-7" />
     <path
        d="M 302.41574,351.65237 285.52917,340.93585"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1320-0-8-71" />
+       id="SvgjsLine1320-0-7-5" />
     <path
        d="m 302.41574,351.65237 -15.9306,-12.09195"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1321-9-3-3" />
+       id="SvgjsLine1321-9-5-7" />
     <path
        d="M 302.41574,351.65237 286.80969,337.60065"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1322-2-81-3" />
+       id="SvgjsLine1322-2-8-8" />
     <path
        d="M 302.41574,351.65237 288.72479,337.073"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1323-6-8-5" />
+       id="SvgjsLine1323-6-6-4" />
     <path
        d="M 302.41574,351.65237 289.9928,335.97852"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1324-7-7-8" />
+       id="SvgjsLine1324-7-4-8" />
     <path
        d="M 302.41574,351.65237 291.3479,334.99396"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1325-6-1-3" />
+       id="SvgjsLine1325-6-9-6" />
     <path
        d="m 302.41574,351.65237 -9.63507,-17.52609"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1326-9-9-98" />
+       id="SvgjsLine1326-9-7-1" />
     <path
        d="m 302.41574,351.65237 -8.54147,-19.18441"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1327-0-4-5" />
+       id="SvgjsLine1327-0-8-4" />
     <path
        d="m 302.41574,351.65237 -6.57733,-18.88748"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1328-8-1-4" />
+       id="SvgjsLine1328-8-0-4" />
     <path
        d="m 302.41574,351.65237 -4.97378,-19.37161"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1329-3-5-0" />
+       id="SvgjsLine1329-3-4-2" />
     <path
        d="M 302.41574,351.65237 299.08035,331.9325"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1330-1-1-69" />
+       id="SvgjsLine1330-1-0-2" />
     <path
        d="m 302.41574,351.65237 -1.67355,-19.92984"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1331-2-9-2" />
+       id="SvgjsLine1331-2-0-8" />
     <path
        d="M 302.41574,351.65237 V 330.6524"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1332-5-7-67" />
+       id="SvgjsLine1332-5-8-3" />
     <path
        d="m 302.41574,351.65237 1.67355,-19.92984"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1333-0-1-3" />
+       id="SvgjsLine1333-0-9-0" />
     <path
        d="m 302.41574,351.65237 3.33539,-19.71987"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1334-5-5-9" />
+       id="SvgjsLine1334-5-4-3" />
     <path
        d="m 302.41574,351.65237 4.97379,-19.37161"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1335-2-1-5" />
+       id="SvgjsLine1335-2-4-9" />
     <path
        d="m 302.41574,351.65237 6.57733,-18.88748"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1336-1-1-4" />
+       id="SvgjsLine1336-1-8-2" />
     <path
        d="m 302.41574,351.65237 8.54147,-19.18441"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1337-7-5-9" />
+       id="SvgjsLine1337-7-0-8" />
     <path
        d="m 302.41574,351.65237 9.63507,-17.52609"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1338-2-4-9" />
+       id="SvgjsLine1338-2-6-1" />
     <path
        d="m 302.41574,351.65237 11.06784,-16.65841"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1339-8-3-7" />
+       id="SvgjsLine1339-8-7-7" />
     <path
        d="m 302.41574,351.65237 12.42294,-15.67385"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1340-7-72-43" />
+       id="SvgjsLine1340-7-7-8" />
     <path
        d="M 302.41574,351.65237 316.10669,337.073"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1341-5-6-0" />
+       id="SvgjsLine1341-5-3-2" />
     <path
        d="m 302.41574,351.65237 15.60605,-14.05172"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1342-2-2-5" />
+       id="SvgjsLine1342-2-5-9" />
     <path
        d="m 302.41574,351.65237 15.9306,-12.09195"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1343-7-4-5" />
+       id="SvgjsLine1343-7-3-5" />
     <path
        d="m 302.41574,351.65237 16.88657,-10.71652"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1344-0-4-61" />
+       id="SvgjsLine1344-0-3-5" />
     <path
        d="m 302.41574,351.65237 17.72406,-9.26593"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1345-8-7-8" />
+       id="SvgjsLine1345-8-5-5" />
     <path
        d="m 302.41574,351.65237 18.43726,-7.7503"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1346-5-4-2" />
+       id="SvgjsLine1346-5-3-9" />
     <path
        d="m 302.41574,351.65237 19.9722,-6.48935"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1347-0-6-4" />
+       id="SvgjsLine1347-0-7-0" />
     <path
        d="m 302.41574,351.65237 19.47159,-4.56701"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1348-5-1-0" />
+       id="SvgjsLine1348-5-5-3" />
     <path
        d="m 302.41574,351.65237 19.78546,-2.92166"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1349-6-21-03" />
+       id="SvgjsLine1349-6-2-3" />
     <path
        d="m 302.41574,351.65237 19.96054,-1.25579"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1350-1-0-0" />
+       id="SvgjsLine1350-1-5-5" />
     <path
        d="m 302.41574,351.65237 19.99561,0.41886"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1351-5-4-59" />
+       id="SvgjsLine1351-5-7-4" />
     <path
        d="m 302.41574,351.65237 20.88495,2.1951"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1352-4-2-20" />
+       id="SvgjsLine1352-4-8-4" />
     <path
        d="m 302.41574,351.65237 19.64575,3.74762"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1353-2-7-5" />
+       id="SvgjsLine1353-2-0-1" />
     <path
        d="m 302.41574,351.65237 19.26325,5.37842"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1354-5-1-4" />
+       id="SvgjsLine1354-5-3-3" />
     <path
        d="m 302.41574,351.65237 18.74564,6.97144"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1355-6-3-3" />
+       id="SvgjsLine1355-6-5-1" />
     <path
        d="m 302.41574,351.65237 18.09653,8.51557"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1356-6-8-7" />
+       id="SvgjsLine1356-6-6-6" />
     <path
        d="m 302.41574,351.65237 18.18652,10.5"
        style="stroke:#e8b923;stroke-width:0.75"
-       id="SvgjsLine1357-8-07-22" />
+       id="SvgjsLine1357-8-0-1" />
     <path
        d="m 320.41574,351.65237 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18"
        style="fill:#988903;stroke:#583903;stroke-width:0.75"
-       id="SvgjsCircle1358-7-1-6" />
+       id="SvgjsCircle1358-7-7-6" />
   </g>
-  <text
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-1-4-40-0-8-8"
-     x="19.976566"
-     font-size="8px"
-     y="248.14539">FOLD</text>
   <g
-     id="g6916-0-01-1"
-     transform="matrix(0.5,0,0,0.5,-132.2458,54.6738)">
+     id="g6916-2-8-8"
+     transform="matrix(0.5,0,0,0.5,-41.745796,-33.3262)">
     <path
-       id="SvgjsLine1307-6-6-6-5"
+       id="SvgjsLine1307-6-8-4-9"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -18.18652,10.5" />
     <path
-       id="SvgjsLine1308-2-6-9-0"
+       id="SvgjsLine1308-2-9-6-1"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -18.09653,8.51557" />
     <path
-       id="SvgjsLine1309-4-0-8-3"
+       id="SvgjsLine1309-4-6-2-1"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -18.74564,6.97144" />
     <path
-       id="SvgjsLine1310-4-20-0-4"
+       id="SvgjsLine1310-4-2-2-3"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -19.26324,5.37842" />
     <path
-       id="SvgjsLine1311-0-9-43-6"
+       id="SvgjsLine1311-0-7-1-8"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -19.64575,3.74762" />
     <path
-       id="SvgjsLine1312-4-8-4-7"
+       id="SvgjsLine1312-4-1-7-8"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -20.88495,2.1951" />
     <path
-       id="SvgjsLine1313-4-0-0-9"
+       id="SvgjsLine1313-4-5-1-9"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -19.9956,0.41886" />
     <path
-       id="SvgjsLine1314-7-4-1-8"
+       id="SvgjsLine1314-7-0-3-3"
        style="stroke:#e8b923;stroke-width:0.75"
        d="M 302.41574,351.65237 282.4552,350.39658" />
     <path
-       id="SvgjsLine1315-0-7-9-7"
+       id="SvgjsLine1315-0-6-6-6"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -19.78546,-2.92166" />
     <path
-       id="SvgjsLine1316-9-10-46-6"
+       id="SvgjsLine1316-9-1-9-4"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -19.47159,-4.56701" />
     <path
-       id="SvgjsLine1317-8-4-1-6"
+       id="SvgjsLine1317-8-5-3-7"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -19.9722,-6.48935" />
     <path
-       id="SvgjsLine1318-3-7-5-8"
+       id="SvgjsLine1318-3-2-7-6"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -18.43725,-7.7503" />
     <path
-       id="SvgjsLine1319-2-5-25-1"
+       id="SvgjsLine1319-2-0-7-4"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -17.72406,-9.26593" />
     <path
-       id="SvgjsLine1320-0-8-71-4"
+       id="SvgjsLine1320-0-7-5-3"
        style="stroke:#e8b923;stroke-width:0.75"
        d="M 302.41574,351.65237 285.52917,340.93585" />
     <path
-       id="SvgjsLine1321-9-3-3-5"
+       id="SvgjsLine1321-9-5-7-0"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -15.9306,-12.09195" />
     <path
-       id="SvgjsLine1322-2-81-3-2"
+       id="SvgjsLine1322-2-8-8-8"
        style="stroke:#e8b923;stroke-width:0.75"
        d="M 302.41574,351.65237 286.80969,337.60065" />
     <path
-       id="SvgjsLine1323-6-8-5-0"
+       id="SvgjsLine1323-6-6-4-2"
        style="stroke:#e8b923;stroke-width:0.75"
        d="M 302.41574,351.65237 288.72479,337.073" />
     <path
-       id="SvgjsLine1324-7-7-8-4"
+       id="SvgjsLine1324-7-4-8-0"
        style="stroke:#e8b923;stroke-width:0.75"
        d="M 302.41574,351.65237 289.9928,335.97852" />
     <path
-       id="SvgjsLine1325-6-1-3-0"
+       id="SvgjsLine1325-6-9-6-5"
        style="stroke:#e8b923;stroke-width:0.75"
        d="M 302.41574,351.65237 291.3479,334.99396" />
     <path
-       id="SvgjsLine1326-9-9-98-8"
+       id="SvgjsLine1326-9-7-1-3"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -9.63507,-17.52609" />
     <path
-       id="SvgjsLine1327-0-4-5-8"
+       id="SvgjsLine1327-0-8-4-4"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -8.54147,-19.18441" />
     <path
-       id="SvgjsLine1328-8-1-4-5"
+       id="SvgjsLine1328-8-0-4-6"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -6.57733,-18.88748" />
     <path
-       id="SvgjsLine1329-3-5-0-9"
+       id="SvgjsLine1329-3-4-2-6"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -4.97378,-19.37161" />
     <path
-       id="SvgjsLine1330-1-1-69-0"
+       id="SvgjsLine1330-1-0-2-1"
        style="stroke:#e8b923;stroke-width:0.75"
        d="M 302.41574,351.65237 299.08035,331.9325" />
     <path
-       id="SvgjsLine1331-2-9-2-2"
+       id="SvgjsLine1331-2-0-8-7"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 -1.67355,-19.92984" />
     <path
-       id="SvgjsLine1332-5-7-67-6"
+       id="SvgjsLine1332-5-8-3-0"
        style="stroke:#e8b923;stroke-width:0.75"
        d="M 302.41574,351.65237 V 330.6524" />
     <path
-       id="SvgjsLine1333-0-1-3-4"
+       id="SvgjsLine1333-0-9-0-5"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 1.67355,-19.92984" />
     <path
-       id="SvgjsLine1334-5-5-9-3"
+       id="SvgjsLine1334-5-4-3-2"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 3.33539,-19.71987" />
     <path
-       id="SvgjsLine1335-2-1-5-5"
+       id="SvgjsLine1335-2-4-9-7"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 4.97379,-19.37161" />
     <path
-       id="SvgjsLine1336-1-1-4-6"
+       id="SvgjsLine1336-1-8-2-9"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 6.57733,-18.88748" />
     <path
-       id="SvgjsLine1337-7-5-9-6"
+       id="SvgjsLine1337-7-0-8-2"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 8.54147,-19.18441" />
     <path
-       id="SvgjsLine1338-2-4-9-1"
+       id="SvgjsLine1338-2-6-1-9"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 9.63507,-17.52609" />
     <path
-       id="SvgjsLine1339-8-3-7-8"
+       id="SvgjsLine1339-8-7-7-5"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 11.06784,-16.65841" />
     <path
-       id="SvgjsLine1340-7-72-43-5"
+       id="SvgjsLine1340-7-7-8-8"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 12.42294,-15.67385" />
     <path
-       id="SvgjsLine1341-5-6-0-3"
+       id="SvgjsLine1341-5-3-2-2"
        style="stroke:#e8b923;stroke-width:0.75"
        d="M 302.41574,351.65237 316.10669,337.073" />
     <path
-       id="SvgjsLine1342-2-2-5-2"
+       id="SvgjsLine1342-2-5-9-3"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 15.60605,-14.05172" />
     <path
-       id="SvgjsLine1343-7-4-5-1"
+       id="SvgjsLine1343-7-3-5-5"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 15.9306,-12.09195" />
     <path
-       id="SvgjsLine1344-0-4-61-3"
+       id="SvgjsLine1344-0-3-5-9"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 16.88657,-10.71652" />
     <path
-       id="SvgjsLine1345-8-7-8-5"
+       id="SvgjsLine1345-8-5-5-3"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 17.72406,-9.26593" />
     <path
-       id="SvgjsLine1346-5-4-2-9"
+       id="SvgjsLine1346-5-3-9-3"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 18.43726,-7.7503" />
     <path
-       id="SvgjsLine1347-0-6-4-7"
+       id="SvgjsLine1347-0-7-0-8"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 19.9722,-6.48935" />
     <path
-       id="SvgjsLine1348-5-1-0-8"
+       id="SvgjsLine1348-5-5-3-8"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 19.47159,-4.56701" />
     <path
-       id="SvgjsLine1349-6-21-03-3"
+       id="SvgjsLine1349-6-2-3-8"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 19.78546,-2.92166" />
     <path
-       id="SvgjsLine1350-1-0-0-2"
+       id="SvgjsLine1350-1-5-5-0"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 19.96054,-1.25579" />
     <path
-       id="SvgjsLine1351-5-4-59-4"
+       id="SvgjsLine1351-5-7-4-5"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 19.99561,0.41886" />
     <path
-       id="SvgjsLine1352-4-2-20-4"
+       id="SvgjsLine1352-4-8-4-2"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 20.88495,2.1951" />
     <path
-       id="SvgjsLine1353-2-7-5-3"
+       id="SvgjsLine1353-2-0-1-0"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 19.64575,3.74762" />
     <path
-       id="SvgjsLine1354-5-1-4-9"
+       id="SvgjsLine1354-5-3-3-5"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 19.26325,5.37842" />
     <path
-       id="SvgjsLine1355-6-3-3-5"
+       id="SvgjsLine1355-6-5-1-0"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 18.74564,6.97144" />
     <path
-       id="SvgjsLine1356-6-8-7-0"
+       id="SvgjsLine1356-6-6-6-5"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 18.09653,8.51557" />
     <path
-       id="SvgjsLine1357-8-07-22-4"
+       id="SvgjsLine1357-8-0-1-6"
        style="stroke:#e8b923;stroke-width:0.75"
        d="m 302.41574,351.65237 18.18652,10.5" />
     <path
-       id="SvgjsCircle1358-7-1-6-0"
+       id="SvgjsCircle1358-7-7-6-7"
        style="fill:#988903;stroke:#583903;stroke-width:0.75"
        d="m 320.41574,351.65237 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18" />
   </g>
-  <path
-     inkscape:connector-curvature="0"
-     id="rect4936-0-8-4-4-0-4-2-1"
-     d="m 50.25,262.75 h 32.502598 v 32.5026 H 50.25 Z"
-     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-  <path
-     style="fill:#4f2240;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.436419"
-     d="m 34.019487,324.74436 c 0,-0.56909 -0.66425,-1.0355 -1.47928,-1.0355 H 21.182751 c -0.812993,0 -1.479281,0.46641 -1.479281,1.0355 v 12.59855 c 0,0.56909 0.666288,1.0355 1.479281,1.0355 h 11.357456 c 0.81503,0 1.47928,-0.46641 1.47928,-1.0355 z m 0,0"
-     id="path36629"
-     inkscape:connector-curvature="0" />
+  <g
+     id="g6916-2-8-7"
+     transform="matrix(0.5,0,0,0.5,-86.745796,-33.3262)">
+    <path
+       id="SvgjsLine1307-6-8-4-98"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -18.18652,10.5" />
+    <path
+       id="SvgjsLine1308-2-9-6-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -18.09653,8.51557" />
+    <path
+       id="SvgjsLine1309-4-6-2-9"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -18.74564,6.97144" />
+    <path
+       id="SvgjsLine1310-4-2-2-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.26324,5.37842" />
+    <path
+       id="SvgjsLine1311-0-7-1-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.64575,3.74762" />
+    <path
+       id="SvgjsLine1312-4-1-7-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -20.88495,2.1951" />
+    <path
+       id="SvgjsLine1313-4-5-1-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.9956,0.41886" />
+    <path
+       id="SvgjsLine1314-7-0-3-9"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 282.4552,350.39658" />
+    <path
+       id="SvgjsLine1315-0-6-6-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.78546,-2.92166" />
+    <path
+       id="SvgjsLine1316-9-1-9-3"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.47159,-4.56701" />
+    <path
+       id="SvgjsLine1317-8-5-3-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.9722,-6.48935" />
+    <path
+       id="SvgjsLine1318-3-2-7-66"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -18.43725,-7.7503" />
+    <path
+       id="SvgjsLine1319-2-0-7-1"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -17.72406,-9.26593" />
+    <path
+       id="SvgjsLine1320-0-7-5-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 285.52917,340.93585" />
+    <path
+       id="SvgjsLine1321-9-5-7-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -15.9306,-12.09195" />
+    <path
+       id="SvgjsLine1322-2-8-8-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 286.80969,337.60065" />
+    <path
+       id="SvgjsLine1323-6-6-4-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 288.72479,337.073" />
+    <path
+       id="SvgjsLine1324-7-4-8-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 289.9928,335.97852" />
+    <path
+       id="SvgjsLine1325-6-9-6-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 291.3479,334.99396" />
+    <path
+       id="SvgjsLine1326-9-7-1-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -9.63507,-17.52609" />
+    <path
+       id="SvgjsLine1327-0-8-4-9"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -8.54147,-19.18441" />
+    <path
+       id="SvgjsLine1328-8-0-4-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -6.57733,-18.88748" />
+    <path
+       id="SvgjsLine1329-3-4-2-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -4.97378,-19.37161" />
+    <path
+       id="SvgjsLine1330-1-0-2-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 299.08035,331.9325" />
+    <path
+       id="SvgjsLine1331-2-0-8-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -1.67355,-19.92984" />
+    <path
+       id="SvgjsLine1332-5-8-3-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 V 330.6524" />
+    <path
+       id="SvgjsLine1333-0-9-0-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 1.67355,-19.92984" />
+    <path
+       id="SvgjsLine1334-5-4-3-3"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 3.33539,-19.71987" />
+    <path
+       id="SvgjsLine1335-2-4-9-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 4.97379,-19.37161" />
+    <path
+       id="SvgjsLine1336-1-8-2-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 6.57733,-18.88748" />
+    <path
+       id="SvgjsLine1337-7-0-8-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 8.54147,-19.18441" />
+    <path
+       id="SvgjsLine1338-2-6-1-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 9.63507,-17.52609" />
+    <path
+       id="SvgjsLine1339-8-7-7-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 11.06784,-16.65841" />
+    <path
+       id="SvgjsLine1340-7-7-8-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 12.42294,-15.67385" />
+    <path
+       id="SvgjsLine1341-5-3-2-3"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 316.10669,337.073" />
+    <path
+       id="SvgjsLine1342-2-5-9-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 15.60605,-14.05172" />
+    <path
+       id="SvgjsLine1343-7-3-5-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 15.9306,-12.09195" />
+    <path
+       id="SvgjsLine1344-0-3-5-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 16.88657,-10.71652" />
+    <path
+       id="SvgjsLine1345-8-5-5-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 17.72406,-9.26593" />
+    <path
+       id="SvgjsLine1346-5-3-9-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 18.43726,-7.7503" />
+    <path
+       id="SvgjsLine1347-0-7-0-3"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.9722,-6.48935" />
+    <path
+       id="SvgjsLine1348-5-5-3-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.47159,-4.56701" />
+    <path
+       id="SvgjsLine1349-6-2-3-9"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.78546,-2.92166" />
+    <path
+       id="SvgjsLine1350-1-5-5-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.96054,-1.25579" />
+    <path
+       id="SvgjsLine1351-5-7-4-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.99561,0.41886" />
+    <path
+       id="SvgjsLine1352-4-8-4-27"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 20.88495,2.1951" />
+    <path
+       id="SvgjsLine1353-2-0-1-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.64575,3.74762" />
+    <path
+       id="SvgjsLine1354-5-3-3-51"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.26325,5.37842" />
+    <path
+       id="SvgjsLine1355-6-5-1-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 18.74564,6.97144" />
+    <path
+       id="SvgjsLine1356-6-6-6-3"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 18.09653,8.51557" />
+    <path
+       id="SvgjsLine1357-8-0-1-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 18.18652,10.5" />
+    <path
+       id="SvgjsCircle1358-7-7-6-4"
+       style="fill:#988903;stroke:#583903;stroke-width:0.75"
+       d="m 320.41574,351.65237 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18" />
+  </g>
+  <g
+     id="g6916-2-8-9"
+     transform="matrix(0.5,0,0,0.5,-131.7458,86.6738)">
+    <path
+       id="SvgjsLine1307-6-8-4-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -18.18652,10.5" />
+    <path
+       id="SvgjsLine1308-2-9-6-3"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -18.09653,8.51557" />
+    <path
+       id="SvgjsLine1309-4-6-2-92"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -18.74564,6.97144" />
+    <path
+       id="SvgjsLine1310-4-2-2-62"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.26324,5.37842" />
+    <path
+       id="SvgjsLine1311-0-7-1-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.64575,3.74762" />
+    <path
+       id="SvgjsLine1312-4-1-7-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -20.88495,2.1951" />
+    <path
+       id="SvgjsLine1313-4-5-1-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.9956,0.41886" />
+    <path
+       id="SvgjsLine1314-7-0-3-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 282.4552,350.39658" />
+    <path
+       id="SvgjsLine1315-0-6-6-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.78546,-2.92166" />
+    <path
+       id="SvgjsLine1316-9-1-9-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.47159,-4.56701" />
+    <path
+       id="SvgjsLine1317-8-5-3-76"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.9722,-6.48935" />
+    <path
+       id="SvgjsLine1318-3-2-7-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -18.43725,-7.7503" />
+    <path
+       id="SvgjsLine1319-2-0-7-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -17.72406,-9.26593" />
+    <path
+       id="SvgjsLine1320-0-7-5-47"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 285.52917,340.93585" />
+    <path
+       id="SvgjsLine1321-9-5-7-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -15.9306,-12.09195" />
+    <path
+       id="SvgjsLine1322-2-8-8-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 286.80969,337.60065" />
+    <path
+       id="SvgjsLine1323-6-6-4-9"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 288.72479,337.073" />
+    <path
+       id="SvgjsLine1324-7-4-8-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 289.9928,335.97852" />
+    <path
+       id="SvgjsLine1325-6-9-6-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 291.3479,334.99396" />
+    <path
+       id="SvgjsLine1326-9-7-1-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -9.63507,-17.52609" />
+    <path
+       id="SvgjsLine1327-0-8-4-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -8.54147,-19.18441" />
+    <path
+       id="SvgjsLine1328-8-0-4-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -6.57733,-18.88748" />
+    <path
+       id="SvgjsLine1329-3-4-2-3"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -4.97378,-19.37161" />
+    <path
+       id="SvgjsLine1330-1-0-2-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 299.08035,331.9325" />
+    <path
+       id="SvgjsLine1331-2-0-8-3"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -1.67355,-19.92984" />
+    <path
+       id="SvgjsLine1332-5-8-3-1"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 V 330.6524" />
+    <path
+       id="SvgjsLine1333-0-9-0-54"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 1.67355,-19.92984" />
+    <path
+       id="SvgjsLine1334-5-4-3-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 3.33539,-19.71987" />
+    <path
+       id="SvgjsLine1335-2-4-9-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 4.97379,-19.37161" />
+    <path
+       id="SvgjsLine1336-1-8-2-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 6.57733,-18.88748" />
+    <path
+       id="SvgjsLine1337-7-0-8-1"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 8.54147,-19.18441" />
+    <path
+       id="SvgjsLine1338-2-6-1-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 9.63507,-17.52609" />
+    <path
+       id="SvgjsLine1339-8-7-7-1"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 11.06784,-16.65841" />
+    <path
+       id="SvgjsLine1340-7-7-8-3"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 12.42294,-15.67385" />
+    <path
+       id="SvgjsLine1341-5-3-2-20"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 316.10669,337.073" />
+    <path
+       id="SvgjsLine1342-2-5-9-38"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 15.60605,-14.05172" />
+    <path
+       id="SvgjsLine1343-7-3-5-50"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 15.9306,-12.09195" />
+    <path
+       id="SvgjsLine1344-0-3-5-28"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 16.88657,-10.71652" />
+    <path
+       id="SvgjsLine1345-8-5-5-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 17.72406,-9.26593" />
+    <path
+       id="SvgjsLine1346-5-3-9-9"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 18.43726,-7.7503" />
+    <path
+       id="SvgjsLine1347-0-7-0-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.9722,-6.48935" />
+    <path
+       id="SvgjsLine1348-5-5-3-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.47159,-4.56701" />
+    <path
+       id="SvgjsLine1349-6-2-3-1"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.78546,-2.92166" />
+    <path
+       id="SvgjsLine1350-1-5-5-68"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.96054,-1.25579" />
+    <path
+       id="SvgjsLine1351-5-7-4-79"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.99561,0.41886" />
+    <path
+       id="SvgjsLine1352-4-8-4-24"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 20.88495,2.1951" />
+    <path
+       id="SvgjsLine1353-2-0-1-3"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.64575,3.74762" />
+    <path
+       id="SvgjsLine1354-5-3-3-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.26325,5.37842" />
+    <path
+       id="SvgjsLine1355-6-5-1-50"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 18.74564,6.97144" />
+    <path
+       id="SvgjsLine1356-6-6-6-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 18.09653,8.51557" />
+    <path
+       id="SvgjsLine1357-8-0-1-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 18.18652,10.5" />
+    <path
+       id="SvgjsCircle1358-7-7-6-1"
+       style="fill:#988903;stroke:#583903;stroke-width:0.75"
+       d="m 320.41574,351.65237 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18" />
+  </g>
+  <g
+     transform="matrix(0.5,0,0,0.5,-131.7458,26.6738)"
+     id="g6916-2-8-9-4">
+    <path
+       d="m 302.41574,351.65237 -18.18652,10.5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1307-6-8-4-4-3" />
+    <path
+       d="m 302.41574,351.65237 -18.09653,8.51557"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1308-2-9-6-3-4" />
+    <path
+       d="m 302.41574,351.65237 -18.74564,6.97144"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1309-4-6-2-92-3" />
+    <path
+       d="m 302.41574,351.65237 -19.26324,5.37842"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1310-4-2-2-62-7" />
+    <path
+       d="m 302.41574,351.65237 -19.64575,3.74762"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1311-0-7-1-0-3" />
+    <path
+       d="m 302.41574,351.65237 -20.88495,2.1951"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1312-4-1-7-5-5" />
+    <path
+       d="m 302.41574,351.65237 -19.9956,0.41886"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1313-4-5-1-7-6" />
+    <path
+       d="M 302.41574,351.65237 282.4552,350.39658"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1314-7-0-3-8-6" />
+    <path
+       d="m 302.41574,351.65237 -19.78546,-2.92166"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1315-0-6-6-7-3" />
+    <path
+       d="m 302.41574,351.65237 -19.47159,-4.56701"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1316-9-1-9-0-5" />
+    <path
+       d="m 302.41574,351.65237 -19.9722,-6.48935"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1317-8-5-3-76-7" />
+    <path
+       d="m 302.41574,351.65237 -18.43725,-7.7503"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1318-3-2-7-0-3" />
+    <path
+       d="m 302.41574,351.65237 -17.72406,-9.26593"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1319-2-0-7-8-5" />
+    <path
+       d="M 302.41574,351.65237 285.52917,340.93585"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1320-0-7-5-47-9" />
+    <path
+       d="m 302.41574,351.65237 -15.9306,-12.09195"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1321-9-5-7-4-7" />
+    <path
+       d="M 302.41574,351.65237 286.80969,337.60065"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1322-2-8-8-7-5" />
+    <path
+       d="M 302.41574,351.65237 288.72479,337.073"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1323-6-6-4-9-6" />
+    <path
+       d="M 302.41574,351.65237 289.9928,335.97852"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1324-7-4-8-7-2" />
+    <path
+       d="M 302.41574,351.65237 291.3479,334.99396"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1325-6-9-6-4-5" />
+    <path
+       d="m 302.41574,351.65237 -9.63507,-17.52609"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1326-9-7-1-7-3" />
+    <path
+       d="m 302.41574,351.65237 -8.54147,-19.18441"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1327-0-8-4-7-5" />
+    <path
+       d="m 302.41574,351.65237 -6.57733,-18.88748"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1328-8-0-4-7-6" />
+    <path
+       d="m 302.41574,351.65237 -4.97378,-19.37161"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1329-3-4-2-3-7" />
+    <path
+       d="M 302.41574,351.65237 299.08035,331.9325"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1330-1-0-2-5-3" />
+    <path
+       d="m 302.41574,351.65237 -1.67355,-19.92984"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1331-2-0-8-3-2" />
+    <path
+       d="M 302.41574,351.65237 V 330.6524"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1332-5-8-3-1-2" />
+    <path
+       d="m 302.41574,351.65237 1.67355,-19.92984"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1333-0-9-0-54-8" />
+    <path
+       d="m 302.41574,351.65237 3.33539,-19.71987"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1334-5-4-3-8-8" />
+    <path
+       d="m 302.41574,351.65237 4.97379,-19.37161"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1335-2-4-9-6-3" />
+    <path
+       d="m 302.41574,351.65237 6.57733,-18.88748"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1336-1-8-2-2-7" />
+    <path
+       d="m 302.41574,351.65237 8.54147,-19.18441"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1337-7-0-8-1-5" />
+    <path
+       d="m 302.41574,351.65237 9.63507,-17.52609"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1338-2-6-1-8-6" />
+    <path
+       d="m 302.41574,351.65237 11.06784,-16.65841"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1339-8-7-7-1-7" />
+    <path
+       d="m 302.41574,351.65237 12.42294,-15.67385"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1340-7-7-8-3-9" />
+    <path
+       d="M 302.41574,351.65237 316.10669,337.073"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1341-5-3-2-20-8" />
+    <path
+       d="m 302.41574,351.65237 15.60605,-14.05172"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1342-2-5-9-38-9" />
+    <path
+       d="m 302.41574,351.65237 15.9306,-12.09195"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1343-7-3-5-50-0" />
+    <path
+       d="m 302.41574,351.65237 16.88657,-10.71652"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1344-0-3-5-28-5" />
+    <path
+       d="m 302.41574,351.65237 17.72406,-9.26593"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1345-8-5-5-0-9" />
+    <path
+       d="m 302.41574,351.65237 18.43726,-7.7503"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1346-5-3-9-9-5" />
+    <path
+       d="m 302.41574,351.65237 19.9722,-6.48935"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1347-0-7-0-7-7" />
+    <path
+       d="m 302.41574,351.65237 19.47159,-4.56701"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1348-5-5-3-7-0" />
+    <path
+       d="m 302.41574,351.65237 19.78546,-2.92166"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1349-6-2-3-1-1" />
+    <path
+       d="m 302.41574,351.65237 19.96054,-1.25579"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1350-1-5-5-68-2" />
+    <path
+       d="m 302.41574,351.65237 19.99561,0.41886"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1351-5-7-4-79-4" />
+    <path
+       d="m 302.41574,351.65237 20.88495,2.1951"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1352-4-8-4-24-8" />
+    <path
+       d="m 302.41574,351.65237 19.64575,3.74762"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1353-2-0-1-3-9" />
+    <path
+       d="m 302.41574,351.65237 19.26325,5.37842"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1354-5-3-3-8-2" />
+    <path
+       d="m 302.41574,351.65237 18.74564,6.97144"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1355-6-5-1-50-6" />
+    <path
+       d="m 302.41574,351.65237 18.09653,8.51557"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1356-6-6-6-0-0" />
+    <path
+       d="m 302.41574,351.65237 18.18652,10.5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1357-8-0-1-5-0" />
+    <path
+       d="m 320.41574,351.65237 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18"
+       style="fill:#988903;stroke:#583903;stroke-width:0.75"
+       id="SvgjsCircle1358-7-7-6-1-4" />
+  </g>
+  <g
+     id="g6916-2-8-9-4-0"
+     transform="matrix(0.5,0,0,0.5,-86.745796,26.6738)">
+    <path
+       id="SvgjsLine1307-6-8-4-4-3-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -18.18652,10.5" />
+    <path
+       id="SvgjsLine1308-2-9-6-3-4-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -18.09653,8.51557" />
+    <path
+       id="SvgjsLine1309-4-6-2-92-3-1"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -18.74564,6.97144" />
+    <path
+       id="SvgjsLine1310-4-2-2-62-7-1"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.26324,5.37842" />
+    <path
+       id="SvgjsLine1311-0-7-1-0-3-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.64575,3.74762" />
+    <path
+       id="SvgjsLine1312-4-1-7-5-5-3"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -20.88495,2.1951" />
+    <path
+       id="SvgjsLine1313-4-5-1-7-6-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.9956,0.41886" />
+    <path
+       id="SvgjsLine1314-7-0-3-8-6-9"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 282.4552,350.39658" />
+    <path
+       id="SvgjsLine1315-0-6-6-7-3-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.78546,-2.92166" />
+    <path
+       id="SvgjsLine1316-9-1-9-0-5-1"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.47159,-4.56701" />
+    <path
+       id="SvgjsLine1317-8-5-3-76-7-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.9722,-6.48935" />
+    <path
+       id="SvgjsLine1318-3-2-7-0-3-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -18.43725,-7.7503" />
+    <path
+       id="SvgjsLine1319-2-0-7-8-5-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -17.72406,-9.26593" />
+    <path
+       id="SvgjsLine1320-0-7-5-47-9-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 285.52917,340.93585" />
+    <path
+       id="SvgjsLine1321-9-5-7-4-7-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -15.9306,-12.09195" />
+    <path
+       id="SvgjsLine1322-2-8-8-7-5-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 286.80969,337.60065" />
+    <path
+       id="SvgjsLine1323-6-6-4-9-6-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 288.72479,337.073" />
+    <path
+       id="SvgjsLine1324-7-4-8-7-2-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 289.9928,335.97852" />
+    <path
+       id="SvgjsLine1325-6-9-6-4-5-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 291.3479,334.99396" />
+    <path
+       id="SvgjsLine1326-9-7-1-7-3-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -9.63507,-17.52609" />
+    <path
+       id="SvgjsLine1327-0-8-4-7-5-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -8.54147,-19.18441" />
+    <path
+       id="SvgjsLine1328-8-0-4-7-6-9"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -6.57733,-18.88748" />
+    <path
+       id="SvgjsLine1329-3-4-2-3-7-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -4.97378,-19.37161" />
+    <path
+       id="SvgjsLine1330-1-0-2-5-3-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 299.08035,331.9325" />
+    <path
+       id="SvgjsLine1331-2-0-8-3-2-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -1.67355,-19.92984" />
+    <path
+       id="SvgjsLine1332-5-8-3-1-2-1"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 V 330.6524" />
+    <path
+       id="SvgjsLine1333-0-9-0-54-8-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 1.67355,-19.92984" />
+    <path
+       id="SvgjsLine1334-5-4-3-8-8-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 3.33539,-19.71987" />
+    <path
+       id="SvgjsLine1335-2-4-9-6-3-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 4.97379,-19.37161" />
+    <path
+       id="SvgjsLine1336-1-8-2-2-7-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 6.57733,-18.88748" />
+    <path
+       id="SvgjsLine1337-7-0-8-1-5-3"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 8.54147,-19.18441" />
+    <path
+       id="SvgjsLine1338-2-6-1-8-6-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 9.63507,-17.52609" />
+    <path
+       id="SvgjsLine1339-8-7-7-1-7-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 11.06784,-16.65841" />
+    <path
+       id="SvgjsLine1340-7-7-8-3-9-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 12.42294,-15.67385" />
+    <path
+       id="SvgjsLine1341-5-3-2-20-8-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 316.10669,337.073" />
+    <path
+       id="SvgjsLine1342-2-5-9-38-9-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 15.60605,-14.05172" />
+    <path
+       id="SvgjsLine1343-7-3-5-50-0-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 15.9306,-12.09195" />
+    <path
+       id="SvgjsLine1344-0-3-5-28-5-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 16.88657,-10.71652" />
+    <path
+       id="SvgjsLine1345-8-5-5-0-9-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 17.72406,-9.26593" />
+    <path
+       id="SvgjsLine1346-5-3-9-9-5-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 18.43726,-7.7503" />
+    <path
+       id="SvgjsLine1347-0-7-0-7-7-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.9722,-6.48935" />
+    <path
+       id="SvgjsLine1348-5-5-3-7-0-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.47159,-4.56701" />
+    <path
+       id="SvgjsLine1349-6-2-3-1-1-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.78546,-2.92166" />
+    <path
+       id="SvgjsLine1350-1-5-5-68-2-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.96054,-1.25579" />
+    <path
+       id="SvgjsLine1351-5-7-4-79-4-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.99561,0.41886" />
+    <path
+       id="SvgjsLine1352-4-8-4-24-8-9"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 20.88495,2.1951" />
+    <path
+       id="SvgjsLine1353-2-0-1-3-9-3"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.64575,3.74762" />
+    <path
+       id="SvgjsLine1354-5-3-3-8-2-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.26325,5.37842" />
+    <path
+       id="SvgjsLine1355-6-5-1-50-6-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 18.74564,6.97144" />
+    <path
+       id="SvgjsLine1356-6-6-6-0-0-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 18.09653,8.51557" />
+    <path
+       id="SvgjsLine1357-8-0-1-5-0-1"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 18.18652,10.5" />
+    <path
+       id="SvgjsCircle1358-7-7-6-1-4-3"
+       style="fill:#988903;stroke:#583903;stroke-width:0.75"
+       d="m 320.41574,351.65237 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18" />
+  </g>
+  <g
+     id="g6916-2-8-9-4-1"
+     transform="matrix(0.5,0,0,0.5,-86.745796,86.6738)">
+    <path
+       id="SvgjsLine1307-6-8-4-4-3-1"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -18.18652,10.5" />
+    <path
+       id="SvgjsLine1308-2-9-6-3-4-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -18.09653,8.51557" />
+    <path
+       id="SvgjsLine1309-4-6-2-92-3-9"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -18.74564,6.97144" />
+    <path
+       id="SvgjsLine1310-4-2-2-62-7-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.26324,5.37842" />
+    <path
+       id="SvgjsLine1311-0-7-1-0-3-3"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.64575,3.74762" />
+    <path
+       id="SvgjsLine1312-4-1-7-5-5-9"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -20.88495,2.1951" />
+    <path
+       id="SvgjsLine1313-4-5-1-7-6-75"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.9956,0.41886" />
+    <path
+       id="SvgjsLine1314-7-0-3-8-6-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 282.4552,350.39658" />
+    <path
+       id="SvgjsLine1315-0-6-6-7-3-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.78546,-2.92166" />
+    <path
+       id="SvgjsLine1316-9-1-9-0-5-9"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.47159,-4.56701" />
+    <path
+       id="SvgjsLine1317-8-5-3-76-7-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -19.9722,-6.48935" />
+    <path
+       id="SvgjsLine1318-3-2-7-0-3-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -18.43725,-7.7503" />
+    <path
+       id="SvgjsLine1319-2-0-7-8-5-84"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -17.72406,-9.26593" />
+    <path
+       id="SvgjsLine1320-0-7-5-47-9-1"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 285.52917,340.93585" />
+    <path
+       id="SvgjsLine1321-9-5-7-4-7-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -15.9306,-12.09195" />
+    <path
+       id="SvgjsLine1322-2-8-8-7-5-08"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 286.80969,337.60065" />
+    <path
+       id="SvgjsLine1323-6-6-4-9-6-1"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 288.72479,337.073" />
+    <path
+       id="SvgjsLine1324-7-4-8-7-2-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 289.9928,335.97852" />
+    <path
+       id="SvgjsLine1325-6-9-6-4-5-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 291.3479,334.99396" />
+    <path
+       id="SvgjsLine1326-9-7-1-7-3-3"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -9.63507,-17.52609" />
+    <path
+       id="SvgjsLine1327-0-8-4-7-5-87"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -8.54147,-19.18441" />
+    <path
+       id="SvgjsLine1328-8-0-4-7-6-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -6.57733,-18.88748" />
+    <path
+       id="SvgjsLine1329-3-4-2-3-7-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -4.97378,-19.37161" />
+    <path
+       id="SvgjsLine1330-1-0-2-5-3-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 299.08035,331.9325" />
+    <path
+       id="SvgjsLine1331-2-0-8-3-2-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 -1.67355,-19.92984" />
+    <path
+       id="SvgjsLine1332-5-8-3-1-2-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 V 330.6524" />
+    <path
+       id="SvgjsLine1333-0-9-0-54-8-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 1.67355,-19.92984" />
+    <path
+       id="SvgjsLine1334-5-4-3-8-8-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 3.33539,-19.71987" />
+    <path
+       id="SvgjsLine1335-2-4-9-6-3-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 4.97379,-19.37161" />
+    <path
+       id="SvgjsLine1336-1-8-2-2-7-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 6.57733,-18.88748" />
+    <path
+       id="SvgjsLine1337-7-0-8-1-5-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 8.54147,-19.18441" />
+    <path
+       id="SvgjsLine1338-2-6-1-8-6-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 9.63507,-17.52609" />
+    <path
+       id="SvgjsLine1339-8-7-7-1-7-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 11.06784,-16.65841" />
+    <path
+       id="SvgjsLine1340-7-7-8-3-9-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 12.42294,-15.67385" />
+    <path
+       id="SvgjsLine1341-5-3-2-20-8-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="M 302.41574,351.65237 316.10669,337.073" />
+    <path
+       id="SvgjsLine1342-2-5-9-38-9-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 15.60605,-14.05172" />
+    <path
+       id="SvgjsLine1343-7-3-5-50-0-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 15.9306,-12.09195" />
+    <path
+       id="SvgjsLine1344-0-3-5-28-5-40"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 16.88657,-10.71652" />
+    <path
+       id="SvgjsLine1345-8-5-5-0-9-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 17.72406,-9.26593" />
+    <path
+       id="SvgjsLine1346-5-3-9-9-5-8"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 18.43726,-7.7503" />
+    <path
+       id="SvgjsLine1347-0-7-0-7-7-9"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.9722,-6.48935" />
+    <path
+       id="SvgjsLine1348-5-5-3-7-0-1"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.47159,-4.56701" />
+    <path
+       id="SvgjsLine1349-6-2-3-1-1-3"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.78546,-2.92166" />
+    <path
+       id="SvgjsLine1350-1-5-5-68-2-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.96054,-1.25579" />
+    <path
+       id="SvgjsLine1351-5-7-4-79-4-2"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.99561,0.41886" />
+    <path
+       id="SvgjsLine1352-4-8-4-24-8-4"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 20.88495,2.1951" />
+    <path
+       id="SvgjsLine1353-2-0-1-3-9-6"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.64575,3.74762" />
+    <path
+       id="SvgjsLine1354-5-3-3-8-2-0"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 19.26325,5.37842" />
+    <path
+       id="SvgjsLine1355-6-5-1-50-6-7"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 18.74564,6.97144" />
+    <path
+       id="SvgjsLine1356-6-6-6-0-0-5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 18.09653,8.51557" />
+    <path
+       id="SvgjsLine1357-8-0-1-5-0-9"
+       style="stroke:#e8b923;stroke-width:0.75"
+       d="m 302.41574,351.65237 18.18652,10.5" />
+    <path
+       id="SvgjsCircle1358-7-7-6-1-4-1"
+       style="fill:#988903;stroke:#583903;stroke-width:0.75"
+       d="m 320.41574,351.65237 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18" />
+  </g>
+  <g
+     transform="matrix(0.5,0,0,0.5,3.2542041,26.6738)"
+     id="g6916-2-8-9-4-0-5">
+    <path
+       d="m 302.41574,351.65237 -18.18652,10.5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1307-6-8-4-4-3-4-2" />
+    <path
+       d="m 302.41574,351.65237 -18.09653,8.51557"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1308-2-9-6-3-4-8-2" />
+    <path
+       d="m 302.41574,351.65237 -18.74564,6.97144"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1309-4-6-2-92-3-1-3" />
+    <path
+       d="m 302.41574,351.65237 -19.26324,5.37842"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1310-4-2-2-62-7-1-9" />
+    <path
+       d="m 302.41574,351.65237 -19.64575,3.74762"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1311-0-7-1-0-3-7-8" />
+    <path
+       d="m 302.41574,351.65237 -20.88495,2.1951"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1312-4-1-7-5-5-3-2" />
+    <path
+       d="m 302.41574,351.65237 -19.9956,0.41886"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1313-4-5-1-7-6-7-7" />
+    <path
+       d="M 302.41574,351.65237 282.4552,350.39658"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1314-7-0-3-8-6-9-0" />
+    <path
+       d="m 302.41574,351.65237 -19.78546,-2.92166"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1315-0-6-6-7-3-5-1" />
+    <path
+       d="m 302.41574,351.65237 -19.47159,-4.56701"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1316-9-1-9-0-5-1-0" />
+    <path
+       d="m 302.41574,351.65237 -19.9722,-6.48935"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1317-8-5-3-76-7-7-8" />
+    <path
+       d="m 302.41574,351.65237 -18.43725,-7.7503"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1318-3-2-7-0-3-7-6" />
+    <path
+       d="m 302.41574,351.65237 -17.72406,-9.26593"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1319-2-0-7-8-5-8-8" />
+    <path
+       d="M 302.41574,351.65237 285.52917,340.93585"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1320-0-7-5-47-9-7-8" />
+    <path
+       d="m 302.41574,351.65237 -15.9306,-12.09195"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1321-9-5-7-4-7-4-0" />
+    <path
+       d="M 302.41574,351.65237 286.80969,337.60065"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1322-2-8-8-7-5-0-3" />
+    <path
+       d="M 302.41574,351.65237 288.72479,337.073"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1323-6-6-4-9-6-0-5" />
+    <path
+       d="M 302.41574,351.65237 289.9928,335.97852"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1324-7-4-8-7-2-8-9" />
+    <path
+       d="M 302.41574,351.65237 291.3479,334.99396"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1325-6-9-6-4-5-2-2" />
+    <path
+       d="m 302.41574,351.65237 -9.63507,-17.52609"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1326-9-7-1-7-3-7-8" />
+    <path
+       d="m 302.41574,351.65237 -8.54147,-19.18441"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1327-0-8-4-7-5-8-6" />
+    <path
+       d="m 302.41574,351.65237 -6.57733,-18.88748"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1328-8-0-4-7-6-9-8" />
+    <path
+       d="m 302.41574,351.65237 -4.97378,-19.37161"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1329-3-4-2-3-7-8-4" />
+    <path
+       d="M 302.41574,351.65237 299.08035,331.9325"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1330-1-0-2-5-3-8-6" />
+    <path
+       d="m 302.41574,351.65237 -1.67355,-19.92984"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1331-2-0-8-3-2-2-6" />
+    <path
+       d="M 302.41574,351.65237 V 330.6524"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1332-5-8-3-1-2-1-0" />
+    <path
+       d="m 302.41574,351.65237 1.67355,-19.92984"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1333-0-9-0-54-8-0-2" />
+    <path
+       d="m 302.41574,351.65237 3.33539,-19.71987"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1334-5-4-3-8-8-8-9" />
+    <path
+       d="m 302.41574,351.65237 4.97379,-19.37161"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1335-2-4-9-6-3-4-9" />
+    <path
+       d="m 302.41574,351.65237 6.57733,-18.88748"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1336-1-8-2-2-7-2-1" />
+    <path
+       d="m 302.41574,351.65237 8.54147,-19.18441"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1337-7-0-8-1-5-3-2" />
+    <path
+       d="m 302.41574,351.65237 9.63507,-17.52609"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1338-2-6-1-8-6-0-9" />
+    <path
+       d="m 302.41574,351.65237 11.06784,-16.65841"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1339-8-7-7-1-7-4-0" />
+    <path
+       d="m 302.41574,351.65237 12.42294,-15.67385"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1340-7-7-8-3-9-5-8" />
+    <path
+       d="M 302.41574,351.65237 316.10669,337.073"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1341-5-3-2-20-8-0-6" />
+    <path
+       d="m 302.41574,351.65237 15.60605,-14.05172"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1342-2-5-9-38-9-4-2" />
+    <path
+       d="m 302.41574,351.65237 15.9306,-12.09195"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1343-7-3-5-50-0-6-0" />
+    <path
+       d="m 302.41574,351.65237 16.88657,-10.71652"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1344-0-3-5-28-5-4-8" />
+    <path
+       d="m 302.41574,351.65237 17.72406,-9.26593"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1345-8-5-5-0-9-0-6" />
+    <path
+       d="m 302.41574,351.65237 18.43726,-7.7503"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1346-5-3-9-9-5-2-2" />
+    <path
+       d="m 302.41574,351.65237 19.9722,-6.48935"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1347-0-7-0-7-7-6-2" />
+    <path
+       d="m 302.41574,351.65237 19.47159,-4.56701"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1348-5-5-3-7-0-6-0" />
+    <path
+       d="m 302.41574,351.65237 19.78546,-2.92166"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1349-6-2-3-1-1-2-2" />
+    <path
+       d="m 302.41574,351.65237 19.96054,-1.25579"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1350-1-5-5-68-2-4-0" />
+    <path
+       d="m 302.41574,351.65237 19.99561,0.41886"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1351-5-7-4-79-4-0-6" />
+    <path
+       d="m 302.41574,351.65237 20.88495,2.1951"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1352-4-8-4-24-8-9-3" />
+    <path
+       d="m 302.41574,351.65237 19.64575,3.74762"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1353-2-0-1-3-9-3-0" />
+    <path
+       d="m 302.41574,351.65237 19.26325,5.37842"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1354-5-3-3-8-2-2-5" />
+    <path
+       d="m 302.41574,351.65237 18.74564,6.97144"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1355-6-5-1-50-6-2-8" />
+    <path
+       d="m 302.41574,351.65237 18.09653,8.51557"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1356-6-6-6-0-0-8-4" />
+    <path
+       d="m 302.41574,351.65237 18.18652,10.5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1357-8-0-1-5-0-1-9" />
+    <path
+       d="m 320.41574,351.65237 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18"
+       style="fill:#988903;stroke:#583903;stroke-width:0.75"
+       id="SvgjsCircle1358-7-7-6-1-4-3-3" />
+  </g>
+  <g
+     transform="matrix(0.5,0,0,0.5,43.254204,26.6738)"
+     id="g6916-2-8-9-4-0-4">
+    <path
+       d="m 302.41574,351.65237 -18.18652,10.5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1307-6-8-4-4-3-4-27" />
+    <path
+       d="m 302.41574,351.65237 -18.09653,8.51557"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1308-2-9-6-3-4-8-7" />
+    <path
+       d="m 302.41574,351.65237 -18.74564,6.97144"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1309-4-6-2-92-3-1-7" />
+    <path
+       d="m 302.41574,351.65237 -19.26324,5.37842"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1310-4-2-2-62-7-1-6" />
+    <path
+       d="m 302.41574,351.65237 -19.64575,3.74762"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1311-0-7-1-0-3-7-4" />
+    <path
+       d="m 302.41574,351.65237 -20.88495,2.1951"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1312-4-1-7-5-5-3-1" />
+    <path
+       d="m 302.41574,351.65237 -19.9956,0.41886"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1313-4-5-1-7-6-7-4" />
+    <path
+       d="M 302.41574,351.65237 282.4552,350.39658"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1314-7-0-3-8-6-9-9" />
+    <path
+       d="m 302.41574,351.65237 -19.78546,-2.92166"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1315-0-6-6-7-3-5-5" />
+    <path
+       d="m 302.41574,351.65237 -19.47159,-4.56701"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1316-9-1-9-0-5-1-5" />
+    <path
+       d="m 302.41574,351.65237 -19.9722,-6.48935"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1317-8-5-3-76-7-7-81" />
+    <path
+       d="m 302.41574,351.65237 -18.43725,-7.7503"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1318-3-2-7-0-3-7-4" />
+    <path
+       d="m 302.41574,351.65237 -17.72406,-9.26593"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1319-2-0-7-8-5-8-3" />
+    <path
+       d="M 302.41574,351.65237 285.52917,340.93585"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1320-0-7-5-47-9-7-0" />
+    <path
+       d="m 302.41574,351.65237 -15.9306,-12.09195"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1321-9-5-7-4-7-4-8" />
+    <path
+       d="M 302.41574,351.65237 286.80969,337.60065"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1322-2-8-8-7-5-0-7" />
+    <path
+       d="M 302.41574,351.65237 288.72479,337.073"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1323-6-6-4-9-6-0-8" />
+    <path
+       d="M 302.41574,351.65237 289.9928,335.97852"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1324-7-4-8-7-2-8-91" />
+    <path
+       d="M 302.41574,351.65237 291.3479,334.99396"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1325-6-9-6-4-5-2-3" />
+    <path
+       d="m 302.41574,351.65237 -9.63507,-17.52609"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1326-9-7-1-7-3-7-4" />
+    <path
+       d="m 302.41574,351.65237 -8.54147,-19.18441"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1327-0-8-4-7-5-8-9" />
+    <path
+       d="m 302.41574,351.65237 -6.57733,-18.88748"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1328-8-0-4-7-6-9-86" />
+    <path
+       d="m 302.41574,351.65237 -4.97378,-19.37161"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1329-3-4-2-3-7-8-1" />
+    <path
+       d="M 302.41574,351.65237 299.08035,331.9325"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1330-1-0-2-5-3-8-8" />
+    <path
+       d="m 302.41574,351.65237 -1.67355,-19.92984"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1331-2-0-8-3-2-2-5" />
+    <path
+       d="M 302.41574,351.65237 V 330.6524"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1332-5-8-3-1-2-1-09" />
+    <path
+       d="m 302.41574,351.65237 1.67355,-19.92984"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1333-0-9-0-54-8-0-3" />
+    <path
+       d="m 302.41574,351.65237 3.33539,-19.71987"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1334-5-4-3-8-8-8-4" />
+    <path
+       d="m 302.41574,351.65237 4.97379,-19.37161"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1335-2-4-9-6-3-4-1" />
+    <path
+       d="m 302.41574,351.65237 6.57733,-18.88748"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1336-1-8-2-2-7-2-3" />
+    <path
+       d="m 302.41574,351.65237 8.54147,-19.18441"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1337-7-0-8-1-5-3-6" />
+    <path
+       d="m 302.41574,351.65237 9.63507,-17.52609"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1338-2-6-1-8-6-0-5" />
+    <path
+       d="m 302.41574,351.65237 11.06784,-16.65841"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1339-8-7-7-1-7-4-9" />
+    <path
+       d="m 302.41574,351.65237 12.42294,-15.67385"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1340-7-7-8-3-9-5-3" />
+    <path
+       d="M 302.41574,351.65237 316.10669,337.073"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1341-5-3-2-20-8-0-8" />
+    <path
+       d="m 302.41574,351.65237 15.60605,-14.05172"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1342-2-5-9-38-9-4-9" />
+    <path
+       d="m 302.41574,351.65237 15.9306,-12.09195"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1343-7-3-5-50-0-6-8" />
+    <path
+       d="m 302.41574,351.65237 16.88657,-10.71652"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1344-0-3-5-28-5-4-6" />
+    <path
+       d="m 302.41574,351.65237 17.72406,-9.26593"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1345-8-5-5-0-9-0-9" />
+    <path
+       d="m 302.41574,351.65237 18.43726,-7.7503"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1346-5-3-9-9-5-2-1" />
+    <path
+       d="m 302.41574,351.65237 19.9722,-6.48935"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1347-0-7-0-7-7-6-7" />
+    <path
+       d="m 302.41574,351.65237 19.47159,-4.56701"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1348-5-5-3-7-0-6-6" />
+    <path
+       d="m 302.41574,351.65237 19.78546,-2.92166"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1349-6-2-3-1-1-2-3" />
+    <path
+       d="m 302.41574,351.65237 19.96054,-1.25579"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1350-1-5-5-68-2-4-8" />
+    <path
+       d="m 302.41574,351.65237 19.99561,0.41886"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1351-5-7-4-79-4-0-2" />
+    <path
+       d="m 302.41574,351.65237 20.88495,2.1951"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1352-4-8-4-24-8-9-5" />
+    <path
+       d="m 302.41574,351.65237 19.64575,3.74762"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1353-2-0-1-3-9-3-5" />
+    <path
+       d="m 302.41574,351.65237 19.26325,5.37842"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1354-5-3-3-8-2-2-1" />
+    <path
+       d="m 302.41574,351.65237 18.74564,6.97144"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1355-6-5-1-50-6-2-6" />
+    <path
+       d="m 302.41574,351.65237 18.09653,8.51557"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1356-6-6-6-0-0-8-43" />
+    <path
+       d="m 302.41574,351.65237 18.18652,10.5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1357-8-0-1-5-0-1-5" />
+    <path
+       d="m 320.41574,351.65237 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18"
+       style="fill:#988903;stroke:#583903;stroke-width:0.75"
+       id="SvgjsCircle1358-7-7-6-1-4-3-9" />
+  </g>
+  <g
+     transform="matrix(0.5,0,0,0.5,83.254204,26.6738)"
+     id="g6916-2-8-9-4-0-3">
+    <path
+       d="m 302.41574,351.65237 -18.18652,10.5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1307-6-8-4-4-3-4-1" />
+    <path
+       d="m 302.41574,351.65237 -18.09653,8.51557"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1308-2-9-6-3-4-8-8" />
+    <path
+       d="m 302.41574,351.65237 -18.74564,6.97144"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1309-4-6-2-92-3-1-9" />
+    <path
+       d="m 302.41574,351.65237 -19.26324,5.37842"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1310-4-2-2-62-7-1-3" />
+    <path
+       d="m 302.41574,351.65237 -19.64575,3.74762"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1311-0-7-1-0-3-7-0" />
+    <path
+       d="m 302.41574,351.65237 -20.88495,2.1951"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1312-4-1-7-5-5-3-8" />
+    <path
+       d="m 302.41574,351.65237 -19.9956,0.41886"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1313-4-5-1-7-6-7-6" />
+    <path
+       d="M 302.41574,351.65237 282.4552,350.39658"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1314-7-0-3-8-6-9-4" />
+    <path
+       d="m 302.41574,351.65237 -19.78546,-2.92166"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1315-0-6-6-7-3-5-7" />
+    <path
+       d="m 302.41574,351.65237 -19.47159,-4.56701"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1316-9-1-9-0-5-1-58" />
+    <path
+       d="m 302.41574,351.65237 -19.9722,-6.48935"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1317-8-5-3-76-7-7-5" />
+    <path
+       d="m 302.41574,351.65237 -18.43725,-7.7503"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1318-3-2-7-0-3-7-7" />
+    <path
+       d="m 302.41574,351.65237 -17.72406,-9.26593"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1319-2-0-7-8-5-8-4" />
+    <path
+       d="M 302.41574,351.65237 285.52917,340.93585"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1320-0-7-5-47-9-7-02" />
+    <path
+       d="m 302.41574,351.65237 -15.9306,-12.09195"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1321-9-5-7-4-7-4-7" />
+    <path
+       d="M 302.41574,351.65237 286.80969,337.60065"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1322-2-8-8-7-5-0-0" />
+    <path
+       d="M 302.41574,351.65237 288.72479,337.073"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1323-6-6-4-9-6-0-3" />
+    <path
+       d="M 302.41574,351.65237 289.9928,335.97852"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1324-7-4-8-7-2-8-4" />
+    <path
+       d="M 302.41574,351.65237 291.3479,334.99396"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1325-6-9-6-4-5-2-26" />
+    <path
+       d="m 302.41574,351.65237 -9.63507,-17.52609"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1326-9-7-1-7-3-7-9" />
+    <path
+       d="m 302.41574,351.65237 -8.54147,-19.18441"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1327-0-8-4-7-5-8-99" />
+    <path
+       d="m 302.41574,351.65237 -6.57733,-18.88748"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1328-8-0-4-7-6-9-1" />
+    <path
+       d="m 302.41574,351.65237 -4.97378,-19.37161"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1329-3-4-2-3-7-8-9" />
+    <path
+       d="M 302.41574,351.65237 299.08035,331.9325"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1330-1-0-2-5-3-8-7" />
+    <path
+       d="m 302.41574,351.65237 -1.67355,-19.92984"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1331-2-0-8-3-2-2-69" />
+    <path
+       d="M 302.41574,351.65237 V 330.6524"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1332-5-8-3-1-2-1-9" />
+    <path
+       d="m 302.41574,351.65237 1.67355,-19.92984"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1333-0-9-0-54-8-0-6" />
+    <path
+       d="m 302.41574,351.65237 3.33539,-19.71987"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1334-5-4-3-8-8-8-5" />
+    <path
+       d="m 302.41574,351.65237 4.97379,-19.37161"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1335-2-4-9-6-3-4-11" />
+    <path
+       d="m 302.41574,351.65237 6.57733,-18.88748"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1336-1-8-2-2-7-2-16" />
+    <path
+       d="m 302.41574,351.65237 8.54147,-19.18441"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1337-7-0-8-1-5-3-28" />
+    <path
+       d="m 302.41574,351.65237 9.63507,-17.52609"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1338-2-6-1-8-6-0-54" />
+    <path
+       d="m 302.41574,351.65237 11.06784,-16.65841"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1339-8-7-7-1-7-4-3" />
+    <path
+       d="m 302.41574,351.65237 12.42294,-15.67385"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1340-7-7-8-3-9-5-6" />
+    <path
+       d="M 302.41574,351.65237 316.10669,337.073"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1341-5-3-2-20-8-0-7" />
+    <path
+       d="m 302.41574,351.65237 15.60605,-14.05172"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1342-2-5-9-38-9-4-0" />
+    <path
+       d="m 302.41574,351.65237 15.9306,-12.09195"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1343-7-3-5-50-0-6-7" />
+    <path
+       d="m 302.41574,351.65237 16.88657,-10.71652"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1344-0-3-5-28-5-4-1" />
+    <path
+       d="m 302.41574,351.65237 17.72406,-9.26593"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1345-8-5-5-0-9-0-4" />
+    <path
+       d="m 302.41574,351.65237 18.43726,-7.7503"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1346-5-3-9-9-5-2-7" />
+    <path
+       d="m 302.41574,351.65237 19.9722,-6.48935"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1347-0-7-0-7-7-6-8" />
+    <path
+       d="m 302.41574,351.65237 19.47159,-4.56701"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1348-5-5-3-7-0-6-3" />
+    <path
+       d="m 302.41574,351.65237 19.78546,-2.92166"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1349-6-2-3-1-1-2-7" />
+    <path
+       d="m 302.41574,351.65237 19.96054,-1.25579"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1350-1-5-5-68-2-4-3" />
+    <path
+       d="m 302.41574,351.65237 19.99561,0.41886"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1351-5-7-4-79-4-0-67" />
+    <path
+       d="m 302.41574,351.65237 20.88495,2.1951"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1352-4-8-4-24-8-9-2" />
+    <path
+       d="m 302.41574,351.65237 19.64575,3.74762"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1353-2-0-1-3-9-3-2" />
+    <path
+       d="m 302.41574,351.65237 19.26325,5.37842"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1354-5-3-3-8-2-2-9" />
+    <path
+       d="m 302.41574,351.65237 18.74564,6.97144"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1355-6-5-1-50-6-2-0" />
+    <path
+       d="m 302.41574,351.65237 18.09653,8.51557"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1356-6-6-6-0-0-8-2" />
+    <path
+       d="m 302.41574,351.65237 18.18652,10.5"
+       style="stroke:#e8b923;stroke-width:0.75"
+       id="SvgjsLine1357-8-0-1-5-0-1-0" />
+    <path
+       d="m 320.41574,351.65237 a 18,18 0 0 1 -18,18 18,18 0 0 1 -18,-18 18,18 0 0 1 18,-18 18,18 0 0 1 18,18"
+       style="fill:#988903;stroke:#583903;stroke-width:0.75"
+       id="SvgjsCircle1358-7-7-6-1-4-3-1" />
+  </g>
   <text
-     y="261.86078"
+     y="174.83594"
      font-size="8px"
-     x="66.394943"
-     id="text106-6-1-4-40-0-9-8-3"
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"><tspan
-       style="font-size:5.33333px"
-       id="tspan5747">HARMONICS</tspan></text>
+     x="17.333332"
+     id="text106-6-1-4-6"
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision">F<tspan
+   id="tspan5077"
+   style="font-size:5.33333px">C</tspan> 1</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-1-4-40-0-9-3"
-     x="57.569313"
+     id="text106-6-1-4-6-0"
+     x="64.107376"
      font-size="8px"
-     y="319.9101">X</text>
-  <text
-     y="319.17386"
-     font-size="8px"
-     x="75.495255"
-     id="text106-6-1-4-40-0-9-3-5"
-     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision">Y</text>
+     y="174.9375">F<tspan
+   id="tspan5125"
+   style="font-size:5.33333px">C</tspan> 2</text>
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
-     id="text106-6-1-4-40-0-9-0"
-     x="22.834305"
+     id="text106-6-1-4-6-8"
+     x="114.4349"
      font-size="8px"
-     y="275.4375">FOLD</text>
-  <path
-     inkscape:connector-curvature="0"
-     id="rect4936-0-8-4-4-0-4-2-62"
-     d="M 6.983418,239.09442 H 39.79457 v 10.81116 H 6.983418 Z"
-     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.188848;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+     y="174.92188">F<tspan
+   id="tspan5115"
+   style="font-size:5.33333px">C</tspan> MESH</text>
+  <text
+     y="235.83594"
+     font-size="8px"
+     x="23.834969"
+     id="text106-6-1-4-6-8-7"
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision">DELAY 1</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text106-6-1-4-6-8-7-9"
+     x="71.735458"
+     font-size="8px"
+     y="235.9375">DELAY 2</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text106-6-1-4-6-8-7-6"
+     x="23.686127"
+     font-size="8px"
+     y="295.92188">FEEDBACK</text>
+  <text
+     id="text5188"
+     y="287.13474"
+     x="83.377609"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+     xml:space="preserve"><tspan
+       y="287.13474"
+       x="83.377609"
+       id="tspan5186"
+       sodipodi:role="line" /></text>
+  <text
+     y="295.9375"
+     font-size="8px"
+     x="84.1894"
+     id="text106-6-1-4-6-8-7-6-8"
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision">NON-LINEAR</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text106-6-1-4-6-8-7-6-8-6"
+     x="243.13483"
+     font-size="8px"
+     y="235.9375">NON-LIN</text>
+  <text
+     y="235.81641"
+     font-size="8px"
+     x="192.32224"
+     id="text106-6-1-4-6-8-7-6-3"
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision">FB</text>
+  <text
+     style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
+     id="text106-6-1-4-6-8-7-1"
+     x="158.10156"
+     font-size="8px"
+     y="235.81641">DELAY</text>
 </svg>
