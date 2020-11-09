@@ -26,7 +26,7 @@ BallOfConfusionModule::BallOfConfusionModule() {
     configParam(SPECTRUM_SHIFT_PARAM, -64.0f, 64.0f, 0.0f, "Spectrum Shift","Band(s)");
 
     configParam(WAVEFOLD_AMOUNT_PARAM, 1.0f, 4.0f, 1.0f, "Fold Amount");
-    configParam(WWAVEFOLD_SYMMETRY_PARAM, -1.0f, 1.0f, 0.0f, "Symmetry","%",0,100);
+    
 
 
     sphere.resize(0);
@@ -87,6 +87,11 @@ void BallOfConfusionModule::dataFromJson(json_t *root) {
       syncMode = json_integer_value(smJ);
     }
 
+    json_t *wfmJ = json_object_get(root, "waveFoldMode");
+    if (json_integer_value(wfmJ)) {
+      waveFoldMode = json_integer_value(wfmJ);
+    }
+
     uint16_t tempPathCount = 0;
     json_t *wtfcJ = json_object_get(root, "waveTablePathCount");
     if (json_integer_value(wtfcJ)) {
@@ -137,6 +142,7 @@ json_t *BallOfConfusionModule::dataToJson() {
   json_object_set(root, "scatterPercent", json_real(scatterPercent));
   json_object_set(root, "morphMode", json_integer(morphMode));
   json_object_set(root, "syncMode", json_integer(syncMode));
+  json_object_set(root, "waveFoldMode", json_integer(waveFoldMode));
   json_object_set(root, "waveTablePathCount", json_integer(waveTablePathCount));
 
   for(int i=0;i<MAX_HARMONICS;i++) {
@@ -514,16 +520,25 @@ void BallOfConfusionModule::buildActualWaveTable() {
 }
 
 void BallOfConfusionModule::calculateWaveFolding() {
+
+  float decimation = 1024 / pow(4,wavefoldAmount*1.25);
+
   for(int i=0;i<WAV_TABLE_SIZE;i++) {
 
-    float foldedValue = (prefoldedWaveTable[i]) * wavefoldAmount;
-    while(foldedValue < -1.0 || foldedValue > 1.0) {
-      if(foldedValue < -1.0) {
-        foldedValue = -1.0-foldedValue ;
+    float foldedValue = (prefoldedWaveTable[i]);
+    
+    if(waveFoldMode == WAVEFOLD_INVERT) {
+      foldedValue = (prefoldedWaveTable[i]) * wavefoldAmount;
+      while(foldedValue < -1.0 || foldedValue > 1.0) {
+        if(foldedValue < -1.0) {
+          foldedValue = -1.0-foldedValue ;
+        }
+        if(foldedValue > 1.0) {
+          foldedValue = 1.0 - foldedValue;
+        }
       }
-      if(foldedValue > 1.0) {
-        foldedValue = 1.0 - foldedValue;
-      }
+    } else { // DECIMATE
+      foldedValue = round(prefoldedWaveTable[i] * decimation) / decimation;
     }
 
     actualWaveTable[i] = foldedValue;
@@ -602,6 +617,23 @@ void BallOfConfusionModule::process(const ProcessArgs &args) {
     break;
   }
 
+  if (wavefoldModeTrigger.process(params[WAVEFOLD_MODE_PARAM].getValue())) {
+    waveFoldMode = (waveFoldMode + 1) % NBR_WAVEFOLD_MODES; 
+  }
+  switch(waveFoldMode) {
+    case WAVEFOLD_INVERT : 
+      lights[WAVEFOLD_MODE_LIGHT+0].value = 1;
+      lights[WAVEFOLD_MODE_LIGHT+1].value = 1;
+      lights[WAVEFOLD_MODE_LIGHT+2].value = 0.2;
+      break;
+    case WAVEFOLD_DECIMATE :
+      lights[WAVEFOLD_MODE_LIGHT+0].value = .2;
+      lights[WAVEFOLD_MODE_LIGHT+1].value = 1;
+      lights[WAVEFOLD_MODE_LIGHT+2].value = 1;
+      break;
+  }
+
+
   if(lastScatterPercent != scatterPercent) {
     loading = true;
     sphere.clear();
@@ -642,10 +674,11 @@ void BallOfConfusionModule::process(const ProcessArgs &args) {
       recalcFold = true;
     }
 
-    if(recalcFold || std::abs(wavefoldAmount-lastWavefoldAmount) > epsilon) {
+    if(recalcFold || waveFoldMode != lastWaveFoldMode || std::abs(wavefoldAmount-lastWavefoldAmount) > epsilon) {
       calculateWaveFolding();
       recalcFold = false;
       lastWavefoldAmount = wavefoldAmount;
+      lastWaveFoldMode = waveFoldMode;
     }
   }
 

@@ -1,7 +1,8 @@
 # FLAGS will be passed to both the C and C++ compiler
 FLAGS +=
-CFLAGS += -g #-fno-omit-frame-pointer -fsanitize=address
-CXXFLAGS += -g #-fno-omit-frame-pointer -fsanitize=address
+#CFLAGS += -g #-fno-omit-frame-pointer -fsanitize=address
+#CXXFLAGS += -g #-fno-omit-frame-pointer -fsanitize=address
+
 
 # Careful about linking to libraries, since you can't assume much about the user's environment and library search path.
 # Static libraries are fine.

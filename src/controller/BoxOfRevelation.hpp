@@ -7,6 +7,7 @@
 #include "../model/dsp/filter/Filter.hpp"
 #include "../model/dsp/filter/NonlinearBiquad.hpp"
 #include "../model/dsp/filter/ChebyshevI.hpp"
+#include "../model/dsp/filter/CombFilter.hpp"
 #include "../model/cubeFilterModel.hpp"
 #include "../model/cubeFilterPoint.hpp"
 #include "../model/Interpolate.hpp"
@@ -52,12 +53,7 @@ struct BoxOfRevelationModule : Module {
 
     enum OutputIds { OUTPUT_L, OUTPUT_R,  NUM_OUTPUTS };
     enum LightIds {
-        SYNC_MODE_LIGHT,
-        MORPH_MODE_LIGHT = SYNC_MODE_LIGHT + 3,
-        YAW_QUANTIZED_LIGHT = MORPH_MODE_LIGHT + 3,
-        PITCH_QUANTIZED_LIGHT = YAW_QUANTIZED_LIGHT + 3,
-        ROLL_QUANTIZED_LIGHT = PITCH_QUANTIZED_LIGHT + 3,
-        NUM_LIGHTS = ROLL_QUANTIZED_LIGHT + 3
+        NUM_LIGHTS
     };
 
     BoxOfRevelationModule ();
@@ -78,10 +74,20 @@ struct BoxOfRevelationModule : Module {
     //std::unique_ptr<NonlinearBiquad<double>> pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
     //std::unique_ptr<ChebyshevI<double>> cFilter[NBR_FILTER_STAGES][NBR_CHANNELS]; //temporary until we get abstract class set up
 
+//Biquad filter params
     double Fc[NBR_FILTER_STAGES] = {0};
     double Q[NBR_FILTER_STAGES] = {0};
     double drive[NBR_FILTER_STAGES] = {0};
     double gain[NBR_FILTER_STAGES] = {0};
+
+    //Comb filter Parameters
+    double feedforwardDelay[NBR_FILTER_STAGES] = {0};
+    double feedbackDelay[NBR_FILTER_STAGES] = {0};
+    double feedforwardGain[NBR_FILTER_STAGES] = {0};
+    double feedbackGain[NBR_FILTER_STAGES] = {0};
+
+
+    //Common filter params
     double attenuation[NBR_FILTER_STAGES] = {0};
 
     std::string lastPath;

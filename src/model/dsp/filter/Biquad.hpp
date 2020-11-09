@@ -93,8 +93,8 @@ public:
     z1 = in * a1 + z2 - b1 * out;
     z2 = in * a2 - b2 * out;
 
-    fprintf(stderr, "i:%i in:%f a0:%f z1:%f z2:%f  out:%f     a1:%f a2:%f  b1:%f b2:%f  \n",count, in,a0,z1,z2,out,a1,a2,b1,b2);
-    count++;
+    // fprintf(stderr, "i:%i in:%f a0:%f z1:%f z2:%f  out:%f     a1:%f a2:%f  b1:%f b2:%f  \n",count, in,a0,z1,z2,out,a1,a2,b1,b2);
+    // count++;
     return out;
   }
 

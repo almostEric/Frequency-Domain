@@ -26,6 +26,8 @@ public:
 
     virtual void setFilterParameters(int type, T Fc, T Q, T drive, T peakGainDB) {}
 
+    virtual void setFilterParameters(int type, T feedforwardAmount, T feedbackAmount, T feedforwardGain, T feedbackGain, T drive) {}
+
     virtual T process(T in);
 
     virtual T frequencyResponse(T frequency);

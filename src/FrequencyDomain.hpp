@@ -10,8 +10,10 @@ extern Plugin *pluginInstance;
 
 extern Model *modelBallOfConfusion;
 extern Model *modelBoxOfRevelation;
+extern Model *modelDanceThisMeshAround;
 extern Model *modelDelayedReaction;
 extern Model *modelFreudianSlip;
 extern Model *modelGrainsOfWrath;
 extern Model *modelHarmonicConvergence;
+extern Model *modelHeatOfTheMoment;
 extern Model *modelMorphology;

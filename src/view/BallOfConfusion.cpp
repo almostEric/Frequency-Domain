@@ -263,6 +263,35 @@ struct BCDisplayWaveFiles : FramebufferWidget {
   }
 };
 
+struct BCDisplayWaveFoldMode : FramebufferWidget {
+  BallOfConfusionModule *module;
+  std::shared_ptr<Font> font;
+
+  BCDisplayWaveFoldMode() {
+    font = APP->window->loadFont(asset::plugin(pluginInstance, "res/fonts/routed-gothic.ttf"));
+  }
+
+  void draw(const DrawArgs &args) override {
+    //background
+    nvgFillColor(args.vg, nvgRGB(20, 30, 33));
+    nvgBeginPath(args.vg);
+    nvgRect(args.vg, 0, 0, box.size.x, box.size.y);
+    nvgFill(args.vg);
+
+    if (!module) 
+      return;
+
+    nvgFontSize(args.vg, 9);
+    nvgFontFaceId(args.vg, font->handle);
+    nvgTextLetterSpacing(args.vg, -0.5);
+    nvgFillColor(args.vg,nvgRGB(0x1f,0xf0,0x1f)); 	
+    char text[128];
+    snprintf(text, sizeof(text), "%s", module->waveFoldModes[module->waveFoldMode].c_str());
+    nvgText(args.vg, 2, 7, text, NULL);      
+  }
+};
+
+
 struct BCDisplayMorphMode : FramebufferWidget {
   BallOfConfusionModule *module;
   std::shared_ptr<Font> font;
@@ -361,12 +390,23 @@ struct BallOfConfusionWidget : ModuleWidget {
       addChild(dwf);
     }
 
+
+    {
+      BCDisplayWaveFoldMode *dwfm = new BCDisplayWaveFoldMode();    
+      //if (module) {
+        dwfm->module = module;
+      //}   
+      dwfm->box.pos = Vec(8, 251);
+      dwfm->box.size = Vec(32, 10);
+      addChild(dwfm);
+    }
+
     {
       BCDisplayMorphMode *dmm = new BCDisplayMorphMode();    
       //if (module) {
         dmm->module = module;
       //}   
-      dmm->box.pos = Vec(8, 263);
+      dmm->box.pos = Vec(8, 280);
       dmm->box.size = Vec(32, 10);
       addChild(dmm);
     }
@@ -509,12 +549,14 @@ struct BallOfConfusionWidget : ModuleWidget {
 
 
 
-
     addParam(createParam<RecButton>(Vec(176, 182), module, BallOfConfusionModule::SYNC_MODE_PARAM));
     addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(178, 183), module, BallOfConfusionModule::SYNC_MODE_LIGHT));
 
-    addParam(createParam<RecButton>(Vec(8, 277), module, BallOfConfusionModule::MORPH_MODE_PARAM));
-    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(10, 278), module, BallOfConfusionModule::MORPH_MODE_LIGHT));
+    addParam(createParam<RecButton>(Vec(8, 263), module, BallOfConfusionModule::WAVEFOLD_MODE_PARAM));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(10, 264), module, BallOfConfusionModule::WAVEFOLD_MODE_LIGHT));
+
+    addParam(createParam<RecButton>(Vec(8, 292), module, BallOfConfusionModule::MORPH_MODE_PARAM));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(10, 293), module, BallOfConfusionModule::MORPH_MODE_LIGHT));
 
 
     addInput(createInput<LightPort>(Vec(48, 127), module, BallOfConfusionModule::V_OCTAVE_INPUT));
@@ -522,7 +564,7 @@ struct BallOfConfusionWidget : ModuleWidget {
     addInput(createInput<LightPort>(Vec(32, 166), module, BallOfConfusionModule::SYNC_INPUT));
     addInput(createInput<LightPort>(Vec(59, 166), module, BallOfConfusionModule::PHASE_INPUT));
 
-    addOutput(createOutput<LightPort>(Vec(20, 315), module, BallOfConfusionModule::OUTPUT_L));
+    addOutput(createOutput<LightPort>(Vec(15, 315), module, BallOfConfusionModule::OUTPUT_L));
 
 
 

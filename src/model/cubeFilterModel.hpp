@@ -5,7 +5,8 @@
 
 enum FilterModels {
   FILTER_MODEL_BIQUAD,
-  FILTER_MODEL_CHEBYSHEV
+  FILTER_MODEL_CHEBYSHEV,
+  FILTER_MODEL_COMB
 };
 
 // one vertex of filter paramaters
