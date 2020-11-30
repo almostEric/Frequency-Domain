@@ -68,9 +68,6 @@ void BallOfConfusionModule::dataFromJson(json_t *root) {
 
   //fprintf(stderr, "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1   Getting JSON data \n");
 
-
-
-
     json_t *spJ = json_object_get(root, "scatterPercent");
     if (json_real_value(spJ)) {
       scatterPercent = json_real_value(spJ);

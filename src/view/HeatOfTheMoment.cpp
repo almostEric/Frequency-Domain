@@ -48,9 +48,9 @@ struct HMDisplayImpulse : FramebufferWidget {
         case NOISE_BLACK:
             nvgFillColor(args.vg, nvgRGB(0x00, 0x00, 0x00));
             break;
-        case NOISE_GAUSSIAN:
-            nvgFillColor(args.vg, nvgRGB(0x20, 0xd0, 0x30));
-            break;
+        // case NOISE_GAUSSIAN:
+        //     nvgFillColor(args.vg, nvgRGB(0x20, 0xd0, 0x30));
+        //     break;
     }
 
     nvgBeginPath(args.vg);

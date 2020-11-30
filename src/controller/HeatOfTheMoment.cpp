@@ -8,7 +8,7 @@ HeatOfTheMomentModule::HeatOfTheMomentModule() {
     config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
 
 
-    configParam(NOISE_COLOR_PARAM, 0.0f, 7.0f, 0.0f, "Noise Color");
+    configParam(NOISE_COLOR_PARAM, 0.0f, 6.0f, 0.0f, "Noise Color");
     configParam(WINDOW_FUNCTION_PARAM, 0.0f, 7.0f, 0.0f, "Window Function");
     configParam(IMPULSE_PEAK_COUNT_PARAM, 1.0f, 4.0f, 1.0f, "# of Peaks");
 
@@ -69,8 +69,8 @@ float HeatOfTheMomentModule::paramValue (uint16_t param, uint16_t input, float l
 void HeatOfTheMomentModule::process(const ProcessArgs &args) {
 
     noiseGenerator.sampleTime = args.sampleTime;
-    noiseColor = (NoiseColor)paramValue(NOISE_COLOR_PARAM,NOISE_COLOR_INPUT,0,7);
-    noiseColorPercentage = noiseColor/7.0;
+    noiseColor = (NoiseColor)paramValue(NOISE_COLOR_PARAM,NOISE_COLOR_INPUT,0,6);
+    noiseColorPercentage = noiseColor/6.0;
     windowFunctionId = paramValue(WINDOW_FUNCTION_PARAM,WINDOW_FUNCTION_INPUT,0,7);
     windowFunctionPercentage = windowFunctionId/7.0;
 

@@ -38,6 +38,11 @@ struct BoxOfRevelationModule : Module {
         FREQUENCY_PARAM,
         Y_PARAM,
         Z_PARAM,
+        FREQUENCY_2_PARAM,
+        Y_2_PARAM,
+        Z_2_PARAM,
+        LINK_PARAM,
+        MS_MODE_PARAM,
         NUM_PARAMS
     };
 
@@ -48,12 +53,17 @@ struct BoxOfRevelationModule : Module {
         FREQUENCY_INPUT,
         Y_INPUT,
         Z_INPUT,
+        FREQUENCY_2_INPUT,
+        Y_2_INPUT,
+        Z_2_INPUT,
         NUM_INPUTS
     };
 
     enum OutputIds { OUTPUT_L, OUTPUT_R,  NUM_OUTPUTS };
     enum LightIds {
-        NUM_LIGHTS
+        LINK_MODE_LIGHT,
+        MS_MODE_LIGHT = LINK_MODE_LIGHT + 3,
+        NUM_LIGHTS = MS_MODE_LIGHT + 3
     };
 
     BoxOfRevelationModule ();
@@ -70,6 +80,8 @@ struct BoxOfRevelationModule : Module {
     json_t *dataToJson() override;
 
 
+    dsp::SchmittTrigger linkModeTrigger,midSideModeTrigger;
+
     std::unique_ptr<Filter<double>> pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
     //std::unique_ptr<NonlinearBiquad<double>> pFilter[NBR_FILTER_STAGES][NBR_CHANNELS];
     //std::unique_ptr<ChebyshevI<double>> cFilter[NBR_FILTER_STAGES][NBR_CHANNELS]; //temporary until we get abstract class set up
@@ -77,7 +89,7 @@ struct BoxOfRevelationModule : Module {
 //Biquad filter params
     double Fc[NBR_FILTER_STAGES] = {0};
     double Q[NBR_FILTER_STAGES] = {0};
-    double drive[NBR_FILTER_STAGES] = {0};
+    double drive[NBR_FILTER_STAGES][2] = {{0}};
     double gain[NBR_FILTER_STAGES] = {0};
 
     //Comb filter Parameters
@@ -88,26 +100,31 @@ struct BoxOfRevelationModule : Module {
 
 
     //Common filter params
-    double attenuation[NBR_FILTER_STAGES] = {0};
+    double attenuation[NBR_FILTER_STAGES][2] = {{0}};
 
     std::string lastPath;
 
     std::vector<cubeFilterModel> cubeModels;
     int nbrCubeModels = 0;
     double makeupGain = 0; //In dB
-    double makeupAttenuation = 1.0; //actual multiplier
+    double makeupAttenuation[2] = {1.0}; //actual multiplier
 
     int currentModel = 0;
-    cubeFilterPoint currentPoint;
+    cubeFilterPoint currentPoint[2];
     int nbrfilterLevels; // Number of serial filter levels in current model
 
-    float frequency=0;
-    float yMorph=0;
-    float zMorph=0;
-    float lastFrequency = -1;
-    float lastYMoprh = -1;
-    float lastZMoprh = -1;
+    float frequency[2]= {0};
+    float yMorph[2]={0};
+    float zMorph[2]={0};
+    float lastFrequency[2] = {-1};
+    float lastYMoprh[2] = {-1};
+    float lastZMoprh[2] = {-1};
+
+
     int lastModel = -1;
+
+    bool linkMode = true;
+    bool msMode = false;
 
     float cubePoints[NBR_VERTEX][NBR_DIMENSIONS] = {{0,0,0},{1,0,0},{0,1,0},{1,1,0},{0,0,1},{1,0,1},{0,1,1},{1,1,1}};
     int edges[NBR_EDGES][2] = {{0,1},{1,5},{5,4},{4,0}, {2,3},{3,7},{7,6},{6,2}, {0,2},{1,3},{5,7},{4,6}};
@@ -116,9 +133,10 @@ struct BoxOfRevelationModule : Module {
     float sampleRate;
 
     // percentages
-    float frequencyPercentage = 0;
-    float yMorphPercentage = 0;
-    float zMorphPercentage = 0;
+    float frequencyPercentage[2] = {0};
+    float yMorphPercentage[2] = {0};
+    float zMorphPercentage[2] = {0};
+
     float modelPercentage = 0;
 
 

@@ -11,14 +11,6 @@
 
 #include "cmath"
 
-//using simd::float_4;
-
-#define NBR_FILTER_STAGES 7
-#define NBR_CHANNELS 2
-#define NBR_VERTEX 8
-#define NBR_DIMENSIONS 3
-#define NBR_EDGES 12
-
 
 
 struct HeatOfTheMomentModule : Module {
@@ -43,8 +35,7 @@ struct HeatOfTheMomentModule : Module {
 
     enum OutputIds { OUTPUT_L, NUM_OUTPUTS };
     enum LightIds {
-        SYNC_MODE_LIGHT,
-        NUM_LIGHTS = SYNC_MODE_LIGHT + 3
+        NUM_LIGHTS
     };
 
     HeatOfTheMomentModule ();
