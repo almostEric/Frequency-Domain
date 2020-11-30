@@ -33,7 +33,7 @@ DanceThisMeshAroundModule::DanceThisMeshAroundModule() {
   configParam(DELAY_MESH_FB_NONLINEARITY_PARAM, 1.f, 5.f, 1.0f, "Mesh X Axis Feedback Non-linarity", "x");
 
 
-  // configParam(ALLPASS_FC_PARAM, 0.1f, 0.5f, 0.35f, "AllPass Filter", " Hz", std::pow(2, 10.f), dsp::FREQ_C4 / std::pow(2, 5.f));
+  configParam(MESH_IMPEDANCE_PARAM, 0.0f, 1.0f, 1.0f, "Mesh Impedance", "%", 0,100);
 
 
   junctions.resize(0);
@@ -143,15 +143,14 @@ void DanceThisMeshAroundModule::process(const ProcessArgs &args) {
 
     for(int b=0;b<MAX_BANDS;b++) {
     // Get pitch
-      float freqParam = paramValue(BP_1_CUTOFF_PARAM+b,BP_1_CUTOFF_INPUT+b,0.05,1.0);      
-      bpCutoff[b] = freqParam;
+      bpCutoff[b] = paramValue(BP_1_CUTOFF_PARAM+b,BP_1_CUTOFF_INPUT+b,0.05,1.0);
       if(b > 0 && bpCutoff[b] / bpCutoff[b-1] < 1.20 ) { // Prevent Bands from crossing
         bpCutoff[b] = bpCutoff[b-1] * 1.20;
       } 
 
       if(bpCutoff[b] != lastBpCutoff[b]) {
         float cutoff = dsp::FREQ_C4 * pow(2.f, bpCutoff[b] * 10.f - 5.f);
-        cutoff = clamp(cutoff, 60.f, 15000.f) / 22000;        
+        cutoff = clamp(cutoff, 60.f, 10000.f) / 22000;        
         bandpassFilters[b*2]->setFilterParameters(bq_type_bandpass,cutoff,1.707,nonlinearity[b],0.0);
         bandpassFilters[b*2+1]->setFilterParameters(bq_type_bandpass,cutoff,1.707,nonlinearity[b],0.0);
         lastBpCutoff[b] = bpCutoff[b];
@@ -211,6 +210,8 @@ void DanceThisMeshAroundModule::process(const ProcessArgs &args) {
     int delayTimeMesh = paramValue(DELAY_TIME_MESH_PARAM,DELAY_TIME_MESH_INPUT,1.0,500.0) * 2.0;
     float meshFBAmount = paramValue(DELAY_MESH_FB_AMOUNT_PARAM,DELAY_MESH_FB_AMOUNT_INPUT,0.0,0.95);
     double meshFBNonlinearity = paramValue(DELAY_MESH_FB_NONLINEARITY_PARAM,DELAY_MESH_FB_NONLINEARITY_INPUT,1.0,5.0);
+    // float impedance = paramValue(MESH_IMPEDANCE_PARAM,MESH_IMPEDANCE_INPUT,0.0,1.0);
+
 
     delayTimeMeshPercentage = delayTimeMesh / 1000.0;
     delayTimeMeshFeedbackPercentage = meshFBAmount;
@@ -243,10 +244,10 @@ void DanceThisMeshAroundModule::process(const ProcessArgs &args) {
 
           MeshJunction<float> junction = junctions[0][y][x];
 
-          delayLines[0][y][x+1][0].write(junction.currentValue - junction.in3 * impedance); //e
-          delayLines[0][y+1][x][1].write(junction.currentValue - junction.in4 * impedance);// s
-          delayLines[0][y][x][2].write(junction.currentValue - junction.in1 * impedance); //w
-          delayLines[0][y][x][3].write(junction.currentValue - junction.in2 * impedance); //n
+          delayLines[0][y][x+1][0].write((junction.currentValue - junction.in3) * impedance); //e
+          delayLines[0][y+1][x][1].write((junction.currentValue - junction.in4) * impedance);// s
+          delayLines[0][y][x][2].write((junction.currentValue - junction.in1) * impedance); //w
+          delayLines[0][y][x][3].write((junction.currentValue - junction.in2) * impedance); //n
 
         }
       }

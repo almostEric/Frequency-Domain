@@ -69,62 +69,71 @@ struct BRDisplayFilterResponse : FramebufferWidget {
 
     float driveLevel = 0.0;
     float filtersInLevel = 0;
-    for(int s=0;s<NBR_FILTER_STAGES;s++) {
-        if(module->cubeModels[module->currentModel].filterLevel[s] >= 0 && module->cubeModels[module->currentModel].filterNonlinearityStructure[s] != 0) {
-          driveLevel += module->drive[s]; 
-          filtersInLevel +=1.0;
-        }
-    }
-    if(filtersInLevel > 0) {
-      driveLevel = clamp(driveLevel/filtersInLevel,0.1,5.0);
-    }
-
-//driveLevel = 0.0;
-    float r = interpolate(176.0f,255.0f,driveLevel,0.0f,5.0f);
-    float g = interpolate(176.0f,0.0f,driveLevel,0.0f,5.0f);
-    float b = interpolate(255.0f,0.0f,driveLevel,0.0f,5.0f);
-
-        // fprintf(stderr, "drive level: %f  r:%f g:%f b:%f \n",driveLevel,r,g,b);
-
-    nvgBeginPath(args.vg);  
-    //nvgStrokeColor(args.vg, nvgRGB(0xb0,0xb0,0xff));
-    nvgStrokeColor(args.vg, nvgRGB(r,g,b));
-    nvgStrokeWidth(args.vg, 1);
-    for(float x=0.0f; x<204.0f; x+=1.0f) {
-      double frequency = std::pow(10.0f, x/87.18f + 2.0f) / module->sampleRate;
-      double response = 1;
-      
-      for(int l=0;l<module->nbrfilterLevels;l++) {
-        int filtersInLevel = 0;
-        double levelResponse = 0;
-        for(int s=0;s<NBR_FILTER_STAGES;s++) {
-            if(module->cubeModels[module->currentModel].filterLevel[s] == l) {
-              levelResponse += module->pFilter[s][0]->frequencyResponse(frequency) * module->attenuation[s]; 
-              filtersInLevel +=1;
-        // fprintf(stderr, "Point x:%i l:%i freq:%f response:%f  level response: %f  \n",x,l,frequency[0],response[0],levelResponse[0]);
-            }
-        }
-        if(filtersInLevel > 0) {
-          levelResponse = levelResponse / std::sqrt(filtersInLevel);
-          response *= levelResponse;
-        }
+    int nbrResponses = module->linkMode ? 1 : 2;
+    for(int c=0;c<nbrResponses;c++) {
+      for(int s=0;s<NBR_FILTER_STAGES;s++) {
+          if(module->cubeModels[module->currentModel].filterLevel[s] >= 0 && module->cubeModels[module->currentModel].filterNonlinearityStructure[s] != 0) {
+            driveLevel += module->drive[s][c]; 
+            filtersInLevel +=1.0;
+          }
       }
-      //attenuation[s] = powf(10,_gain / 20.0f);
-      double responseDB = std::log10(std::max(std::abs(response * module->makeupAttenuation), 1.0e-4)) * 20;
-      float responseYCoord = clamp(50.0f - (float) responseDB, 0.0f, 100.0f);
-        // fprintf(stderr, "Point x:%i response:%f  \n",x,response[0]);
+      if(filtersInLevel > 0) {
+        driveLevel = clamp(driveLevel/filtersInLevel,0.1,5.0);
+      }
 
-      if(x < 1)
-        nvgMoveTo(args.vg, 0.0f, responseYCoord);
-      else  
-        nvgLineTo(args.vg, x, responseYCoord);
-    
+  //driveLevel = 0.0;
+      float r;
+      float g;
+      float b;
+      if(c == 1) {
+        r = interpolate(176.0f,255.0f,driveLevel,0.0f,5.0f);
+        g = interpolate(176.0f,0.0f,driveLevel,0.0f,5.0f);
+        b = interpolate(255.0f,0.0f,driveLevel,0.0f,5.0f);  
+      } else {
+        r = interpolate(176.0f,255.0f,driveLevel,0.0f,5.0f);
+        g = interpolate(255.0f,0.0f,driveLevel,0.0f,5.0f);
+        b = interpolate(176.0f,0.0f,driveLevel,0.0f,5.0f);  
+      }
+
+          // fprintf(stderr, "drive level: %f  r:%f g:%f b:%f \n",driveLevel,r,g,b);
+
+      nvgBeginPath(args.vg);  
+      //nvgStrokeColor(args.vg, nvgRGB(0xb0,0xb0,0xff));
+      nvgStrokeColor(args.vg, nvgRGB(r,g,b));
+      nvgStrokeWidth(args.vg, 1);
+      for(float x=0.0f; x<204.0f; x+=1.0f) {
+        double frequency = std::pow(10.0f, x/87.18f + 2.0f) / module->sampleRate;
+        double response = 1;
+        
+        for(int l=0;l<module->nbrfilterLevels;l++) {
+          int filtersInLevel = 0;
+          double levelResponse = 0;
+          for(int s=0;s<NBR_FILTER_STAGES;s++) {
+              if(module->cubeModels[module->currentModel].filterLevel[s] == l) {
+                levelResponse += module->pFilter[s][c]->frequencyResponse(frequency) * module->attenuation[s][c]; 
+                filtersInLevel +=1;
+          // fprintf(stderr, "Point x:%i l:%i freq:%f response:%f  level response: %f  \n",x,l,frequency[0],response[0],levelResponse[0]);
+              }
+          }
+          if(filtersInLevel > 0) {
+            levelResponse = levelResponse / std::sqrt(filtersInLevel);
+            response *= levelResponse;
+          }
+        }
+        //attenuation[s] = powf(10,_gain / 20.0f);
+        double responseDB = std::log10(std::max(std::abs(response * module->makeupAttenuation[c]), 1.0e-4)) * 20;
+        float responseYCoord = clamp(50.0f - (float) responseDB, 0.0f, 100.0f);
+          // fprintf(stderr, "Point x:%i response:%f  \n",x,response[0]);
+
+        if(x < 1)
+          nvgMoveTo(args.vg, 0.0f, responseYCoord);
+        else  
+          nvgLineTo(args.vg, x, responseYCoord);
+      
+      }
+      nvgStroke(args.vg);
     }
-    nvgStroke(args.vg);
-
-
   }
-
 };  
 
 struct BRDisplayFilterTopology : FramebufferWidget {
@@ -296,18 +305,22 @@ struct BRDisplayCube : FramebufferWidget {
     }
     nvgStroke(args.vg);
 
+    int nbrPoints = module->linkMode ? 1 : 2;
+    bool point2Behind = !module->linkMode && (module->currentPoint[1].z > module->currentPoint[0].z);   //Need better calculation
 
-    float x = module->currentPoint.x;
-    float y = module->currentPoint.y;
-    float z = module->currentPoint.z;
-    float xPrimeC =  (x + z/2) * boxEdgeLength + boxXOffset;
-    float yPrimeC =  ((1.0 - (y + z/2)) * boxEdgeLength) + boxYOffset;
+    for(int c=0;c< nbrPoints;c++) {
+      int ca = point2Behind ? 1-c: c; // reverse drawing order if point 2 is in front;
+      float x = module->currentPoint[ca].x;
+      float y = module->currentPoint[ca].y;
+      float z = module->currentPoint[ca].z;
+      float xPrimeC =  (x + z/2) * boxEdgeLength + boxXOffset;
+      float yPrimeC =  ((1.0 - (y + z/2)) * boxEdgeLength) + boxYOffset;
 
-
-    nvgFillColor(args.vg,nvgRGB(0x1f,0xd0,0x1f)); 	
-    nvgBeginPath(args.vg);
-    nvgCircle(args.vg,xPrimeC,yPrimeC,6-(3*z));
-    nvgFill(args.vg);
+      nvgFillColor(args.vg,ca == 0 ? nvgRGB(0x1f,0xd0,0x1f) : nvgRGB(0x1f,0x1f,0xd0) ); 	
+      nvgBeginPath(args.vg);
+      nvgCircle(args.vg,xPrimeC,yPrimeC,6-(3*z));
+      nvgFill(args.vg);
+    }
   }
 };
 
@@ -408,43 +421,89 @@ struct BoxOfRevelationWidget : ModuleWidget {
 
     
 
-    addParam(createParam<LightSmallKnob>(Vec(24.5, 302), module, BoxOfRevelationModule::FREQUENCY_PARAM));
+    addParam(createParam<LightSmallKnob>(Vec(24.5, 298), module, BoxOfRevelationModule::FREQUENCY_PARAM));
     {
       SmallArcDisplay *c = new SmallArcDisplay();
       if (module) {
-        c->percentage = &module->frequencyPercentage;
+        c->percentage = &module->frequencyPercentage[0];
       }
-      c->box.pos = Vec(28, 305.5);
+      c->box.pos = Vec(28, 301.5);
       c->box.size = Vec(30, 30);    
       addChild(c);
     }
-    addInput(createInput<LightPort>(Vec(43.5, 300), module, BoxOfRevelationModule::FREQUENCY_INPUT));
+    addInput(createInput<LightPort>(Vec(43.5, 292), module, BoxOfRevelationModule::FREQUENCY_INPUT));
 
 
-    addParam(createParam<LightSmallKnob>(Vec(74.5, 302), module, BoxOfRevelationModule::Y_PARAM));
+    addParam(createParam<LightSmallKnob>(Vec(74.5, 298), module, BoxOfRevelationModule::Y_PARAM));
     {
       SmallArcDisplay *c = new SmallArcDisplay();
       if (module) {
-        c->percentage = &module->yMorphPercentage;
+        c->percentage = &module->yMorphPercentage[0];
       }
-      c->box.pos = Vec(78, 305.5);
+      c->box.pos = Vec(78, 301.5);
       c->box.size = Vec(30, 30);
       addChild(c);
     }
-    addInput(createInput<LightPort>(Vec(93.5, 300), module, BoxOfRevelationModule::Y_INPUT));
+    addInput(createInput<LightPort>(Vec(93.5, 292), module, BoxOfRevelationModule::Y_INPUT));
 
 
-    addParam(createParam<LightSmallKnob>(Vec(123, 302), module, BoxOfRevelationModule::Z_PARAM));
+    addParam(createParam<LightSmallKnob>(Vec(123, 298), module, BoxOfRevelationModule::Z_PARAM));
     {
       SmallArcDisplay *c = new SmallArcDisplay();
       if (module) {
-        c->percentage = &module->zMorphPercentage;
+        c->percentage = &module->zMorphPercentage[0];
       }
-      c->box.pos = Vec(126.5, 305.5);
+      c->box.pos = Vec(126.5, 301.5);
       c->box.size = Vec(30, 30);
       addChild(c);
     }
-    addInput(createInput<LightPort>(Vec(142, 300), module, BoxOfRevelationModule::Z_INPUT));
+    addInput(createInput<LightPort>(Vec(142, 292), module, BoxOfRevelationModule::Z_INPUT));
+
+
+    addParam(createParam<LightSmallKnob>(Vec(29.5, 319), module, BoxOfRevelationModule::FREQUENCY_2_PARAM));
+    {
+      SmallArcDisplay *c = new SmallArcDisplay();
+      if (module) {
+        c->percentage = &module->frequencyPercentage[1];
+      }
+      c->box.pos = Vec(33, 322.5);
+      c->box.size = Vec(30, 30);    
+      addChild(c);
+    }
+    addInput(createInput<LightPort>(Vec(48.5, 313), module, BoxOfRevelationModule::FREQUENCY_2_INPUT));
+
+
+    addParam(createParam<LightSmallKnob>(Vec(79.5, 319), module, BoxOfRevelationModule::Y_2_PARAM));
+    {
+      SmallArcDisplay *c = new SmallArcDisplay();
+      if (module) {
+        c->percentage = &module->yMorphPercentage[1];
+      }
+      c->box.pos = Vec(83, 322.5);
+      c->box.size = Vec(30, 30);
+      addChild(c);
+    }
+    addInput(createInput<LightPort>(Vec(98.5, 313), module, BoxOfRevelationModule::Y_2_INPUT));
+
+
+    addParam(createParam<LightSmallKnob>(Vec(128, 319), module, BoxOfRevelationModule::Z_2_PARAM));
+    {
+      SmallArcDisplay *c = new SmallArcDisplay();
+      if (module) {
+        c->percentage = &module->zMorphPercentage[1];
+      }
+      c->box.pos = Vec(131.5, 322.5);
+      c->box.size = Vec(30, 30);
+      addChild(c);
+    }
+    addInput(createInput<LightPort>(Vec(147, 313), module, BoxOfRevelationModule::Z_2_INPUT));
+
+
+    addParam(createParam<RecButton>(Vec(184, 288), module, BoxOfRevelationModule::LINK_PARAM));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(186, 289), module, BoxOfRevelationModule::LINK_MODE_LIGHT));
+
+    addParam(createParam<RecButton>(Vec(184, 314), module, BoxOfRevelationModule::MS_MODE_PARAM));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(186, 315), module, BoxOfRevelationModule::MS_MODE_LIGHT));
 
 
     addInput(createInput<LightPort>(Vec(92, 342), module, BoxOfRevelationModule::INPUT_L));

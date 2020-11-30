@@ -418,34 +418,6 @@ struct DanceThisMeshAroundWidget : ModuleWidget {
 
 
 
-    // addParam(createParam<LightSmallKnob>(Vec(225, 243), module, DanceThisMeshAroundModule::ALLPASS_FC_PARAM));
-    // // {
-    // //   SmallArcDisplay *c = new SmallArcDisplay();
-    // //   if (module) {
-    // //     c->percentage = &module->delayTimeMeshNonLinearityPercentage;
-    // //   }
-    // //   c->box.pos = Vec(228.5, 246.5);
-    // //   c->box.size = Vec(30, 30);
-    // //   addChild(c);
-    // // }
-    // addInput(createInput<LightPort>(Vec(241, 255), module, DanceThisMeshAroundModule::ALLPASS_FC_INPUT));
-
-
-
-  
-
-    // addParam(createParam<RecButton>(Vec(176, 182), module, DanceThisMeshAroundModule::SYNC_MODE_PARAM));
-    // addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(178, 183), module, DanceThisMeshAroundModule::SYNC_MODE_LIGHT));
-
-    // addParam(createParam<RecButton>(Vec(8, 277), module, DanceThisMeshAroundModule::MORPH_MODE_PARAM));
-    // addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(10, 278), module, DanceThisMeshAroundModule::MORPH_MODE_LIGHT));
-
-
-    // addInput(createInput<LightPort>(Vec(48, 127), module, DanceThisMeshAroundModule::V_OCTAVE_INPUT));
-    // addInput(createInput<LightPort>(Vec(5, 166), module, DanceThisMeshAroundModule::FM_INPUT));
-    // addInput(createInput<LightPort>(Vec(32, 166), module, DanceThisMeshAroundModule::SYNC_INPUT));
-    // addInput(createInput<LightPort>(Vec(59, 166), module, DanceThisMeshAroundModule::PHASE_INPUT));
-
     addInput(createInput<LightPort>(Vec(10, 304), module, DanceThisMeshAroundModule::IMPULSE_INPUT));
     addOutput(createOutput<LightPort>(Vec(228, 304), module, DanceThisMeshAroundModule::OUTPUT_1));
 

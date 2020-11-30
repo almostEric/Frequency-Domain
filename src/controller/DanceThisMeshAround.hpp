@@ -43,6 +43,7 @@ struct DanceThisMeshAroundModule : Module {
         DELAY_2_FB_AMOUNT_PARAM,
         DELAY_MESH_FB_AMOUNT_PARAM,
         DELAY_MESH_FB_NONLINEARITY_PARAM,
+        MESH_IMPEDANCE_PARAM,
         GROUP_FEEDBACK_PARAM,
         ALLPASS_FC_PARAM,
         NUM_PARAMS
@@ -62,6 +63,7 @@ struct DanceThisMeshAroundModule : Module {
         DELAY_2_FB_AMOUNT_INPUT,
         DELAY_MESH_FB_AMOUNT_INPUT,
         DELAY_MESH_FB_NONLINEARITY_INPUT,
+        MESH_IMPEDANCE_INPUT,
         GROUP_FEEDBACK_INPUT,
         ALLPASS_FC_INPUT,
         NUM_INPUTS
