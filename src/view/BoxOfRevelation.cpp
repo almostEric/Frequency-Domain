@@ -179,6 +179,9 @@ struct BRDisplayFilterTopology : FramebufferWidget {
             case FILTER_MODEL_COMB :
                 nvgStrokeColor(args.vg, nvgRGB(0x2f,0xb0,0xb0));
                 break;
+            case FILTER_MODEL_MODAL :
+                nvgStrokeColor(args.vg, nvgRGB(0xb0,0x2f,0xb0));
+                break;
           }
           nvgStroke(args.vg);
 
@@ -210,6 +213,15 @@ struct BRDisplayFilterTopology : FramebufferWidget {
                 nvgLineTo(args.vg,xPos+2.0,yPos+2.0);
                 nvgMoveTo(args.vg,xPos+4.0,yPos+6.0);
                 nvgLineTo(args.vg,xPos+4.0,yPos+2.0);
+                nvgStroke(args.vg);
+                continue;
+          }
+
+          //Draw weird modal shape
+          if(module->cubeModels[module->currentModel].filterModel[s] == FILTER_MODEL_MODAL) {
+                nvgStrokeWidth(args.vg, 1.0);
+                nvgBeginPath(args.vg);
+                nvgCircle(args.vg,xPos+3,yPos+3,2.0);
                 nvgStroke(args.vg);
                 continue;
           }

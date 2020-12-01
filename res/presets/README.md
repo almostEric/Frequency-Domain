@@ -2,7 +2,7 @@
 
 Each cube model has 7 filters, numbered 0-6.
 Each filter has a model:
-Currently only two Models: 0-Biquad,2-Comb,3-Modal (1 is coming soon)
+Currently has three Models: 0-Biquad,2-Comb,3-Modal (1 is coming soon)
 
 Each filter has a Non-liearity structure
 Structures: 0-None, 1-Non-linear states,2-Non-linear feedback,3-Nonlinear states and feeback
