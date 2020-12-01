@@ -8,6 +8,7 @@
 #include "../model/dsp/filter/NonlinearBiquad.hpp"
 #include "../model/dsp/filter/ChebyshevI.hpp"
 #include "../model/dsp/filter/CombFilter.hpp"
+#include "../model/dsp/filter/ModalFilter.hpp"
 #include "../model/cubeFilterModel.hpp"
 #include "../model/cubeFilterPoint.hpp"
 #include "../model/Interpolate.hpp"

@@ -176,10 +176,9 @@ void BoxOfRevelationModule::loadCubeFile(std::string path)  {
                         int filterNumber = filterIndex;
                         switch (model.filterModel[filterIndex]) {
                             case FILTER_MODEL_BIQUAD:
-                                {
+                            {
                                 float Fc = 15000;
                                 float _q = .707;
-                                float _drive = 1.0;
                                 json_t *filterNumberJ = json_object_get(filterJ, "filterNumber");
                                 if(filterNumberJ)
                                     filterNumber = json_integer_value(filterNumberJ);
@@ -192,22 +191,16 @@ void BoxOfRevelationModule::loadCubeFile(std::string path)  {
                                 if(qJ)
                                     _q = json_real_value(qJ);
 
-                                json_t *driveJ = json_object_get(filterJ, "drive");
-                                if(driveJ)
-                                    _drive = json_real_value(driveJ);
-
                                 model.vertex[x][y][z].filterParameters[filterNumber].Fc = Fc;
                                 model.vertex[x][y][z].filterParameters[filterNumber].Q = _q;
-                                model.vertex[x][y][z].filterParameters[filterNumber].drive = _drive;
                                 break;
-                                }
+                            }
                             case FILTER_MODEL_COMB:
-                                {
+                            {
                                 float _feedforwardAmount = 0;
                                 float _feedbackAmount = 0;
                                 float _feedforwardGain = 0.0;
                                 float _feedbackGain = 0.0;
-                                float _drive = 1.0;
 
                                 json_t *filterNumberJ = json_object_get(filterJ, "filterNumber");
                                 if(filterNumberJ)
@@ -229,18 +222,45 @@ void BoxOfRevelationModule::loadCubeFile(std::string path)  {
                                 if(fbgJ)
                                     _feedbackGain = json_real_value(fbgJ);
 
-                                json_t *driveJ = json_object_get(filterJ, "drive");
-                                if(driveJ)
-                                    _drive = json_real_value(driveJ);
-
                                 model.vertex[x][y][z].filterParameters[filterNumber].feedforwardAmount = _feedforwardAmount;
                                 model.vertex[x][y][z].filterParameters[filterNumber].feedbackAmount = _feedbackAmount;
                                 model.vertex[x][y][z].filterParameters[filterNumber].feedforwardGain = _feedforwardGain;
                                 model.vertex[x][y][z].filterParameters[filterNumber].feedbackGain = _feedbackGain;
-                                model.vertex[x][y][z].filterParameters[filterNumber].drive = _drive;
                                 break;
-                                }
+                            }
+                            case FILTER_MODEL_MODAL:
+                            {
+                                float Fc = 15000;
+                                float _decay = 0.25;
+                                float _phase = 1.0;
+                                json_t *filterNumberJ = json_object_get(filterJ, "filterNumber");
+                                if(filterNumberJ)
+                                    filterNumber = json_integer_value(filterNumberJ);
+
+                                json_t *FcJ = json_object_get(filterJ, "Fc");
+                                if(FcJ)
+                                    Fc = json_real_value(FcJ);
+
+                                json_t *decayJ = json_object_get(filterJ, "decay");
+                                if(decayJ)
+                                    _decay = json_real_value(decayJ);
+
+                                json_t *phaseJ = json_object_get(filterJ, "phase");
+                                if(phaseJ)
+                                    _phase = json_real_value(phaseJ);
+
+                                model.vertex[x][y][z].filterParameters[filterNumber].Fc = Fc;
+                                model.vertex[x][y][z].filterParameters[filterNumber].decay = _decay;
+                                model.vertex[x][y][z].filterParameters[filterNumber].phase = _phase;
+                                break;
+                            }
                         }
+                        float _drive = 1.0;
+                        json_t *driveJ = json_object_get(filterJ, "drive");
+                                if(driveJ)
+                                    _drive = json_real_value(driveJ);
+                        model.vertex[x][y][z].filterParameters[filterNumber].drive = _drive;
+
                         float _gain = 0.0;
                         json_t *gainJ = json_object_get(filterJ, "gain");
                         if(gainJ)
@@ -306,6 +326,10 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
                 case FILTER_MODEL_COMB:
                     pFilter[s][0].reset(new CombFilter<double>(0, 0.0 , 0.0 , 0.0, 0.0));
                     pFilter[s][1].reset(new CombFilter<double>(0, 0.0 , 0.0 , 0.0, 0.0));
+                    break;
+                case FILTER_MODEL_MODAL:
+                    pFilter[s][0].reset(new ModalFilter<double>(0.5 , 1000.0, 0.5, 0.0));
+                    pFilter[s][1].reset(new ModalFilter<double>(0.5 , 1000.0, 0.5, 0.0));
                     break;
                 case FILTER_MODEL_BIQUAD:
                 default:
@@ -411,7 +435,41 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
                     drive[s][c] = _drive;
 
                     pFilter[s][c]->setFilterParameters(cubeModels[currentModel].filterType[s],clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_q,_drive,0);
+                } else if (cubeModels[currentModel].filterModel[s] == FILTER_MODEL_MODAL) {
+                    float cutOffFrequeny = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].Fc,
+                                                                cubeModels[currentModel].vertex[1][0][0].filterParameters[s].Fc,
+                                                                cubeModels[currentModel].vertex[0][1][0].filterParameters[s].Fc,
+                                                                cubeModels[currentModel].vertex[1][1][0].filterParameters[s].Fc,
+                                                                cubeModels[currentModel].vertex[0][0][1].filterParameters[s].Fc,
+                                                                cubeModels[currentModel].vertex[1][0][1].filterParameters[s].Fc,
+                                                                cubeModels[currentModel].vertex[0][1][1].filterParameters[s].Fc,
+                                                                cubeModels[currentModel].vertex[1][1][1].filterParameters[s].Fc,
+                                                                frequency[c],yMorph[c],zMorph[c]);
 
+                    float _decay = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].decay,
+                                                    cubeModels[currentModel].vertex[1][0][0].filterParameters[s].decay,
+                                                    cubeModels[currentModel].vertex[0][1][0].filterParameters[s].decay,
+                                                    cubeModels[currentModel].vertex[1][1][0].filterParameters[s].decay,
+                                                    cubeModels[currentModel].vertex[0][0][1].filterParameters[s].decay,
+                                                    cubeModels[currentModel].vertex[1][0][1].filterParameters[s].decay,
+                                                    cubeModels[currentModel].vertex[0][1][1].filterParameters[s].decay,
+                                                    cubeModels[currentModel].vertex[1][1][1].filterParameters[s].decay,
+                                                    frequency[c],yMorph[c],zMorph[c]);
+
+                    float _drive = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].drive,
+                        cubeModels[currentModel].vertex[1][0][0].filterParameters[s].drive,
+                        cubeModels[currentModel].vertex[0][1][0].filterParameters[s].drive,
+                        cubeModels[currentModel].vertex[1][1][0].filterParameters[s].drive,
+                        cubeModels[currentModel].vertex[0][0][1].filterParameters[s].drive,
+                        cubeModels[currentModel].vertex[1][0][1].filterParameters[s].drive,
+                        cubeModels[currentModel].vertex[0][1][1].filterParameters[s].drive,
+                        cubeModels[currentModel].vertex[1][1][1].filterParameters[s].drive,
+                        frequency[c],yMorph[c],zMorph[c]);
+
+                    Fc[s] = cutOffFrequeny;
+                    drive[s][c] = _drive;
+
+                    pFilter[s][c]->setFilterParameters(clamp(cutOffFrequeny,20.0f,20000.0f)/ sampleRate,_decay * sampleRate,_drive,0.0);
                 } else { // COMB FILTER
                     float _feedforwardAmount = trilinearInterpolate(cubeModels[currentModel].vertex[0][0][0].filterParameters[s].feedforwardAmount,
                                                     cubeModels[currentModel].vertex[1][0][0].filterParameters[s].feedforwardAmount,

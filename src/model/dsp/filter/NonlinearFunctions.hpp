@@ -1,3 +1,4 @@
+#pragma once
 
 /**
  * Simple cubic soft-clipping nonlinearity.

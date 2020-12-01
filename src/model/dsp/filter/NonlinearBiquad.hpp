@@ -1,3 +1,5 @@
+#pragma once
+
 /**
  * NonlinearBiquad.hpp
  * Author: Jatin Chowdhury
