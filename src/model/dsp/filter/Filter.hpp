@@ -1,3 +1,5 @@
+#pragma once
+
 #include "NonlinearFunctions.hpp"
 
 enum NLType {
@@ -25,6 +27,8 @@ public:
     virtual void setNonLinearFunction(NLFunction nlfunction) {}
 
     virtual void setFilterParameters(int type, T Fc, T Q, T drive, T peakGainDB) {}
+    
+    virtual void setFilterParameters(T Fc, T t60Samp, T drive, T phase) {}
 
     virtual void setFilterParameters(int type, T feedforwardAmount, T feedbackAmount, T feedforwardGain, T feedbackGain, T drive) {}
 
