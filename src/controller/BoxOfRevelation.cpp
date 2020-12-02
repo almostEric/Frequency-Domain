@@ -394,7 +394,7 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
                                                 frequency[c],yMorph[c],zMorph[c]);
 
             makeupAttenuation[c] = powf(10,makeupGain / 20.0f);
-        //fprintf(stderr, "  att:%f  \n",makeupAttenuation);
+        // fprintf(stderr, "  att:%f  \n",makeupGain);
 
 
 
@@ -601,6 +601,8 @@ void BoxOfRevelationModule::process(const ProcessArgs &args) {
                 }
             }
         }
+
+// fprintf(stderr, "makeup gain  %f %f \n",makeupAttenuation[0],makeupAttenuation[1]);
 
         out[0] = out[0] * makeupAttenuation[0]; // Needs to be renamed, not really attenuation
         out[1] = out[1] * makeupAttenuation[1]; 
