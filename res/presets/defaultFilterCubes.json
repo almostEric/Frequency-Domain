@@ -14375,6 +14375,1018 @@
           ]
         }
       ]
+    },
+    {
+      "modelName": "Kalimba",
+      "filterModels": [
+        3,
+        3,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityStructures": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityFunctions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterTypes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "filterLevels": [
+        0,
+        1,
+        2,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "vertexes": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "decay": 0.05,
+              "drive" : 1.0,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 649.0,
+              "decay": 0.05,
+              "drive" : 0.1,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 1826.0,
+              "decay": 0.05,
+              "drive" : 0.0045,
+              "phase": 3.14
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 178.2,
+              "decay": 0.05,
+              "drive" : 0.01,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 2.0,
+              "Q": 0.2000008,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2000008,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2000008,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 1000.0,
+              "decay": 0.2,
+              "drive" : 4.0,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 6490.0,
+              "decay": 0.2,
+              "drive" : 0.4,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 18260.0,
+              "decay": 0.2,
+              "drive" : 0.0182,
+              "phase": 3.14
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1782.0,
+              "decay": 0.2,
+              "drive" : 0.01,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "makeupGain": -18.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "decay": 0.5,
+              "drive" : 1.0,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 649.0,
+              "decay": 0.35,
+              "drive" : 0.1,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 1826.0,
+              "decay": 0.2,
+              "drive" : 0.0045,
+              "phase": 3.14
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 178.2,
+              "decay": 0.08,
+              "drive" : 0.001,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 1000.0,
+              "decay": 1.2,
+              "drive" : 4.0,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 6490.0,
+              "decay": 1.0,
+              "drive" : 0.4,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 18260.0,
+              "decay": 0.8,
+              "drive" : 0.0182,
+              "phase": 3.14
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1782.0,
+              "decay": 0.3,
+              "drive" : 0.01,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 200.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1,
+          "makeupGain": 3.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "decay": 0.01,
+              "drive" : 1.0,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 571.0,
+              "decay": 0.01,
+              "drive" : 0.1,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 903.0,
+              "decay": 0.01,
+              "drive" : 0.0045,
+              "phase": 3.14
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 178.2,
+              "decay": 0.01,
+              "drive" : 0.01,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": -10.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": -24.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": -24.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 1,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 1000.0,
+              "decay": 0.01,
+              "drive" : 4.0,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 5710.0,
+              "decay": 0.01,
+              "drive" : 0.4,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 9030.0,
+              "decay": 0.01,
+              "drive" : 0.0182,
+              "phase": 3.14
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1782.0,
+              "decay": 0.01,
+              "drive" : 0.01,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 1,
+          "makeupGain": -18.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "decay": 0.5,
+              "drive" : 1.0,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 571.0,
+              "decay": 0.35,
+              "drive" : 0.1,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 903.0,
+              "decay": 0.2,
+              "drive" : 0.0045,
+              "phase": 3.14
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 178.2,
+              "decay": 0.08,
+              "drive" : 0.005,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 1,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 1000.0,
+              "decay": 1.1,
+              "drive" : 4.0,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 5710.0,
+              "decay": 0.85,
+              "drive" : 0.4,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 9030.0,
+              "decay": 0.65,
+              "drive" : 0.0182,
+              "phase": 3.14
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1782.0,
+              "decay": 0.2,
+              "drive" : 0.02,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": 0.0
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 20.0,
+              "Q": 0.2,
+              "drive" : 1.0,
+              "gain": -12.0
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 20.0,
+              "Q": 0.20,
+              "drive" : 1.0,
+              "gain": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelName": "Tin Can Reverb",
+      "filterModels": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],  
+      "filterNonLinearityStructures": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterNonLinearityFunctions": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],  
+      "filterTypes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "filterLevels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "vertexes": [
+        {
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "makeupGain": 9.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "decay": 0.5,
+              "drive" : 0.04,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 330.0,
+              "decay": 0.45,
+              "drive" : 0.06,
+              "phase": 0.5
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 707.0,
+              "decay": 0.4,
+              "drive" : 0.05,
+              "phase": 0.75
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1501.0,
+              "decay": 0.35,
+              "drive" : 0.3,
+              "phase": 0.2
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 3330.0,
+              "decay": 0.3,
+              "drive" : 0.4,
+              "phase": 0.9
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 8909.0,
+              "decay": 0.25,
+              "drive" : 0.6,
+              "phase": 1.2
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 12010.0,
+              "decay": 0.2,
+              "drive" : 0.8,
+              "phase": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 0,
+          "makeupGain": 6.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 200.0,
+              "decay": 0.5,
+              "drive" : 0.08,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 660.0,
+              "decay": 0.45,
+              "drive" : 0.12,
+              "phase": 0.5
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 1414.0,
+              "decay": 0.4,
+              "drive" : 0.2,
+              "phase": 0.75
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 3002.0,
+              "decay": 0.35,
+              "drive" : 0.6,
+              "phase": 0.2
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 6660.0,
+              "decay": 0.3,
+              "drive" : 0.8,
+              "phase": 0.9
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 14818.0,
+              "decay": 0.25,
+              "drive" : 1.2,
+              "phase": 1.2
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 19008.0,
+              "decay": 0.2,
+              "drive" : 1.6,
+              "phase": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 0,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "decay": 4.0,
+              "drive" : 0.04,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 330.0,
+              "decay": 8.3,
+              "drive" : 0.06,
+              "phase": 0.5
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 707.0,
+              "decay": 5.4,
+              "drive" : 0.1,
+              "phase": 0.75
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1501.0,
+              "decay": 1.1,
+              "drive" : 0.3,
+              "phase": 0.2
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 3330.0,
+              "decay": 0.9,
+              "drive" : 0.4,
+              "phase": 0.9
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 8909.0,
+              "decay": 0.75,
+              "drive" : 0.6,
+              "phase": 1.2
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 12010.0,
+              "decay": 0.6,
+              "drive" : 0.8,
+              "phase": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 0,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 200.0,
+              "decay": 4.0,
+              "drive" : 0.08,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 660.0,
+              "decay": 8.3,
+              "drive" : 0.12,
+              "phase": 0.5
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 1414.0,
+              "decay": 5.4,
+              "drive" : 0.2,
+              "phase": 0.75
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 3002.0,
+              "decay": 1.1,
+              "drive" : 0.6,
+              "phase": 0.2
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 6660.0,
+              "decay": 0.9,
+              "drive" : 0.8,
+              "phase": 0.9
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 14818.0,
+              "decay": 0.75,
+              "drive" : 1.2,
+              "phase": 1.2
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 19008.0,
+              "decay": 0.6,
+              "drive" : 1.6,
+              "phase": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "z": 1,
+          "makeupGain": 3.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "decay": 0.5,
+              "drive" : 0.04,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 330.0,
+              "decay": 0.45,
+              "drive" : 0.06,
+              "phase": 0.5
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 707.0,
+              "decay": 0.4,
+              "drive" : 0.05,
+              "phase": 0.75
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1501.0,
+              "decay": 0.35,
+              "drive" : 0.3,
+              "phase": 0.2
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 3330.0,
+              "decay": 0.3,
+              "drive" : 0.4,
+              "phase": 0.9
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 8909.0,
+              "decay": 0.25,
+              "drive" : 0.6,
+              "phase": 1.2
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 12010.0,
+              "decay": 0.2,
+              "drive" : 0.8,
+              "phase": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "z": 1,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "decay": 0.5,
+              "drive" : 0.04,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 330.0,
+              "decay": 0.45,
+              "drive" : 0.06,
+              "phase": 0.5
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 707.0,
+              "decay": 0.4,
+              "drive" : 0.05,
+              "phase": 0.75
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1501.0,
+              "decay": 0.35,
+              "drive" : 0.3,
+              "phase": 0.2
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 3330.0,
+              "decay": 0.3,
+              "drive" : 0.4,
+              "phase": 0.9
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 8909.0,
+              "decay": 0.25,
+              "drive" : 0.6,
+              "phase": 1.2
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 12010.0,
+              "decay": 0.2,
+              "drive" : 0.8,
+              "phase": 0.0
+            }
+          ]
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "z": 1,
+          "makeupGain": -18.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 100.0,
+              "decay": 0.5,
+              "drive" : 0.04,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 330.0,
+              "decay": 0.45,
+              "drive" : 0.06,
+              "phase": 0.5
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 707.0,
+              "decay": 0.4,
+              "drive" : 0.05,
+              "phase": 0.75
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 1501.0,
+              "decay": 0.35,
+              "drive" : 0.3,
+              "phase": 0.2
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 3330.0,
+              "decay": 0.3,
+              "drive" : 0.4,
+              "phase": 0.9
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 8909.0,
+              "decay": 0.25,
+              "drive" : 0.6,
+              "phase": 1.2
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 12010.0,
+              "decay": 0.2,
+              "drive" : 0.8,
+              "phase": 0.0
+            }
+          ]
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "z": 1,
+          "makeupGain": 0.0,
+          "filters": [
+            {
+              "filterNumber": 0,
+              "Fc": 200.0,
+              "decay": 0.6,
+              "drive" : 0.08,
+              "phase": 0.0
+            },
+            {
+              "filterNumber": 1,
+              "Fc": 660.0,
+              "decay": 0.75,
+              "drive" : 0.12,
+              "phase": 0.5
+            },
+            {
+              "filterNumber": 2,
+              "Fc": 1414.0,
+              "decay": 0.9,
+              "drive" : 0.2,
+              "phase": 0.75
+            },
+            {
+              "filterNumber": 3,
+              "Fc": 3002.0,
+              "decay": 10.1,
+              "drive" : 0.6,
+              "phase": 0.2
+            },
+            {
+              "filterNumber": 4,
+              "Fc": 6660.0,
+              "decay": 21.4,
+              "drive" : 0.8,
+              "phase": 0.9
+            },
+            {
+              "filterNumber": 5,
+              "Fc": 14818.0,
+              "decay": 24.3,
+              "drive" : 1.2,
+              "phase": 1.2
+            },
+            {
+              "filterNumber": 6,
+              "Fc": 19008.0,
+              "decay": 12.0,
+              "drive" : 1.6,
+              "phase": 0.0
+            }
+          ]
+        }
+      ]
     }
   ]
 } 

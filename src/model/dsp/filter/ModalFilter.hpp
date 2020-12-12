@@ -9,7 +9,6 @@
  * For more information, see: https://ccrma.stanford.edu/~jos/smac03maxjos/
  */
 
-// #include <complex>
 #include "Filter.hpp"
 
 template <typename T> class ModalFilter : public Filter<T> {
@@ -37,7 +36,7 @@ public:
     T frequencyResponse(T frequency) override {
         T w = 2.0*M_PI*frequency;
         auto denom = std::abs(std::complex<T> (1) - filtCoef * std::exp(-jImag * w));
-        return std::abs(A) / denom;
+        return std::abs(A) / denom / (T) 2.0;
     }
 
 private:
