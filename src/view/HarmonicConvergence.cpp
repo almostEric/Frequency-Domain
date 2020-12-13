@@ -92,92 +92,132 @@ HarmonicConvergenceWidget::HarmonicConvergenceWidget(HarmonicConvergenceModule *
 
 
   // Frequeny Shift
-  addInput(createInput<LightPort>(Vec(153.5, 50), module, HarmonicConvergenceModule::OCTAVE_CV));
-  addParam(createParam<LightKnob>(Vec(183.25, 36), module, HarmonicConvergenceModule::OCTAVE));
+  addInput(createInput<LightPort>(Vec(159.5, 36), module, HarmonicConvergenceModule::OCTAVE_CV));
+  addParam(createParam<LightSmallKnob>(Vec(187.25, 40), module, HarmonicConvergenceModule::OCTAVE));
 
   {
-    BidirectionalArcDisplay *c = new BidirectionalArcDisplay();
+    SmallBidirectionalArcDisplay *c = new SmallBidirectionalArcDisplay();
     if (module) {
       c->percentage = &module->octavePercentage;
     }
-    c->box.pos = Vec(189.5, 42.5);
-    c->box.size = Vec(60, 60);
+    c->box.pos = Vec(190.5, 43.5);
+    c->box.size = Vec(30, 30);
     addChild(c);
   }
 
   //Frequency Wapring
-  addInput(createInput<LightPort>(Vec(201, 82), module, HarmonicConvergenceModule::FREQ_WARP_AMOUNT_CV));
-  addParam(createParam<LightKnob>(Vec(231.5, 68), module, HarmonicConvergenceModule::FREQ_WARP_AMOUNT));
+  addInput(createInput<LightPort>(Vec(159.5, 82), module, HarmonicConvergenceModule::FREQ_WARP_AMOUNT_CV));
+  addParam(createParam<LightSmallKnob>(Vec(187.25, 85), module, HarmonicConvergenceModule::FREQ_WARP_AMOUNT));
   {
-    ArcDisplay *c = new ArcDisplay();
+    SmallArcDisplay *c = new SmallArcDisplay();
     if (module) {
       c->percentage = &module->freqWarpAmount;
     }
-    c->box.pos = Vec(237.5, 74.5);
-    c->box.size = Vec(60, 60);
+    c->box.pos = Vec(190.5, 88.5);
+    c->box.size = Vec(30, 30);
     addChild(c);
   }
 
 
   // Warp Center Frequency
-  addInput(createInput<LightPort>(Vec(263, 50), module, HarmonicConvergenceModule::FREQ_WARP_CENTER_CV));
-  addParam(createParam<LightKnob>(Vec(293.5, 36), module, HarmonicConvergenceModule::FREQ_WARP_CENTER));
+  addInput(createInput<LightPort>(Vec(224, 82), module, HarmonicConvergenceModule::FREQ_WARP_CENTER_CV));
+  addParam(createParam<LightSmallKnob>(Vec(252.5, 85), module, HarmonicConvergenceModule::FREQ_WARP_CENTER));
   {
-    ArcDisplay *c = new ArcDisplay();
+    SmallArcDisplay *c = new SmallArcDisplay();
     if (module) {
       c->percentage = &module->freqWarpCenterPercentage;
     }
-    c->box.pos = Vec(300, 42.5);
-    c->box.size = Vec(60, 60);
+    c->box.pos = Vec(256, 88.5);
+    c->box.size = Vec(30, 30);
     addChild(c);
   }
   
-  addParam(createParam<RecButton>(Vec(257, 35), module, HarmonicConvergenceModule::FREQ_WARP_USE_FUNDAMENTAL));
-  addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(259, 36), module, HarmonicConvergenceModule::FREQ_WARP_USE_FUNDAMENTAL_LIGHT));
+  addParam(createParam<RecButton>(Vec(247, 64), module, HarmonicConvergenceModule::FREQ_WARP_USE_FUNDAMENTAL));
+  addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(249, 65), module, HarmonicConvergenceModule::FREQ_WARP_USE_FUNDAMENTAL_LIGHT));
+
+
+  // Analysis Center Frequency
+  addInput(createInput<LightPort>(Vec(309.5, 36), module, HarmonicConvergenceModule::ANALYZE_CENTER_CV));
+  addParam(createParam<LightSmallKnob>(Vec(337.25, 40), module, HarmonicConvergenceModule::ANALYZE_CENTER));
+  {
+    SmallArcDisplay *c = new SmallArcDisplay();
+    if (module) {
+      c->percentage = &module->analyzeCenterPercentage;
+    }
+    c->box.pos = Vec(340.5, 43.5);
+    c->box.size = Vec(30, 30);
+    addChild(c);
+  }
+
+    // Analysis Band Width
+  addInput(createInput<LightPort>(Vec(386, 36), module, HarmonicConvergenceModule::ANALYZE_BW_CV));
+  addParam(createParam<LightSmallKnob>(Vec(414.25, 40), module, HarmonicConvergenceModule::ANALYZE_BW));
+  {
+    SmallArcDisplay *c = new SmallArcDisplay();
+    if (module) {
+      c->percentage = &module->analyzeBWPercentage;
+    }
+    c->box.pos = Vec(417.5, 43.5);
+    c->box.size = Vec(30, 30);
+    addChild(c);
+  }
+
 
 
   // Spectral Mode
   addInput(createInput<LightPort>(Vec(309.5, 82), module, HarmonicConvergenceModule::SPECTRAL_MODE_CV));
-  addParam(createParam<LightKnobSnap>(Vec(337.25, 68), module, HarmonicConvergenceModule::SPECTRAL_MODE));
-
+  addParam(createParam<LightSmallKnobSnap>(Vec(337.25, 85), module, HarmonicConvergenceModule::SPECTRAL_MODE));
   {
-    ArcDisplay *c = new ArcDisplay();
+    SmallArcDisplay *c = new SmallArcDisplay();
     if (module) {
       c->percentage = &module->spectralPercentage;
     }
-    c->box.pos = Vec(343.5, 74.5);
-    c->box.size = Vec(60, 60);
+    c->box.pos = Vec(340.5, 88.5);
+    c->box.size = Vec(30, 30);
     addChild(c);
   }
 
   // Voice Shift
-  addInput(createInput<LightPort>(Vec(375.5, 51), module, HarmonicConvergenceModule::VOICE_SHIFT_CV));
-  addParam(createParam<LightKnobSnap>(Vec(405.25, 37), module, HarmonicConvergenceModule::VOICE_SHIFT));
+  addInput(createInput<LightPort>(Vec(386.5, 82), module, HarmonicConvergenceModule::VOICE_SHIFT_CV));
+  addParam(createParam<LightSmallKnobSnap>(Vec(414.25, 85), module, HarmonicConvergenceModule::VOICE_SHIFT));
 
   {
-    BidirectionalArcDisplay *c = new BidirectionalArcDisplay();
+    SmallBidirectionalArcDisplay *c = new SmallBidirectionalArcDisplay();
     if (module) {
       c->percentage = &module->shiftPercentage;
     }
-    c->box.pos = Vec(411.5, 43.5);
-    c->box.size = Vec(60, 60);
+    c->box.pos = Vec(417.5, 88.5);
+    c->box.size = Vec(30, 30);
     addChild(c);
   }
 
 
   // Mix
-  addInput(createInput<LightPort>(Vec(332.5, 285), module, HarmonicConvergenceModule::MIX_CV));
-  addParam(createParam<LightKnob>(Vec(365.25, 272), module, HarmonicConvergenceModule::MIX));
+  addInput(createInput<LightPort>(Vec(362.5, 285), module, HarmonicConvergenceModule::MIX_CV));
+  addParam(createParam<LightKnob>(Vec(395.25, 272), module, HarmonicConvergenceModule::MIX));
 
   {
     ArcDisplay *c = new ArcDisplay();
     if (module) {
       c->percentage = &module->mixPercentage;
     }
-    c->box.pos = Vec(371.5, 278.5);
+    c->box.pos = Vec(400.5, 278.5);
     c->box.size = Vec(60, 60);
     addChild(c);
   }
+
+  addInput(createInput<LightPort>(Vec(303, 285), module, HarmonicConvergenceModule::FEEDBACK_CV));
+  addParam(createParam<LightSmallKnob>(Vec(328.5, 289), module, HarmonicConvergenceModule::FEEDBACK));
+  {
+    SmallArcDisplay *c = new SmallArcDisplay();
+    if (module) {
+      c->percentage = &module->feedbackPercentage;
+    }
+    c->box.pos = Vec(332, 292);
+    c->box.size = Vec(30, 30);
+    addChild(c);
+  }
+
 
   addParam(createParam<LightSmallKnob>(Vec(160.25, 227), module, HarmonicConvergenceModule::FM_AMOUNT));
   {

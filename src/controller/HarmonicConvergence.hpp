@@ -35,6 +35,9 @@ struct HarmonicConvergenceModule : Module {
     MORPH_MODE,
     FM_AMOUNT,
     RM_MIX,
+    ANALYZE_CENTER,
+    ANALYZE_BW,
+    FEEDBACK,
     NUM_PARAMS
   };
 
@@ -67,6 +70,9 @@ struct HarmonicConvergenceModule : Module {
     PAN_SHIFT_X_CV,
     PAN_SHIFT_Y_CV,
     SPECTRAL_MODE_CV,
+    ANALYZE_CENTER_CV,
+    ANALYZE_BW_CV,
+    FEEDBACK_CV,
     NUM_INPUTS
   };
   enum OutputIds { OUTPUT_L, OUTPUT_R, DEBUG_OUTPUT, NUM_OUTPUTS };
@@ -156,6 +162,12 @@ struct HarmonicConvergenceModule : Module {
   float freqWarpCenterFrequency = 0;
   bool warpBasedOnFundamental = false;
   
+  float analyzeCenter = 0;
+  float analyzeBW = 0;
+
+  float feedback = 0;
+  float feedbackValue1, feedbackValue2 = 0;
+  
   bool morphMode = false;
 
   // percentages
@@ -175,6 +187,10 @@ struct HarmonicConvergenceModule : Module {
   float shiftPercentage = 0;
   float framePercentage = 0;
   float spectralPercentage = 0;
+  float analyzeCenterPercentage = 0;
+  float analyzeBWPercentage = 0;
+  float feedbackPercentage = 0;
+  
   const float phaseThreshold = 1E-01;
 
 

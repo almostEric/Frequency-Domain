@@ -34,7 +34,7 @@ struct Binning {
 
 
   //Skip Band 0 as that is DC offset
-  void topN(uint16_t count, float *inMagData, float *inPhaseData, Result *outData, FFTSortMode mode) {
+  void topN(uint16_t count, float *inMagData, float *inPhaseData, Result *outData, FFTSortMode mode, float analyzeCenter = 0.5, float analyzeBW = 1.0) {
 
     float binSize = sampleRate / float(size); 
 
@@ -49,12 +49,21 @@ struct Binning {
     }
 
 
+    int centerBand = analyzeCenter * (size / 2);
+    int bandWidth = analyzeBW * (size / 4);
+    int bandStart = std::max(centerBand - bandWidth,0);
+    int bandEnd = std::min(centerBand + bandWidth,size/2);
+
+
+    //fprintf(stderr, "%i , %i  %u\n", bandStart,bandEnd,size/2);
+
     
     // minimum magnitude for replacement
     float minMagnitude = std::numeric_limits<double>::infinity();
     inMagData[0] = -minMagnitude;
     
-    for (uint16_t i = 0; i <= size / 2; i++) { 
+    int ic = 0;
+    for (uint16_t i = bandStart; i <= bandEnd; i++) { 
       //Use phases shift to alter frequency
       float freqAdjustment = binSize * inPhaseData[i] / M_PI;
       //freqAdjustment = 0;
@@ -77,14 +86,14 @@ struct Binning {
       }
 
       if(newFrequency) {
-        if (i < count) {
+        if (ic < count) {
           // if within the minumum count, start with those
           if (magnitude < minMagnitude) {
             minMagnitude = magnitude;
           }
-          outData[i].binNumber = i;
-          outData[i].frequency = freq;
-          outData[i].magnitude = magnitude;
+          outData[ic].binNumber = i;
+          outData[ic].frequency = freq;
+          outData[ic].magnitude = magnitude;
         } else if (magnitude > minMagnitude) {
           // otherwise find the lowest slot and replace it
           for (uint16_t c = 0; c < count; c++) {
@@ -104,6 +113,7 @@ struct Binning {
           }
         }
       }
+      ic++;
     }
   
 
@@ -124,7 +134,8 @@ struct Binning {
 
 
   //Skip Band 0 as that is DC offset
-  void topMorphedN(uint16_t count, uint16_t size1, uint16_t size2, float *inMagData1, float *inPhaseData1, float *inMagData2, float *inPhaseData2, float *morphData, Result *outData, FFTSortMode mode) {
+  void topMorphedN(uint16_t count, uint16_t size1, uint16_t size2, float *inMagData1, float *inPhaseData1, float *inMagData2, float *inPhaseData2, float *morphData, 
+                    Result *outData, FFTSortMode mode, float analyzeCenter = 0.5, float analyzeBW = 1.0) {
 
     uint16_t morphBinWidth = size / 2 / count;
 
@@ -143,12 +154,18 @@ struct Binning {
       outData[c].magnitude = 0;
     }
 
+    int centerBand = analyzeCenter * (size / 2);
+    int bandWidth = analyzeBW * (size / 4);
+    int bandStart = std::max(centerBand - bandWidth,0);
+    int bandEnd = std::min(centerBand + bandWidth,size/2);
+
     // minimum magnitude for replacement
     float minMagnitude = std::numeric_limits<double>::infinity();
     inMagData1[0] = -minMagnitude;
     inMagData2[0] = -minMagnitude;
 
-    for (uint16_t i = 0; i <= size / 2; i++) { 
+    int ic = 0;
+    for (uint16_t i = bandStart; i <= bandEnd; i++) { 
       //Use phases shift to alter frequency
       float freqAdjustment1 = binSize1 * inPhaseData1[i/b1n1SizeAdjust] / M_PI;
       float freqAdjustment2 = binSize2 * inPhaseData2[i/b1n2SizeAdjust] / M_PI;
@@ -176,13 +193,13 @@ struct Binning {
       }
 
       if(newFrequency) {
-        if (i < count) {
+        if (ic < count) {
           // if within the minumum count, start with those
           if (magnitude < minMagnitude) {
             minMagnitude = magnitude;
           }
-          outData[i].frequency = freq;
-          outData[i].magnitude = magnitude;
+          outData[ic].frequency = freq;
+          outData[ic].magnitude = magnitude;
         } else if (magnitude > minMagnitude) {
           // otherwise find the lowest slot and replace it
           for (uint16_t c = 0; c < count; c++) {
@@ -201,6 +218,7 @@ struct Binning {
           }
         }
       }
+      ic++;
     }
   
 
