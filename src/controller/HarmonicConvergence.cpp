@@ -17,6 +17,10 @@ HarmonicConvergenceModule::HarmonicConvergenceModule() {
   configParam<SpectralModeName>(SPECTRAL_MODE, 0.0f, 3.0f, 0.0f, "Spectral Mode");
   configParam(VOICE_SHIFT, -35.0f, 35.0f, 0.0f, "Voice Shift");
 
+  configParam(ANALYZE_CENTER, 0.0f, 1.0f, 0.5f,"Analysis Center Freqency","%",0,100);
+  configParam(ANALYZE_BW, 0.0f, 1.0f, 1.0f,"Analysis Bandwidth", " %", 0, 100);
+
+
   configParam(MIX, 0.0f, 100.0f, 50.0f,"Wet Mix","%");
   configParam(FRAME_SIZE, 7.0f, 13.0f, 9.0f, "Frame Size"," Bytes",2,1);
 
@@ -221,6 +225,9 @@ float HarmonicConvergenceModule::paramValue (uint16_t param, uint16_t input, flo
 void HarmonicConvergenceModule::process(const ProcessArgs &args) {
   // get the current input
 
+  feedback = paramValue(FEEDBACK, FEEDBACK_CV, 0, 1.0);
+  feedbackPercentage = feedback;
+
   input1Connected = inputs[INPUT_1].isConnected();
   input2Connected = inputs[INPUT_2].isConnected();
 
@@ -264,9 +271,8 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
 
     //TODO: Take advantage of SIMD
 
-    dryBuffer1[i]->set(input1 * windowedValue1);
-
-    dryBuffer2[i]->set(input2 * windowedValue2);
+    dryBuffer1[i]->set((input1 + (feedbackValue1 * feedback)) * windowedValue1);
+    dryBuffer2[i]->set((input2 + (feedbackValue2 * feedback)) * windowedValue2);
 
     bool updateCells = false;
     // is it time to do the fft?
@@ -341,8 +347,8 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
       // get the spectral mode
       uint8_t spectralMode = (uint8_t) paramValue(SPECTRAL_MODE, SPECTRAL_MODE_CV, 0, 3);
       spectralPercentage = float(spectralMode) / 3.0f;
-      binnings1->topN(MAX_VOICE_COUNT, freqDomain1, phaseDifference1, bins1, (FFTSortMode) spectralMode);
-      binnings2->topN(MAX_VOICE_COUNT, freqDomain2, phaseDifference2, bins2, (FFTSortMode) spectralMode);
+      binnings1->topN(MAX_VOICE_COUNT, freqDomain1, phaseDifference1, bins1, (FFTSortMode) spectralMode,analyzeCenter,analyzeBW);
+      binnings2->topN(MAX_VOICE_COUNT, freqDomain2, phaseDifference2, bins2, (FFTSortMode) spectralMode,analyzeCenter,analyzeBW);
       bank.switchBanks();
     }
 
@@ -446,6 +452,13 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
   freqWarpAmount = paramValue(FREQ_WARP_AMOUNT, FREQ_WARP_AMOUNT_CV, 0, 1.0);
   freqWarpCenterPercentage = paramValue(FREQ_WARP_CENTER, FREQ_WARP_CENTER_CV, 0, 1.0);
   freqWarpCenterFrequency = freqWarpCenterPercentage * 10000;
+
+  analyzeCenter = paramValue(ANALYZE_CENTER, ANALYZE_CENTER_CV, 0, 1.0);
+  analyzeCenterPercentage = analyzeCenter;
+
+  analyzeBW = paramValue(ANALYZE_BW, ANALYZE_BW_CV, 0, 1.0);
+  analyzeBWPercentage = analyzeBW;
+
   
   //magnitudeNormaliztion = 2.0 / powf(windowFunction->sum[windowFunctionId], 2.0);
   for (uint8_t i = 0; i < voiceCount; i++) {
@@ -530,9 +543,14 @@ void HarmonicConvergenceModule::process(const ProcessArgs &args) {
 
 //  assert(!isnan(output.outputMono));
 
+
   if(!outputs[OUTPUT_R].isConnected()) { // mono mode
+    feedbackValue1 = output.outputMono;
+    feedbackValue2 = feedbackValue1;
     outputs[OUTPUT_L].setVoltage(interpolate(dryDelayed+dryDelayed2, output.outputMono, mix, 0.0f, 100.0f));
   } else {
+    feedbackValue1 = output.outputLeft;
+    feedbackValue2 = output.outputRight;
     outputs[OUTPUT_L].setVoltage(interpolate(dryDelayed+dryDelayed2, output.outputLeft, mix, 0.0f, 100.0f));
     outputs[OUTPUT_R].setVoltage(interpolate(dryDelayed+dryDelayed2, output.outputRight, mix, 0.0f, 100.0f));
   }
