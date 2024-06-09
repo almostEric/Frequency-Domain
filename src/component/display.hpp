@@ -169,13 +169,13 @@ struct CellGrid : FramebufferWidget {
   }
 
   void onDragStart(const event::DragStart &e) override {
-    dragX = APP->scene->rack->mousePos.x;
-    dragY = APP->scene->rack->mousePos.y;
+    dragX = APP->scene->rack->getMousePos().x;
+    dragY = APP->scene->rack->getMousePos().y;
   }
 
   void onDragMove(const event::DragMove &e) override {
-    float newDragX = APP->scene->rack->mousePos.x;
-    float newDragY = APP->scene->rack->mousePos.y;
+    float newDragX = APP->scene->rack->getMousePos().x;
+    float newDragY = APP->scene->rack->getMousePos().y;
 
     cells->setCell((initX+(newDragX-dragX)) / cellWidth, (initY+(newDragY-dragY)) / cellHeight,setRange);
   }
@@ -345,13 +345,13 @@ struct CellRangeGrid : FramebufferWidget {
   }
 
   void onDragStart(const event::DragStart &e) override {
-    dragX = APP->scene->rack->mousePos.x;
-    dragY = APP->scene->rack->mousePos.y;
+    dragX = APP->scene->rack->getMousePos().x;
+    dragY = APP->scene->rack->getMousePos().y;
   }
 
   void onDragMove(const event::DragMove &e) override {
-    float newDragX = APP->scene->rack->mousePos.x;
-    float newDragY = APP->scene->rack->mousePos.y;
+    float newDragX = APP->scene->rack->getMousePos().x;
+    float newDragY = APP->scene->rack->getMousePos().y;
 
     cells->setCell((initX+(newDragX-dragX)) / cellWidth, (initY+(newDragY-dragY)) / cellHeight,setRange);
   }
@@ -558,13 +558,13 @@ struct CellBarGrid : FramebufferWidget {
   }
 
   void onDragStart(const event::DragStart &e) override {
-    dragX = APP->scene->rack->mousePos.x;
-    dragY = APP->scene->rack->mousePos.y;
+    dragX = APP->scene->rack->getMousePos().x;
+    dragY = APP->scene->rack->getMousePos().y;
   }
 
   void onDragMove(const event::DragMove &e) override {
-    float newDragX = APP->scene->rack->mousePos.x;
-    float newDragY = APP->scene->rack->mousePos.y;
+    float newDragX = APP->scene->rack->getMousePos().x;
+    float newDragY = APP->scene->rack->getMousePos().y;
 
     cells->setCell((initX+(newDragX-dragX)) / cellWidth, (initY+(newDragY-dragY)) / cellHeight,setRange);
   }
@@ -754,13 +754,13 @@ struct CellVerticalBarGrid : FramebufferWidget {
   }
 
   void onDragStart(const event::DragStart &e) override {
-    dragX = APP->scene->rack->mousePos.x;
-    dragY = APP->scene->rack->mousePos.y;
+    dragX = APP->scene->rack->getMousePos().x;
+    dragY = APP->scene->rack->getMousePos().y;
   }
 
   void onDragMove(const event::DragMove &e) override {
-    float newDragX = APP->scene->rack->mousePos.x;
-    float newDragY = APP->scene->rack->mousePos.y;
+    float newDragX = APP->scene->rack->getMousePos().x;
+    float newDragY = APP->scene->rack->getMousePos().y;
 
     cells->setCell( (cells->width - 0 - (initY+(newDragY-dragY)) / cellHeight),std::floor(cells->height - 1 - ((initX+(newDragX-dragX)) / cellWidth)),setRange);    
   }

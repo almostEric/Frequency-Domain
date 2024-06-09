@@ -99,7 +99,7 @@ void BoxOfRevelationModule::loadCubeFile(std::string path)  {
 	json_error_t error;
 	json_t* rootJ = json_loadf(file, 0, &error);
 	if (!rootJ)
-		throw UserException(string::f("Model Cube File file has invalid JSON at %d:%d %s", error.line, error.column, error.text));
+		throw Exception(string::f("Model Cube File file has invalid JSON at %d:%d %s", error.line, error.column, error.text));
 
     // fprintf(stderr, "Loading cube - successfully parsed  \n");
 
