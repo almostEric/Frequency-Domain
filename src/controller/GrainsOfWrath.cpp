@@ -256,7 +256,7 @@ void GrainsOfWrathModule::clearSamples() {
 void GrainsOfWrathModule::loadDirectory(std::string path) {
   DIR* rep = NULL;
   struct dirent* dirp = NULL;
-  std::string dir = path.empty() ? NULL : rack::string::directory(path);
+  std::string dir = path.empty() ? NULL : system::getDirectory(path);
 
   rep = opendir(dir.c_str());
   fichier.clear();
@@ -311,7 +311,7 @@ void GrainsOfWrathModule::loadSample(uint8_t slot, std::string path) {
 
 
 		fileLoaded = true;
-		fileDesc = rack::string::filename(path).substr(0,40);
+		fileDesc = system::getFilename(path).substr(0,40);
 
 //        fprintf(stderr, "%s \n", fileDesc.c_str());
 

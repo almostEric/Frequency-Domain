@@ -286,7 +286,7 @@ void FreudianSlipModule::loadSample(std::string path) {
 
 
 		fileLoaded = true;
-		fileDesc = rack::string::filename(path).substr(0,80) + "\n";
+		fileDesc = system::getFilename(path).substr(0,80) + "\n";
 		fileDesc += std::to_string(channels)+ " channel" + (channels > 1 ? "s" : "") + ", ";
 		fileDesc += std::to_string(playerSampleRate)+ " Hz" + "\n";
 
