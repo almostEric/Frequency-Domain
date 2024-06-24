@@ -9,6 +9,9 @@ MorphologyModule::MorphologyModule() {
 
   configParam(SPREAD, -1024.0f, 1024.0f, 0.0f, "Band Spread");
 
+  configParam(X_AXIS_PIN_POS_BAND_SPREAD, 0.0f, 1.0f, 0.0f, "Band Spread X Axis Pin Position","%",0,100);
+  configParam(X_AXIS_PIN_POS_PANNING, 0.0f, 1.0f, 0.0f, "Panning X Axis Pin Position","%",0,100);
+
   configParam(X_AXIS_ROTATION_BAND_SPREAD, -1.0f, 1.0f, 0.0f, "Band Spread X Axis Rotation","°",0,180);
   configParam(X_AXIS_ROTATION_PANNING, -1.0f, 1.0f, 0.0f, "Panning X Axis Rotation","°",0,180);
 
@@ -16,6 +19,36 @@ MorphologyModule::MorphologyModule() {
   configParam(INVERT_THRESHOLD_1, 0.0f, 50.0f, 0.0f, "Invert Threshold L");
   configParam(INVERT_THRESHOLD_2, 0.0f, 50.0f, 0.0f, "Invert Threshold R");
 
+
+  configButton(PIN_BAND_SPREAD_XS,"Band Spread Pin X Axis Mode");
+  configButton(PIN_PANNING_XS,"Panning Pin X Axis Mode");
+
+  configButton(INVERT_SPECTA_1,"Invert 1's Spectra");
+  configButton(INVERT_SPECTA_2,"Invert 2's Spectra");
+
+
+  configInput(INPUT_1, "#1");
+  configInput(INPUT_2, "#2");
+
+  configInput(BAND_SHIFT_X_CV, "Band Shift X CV");
+  configInput(BAND_SHIFT_Y_CV, "Band Shift Y CV");
+
+  configInput(PANNING_X_CV, "Panning X CV");
+  configInput(PANNING_Y_CV, "Panning Y CV");
+
+  configInput(SPREAD_CV, "Band Spread CV");
+
+  configInput(X_AXIS_PIN_POS_BAND_SPREAD_CV, "Band Spread X Axis Pin CV");
+  configInput(X_AXIS_PIN_POS_PANNING_CV, "Panning X Axis Pin CV");
+  configInput(X_AXIS_ROTATION_BAND_SPREAD_CV, "Band Spread X Axis Rotation CV");
+  configInput(X_AXIS_ROTATION_PANNING_CV, "Panning X Axis Rotation CV");
+
+  configInput(INVERT_THRESHOLD_1_CV, "Invert Threshold 1 CV");
+  configInput(INVERT_THRESHOLD_2_CV, "Invert Threshold 2 CV");
+
+  configOutput(OUTPUT_L, "Left");
+  configOutput(OUTPUT_R, "Right");
+    
 
   frameSize = 11;
   hopSize = frameSize - 2;

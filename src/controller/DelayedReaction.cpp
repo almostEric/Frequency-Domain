@@ -12,10 +12,54 @@ DelayedReactionModule::DelayedReactionModule() {
   configParam(X_AXIS_PIN_POS_ATTENUATION, 0.0f, 1.0f, 0.0f, "Attenuation X Axis Pin Position","%",0,100);
   configParam(X_AXIS_PIN_POS_DELAY_TIME, 0.0f, 1.0f, 0.0f, "Delay Time X Axis Pin Position","%",0,100);
   configParam(X_AXIS_PIN_POS_FEEDBACK, 0.0f, 1.0f, 0.0f, "Feedback X Axis Pin Position","%",0,100);
+  configParam(X_AXIS_PIN_POS_PANNING, 0.0f, 1.0f, 0.0f, "Panning X Axis Pin Position","%",0,100);
 
   configParam(X_AXIS_ROTATION_ATTENUATION, -1.0f, 1.0f, 0.0f, "Attenuation X Axis Rotation","°",0,180);
   configParam(X_AXIS_ROTATION_DELAY_TIME, -1.0f, 1.0f, 0.0f, "Delay Time X Axis Rotation","°",0,180);
   configParam(X_AXIS_ROTATION_FEEDBACK, -1.0f, 1.0f, 0.0f, "Feedback X Axis Rotation","°",0,180);
+  configParam(X_AXIS_ROTATION_PANNING, -1.0f, 1.0f, 0.0f, "Panning X Axis Rotation","°",0,180);
+
+  configButton(PIN_ATTENUATION_0S,"Attenuation Grid Pin X Axis Mode");
+  configButton(PIN_DELAY_TIME_0S,"Delay Time Grid Pin X Axis Mode");
+  configButton(PIN_FEEDBACK_0S,"Feedback Grid Pin X Axis Mode");
+  configButton(PIN_PANNING_0S,"Panning Grid Pin X Axis Mode");
+
+  configButton(LINK_ATTENUATION,"Link Attention Grid to 2nd Delayed Reaction");
+  configButton(LINK_DELAY_TIME,"Link Delay Time Grid to 2nd Delayed Reaction");
+  configButton(LINK_FEEDBACK,"Link Feedback Grid to 2nd Delayed Reaction");
+
+  configButton(DELAY_RANGE,"Delay Time Range");
+
+
+  configInput(INPUT, "Main");
+  configInput(MIX_CV, "Mix CV");
+  configInput(FEEDBACK_RETURN, "Feedback Return");
+
+  configInput(ATTENUATION_X_CV, "Attenuation Grid X Shift CV");
+  configInput(ATTENUATION_Y_CV, "Attenuation Grid Y Shift CV");
+  configInput(X_AXIS_PIN_POS_ATTENUATION_CV, "Attenuation Grid X Axis Pin CV");
+  configInput(X_AXIS_ROTATION_ATTENUATION_CV, "Attenuation Grid X Axis Rotation CV"); 
+
+  configInput(DELAY_TIME_X_CV, "Delay Time Grid X Shift CV");
+  configInput(DELAY_TIME_Y_CV, "Delay Time Grid Y Shift CV");
+  configInput(X_AXIS_PIN_POS_DELAY_TIME_CV, "Delay Time Grid X Axis Pin CV");
+  configInput(X_AXIS_ROTATION_DELAY_CV, "Delay Time Grid X Axis Rotation CV");
+
+  configInput(DELAY_FEEDBACK_X_CV, "Feedback Grid X Shift CV");
+  configInput(DELAY_FEEDBACK_Y_CV, "Feedback Grid Y Shift CV");
+  configInput(X_AXIS_PIN_POS_FEEDBACK_CV, "Feedback Grid X Axis Pin CV");
+  configInput(X_AXIS_ROTATION_FEEDBACK_CV, "Feedback Grid X Axis Rotation CV");
+
+  configInput(PANNING_X_CV, "Panning Grid X Shift CV");
+  configInput(PANNING_Y_CV, "Panning Grid Y Shift CV");
+  configInput(X_AXIS_PIN_POS_PANNING_CV, "Panning Grid X Axis Pin CV");
+  configInput(X_AXIS_ROTATION_PANNING_CV, "Panning Grid X Axis Rotation CV");
+
+  configOutput(OUTPUT_L, "Left/Mono");
+  configOutput(OUTPUT_L, "Right");
+  configOutput(FEEDBACK_SEND, "Feedback Send");
+
+
 
   leftExpander.producerMessage = producerMessage;
   leftExpander.consumerMessage = consumerMessage;
@@ -78,6 +122,7 @@ DelayedReactionModule::DelayedReactionModule() {
   attenuationCells = new OneDimensionalCellsWithRollover(50, NUM_UI_BANDS, 0, 1, PIN_ROLLOVER_MODE, WRAP_AROUND_ROLLOVER_MODE,1.0);
   delayTimeCells = new OneDimensionalCellsWithRollover(50, NUM_UI_BANDS, 0, 1, PIN_ROLLOVER_MODE, WRAP_AROUND_ROLLOVER_MODE);
   feedbackCells = new OneDimensionalCellsWithRollover(50, NUM_UI_BANDS, 0, 1, PIN_ROLLOVER_MODE, WRAP_AROUND_ROLLOVER_MODE);
+  panningCells = new OneDimensionalCellsWithRollover(50, NUM_UI_BANDS, -1, 1, PIN_ROLLOVER_MODE, WRAP_AROUND_ROLLOVER_MODE,0.0);
 
   onReset();
 }
@@ -126,6 +171,11 @@ void DelayedReactionModule::dataFromJson(json_t *root) {
     pinFeedback0s = (uint8_t) json_integer_value(fb0J);
   }
 
+  json_t *pn0J = json_object_get(root, "pinPanning0s");
+  if (json_is_integer(pn0J)) {
+    pinPanning0s = (uint8_t) json_integer_value(pn0J);
+  }
+
   json_t *alJ = json_object_get(root, "attenuationLinked");
   if (json_is_integer(alJ)) {
     attenuationLinked = (bool) json_integer_value(alJ);
@@ -157,6 +207,11 @@ void DelayedReactionModule::dataFromJson(json_t *root) {
     if (fbJ) {
       feedbackCells->cells[i] = json_real_value(fbJ);
     }
+    buf = "panning-" + std::to_string(i) ;
+    json_t *pnJ = json_object_get(root, buf.c_str());
+    if (pnJ) {
+      panningCells->cells[i] = json_real_value(pnJ);
+    }
   }
 }
 
@@ -170,6 +225,7 @@ json_t *DelayedReactionModule::dataToJson() {
   json_object_set(root, "pinAttenuation0s", json_integer(pinAttenuation0s));
   json_object_set(root, "pinDelayTime0s", json_integer(pinDelayTime0s));
   json_object_set(root, "pinFeedback0s", json_integer(pinFeedback0s));
+  json_object_set(root, "pinPanning0s", json_integer(pinPanning0s));
   json_object_set(root, "attenuationLinked", json_integer(attenuationLinked));
   json_object_set(root, "delayTimeLinked", json_integer(delayTimeLinked));
   json_object_set(root, "feedbackLinked", json_integer(feedbackLinked));
@@ -180,6 +236,8 @@ json_t *DelayedReactionModule::dataToJson() {
     json_object_set(root, buf.c_str(),json_real((float) delayTimeCells->cells[i]));
     buf = "feedback-" + std::to_string(i) ;
     json_object_set(root, buf.c_str(),json_real((float) feedbackCells->cells[i]));
+    buf = "panning-" + std::to_string(i) ;
+    json_object_set(root, buf.c_str(),json_real((float) panningCells->cells[i]));
   }
 
   return root;
@@ -199,11 +257,13 @@ void DelayedReactionModule::onReset() {
   pinAttenuation0s = false;
   pinDelayTime0s = false;
   pinFeedback0s = false;
+  pinPanning0s = false;
 
   // reset the cells
   attenuationCells->reset();
   delayTimeCells->reset();
   feedbackCells->reset();
+  panningCells->reset();
 }
 
 
@@ -435,9 +495,47 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
       break;
   }
 
+  float pinXAxisPosPanning = paramValue(X_AXIS_PIN_POS_PANNING, X_AXIS_PIN_POS_PANNING_CV, 0, 1);
+  panningXAxisPercentage = pinXAxisPosPanning;
+  float xAxisRotationPanning = paramValue(X_AXIS_ROTATION_PANNING, X_AXIS_ROTATION_PANNING_CV, -1, 1);
+  panningXAxisRotatePercentage = xAxisRotationPanning;
+  if (pinPanning0sTrigger.process(params[PIN_PANNING_0S].getValue())) {
+    pinPanning0s = (pinPanning0s + 1) % 5;
+  }
+  panningCells->pinXAxisValues = pinPanning0s;
+  panningCells->pinXAxisPosition = pinXAxisPosPanning;
+  panningCells->rotateX = xAxisRotationPanning;
+  switch (pinPanning0s) {
+    case 0 :
+      lights[PIN_PANNING_0S_LIGHT+0].value = 0;
+      lights[PIN_PANNING_0S_LIGHT+1].value = 0;
+      lights[PIN_PANNING_0S_LIGHT+2].value = 0;
+      break;
+    case 1 :
+      lights[PIN_PANNING_0S_LIGHT].value = .15;
+      lights[PIN_PANNING_0S_LIGHT+1].value = 1;
+      lights[PIN_PANNING_0S_LIGHT+2].value = .15;
+      break;
+    case 2 :
+      lights[PIN_PANNING_0S_LIGHT].value = 0;
+      lights[PIN_PANNING_0S_LIGHT+1].value = 1;
+      lights[PIN_PANNING_0S_LIGHT+2].value = 0;
+      break;
+    case 3 :
+      lights[PIN_PANNING_0S_LIGHT].value = 1;
+      lights[PIN_PANNING_0S_LIGHT+1].value = .15;
+      lights[PIN_PANNING_0S_LIGHT+2].value = .15;
+      break;
+    case 4 :
+      lights[PIN_PANNING_0S_LIGHT].value = 1;
+      lights[PIN_PANNING_0S_LIGHT+1].value = 0;
+      lights[PIN_PANNING_0S_LIGHT+2].value = 0;
+      break;
+  }
+
 
   if (linkAttenuationTrigger.process(params[LINK_ATTENUATION].getValue())) {
-    attenuationLinked = (attenuationLinked + 1) % 5;
+    attenuationLinked = !attenuationLinked;
   }
   lights[LINK_ATTENUATION_LIGHT+0].value = attenuationLinked;
   lights[LINK_ATTENUATION_LIGHT+1].value = attenuationLinked;
@@ -457,6 +555,8 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
   lights[LINK_FEEDBACK_LIGHT+1].value = feedbackLinked;
   lights[LINK_FEEDBACK_LIGHT+2].value = feedbackLinked ? 0.2 : 0.0;
 
+
+  
 
   if (delayRangeTrigger.process(params[DELAY_RANGE].getValue())) {
     delayRange = (delayRange + 1) % 6;
@@ -542,6 +642,11 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
   feedbackCells->shiftX = feedbackShiftX;
   feedbackCells->shiftY = feedbackShiftY;
 
+  float panningShiftX = inputs[PANNING_X_CV].getVoltage() / 5.0;
+  float panningShiftY = inputs[PANNING_Y_CV].getVoltage() / 5.0;
+  panningCells->shiftX = panningShiftX;
+  panningCells->shiftY = panningShiftY;
+
   for(uint8_t i=0; i < MAX_FRAMES; i++) {
     float windowedValue = windowFunction->windowValue(windowFunctionId,dryBuffer[i]->setPos);
     dryBuffer[i]->set(input * windowedValue + feedback); 
@@ -557,11 +662,13 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
         float attenuation = attenuationCells->valueForPosition(uiBand);
         float delayTime = delayTimeCells->displayValueForPosition(uiBand);
         float feedbackAmount = feedbackCells->valueForPosition(uiBand);
+        float panningValue = panningCells->valueForPosition(uiBand);
 
         float bandSum = 0;
         for (uint16_t j = 0; j < bandsPerUIBand[uiBand]; j++) { 
           fftBand-=1;
           delayLine[fftBand].setDelayTime(delayTime * ((1 << delayRange) * 0.64 / delayAdjustment));
+          bandPanning[fftBand] = panningValue;
 
           kiss_fft_cpx inputValue = fft->out[fftBand]; 
           float magnitude = sqrt(inputValue.r * inputValue.r + inputValue.i * inputValue.i);
@@ -619,16 +726,24 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
   mixPercentage = float(mix * 100.0) / 100.0;
 
   float proceesedTotal = 0;
+  float proceesedTotalL = 0;
+  float proceesedTotalR = 0;
   float feedbackTotal = 0;
+
   for(int i=0;i<MAX_FRAMES;i++) {
-    proceesedTotal += processed[i][curPos[i]] * windowFunction->windowValue(windowFunctionId,curPos[i]);
+    float processedValue = processed[i][curPos[i]] * windowFunction->windowValue(windowFunctionId,curPos[i]);
+    float panningValue = bandPanning[i];
+
+    proceesedTotal += processedValue;
+    proceesedTotalL += processedValue * (panningValue > 0 ? (1.0 - panningValue) : 1.0);
+    proceesedTotalR += processedValue * (panningValue < 0 ? (1.0 - abs(panningValue)) : 1.0);
+
     feedbackTotal += feedbackResult[i][curPos[i]] * windowFunction->windowValue(windowFunctionId,curPos[i]);
     curPos[i]++;
   }
 
   feedbackTotal = clamp(feedbackTotal,-10.0,10.0);
   
-  float wet = proceesedTotal;
   outputs[FEEDBACK_SEND].setVoltage(feedbackTotal);
   if(inputs[FEEDBACK_RETURN].isConnected()) {
     feedback = inputs[FEEDBACK_RETURN].getVoltage();
@@ -637,7 +752,18 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
   }
   
 
-  float output = (wet * mix) + ((1.0f - mix) * dryDelayed);
+  if(!outputs[OUTPUT_R].isConnected()) { //Mono Mode
+    float wet = proceesedTotal;
+    float output = (wet * mix) + ((1.0f - mix) * dryDelayed);
 
-  outputs[OUTPUT].setVoltage(output);
+    outputs[OUTPUT_L].setVoltage(output);
+  } else {
+    float wetL = proceesedTotalL;
+    float wetR = proceesedTotalR;
+    float outputL = (wetL * mix) + ((1.0f - mix) * dryDelayed);
+    float outputR = (wetR * mix) + ((1.0f - mix) * dryDelayed);
+
+    outputs[OUTPUT_L].setVoltage(outputL);
+    outputs[OUTPUT_R].setVoltage(outputR);
+  }
 }

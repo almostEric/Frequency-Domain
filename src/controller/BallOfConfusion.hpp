@@ -137,7 +137,7 @@ struct BallOfConfusionModule : Module {
 
     std::string morphModes[NBR_MORPH_MODES] ={"Interpolate","Spectral","Spectral 0","Transfer"};
     std::string syncModes[NBR_SYNC_MODES] ={"Hard","Soft","Soft Reverse"};
-    std::string waveFoldModes[NBR_SYNC_MODES] ={"Invert","Decimate"};
+    std::string waveFoldModes[NBR_WAVEFOLD_MODES] ={"Invert","Decimate"};
 
 
     bool loading = false;

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    height="380"
    cursor="default"
    id="SvgjsSvg1006"
    sodipodi:docname="BallOfConfusion.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
    width="225"
-   version="1.1">
+   version="1.1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata7215">
     <rdf:RDF>
@@ -30,10 +30,10 @@
   <sodipodi:namedview
      borderopacity="1"
      inkscape:zoom="4.0538462"
-     inkscape:cy="277.93769"
+     inkscape:cy="226.94497"
      gridtolerance="10"
-     inkscape:cx="139.80673"
-     inkscape:window-height="1058"
+     inkscape:cx="139.86717"
+     inkscape:window-height="1057"
      inkscape:measure-start="21.6858,252.097"
      inkscape:pagecheckerboard="true"
      inkscape:window-width="1920"
@@ -45,14 +45,16 @@
      bordercolor="#666666"
      inkscape:current-layer="SvgjsSvg1006"
      inkscape:window-maximized="1"
-     inkscape:window-y="-6"
+     inkscape:window-y="-8"
      inkscape:measure-end="21.0081,301.907"
      objecttolerance="10"
      pagecolor="#ffffff"
-     inkscape:window-x="-6"
+     inkscape:window-x="-8"
      visibility="visible"
      showguides="false"
-     inkscape:document-rotation="0" />
+     inkscape:document-rotation="0"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
   <defs
      id="SvgjsDefs1007">
     <linearGradient
@@ -1526,8 +1528,8 @@
   <path
      inkscape:connector-curvature="0"
      id="rect4936-0-8-4-4-0-4-2-6"
-     d="m 175.59442,169.59443 h 32.81115 v 10.81116 h -32.81115 z"
-     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.188848;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+     d="m 175.60128,169.60129 h 37.79744 v 10.79744 h -37.79744 z"
+     style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.202562;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-6-1-4-40-0-9-1"
@@ -2002,11 +2004,11 @@
   <text
      style="font-size:8px;font-family:'Routed Gothic';text-anchor:middle;fill:#e8b923;stroke:none;stroke-width:1px;text-rendering:geometricPrecision"
      id="text106-6-1-4-40-0-9-3"
-     x="57.569313"
+     x="55.569313"
      font-size="8px"
-     y="319.9101">X</text>
+     y="323.44717">X</text>
   <text
-     y="319.17386"
+     y="322.71094"
      font-size="8px"
      x="75.495255"
      id="text106-6-1-4-40-0-9-3-5"
@@ -2020,6 +2022,6 @@
   <path
      inkscape:connector-curvature="0"
      id="rect4936-0-8-4-4-0-4-2-62"
-     d="M 6.983418,239.09442 H 39.79457 v 10.81116 H 6.983418 Z"
+     d="M 6.983418,250.09442 H 39.79457 v 10.81116 H 6.983418 Z"
      style="opacity:0.981;fill:#060e08;fill-opacity:1;stroke:#e8b923;stroke-width:0.188848;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
 </svg>

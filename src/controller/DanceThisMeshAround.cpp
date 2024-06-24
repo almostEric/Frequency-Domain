@@ -16,24 +16,51 @@ DanceThisMeshAroundModule::DanceThisMeshAroundModule() {
   configParam(MESH_SIZE_PARAM, 2.0f, 5.0f, 2.0f, "Mesh Size");
 
 
-  configParam(INPUT_NONLIARITY_PARAM, 1.f, 8.f, 1.0f, "Input Non-linarity", "x");
+  configParam(INPUT_NONLINEARITY_PARAM, 1.f, 8.f, 1.0f, "Input Non-linearity", "x");
 
   configParam(BP_1_CUTOFF_PARAM, 0.29f, 0.5f, 0.35f, "WG 1 Filter Fc", " Hz", std::pow(2, 10.f), dsp::FREQ_C4 / std::pow(2, 5.f));
   configParam(BP_2_CUTOFF_PARAM, 0.31f, 0.75f, 0.5f, "WG 2 Filter Fc", " Hz", std::pow(2, 10.f), dsp::FREQ_C4 / std::pow(2, 5.f));
   configParam(BP_3_CUTOFF_PARAM, 0.34f, 1.f, 0.75f, "Mesh Filter Fc", " Hz", std::pow(2, 10.f), dsp::FREQ_C4 / std::pow(2, 5.f));
 
   configParam(GROUP_FEEDBACK_PARAM, 0.f, 1.f, 0.5f, "Feedback Amount", " %",0,100);
-  configParam(INPUT_NONLIARITY_PARAM, 1.f, 5.f, 1.0f, "Feedback Non-linarity", "x");
+  configParam(INPUT_NONLINEARITY_PARAM, 1.f, 5.f, 1.0f, "Feedback Non-linearity", "x");
 
   configParam(DELAY_TIME_1_PARAM, 1.f, 500.f, 50.0f, "WG 1 Delay Time", " Samples");
   configParam(DELAY_TIME_2_PARAM, 1.f, 500.f, 50.0f, "WG 2 Delay Time", " Samples");
 
   configParam(DELAY_TIME_MESH_PARAM, 1.f, 500.f, 50.0f, "Mesh Delay Time", " Samples");
   configParam(DELAY_MESH_FB_AMOUNT_PARAM, 0.f, 1.f, 0.5f, "Mesh X Axis Feedback Amount", " %",0,100);
-  configParam(DELAY_MESH_FB_NONLINEARITY_PARAM, 1.f, 5.f, 1.0f, "Mesh X Axis Feedback Non-linarity", "x");
+  configParam(DELAY_MESH_FB_NONLINEARITY_PARAM, 1.f, 5.f, 1.0f, "Mesh X Axis Feedback Non-linearity", "x");
 
 
   configParam(MESH_IMPEDANCE_PARAM, 0.0f, 1.0f, 1.0f, "Mesh Impedance", "%", 0,100);
+
+
+  configInput(IMPULSE_INPUT, "Impulse");
+  configInput(MESH_SIZE_INPUT, "Mesh Size CV");
+  configInput(INPUT_NONLINEARITY_INPUT, "Non-linearity CV");
+
+  configInput(BP_1_CUTOFF_INPUT, "WG 1 Filter Fc CV");
+  configInput(BP_2_CUTOFF_INPUT, "WG 2 Filter Fc CV");
+  configInput(BP_3_CUTOFF_INPUT, "Mesh Filter Fc CV");
+
+  configInput(DELAY_TIME_1_INPUT, "WG 1 Delay Time CV");
+  configInput(DELAY_TIME_2_INPUT, "WG 2 Delay Time CV");
+  configInput(DELAY_TIME_MESH_INPUT, "Mesh X Axis Delay Time CV");
+
+  configInput(DELAY_1_FB_AMOUNT_INPUT, "WG 1 Delay Feedback Amount CV");
+  configInput(DELAY_2_FB_AMOUNT_INPUT, "WG 2 Delay Feedback Amount CV");
+  configInput(DELAY_MESH_FB_AMOUNT_INPUT, "Mesh X Axis Feedback Amount CV");
+  configInput(DELAY_MESH_FB_NONLINEARITY_INPUT, "Mesh X Axis Feedback Non-linearity CV");
+
+  configInput(MESH_IMPEDANCE_INPUT, "Mesh Impedance CV");
+
+  configInput(GROUP_FEEDBACK_INPUT, "Feedback Ammount CV");
+
+  configInput(ALLPASS_FC_INPUT, "Allpass Fc CV");
+
+  configOutput(OUTPUT_1, "Mesh");
+
 
 
   junctions.resize(0);
@@ -177,7 +204,7 @@ void DanceThisMeshAroundModule::process(const ProcessArgs &args) {
 
     // Get Input
 
-    double inputNonlinearity = paramValue(INPUT_NONLIARITY_PARAM,INPUT_NONLIARITY_INPUT,1.0,5.0);
+    double inputNonlinearity = paramValue(INPUT_NONLINEARITY_PARAM,INPUT_NONLINEARITY_INPUT,1.0,5.0);
     inputNonlinerityPercentage = (inputNonlinearity - 1.0) / 4.0;
 
     double feedback = paramValue(GROUP_FEEDBACK_PARAM,GROUP_FEEDBACK_INPUT,0.0,1.0);; // this will be parameterized - move this to top

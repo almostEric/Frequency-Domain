@@ -23,6 +23,7 @@ struct DelayedReactionModule : Module {
                   PIN_ATTENUATION_0S,
                   PIN_DELAY_TIME_0S,
                   PIN_FEEDBACK_0S,
+                  PIN_PANNING_0S,
                   LINK_ATTENUATION,
                   LINK_DELAY_TIME,
                   LINK_FEEDBACK,
@@ -30,9 +31,11 @@ struct DelayedReactionModule : Module {
                   X_AXIS_PIN_POS_ATTENUATION,
                   X_AXIS_PIN_POS_DELAY_TIME,
                   X_AXIS_PIN_POS_FEEDBACK,
+                  X_AXIS_PIN_POS_PANNING,
                   X_AXIS_ROTATION_ATTENUATION,
                   X_AXIS_ROTATION_DELAY_TIME,
                   X_AXIS_ROTATION_FEEDBACK,
+                  X_AXIS_ROTATION_PANNING,
                   NUM_PARAMS };
   enum InputIds {
     INPUT,
@@ -43,21 +46,26 @@ struct DelayedReactionModule : Module {
     DELAY_TIME_Y_CV,
     DELAY_FEEDBACK_X_CV,
     DELAY_FEEDBACK_Y_CV,
+    PANNING_X_CV,
+    PANNING_Y_CV,
     MIX_CV,
     X_AXIS_PIN_POS_ATTENUATION_CV,
     X_AXIS_PIN_POS_DELAY_TIME_CV,
     X_AXIS_PIN_POS_FEEDBACK_CV,
+    X_AXIS_PIN_POS_PANNING_CV,
     X_AXIS_ROTATION_ATTENUATION_CV,
     X_AXIS_ROTATION_DELAY_CV,
     X_AXIS_ROTATION_FEEDBACK_CV,
+    X_AXIS_ROTATION_PANNING_CV,
     NUM_INPUTS
   };
-  enum OutputIds { OUTPUT, FEEDBACK_SEND, NUM_OUTPUTS };
+  enum OutputIds { OUTPUT_L, OUTPUT_R, FEEDBACK_SEND, NUM_OUTPUTS };
   enum LightIds { DELAY_RANGE_LIGHT,
                   PIN_ATTENUATION_0S_LIGHT = DELAY_RANGE_LIGHT + 3,
                   PIN_DELAY_TIME_0S_LIGHT = PIN_ATTENUATION_0S_LIGHT + 3,
                   PIN_FEEDBACK_0S_LIGHT = PIN_DELAY_TIME_0S_LIGHT + 3,
-                  LINK_ATTENUATION_LIGHT = PIN_FEEDBACK_0S_LIGHT + 3,
+                  PIN_PANNING_0S_LIGHT = PIN_FEEDBACK_0S_LIGHT + 3,
+                  LINK_ATTENUATION_LIGHT = PIN_PANNING_0S_LIGHT + 3,
                   LINK_DELAY_TIME_LIGHT = LINK_ATTENUATION_LIGHT + 3,
                   LINK_FEEDBACK_LIGHT = LINK_DELAY_TIME_LIGHT + 3,
                   NUM_LIGHTS = LINK_FEEDBACK_LIGHT+3
@@ -90,13 +98,14 @@ struct DelayedReactionModule : Module {
   float *feedbackResult[MAX_FRAMES] = { 0 };
   float *processed[MAX_FRAMES] = {0}; 
 
-  dsp::SchmittTrigger delayRangeTrigger,pinAttenuation0sTrigger,pinDelayTime0sTrigger,pinFeedback0sTrigger,linkAttenuationTrigger,linkDelayTimeTrigger,linkFeedbackTrigger;
+  dsp::SchmittTrigger delayRangeTrigger,pinAttenuation0sTrigger,pinDelayTime0sTrigger,pinFeedback0sTrigger,pinPanning0sTrigger,linkAttenuationTrigger,linkDelayTimeTrigger,linkFeedbackTrigger;
 
   Buffer<float> *dry;
 
   FFT *fft;
   FFT *feedbackfft;
   FFTDelayLine delayLine[4096];
+  float bandPanning[4096] = {0.0};
   uint8_t frameSize;
   uint16_t nbrBands;
   uint8_t lastFrameSize;
@@ -119,6 +128,7 @@ struct DelayedReactionModule : Module {
   uint8_t pinAttenuation0s = 0;
   uint8_t pinDelayTime0s = 0;
   uint8_t pinFeedback0s = 0;
+  uint8_t pinPanning0s = 0;
 
 
   bool attenuationLinked = false;
@@ -130,14 +140,17 @@ struct DelayedReactionModule : Module {
   float attenuationXAxisPercentage = 0;
   float delayTimeXAxisPercentage = 0;
   float feedbackXAxisPercentage = 0;
+  float panningXAxisPercentage = 0;
   float attenuationXAxisRotatePercentage = 0;
   float delayTimeXAxisRotatePercentage = 0;
   float feedbackXAxisRotatePercentage = 0;
+  float panningXAxisRotatePercentage = 0;
   float mixPercentage = 0;
 
   // cells for stuff
   OneDimensionalCells *attenuationCells;
   OneDimensionalCells *delayTimeCells;
   OneDimensionalCells *feedbackCells;
+  OneDimensionalCells *panningCells;
 
 };

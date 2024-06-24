@@ -28,11 +28,48 @@ struct VCOVoice : ParamQuantity {
 };
 
 
+// struct NoiseColorName : ParamQuantity {
+//   std::string getDisplayValueString() override {
+//     int value = (int)getValue();
+
+//     switch (value) {
+//       case NOISE_WHITE :
+//         return "White";
+//         break;
+//       case NOISE_PINK :
+//         return "Pink";
+//         break;
+//       case NOISE_RED :
+//         return "Red";
+//         break;
+//       case NOISE_VIOLET :
+//         return "Violet";
+//         break;
+//       case NOISE_GREY :
+//         return "Grey";
+//         break;
+//       case NOISE_BLUE :
+//         return "Blackman";
+//         break;
+//       case NOISE_BLACK :
+//         return "Nutall";
+//         break;
+//       default :
+//         return "?";
+//         break;
+//     }
+//   }
+// };
+
+
 struct WindowFunctionName : ParamQuantity {
   std::string getDisplayValueString() override {
     int value = (int)getValue();
 
     switch (value) {
+      case NO_WINDOW_FUNCTION :
+        return "None";
+        break;
       case TRIANGLE_WINDOW_FUNCTION :
         return "Triangle";
         break;

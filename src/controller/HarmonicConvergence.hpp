@@ -2,13 +2,14 @@
 #include <vector>
 
 #include "../FrequencyDomain.hpp"
-#include "../model/dsp/Binning.hpp"
-#include "../model/dsp/WindowFunction.hpp"
-#include "../model/Oscillator.hpp"
 #include "../model/Buffer.hpp"
-#include "../model/OscillatorBank.hpp"
 #include "../model/Cells.hpp"
+#include "../model/NoiseGenerator.hpp"
+#include "../model/Oscillator.hpp"
+#include "../model/OscillatorBank.hpp"
+#include "../model/dsp/Binning.hpp"
 #include "../model/dsp/FFT.hpp"
+#include "../model/dsp/WindowFunction.hpp"
 
 using rack::simd::float_4;
 

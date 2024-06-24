@@ -13,6 +13,7 @@ enum WindowFunctionTypes {
     EXPONENTIAL_ATTACK_WINDOW_FUNCTION
 };
 
+
 template <typename T>
 struct WindowFunction {
 

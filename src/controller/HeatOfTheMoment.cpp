@@ -1,29 +1,35 @@
 #include "HeatOfTheMoment.hpp"
+#include "../component/tooltip.hpp"
 #include <cmath>
 
 
 HeatOfTheMomentModule::HeatOfTheMomentModule() {
     //fprintf(stderr, "initializing...  \n");
 
-    config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
+  config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
 
 
-    configParam(NOISE_COLOR_PARAM, 0.0f, 6.0f, 0.0f, "Noise Color");
-    configParam(WINDOW_FUNCTION_PARAM, 0.0f, 7.0f, 0.0f, "Window Function");
-    configParam(IMPULSE_PEAK_COUNT_PARAM, 1.0f, 4.0f, 1.0f, "# of Peaks");
+  configParam(NOISE_COLOR_PARAM, 0.0f, 6.0f, 0.0f, "Noise Color");
+  configParam<WindowFunctionName>(WINDOW_FUNCTION_PARAM, 0.0f, 7.0f, 0.0f, "Window Function");
+  configParam(IMPULSE_PEAK_COUNT_PARAM, 1.0f, 4.0f, 1.0f, "# of Peaks");
 
-    configParam(IMPULSE_DURATION_PARAM, 0.1f, 100.0f, 1.0f, "Impulse Duration"," ms");
-    configParam(IMPULSE_REPEAT_FREQUENCY_PARAM, 1.f, 1000.0f, 1.0f, "Impulse Repeat Frequency"," ms");
+  configParam(IMPULSE_DURATION_PARAM, 0.1f, 100.0f, 1.0f, "Impulse Duration"," ms");
+  configParam(IMPULSE_REPEAT_FREQUENCY_PARAM, 1.f, 1000.0f, 1.0f, "Impulse Repeat Frequency"," ms");
 
-    // configParam(Y_PARAM, 0.0f, 1.0f, 0.0f, "Y","%",0,100);
-    // configParam(Z_PARAM, 0.0f, 1.0f, 0.0f, "Z","%",0,100);
+  configInput(NOISE_COLOR_INPUT, "Noise Color CV");
+  configInput(WINDOW_FUNCTION_INPUT, "Window Function CV");
+  configInput(IMPULSE_DURATION_INPUT, "Impulse Duration CV");
+  configInput(IMPULSE_PEAK_COUNT_INPUT, "Impulse Peak Count CV");
+  configInput(IMPULSE_REPEAT_FREQUENCY_INPUT, "Impulse Repeat Frequency CV");
+
+  configInput(GATE_INPUT, "Gate");
+
+  configOutput(OUTPUT_L, "Impulse");
 
 
-    // configParam(FILTER_MODEL_PARAM, 0, 1, 0, "Model #");
+  windowFunction = new WindowFunction<float>(4096);
 
-    windowFunction = new WindowFunction<float>(4096);
-
-    onReset();
+  onReset();
 }
 
 

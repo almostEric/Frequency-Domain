@@ -32,7 +32,7 @@ struct DanceThisMeshAroundModule : Module {
     enum ParamIds {
         MESH_TOPOLOGY_PARAM,
         MESH_SIZE_PARAM,
-        INPUT_NONLIARITY_PARAM,
+        INPUT_NONLINEARITY_PARAM,
         BP_1_CUTOFF_PARAM,
         BP_2_CUTOFF_PARAM,
         BP_3_CUTOFF_PARAM,
@@ -52,7 +52,7 @@ struct DanceThisMeshAroundModule : Module {
     enum InputIds {
         IMPULSE_INPUT,
         MESH_SIZE_INPUT,
-        INPUT_NONLIARITY_INPUT,
+        INPUT_NONLINEARITY_INPUT,
         BP_1_CUTOFF_INPUT,
         BP_2_CUTOFF_INPUT,
         BP_3_CUTOFF_INPUT,

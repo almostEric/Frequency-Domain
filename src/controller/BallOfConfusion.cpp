@@ -20,14 +20,38 @@ BallOfConfusionModule::BallOfConfusionModule() {
 
     configParam(FREQUENCY_PARAM, -54.f, 54.f, 0.f, "Frequency", " Hz", dsp::FREQ_SEMITONE, dsp::FREQ_C4);
 
-  
     configParam(SYNC_POSITION_PARAM, 0.0f, 1.0f, 1.0f, "Sync Position","%",0,100);
-
     configParam(SPECTRUM_SHIFT_PARAM, -64.0f, 64.0f, 0.0f, "Spectrum Shift","Band(s)");
-
     configParam(WAVEFOLD_AMOUNT_PARAM, 1.0f, 4.0f, 1.0f, "Fold Amount");
     
+    configButton(SYNC_MODE_PARAM,"Sync Mode");
+    configButton(WAVEFOLD_MODE_PARAM,"Fold Mode");
+    configButton(MORPH_MODE_PARAM,"Wave Morphing Mode");
 
+    configInput(V_OCTAVE_INPUT, "v/Oct");
+
+    configInput(YAW_INPUT, "Wavetable Yaw CV");
+    configInput(PITCH_INPUT, "Wavetable Pitch CV");
+    configInput(ROLL_INPUT, "Wavetable Roll CV");
+
+    configInput(FM_INPUT, "FM");
+    configInput(FM_AMOUNT_INPUT, "FM Amount CV");
+
+    configInput(PHASE_INPUT, "Phase");
+    configInput(SYNC_INPUT, "Sync");
+    configInput(SYNC_POSITION_INPUT, "Sync Position CV");
+
+    configInput(SPECTRUM_SHIFT_INPUT, "Spectrum Shift CV");
+
+    configInput(HARMONIC_SHIFT_X_INPUT, "Harmonic Shift X");
+    configInput(HARMONIC_SHIFT_Y_INPUT, "Harmonic Shift Y");
+
+    configInput(WAVEFOLD_AMOUNT_INPUT, "Fold Amount CV");
+
+    // configInput(INPUT, "Main Input");
+
+
+    configOutput(OUTPUT_L, "Main");
 
     sphere.resize(0);
     fft = new FFT(WAV_TABLE_SIZE); //Might need to double suze

@@ -1,3 +1,18 @@
+#pragma once
+
+#define NBR_NOISE_COLORS 8
+
+
+enum NoiseColor {
+    NOISE_WHITE,   
+    NOISE_PINK, // Pink noise: -3dB/oct
+    NOISE_RED,    // apply nonlinearities to feedback paths
+    NOISE_VIOLET,     // apply nonlinearities to both states and feedback paths
+	NOISE_GREY,
+	NOISE_BLUE,
+	NOISE_BLACK
+}; 
+
 
 /** Based on "The Voss algorithm"
 http://www.firstpr.com.au/dsp/pink-noise/
@@ -62,16 +77,6 @@ struct InverseAWeightingFFTFilter {
 };
 
 
-enum NoiseColor {
-    NOISE_WHITE,   
-    NOISE_PINK, // Pink noise: -3dB/oct
-    NOISE_RED,    // apply nonlinearities to feedback paths
-    NOISE_VIOLET,     // apply nonlinearities to both states and feedback paths
-	NOISE_GREY,
-	NOISE_BLUE,
-	NOISE_BLACK,
-//	NOISE_GAUSSIAN
-};
 
 
 
@@ -106,7 +111,7 @@ struct NoiseGenerator  {
         float pink = pinkNoiseGenerator.process() / 0.816f;
         float violet, blue, u;
 
-		float noiseOutput;
+		float noiseOutput = 0;
 		switch(noiseColor) {
 			case NOISE_WHITE: // White noise: equal power density
 				noiseOutput = white * gain;
