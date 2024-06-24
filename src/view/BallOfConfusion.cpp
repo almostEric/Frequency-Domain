@@ -397,7 +397,7 @@ struct BallOfConfusionWidget : ModuleWidget {
         dwfm->module = module;
       //}   
       dwfm->box.pos = Vec(8, 251);
-      dwfm->box.size = Vec(32, 10);
+      dwfm->box.size = Vec(31, 9.5);
       addChild(dwfm);
     }
 
@@ -417,7 +417,7 @@ struct BallOfConfusionWidget : ModuleWidget {
         dsm->module = module;
       //}   
       dsm->box.pos = Vec(176, 170);
-      dsm->box.size = Vec(32, 10);
+      dsm->box.size = Vec(36, 10);
       addChild(dsm);
     }
 

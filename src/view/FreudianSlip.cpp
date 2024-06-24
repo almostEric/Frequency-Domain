@@ -170,7 +170,6 @@ struct FreudianSlipWidget : ModuleWidget {
     // VOICE_COUNT
     addInput(createInput<LightPort>(Vec(9, 104), module, FreudianSlipModule::VOICE_COUNT_CV));
     addParam(createParam<LightSmallKnobSnap>(Vec(37.5, 108), module, FreudianSlipModule::VOICE_COUNT));
-
     {
       SmallArcDisplay *c = new SmallArcDisplay();
       if (module) {
@@ -185,7 +184,6 @@ struct FreudianSlipWidget : ModuleWidget {
     // Waveform
     addInput(createInput<LightPort>(Vec(68, 104), module, FreudianSlipModule::VOICE_WAVEFORM_CV));
     addParam(createParam<LightSmallKnobSnap>(Vec(97, 107), module, FreudianSlipModule::VOICE_WAVEFORM));
-
     {
       SmallArcDisplay *c = new SmallArcDisplay();
       if (module) {
@@ -200,7 +198,6 @@ struct FreudianSlipWidget : ModuleWidget {
     // Tuning 
     addInput(createInput<LightPort>(Vec(133, 104), module, FreudianSlipModule::V_OCT_CV));
     addParam(createParam<LightSmallKnob>(Vec(161.5, 108), module, FreudianSlipModule::V_OCT_PARAM));
-
     {
       SmallBidirectionalArcDisplay *c = new SmallBidirectionalArcDisplay();
       if (module) {

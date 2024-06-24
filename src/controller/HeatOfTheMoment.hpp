@@ -1,8 +1,10 @@
 #include "../FrequencyDomain.hpp"
+#include "../model/Interpolate.hpp"
+#include "../model/NoiseGenerator.hpp"
+#include "../model/Oscillator.hpp"
+#include "../model/dsp/Binning.hpp"
 #include "../model/dsp/FFT.hpp"
 #include "../model/dsp/WindowFunction.hpp"
-#include "../model/NoiseGenerator.hpp"
-#include "../model/Interpolate.hpp"
 
 
 #include <cstdint>

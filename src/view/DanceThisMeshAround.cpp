@@ -340,7 +340,7 @@ struct DanceThisMeshAroundWidget : ModuleWidget {
     }  
     addInput(createInput<LightPort>(Vec(26, 265), module, DanceThisMeshAroundModule::GROUP_FEEDBACK_INPUT));
 
-    addParam(createParam<LightSmallKnob>(Vec(55, 253), module, DanceThisMeshAroundModule::INPUT_NONLIARITY_PARAM));
+    addParam(createParam<LightSmallKnob>(Vec(55, 253), module, DanceThisMeshAroundModule::INPUT_NONLINEARITY_PARAM));
     {
       SmallArcDisplay *c = new SmallArcDisplay();
       if (module) {
@@ -350,7 +350,7 @@ struct DanceThisMeshAroundWidget : ModuleWidget {
       c->box.size = Vec(30, 30);
       addChild(c);
     }
-    addInput(createInput<LightPort>(Vec(71, 265), module, DanceThisMeshAroundModule::INPUT_NONLIARITY_INPUT));
+    addInput(createInput<LightPort>(Vec(71, 265), module, DanceThisMeshAroundModule::INPUT_NONLINEARITY_INPUT));
 
 
 

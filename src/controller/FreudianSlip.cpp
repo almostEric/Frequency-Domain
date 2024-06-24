@@ -27,6 +27,66 @@ FreudianSlipModule::FreudianSlipModule() {
 
     configParam(RING_MODULATION, 0.0f, 1.0f, 0.0f, "Ring Modulation");
 
+    configButton(FREQ_WARP_USE_FUNDAMENTAL,"Warp Use Fundamental Frequncy");
+    configButton(POSITION_MODE_PARAM,"Position Mode");
+    configButton(EOC_MODE_PARAM,"End of Cycle Mode");
+    configButton(LOOP_PARAM,"Loop");
+
+
+    configInput(PLAY_INPUT, "Play");
+    configInput(INPUT_2, "2nd");
+
+    configInput(FM_SHIFT_X_CV, "FM Shift X CV");
+    configInput(FM_SHIFT_Y_CV, "FM Shift Y CV");
+
+    configInput(FM_AMOUNT_SHIFT_X_CV, "FM Amount Shift X CV");
+    configInput(FM_AMOUNT_SHIFT_Y_CV, "FM Amount Shift Y CV");
+
+    configInput(FM_INPUT_1, "FM 1");
+    configInput(FM_INPUT_2, "FM 2");
+
+    configInput(AM_RM_INPUT_1, "AM/RM 1");
+    configInput(AM_RM_INPUT_2, "AM/RM 2");
+
+    configInput(VOICE_COUNT_CV, "Voice Count CV");
+    configInput(VOICE_WAVEFORM_CV, "Voice Waveform CV");
+
+    configInput(V_OCT_CV, "V/Oct");
+
+    configInput(FREQ_WARP_AMOUNT_CV, "Freqency Warp Amount CV");
+    configInput(FREQ_WARP_CENTER_CV, "Freqency Warm Center CV");
+
+    configInput(RM_SHIFT_X_CV, "AM/RM Shift X CV");
+    configInput(RM_SHIFT_Y_CV, "AM/RM Shift Y CV");
+
+    configInput(RM_MIX_SHIFT_X_CV, "AM/RM Mix Shift X CV");
+    configInput(RM_MIX_SHIFT_Y_CV, "AM/RM Mix Shift Y CV");
+
+    configInput(RANDOMIZE_CV, "Randomize CV");
+
+    configInput(PAN_SHIFT_X_CV, "Pan Shift X CV");
+    configInput(PAN_SHIFT_Y_CV, "Pan Shift Y CV");
+    configInput(PAN_ROTATE_X_CV, "Pan Rotate CV");
+
+    configInput(PLAY_SPEED_SHIFT_X_CV, "Play Speed Shift X CV");
+    configInput(PLAY_SPEED_SHIFT_Y_CV, "Play Speed Shift Y CV");
+    configInput(PLAY_SPEED_ROTATE_X_CV, "Play Speed Rotate CV");
+
+    configInput(START_POS_SHIFT_X_CV, "Start Position Shift X CV");
+    configInput(START_POS_SHIFT_Y_CV, "Start Position Shift Y CV");
+    configInput(START_POS_ROTATE_X_CV, "Start Position Rotate CV");
+
+    configInput(STOP_POS_SHIFT_X_CV, "Stop Position Shift X CV");
+    configInput(STOP_POS_SHIFT_Y_CV, "Stop Position Shift Y CV");
+    configInput(STOP_POS_ROTATE_X_CV, "Stop Position Rotate CV");
+
+    configInput(LOOP_INPUT, "Loop");
+
+    configOutput(OUTPUT_L, "Left");
+    configOutput(OUTPUT_R, "Right");
+    configOutput(EOC_OUTPUT, "End of Cycle");
+
+
     playBuffer.resize(2);
     playBuffer[0].resize(0);
     playBuffer[1].resize(0); 

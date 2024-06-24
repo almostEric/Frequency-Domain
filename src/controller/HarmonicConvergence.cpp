@@ -7,8 +7,6 @@
 HarmonicConvergenceModule::HarmonicConvergenceModule() {
   config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
 
-  // this is SOOOOO hacky
-
   configParam(VOICE_COUNT, 1.0f, 36.0f, 18.0f,"# of Voices");
   configParam<VCOVoice>(VOICE_WAVEFORM, 0.0f, 4.0f, 0.0f,"Voice Waveform");
   configParam(OCTAVE, -3.0f, 3.0f, 0.0f, "Frequency Shift (Octaves)");
@@ -28,7 +26,50 @@ HarmonicConvergenceModule::HarmonicConvergenceModule() {
   configParam(FM_AMOUNT, 0.0f, 1.0f, 0.0f, "FM Amount","%",0,100);
   configParam(RM_MIX, 0.0f, 1.0f, 0.0f, "AM/RM Mix","%",0,100);
 
-  configParam(RING_MODULATION, 0.0f, 1.0f, 0.0f, "Ring Modulation");
+
+  configButton(FREQ_WARP_USE_FUNDAMENTAL,"Warp Use Fundamental Frequncy");
+  configButton(RING_MODULATION,"Use Internal Ring Modulation");
+
+
+  configInput(INPUT_1, "#1");
+  configInput(INPUT_2, "#2");
+
+  configInput(FM_SHIFT_X_CV, "FM Shift X CV");
+  configInput(FM_SHIFT_Y_CV, "FM Shift Y CV");
+
+  configInput(FM_AMOUNT_SHIFT_X_CV, "FM Amount Shift X CV");
+  configInput(FM_AMOUNT_SHIFT_Y_CV, "FM Amount Shift Y CV");
+
+  configInput(FM_INPUT_1, "FM 1");
+  configInput(FM_INPUT_2, "FM 2");
+
+  configInput(AM_RM_INPUT_1, "AM/RM 1");
+  configInput(AM_RM_INPUT_2, "AM/RM 2");
+
+  configInput(VOICE_COUNT_CV, "Voice Count CV");
+  configInput(VOICE_WAVEFORM_CV, "Voice Waveform CV");
+  configInput(WINDOW_FUNCTION_CV, "Window Function CV");
+
+  configInput(FRAME_SIZE_CV, "Frame Size");
+  configInput(OCTAVE_CV, "Octave");
+  configInput(FREQ_WARP_AMOUNT_CV, "Frequency Warp Amount CV");
+  configInput(FREQ_WARP_CENTER_CV, "Frequency Warp Center CV");
+  configInput(MIX_CV, "Mix CV");
+  configInput(RM_SHIFT_X_CV, "RM Shift X CV");
+  configInput(RM_SHIFT_Y_CV, "RM Shift Y CV");
+  configInput(RM_MIX_SHIFT_X_CV, "RM Mix Shift X CV");
+  configInput(RM_MIX_SHIFT_Y_CV, "RM Mix Shift Y CV");
+  configInput(VOICE_SHIFT_CV, "Voice Shift CV");
+  configInput(MORPH_SHIFT_X_CV, "Morph Shift X CV");
+  configInput(MORPH_SHIFT_Y_CV, "Morph Shift Y CV");
+  configInput(PAN_SHIFT_X_CV, "Pan Shift X CV");
+  configInput(PAN_SHIFT_Y_CV, "Pan Shift Y CV");
+  configInput(SPECTRAL_MODE_CV, "Spectral Mode CV");
+  configInput(ANALYZE_CENTER_CV, "Analyze Center CV");
+  configInput(ANALYZE_BW_CV, "Analyze Bandwith CV");
+  configInput(FEEDBACK_CV, "Feedback CV");
+
+
 
   // frameSize / sampleRate
   frameSize1 = 9;

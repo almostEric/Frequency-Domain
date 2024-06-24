@@ -30,7 +30,64 @@ GrainsOfWrathModule::GrainsOfWrathModule() {
     configParam(GRAIN_LENGTH_PARAM, 1.0f, 200.0f, 10.0f, "Grain Length","ms");
     configParam(GRAIN_PITCH_PARAM, -3.0f, 3.0f, 0.0f, "Grain Pitch");
 
-    // configParam(RING_MODULATION, 0.0f, 1.0f, 0.0f, "Ring Modulation");
+
+    configButton(FREEZE_TRIGGER_MODE_PARAM,"Freeze (Gate/Trigger) Mode");
+    configButton(PITCH_RANDOM_GAUSSIAN_MODE_PARAM,"Pitch Randomize Guassian");
+    configButton(PAN_RANDOM_GAUSSIAN_MODE_PARAM,"Panning Randomize Gaussian");
+  
+
+    configInput(LIVE_INPUT, "Live");
+
+    configInput(START_POS_SHIFT_X_CV, "Start Position Shift X CV");
+    configInput(START_POS_SHIFT_Y_CV, "Start Position Shift Y CV");
+    configInput(START_POS_ROTATE_X_CV, "Start Position Rotate X Axis CV");
+
+    configInput(STOP_POS_SHIFT_X_CV, "Stop Position Shift X CV");
+    configInput(STOP_POS_SHIFT_Y_CV, "Stop Position Shift Y CV");
+    configInput(STOP_POS_ROTATE_X_CV, "Stop Position Rotate X Axis CV");
+
+    configInput(PLAY_SPEED_SHIFT_X_CV, "Play Speed Shift X CV");
+    configInput(PLAY_SPEED_SHIFT_Y_CV, "Play Speed Shift Y CV");
+    configInput(PLAY_SPEED_ROTATE_X_CV, "Play Speed Rotate X Axis CV");
+
+    configInput(VOICE_WEIGHT_SHIFT_X_CV, "Voice Weight Shift X CV");
+    configInput(VOICE_WEIGHT_SHIFT_Y_CV, "Voice Weight Shift Y CV");
+    configInput(VOICE_WEIGHT_ROTATE_X_CV, "Voice Weight Rotate X Axis CV");
+
+    configInput(GRAIN_LENGTH_SHIFT_X_CV, "Grain Length Shift X CV");
+    configInput(GRAIN_LENGTH_SHIFT_Y_CV, "Grain Length Shift Y CV");
+    configInput(GRAIN_LENGTH_ROTATE_X_CV, "Grain Length Rotate X Axis CV");
+
+    configInput(GRAIN_PITCH_SHIFT_X_CV, "Grain Pitch Shift X CV");
+    configInput(GRAIN_PITCH_SHIFT_Y_CV, "Grain Pitch Shift Y CV");
+    configInput(GRAIN_PITCH_ROTATE_X_CV, "Grain Pitch Rotate X Axis CV");
+
+    configInput(GRAIN_PITCH_RANDOM_SHIFT_X_CV, "Grain Pitch Randomize Shift X CV");
+    configInput(GRAIN_PITCH_RANDOM_SHIFT_Y_CV, "Grain Pitch Randomize Shift Y CV");
+    configInput(GRAIN_PITCH_RANDOM_ROTATE_X_CV, "Grain Pitch Randomize Rotate X Axis CV");
+
+    configInput(WINDOW_FUNCTION_SHIFT_X_CV, "Window Function Shift X CV");
+    configInput(WINDOW_FUNCTION_SHIFT_Y_CV, "Window Function Shift Y CV");
+    configInput(WINDOW_FUNCTION_ROTATE_X_CV, "Window Function Rotate X Axis CV");
+
+    configInput(PAN_SHIFT_X_CV, "Panning Shift X CV");
+    configInput(PAN_SHIFT_Y_CV, "Panning Shift Y CV");
+    configInput(PAN_ROTATE_X_CV, "Panning Rotate X Axis CV");
+
+    configInput(PAN_RANDOM_SHIFT_X_CV, "Panning Randomize Shift X CV");
+    configInput(PAN_RANDOM_SHIFT_Y_CV, "Panning Randomize Shift Y CV");
+    configInput(PAN_RANDOM_ROTATE_X_CV, "Panning Randomize Rotate X Axis CV");
+
+    configInput(GRAIN_DENSITY_INPUT, "Grain Density CV");
+    configInput(GRAIN_DENSITY_VARIATION_INPUT, "Grain Density Variation CV");
+    configInput(EXTERNAL_CLOCK_INPUT, "External Clock");
+    configInput(LIVE_FREEZE_INPUT, "Live Freeze");
+    configInput(REVERSE_GRAIN_LIVE_INPUT, "Reverese Live Grains");
+    configInput(REVERSE_GRAIN_SAMPLES_INPUT, "Reverse Sample Grains");
+    configInput(RESET_INPUT, "Reset");
+    configInput(V_OCT_SAMPLE_INPUT, "Samples v/Oct");
+    configInput(V_OCT_LIVE_INPUT, "Live Inputs v/Oct");
+
 
     for(int i=0;i<MAX_SAMPLES;i++) {
       playBuffer[i].resize(2);

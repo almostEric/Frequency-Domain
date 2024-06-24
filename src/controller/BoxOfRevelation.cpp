@@ -7,13 +7,35 @@ BoxOfRevelationModule::BoxOfRevelationModule() {
 
     config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);
 
+    configParam(FILTER_MODEL_PARAM, 0, 1, 0, "Model #");
 
     configParam(FREQUENCY_PARAM, 0.0f, 1.0f, 0.0f, "Frequency","%",0,100);
     configParam(Y_PARAM, 0.0f, 1.0f, 0.0f, "Y","%",0,100);
     configParam(Z_PARAM, 0.0f, 1.0f, 0.0f, "Z","%",0,100);
 
+    configParam(FREQUENCY_2_PARAM, 0.0f, 1.0f, 0.0f, "2nd Frequency","%",0,100);
+    configParam(Y_2_PARAM, 0.0f, 1.0f, 0.0f, "2nd Y","%",0,100);
+    configParam(Z_2_PARAM, 0.0f, 1.0f, 0.0f, "2nd Z","%",0,100);
 
-    configParam(FILTER_MODEL_PARAM, 0, 1, 0, "Model #");
+    configButton(LINK_PARAM,"Link L/R");
+    configButton(MS_MODE_PARAM,"Mid-Side Mode");
+
+    configInput(INPUT_L, "Left");
+    configInput(INPUT_R, "Right");
+
+    configInput(FILTER_MODEL_INPUT, "Model # CV");
+
+    configInput(FREQUENCY_INPUT, "Frequency CV");
+    configInput(Y_INPUT, "Y CV");
+    configInput(Z_INPUT, "Z CV");
+
+    configInput(FREQUENCY_2_INPUT, "2nd Frequency CV");
+    configInput(Y_2_INPUT, "2nd Y");
+    configInput(Z_2_INPUT, "2nd Z");
+
+    configOutput(OUTPUT_L, "Left/Mono");
+    configOutput(OUTPUT_R, "Right");
+
 
     for(int c=0;c<NBR_CHANNELS;c++) {
         for(int s=0;s<NBR_FILTER_STAGES;s++) {
