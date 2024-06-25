@@ -24,11 +24,11 @@
 
 //#include "Filter.hpp"
 #include <cmath>
-#include <simd/vector.hpp>
-#include <simd/sse_mathfun.h>
-#include <simd/sse_mathfun_extension.h>
+// #include <simd/vector.hpp>
+// #include <simd/sse_mathfun.h>
+// #include <simd/sse_mathfun_extension.h>
 
-using rack::simd::float_4;
+// using rack::simd::float_4;
 
 
 enum {
