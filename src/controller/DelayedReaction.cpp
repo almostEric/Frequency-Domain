@@ -682,10 +682,7 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
         for (uint16_t j = 0; j < bandsPerUIBand[uiBand]; j++) { 
           fftBand-=1;
           delayLine[fftBand].setDelayTime(delayTime * ((1 << delayRange) * 0.64 / delayAdjustment));
-<<<<<<< HEAD
           reverseDelayLine[fftBand].setDelayTime(delayTime * ((1 << delayRange) * 0.64 / delayAdjustment));
-=======
->>>>>>> 4dfdfc70735a7c77f53da7bdcabf2c541916ca38
           bandPanning[fftBand] = panningValue;
 
           kiss_fft_cpx inputValue = fft->out[fftBand]; 

@@ -100,21 +100,14 @@ struct DelayedReactionModule : Module {
   float *feedbackResult[MAX_FRAMES] = { 0 };
   float *processed[MAX_FRAMES] = {0}; 
 
-<<<<<<< HEAD
   dsp::SchmittTrigger delayRangeTrigger,pinAttenuation0sTrigger,pinDelayTime0sTrigger,reverseDelayTrigger,pinFeedback0sTrigger,pinPanning0sTrigger,linkAttenuationTrigger,linkDelayTimeTrigger,linkFeedbackTrigger;
-=======
-  dsp::SchmittTrigger delayRangeTrigger,pinAttenuation0sTrigger,pinDelayTime0sTrigger,pinFeedback0sTrigger,pinPanning0sTrigger,linkAttenuationTrigger,linkDelayTimeTrigger,linkFeedbackTrigger;
->>>>>>> 4dfdfc70735a7c77f53da7bdcabf2c541916ca38
 
   Buffer<float> *dry;
 
   FFT *fft;
   FFT *feedbackfft;
   FFTDelayLine delayLine[4096];
-<<<<<<< HEAD
   ReverseFFTDelayLine reverseDelayLine[4096];
-=======
->>>>>>> 4dfdfc70735a7c77f53da7bdcabf2c541916ca38
   float bandPanning[4096] = {0.0};
   uint8_t frameSize;
   uint16_t nbrBands;
