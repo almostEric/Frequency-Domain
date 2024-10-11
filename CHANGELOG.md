@@ -1,3 +1,7 @@
+### 2.0.2
+- Updated to VCV 2+ standards
+- Delayed Reaction now has reverse mode and panning grid
+
 ### 1.9.1 (2020-12-15)
 - Added Modal Filters to Box of Revelation
 - Added Feedback, Analysis Center and Bandwidth controls to Harmonic Convergence

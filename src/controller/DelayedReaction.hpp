@@ -22,6 +22,7 @@ struct DelayedReactionModule : Module {
                   DELAY_RANGE,
                   PIN_ATTENUATION_0S,
                   PIN_DELAY_TIME_0S,
+                  REVERSE_DELAY,
                   PIN_FEEDBACK_0S,
                   PIN_PANNING_0S,
                   LINK_ATTENUATION,
@@ -63,7 +64,8 @@ struct DelayedReactionModule : Module {
   enum LightIds { DELAY_RANGE_LIGHT,
                   PIN_ATTENUATION_0S_LIGHT = DELAY_RANGE_LIGHT + 3,
                   PIN_DELAY_TIME_0S_LIGHT = PIN_ATTENUATION_0S_LIGHT + 3,
-                  PIN_FEEDBACK_0S_LIGHT = PIN_DELAY_TIME_0S_LIGHT + 3,
+                  REVERSE_DELAY_LIGHT = PIN_DELAY_TIME_0S_LIGHT + 3,
+                  PIN_FEEDBACK_0S_LIGHT = REVERSE_DELAY_LIGHT + 3,
                   PIN_PANNING_0S_LIGHT = PIN_FEEDBACK_0S_LIGHT + 3,
                   LINK_ATTENUATION_LIGHT = PIN_PANNING_0S_LIGHT + 3,
                   LINK_DELAY_TIME_LIGHT = LINK_ATTENUATION_LIGHT + 3,
@@ -98,13 +100,14 @@ struct DelayedReactionModule : Module {
   float *feedbackResult[MAX_FRAMES] = { 0 };
   float *processed[MAX_FRAMES] = {0}; 
 
-  dsp::SchmittTrigger delayRangeTrigger,pinAttenuation0sTrigger,pinDelayTime0sTrigger,pinFeedback0sTrigger,pinPanning0sTrigger,linkAttenuationTrigger,linkDelayTimeTrigger,linkFeedbackTrigger;
+  dsp::SchmittTrigger delayRangeTrigger,pinAttenuation0sTrigger,pinDelayTime0sTrigger,reverseDelayTrigger,pinFeedback0sTrigger,pinPanning0sTrigger,linkAttenuationTrigger,linkDelayTimeTrigger,linkFeedbackTrigger;
 
   Buffer<float> *dry;
 
   FFT *fft;
   FFT *feedbackfft;
   FFTDelayLine delayLine[4096];
+  ReverseFFTDelayLine reverseDelayLine[4096];
   float bandPanning[4096] = {0.0};
   uint8_t frameSize;
   uint16_t nbrBands;
@@ -119,6 +122,7 @@ struct DelayedReactionModule : Module {
   uint8_t delayRange = 0;
   float delayRangeTime;
   float delayAdjustment = 1;
+  bool reverseMode = false;
   uint8_t windowFunctionId;
 
   uint16_t bandsPerUIBand[NUM_UI_BANDS] = {0};

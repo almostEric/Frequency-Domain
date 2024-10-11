@@ -101,6 +101,10 @@ DelayedReactionWidget::DelayedReactionWidget(DelayedReactionModule *module) {
     addParam(createParam<RecButton>(Vec(215, 300), module, DelayedReactionModule::LINK_DELAY_TIME));
     addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(217, 301), module, DelayedReactionModule::LINK_DELAY_TIME_LIGHT));
 
+    addParam(createParam<RecButton>(Vec(251.5, 300), module, DelayedReactionModule::REVERSE_DELAY));
+    addChild(createLight<LargeSMLight<RectangleLight<RedGreenBlueLight>>>(Vec(253.5, 301), module, DelayedReactionModule::REVERSE_DELAY_LIGHT));
+
+
   }
 
   {
@@ -144,14 +148,14 @@ DelayedReactionWidget::DelayedReactionWidget(DelayedReactionModule *module) {
   }
 
 
-  addInput(createInput<LightPort>(Vec(258, 340), module, DelayedReactionModule::MIX_CV));
-  addParam(createParam<LightKnob>(Vec(286.5, 324), module, DelayedReactionModule::MIX));
+  addInput(createInput<LightPort>(Vec(278, 340), module, DelayedReactionModule::MIX_CV));
+  addParam(createParam<LightKnob>(Vec(306.5, 324), module, DelayedReactionModule::MIX));
   {
     ArcDisplay *c = new ArcDisplay();
     if (module) {
       c->percentage = &module->mixPercentage;
     }
-    c->box.pos = Vec(293, 330.5);
+    c->box.pos = Vec(313, 330.5);
     c->box.size = Vec(60, 60);
     addChild(c);
   }

@@ -29,7 +29,8 @@ DelayedReactionModule::DelayedReactionModule() {
   configButton(LINK_FEEDBACK,"Link Feedback Grid to 2nd Delayed Reaction");
 
   configButton(DELAY_RANGE,"Delay Time Range");
-
+  configButton(REVERSE_DELAY,"Reverse Delay");
+  
 
   configInput(INPUT, "Main");
   configInput(MIX_CV, "Mix CV");
@@ -186,6 +187,11 @@ void DelayedReactionModule::dataFromJson(json_t *root) {
     delayTimeLinked = (bool) json_integer_value(dtlJ);
   }
 
+  json_t *rdmJ = json_object_get(root, "reverseDelayMode");
+  if (json_is_integer(rdmJ)) {
+    reverseMode = (bool) json_integer_value(rdmJ);
+  }
+
   json_t *fblJ = json_object_get(root, "feedbackLinked");
   if (json_is_integer(fblJ)) {
     feedbackLinked = (bool) json_integer_value(fblJ);
@@ -222,6 +228,7 @@ json_t *DelayedReactionModule::dataToJson() {
   json_object_set(root, "frameSize", json_integer(frameSize));
   
   json_object_set(root, "delayRange", json_integer(delayRange));
+  json_object_set(root, "reverseDelayMode", json_integer(reverseMode));
   json_object_set(root, "pinAttenuation0s", json_integer(pinAttenuation0s));
   json_object_set(root, "pinDelayTime0s", json_integer(pinDelayTime0s));
   json_object_set(root, "pinFeedback0s", json_integer(pinFeedback0s));
@@ -595,6 +602,13 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
       break;
   }
 
+  if (reverseDelayTrigger.process(params[REVERSE_DELAY].getValue())) {
+    reverseMode = !reverseMode;
+  }
+  lights[REVERSE_DELAY_LIGHT+0].value = reverseMode;
+  lights[REVERSE_DELAY_LIGHT+1].value = reverseMode;
+  lights[REVERSE_DELAY_LIGHT+2].value = reverseMode ? 0.2 : 0.0;
+
 
   //Expander Link logic
   bool slavePresent = (rightExpander.module && rightExpander.module->model == modelDelayedReaction);
@@ -668,6 +682,7 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
         for (uint16_t j = 0; j < bandsPerUIBand[uiBand]; j++) { 
           fftBand-=1;
           delayLine[fftBand].setDelayTime(delayTime * ((1 << delayRange) * 0.64 / delayAdjustment));
+          reverseDelayLine[fftBand].setDelayTime(delayTime * ((1 << delayRange) * 0.64 / delayAdjustment));
           bandPanning[fftBand] = panningValue;
 
           kiss_fft_cpx inputValue = fft->out[fftBand]; 
@@ -681,10 +696,11 @@ void DelayedReactionModule::process(const ProcessArgs &args) {
           inputValue.i = magnitude*sin(phase);
 
           delayLine[fftBand].write(inputValue);
+          reverseDelayLine[fftBand].write(inputValue);
 
           
           //Process Feedback
-          kiss_fft_cpx delayedValue = delayLine[fftBand].getValue(); 
+          kiss_fft_cpx delayedValue = reverseMode ? reverseDelayLine[fftBand].getValue() : delayLine[fftBand].getValue();
 
           fft->in[fftBand].r = delayedValue.r;
           fft->in[fftBand].i = delayedValue.i;
