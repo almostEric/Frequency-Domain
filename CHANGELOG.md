@@ -1,3 +1,8 @@
+### 2.0.3
+- Fixed weird merge issue
+- Fixed reverse mode bug in DR
+- Holding shift key now locks mouse movement for easier drawing in grids
+
 ### 2.0.2
 - Updated to VCV 2+ standards
 - Delayed Reaction now has reverse mode and panning grid

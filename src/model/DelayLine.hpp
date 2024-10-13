@@ -127,9 +127,9 @@ struct ReverseFFTDelayLine {
 
 
 	void setDelayTime(int delaySize) {
-		readPtr = writePtr - delaySize;
-		if (readPtr < 0) { 
-			readPtr += FFT_DELAY_LINE_SIZE;
+		readPtr = writePtr + delaySize;
+		if (readPtr > FFT_DELAY_LINE_SIZE) { 
+			readPtr -= FFT_DELAY_LINE_SIZE;
 		}
 	}
 

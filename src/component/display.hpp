@@ -176,6 +176,11 @@ struct CellGrid : FramebufferWidget {
   void onDragMove(const event::DragMove &e) override {
     float newDragX = APP->scene->rack->getMousePos().x;
     float newDragY = APP->scene->rack->getMousePos().y;
+    int mods = APP->window->getMods();
+
+		if ((mods & RACK_MOD_MASK) == GLFW_MOD_SHIFT) {
+      newDragX = dragX;
+    }
 
     cells->setCell((initX+(newDragX-dragX)) / cellWidth, (initY+(newDragY-dragY)) / cellHeight,setRange);
   }
@@ -352,6 +357,11 @@ struct CellRangeGrid : FramebufferWidget {
   void onDragMove(const event::DragMove &e) override {
     float newDragX = APP->scene->rack->getMousePos().x;
     float newDragY = APP->scene->rack->getMousePos().y;
+    int mods = APP->window->getMods();
+
+		if ((mods & RACK_MOD_MASK) == GLFW_MOD_SHIFT) {
+      newDragX = dragX;
+    }
 
     cells->setCell((initX+(newDragX-dragX)) / cellWidth, (initY+(newDragY-dragY)) / cellHeight,setRange);
   }
@@ -516,6 +526,7 @@ struct CellBarGrid : FramebufferWidget {
   float initY = 0;
   float dragX = 0;
   float dragY = 0;
+  float startDragX = 0;
   float cellWidth = 2.0;
   float cellHeight = 2.0;
   uint16_t yAxis = 0;
@@ -551,7 +562,6 @@ struct CellBarGrid : FramebufferWidget {
       }
     }
     if (e.action == GLFW_PRESS && e.button == GLFW_MOUSE_BUTTON_RIGHT) {
-      //module->selectionSet(type, id);
       createContextMenu();
       e.consume(this);
     }
@@ -565,6 +575,11 @@ struct CellBarGrid : FramebufferWidget {
   void onDragMove(const event::DragMove &e) override {
     float newDragX = APP->scene->rack->getMousePos().x;
     float newDragY = APP->scene->rack->getMousePos().y;
+    int mods = APP->window->getMods();
+
+		if ((mods & RACK_MOD_MASK) == GLFW_MOD_SHIFT) {
+      newDragX = dragX;
+    }
 
     cells->setCell((initX+(newDragX-dragX)) / cellWidth, (initY+(newDragY-dragY)) / cellHeight,setRange);
   }
@@ -737,7 +752,7 @@ struct CellVerticalBarGrid : FramebufferWidget {
         initX = e.pos.x;
         initY = e.pos.y;
 
-       fprintf(stderr, "mouse values: %f %f   %f  %f   %u %u  \n",e.pos.x,e.pos.y,cellHeight,cellWidth,cells->height,cells->width);
+      //  fprintf(stderr, "mouse values: %f %f   %f  %f   %u %u  \n",e.pos.x,e.pos.y,cellHeight,cellWidth,cells->height,cells->width);
 
 
         currentlyTurningOn = !cells->active(cells->width - 0 - (e.pos.y / cellHeight), std::floor(cells->height - 1 - (e.pos.x / cellWidth)));
@@ -747,7 +762,6 @@ struct CellVerticalBarGrid : FramebufferWidget {
       }
     }
     if (e.action == GLFW_PRESS && e.button == GLFW_MOUSE_BUTTON_RIGHT) {
-      //module->selectionSet(type, id);
       createContextMenu();
       e.consume(this);
     }
@@ -761,6 +775,11 @@ struct CellVerticalBarGrid : FramebufferWidget {
   void onDragMove(const event::DragMove &e) override {
     float newDragX = APP->scene->rack->getMousePos().x;
     float newDragY = APP->scene->rack->getMousePos().y;
+    int mods = APP->window->getMods();
+
+		if ((mods & RACK_MOD_MASK) == GLFW_MOD_SHIFT) {
+      newDragY = dragY;
+    }
 
     cells->setCell( (cells->width - 0 - (initY+(newDragY-dragY)) / cellHeight),std::floor(cells->height - 1 - ((initX+(newDragX-dragX)) / cellWidth)),setRange);    
   }

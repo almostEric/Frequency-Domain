@@ -117,22 +117,6 @@ struct CVGrid : Widget {
 		nvgRect(args.vg, 0, 0, box.size.x, box.size.y);
 		nvgFill(args.vg);
 
-		// //grid
-		// nvgStrokeColor(args.vg, nvgRGB(60, 70, 73));
-		// for(int i=1;i<nbrCols;i++){
-		// 	nvgStrokeWidth(args.vg, (i % 4 == 0) ? 2 : 1);
-		// 	nvgBeginPath(args.vg);
-		// 	nvgMoveTo(args.vg, i * HW, 0);
-		// 	nvgLineTo(args.vg, i * HW, box.size.y);
-		// 	nvgStroke(args.vg);
-		// }
-		// for(int i=1;i<nbrRows;i++){
-		// 	nvgStrokeWidth(args.vg, (i % 4 == 0) ? 2 : 1);
-		// 	nvgBeginPath(args.vg);
-		// 	nvgMoveTo(args.vg, 0, i * HW);
-		// 	nvgLineTo(args.vg, box.size.x, i * HW);
-		// 	nvgStroke(args.vg);
-		// }
 
 		if(module == NULL) return;
 
